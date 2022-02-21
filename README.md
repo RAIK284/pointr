@@ -13,4 +13,3 @@
 <li>A React app website will launch with a "Connected?" button</li>
 <li>If everything worked, pressing this button should cause the backend terminal to log "Connected to React"</li>
 </ol>
-
