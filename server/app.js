@@ -1,12 +1,12 @@
 const express = require("express");
 const app = express();
 const mongoConnection = require('./utils/database')
-const userRoutes = require('./routes/userRoutes')
 
-// app.post("/post", (req, res) => {
-//     console.log("Connected to React");
-//     res.redirect("/");
-// });
+app.post("/post", (req, res) => {
+    console.log("Connected to React");
+    res.redirect("/");
+});
+
 //
 // app.get('/user', async function (req, res) {
 //     if (!req.query.username) {
