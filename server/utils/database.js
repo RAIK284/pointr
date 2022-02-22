@@ -25,13 +25,13 @@ const getDb = () => {
     throw 'No database found!';
 };
 
-const addUser = (db, user) => {
-    _database.collection('users').insertOne(user)
-}
+// const addUser = (db, user) => {
+//     _database.collection('users').insertOne(user)
+// }
 
-const getUser = (user) => {
-    return _database.collection('users').findOne({name: user});
-}
+// const getUser = (user) => {
+//     return _database.collection('users').findOne({name: user});
+// }
 
 // TODO: Add delete and update
 const updateUser = (db, user) => {
@@ -43,7 +43,5 @@ const deleteUser = (db, user) => {
 
 module.exports = {
     mongoConnect,
-    getDb,
-    getUser,
-    addUser
+    getDb
 }

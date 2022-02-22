@@ -7,15 +7,7 @@ app.post("/post", (req, res) => {
     res.redirect("/");
 });
 
-//
-// app.get('/user', async function (req, res) {
-//     if (!req.query.username) {
-//         return res.send("You must add a query for a specific user");
-//     }
-//     const user = await mongoConnection.getUser(req.query.username);
-//     res.send(user)
-// });
-
+// Pass in the express app to the routes, so it can listen for api calls
 require('./routes/userRoutes')(app);
 
 const PORT = process.env.PORT || 8080;
