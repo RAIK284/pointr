@@ -2,6 +2,14 @@ const express = require("express");
 const app = express();
 const mongoConnection = require('./utils/database')
 
+app.use(express.json())
+
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
 app.post("/post", (req, res) => {
     console.log("Connected to React");
     res.redirect("/");

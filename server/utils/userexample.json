@@ -1,0 +1,23 @@
+{
+  "username": "bsimpleman",
+  "name": "Blake Simpleman",
+  "age": 20,
+  "bio": "A test user",
+  "email": "blakeman90911@gmail.com",
+  "profileImg": "https://raw.githubusercontent.com/RAIK284/pointr/main/server/images/boredape.png?token=GHSAT0AAAAAABRYIURESMLT7QISUXF5NY56YQVVJJQ",
+  "phoneNumber": 4029490831,
+  "messagingPoints": 100,
+  "funds": 200,
+  "inventoryId": "inventory-blake",
+  "lastLogin": "2022-02-23T03:27:13.535Z",
+  "isPrivate": false,
+  "messagesReceived": [
+    {
+      "timestamp": "2022-02-23T03:31:49.200Z",
+      "sender": "testUser",
+      "receiver": "bsimpleman",
+      "messageBody": "This message is a test",
+      "isRead": false
+    }
+  ]
+}
