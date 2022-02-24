@@ -1,0 +1,15 @@
+{
+  "id": "",
+  "username": "",
+  "name": "",
+  "bio": "",
+  "email": "",
+  "profileImg": "",
+  "phoneNumber": 0,
+  "messagingPoints": 0,
+  "funds": 0,
+  "inventoryId": "",
+  "lastLogin": "2022-02-23T03:27:13.535Z",
+  "isPrivate": false,
+  "messagesReceived": []
+}

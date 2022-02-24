@@ -4,7 +4,9 @@ module.exports = (app) => {
     const express = require("express");
     const router = express.Router();
 
-    router.get('/user', userController.readUser);
+    router.get('/api/user', userController.readUser);
+
+    router.post('/api/user', userController.updateUser);
 
     app.use('/', router);
 };
