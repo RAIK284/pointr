@@ -25,13 +25,6 @@ const getDb = () => {
     throw 'No database found!';
 };
 
-// TODO: Add delete and update
-const updateUser = (db, user) => {
-}
-
-const deleteUser = (db, user) => {
-}
-
 
 module.exports = {
     mongoConnect,
