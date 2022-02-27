@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const userInformation = () => {
-        fetch('http://localhost:8080/api/user?username=scooper22')
+        fetch('http://localhost:8080/api/user?username=bsimpleman')
             .then(response => response.json())
             .then(data => setUserInformation(data));
     }
@@ -64,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         funds.innerHTML = funds.innerHTML + data.funds;
         bio.innerHTML = bio.innerHTML + data.bio;
         messages = data.messagesReceived;
+        profilePicture.src = data.profileImg;
         console.log(messages)
     }
 
@@ -75,6 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
             messageBody: messageBody.value,
             isRead: false
         }
+
         const jsonData = JSON.stringify(data)
         console.log(jsonData)
         fetch("http://localhost:8080/api/user", {
