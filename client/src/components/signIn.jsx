@@ -8,6 +8,7 @@ class SignIn extends Component {
     render() {
         return (
             <React.Fragment >
+                Sign In
                 <body className="signIn">
                     Username:
                     <br />

@@ -7,6 +7,8 @@ import {
     Routes,
     Route  } from "react-router-dom";
 import HomePage from './homePage';
+import ProfilePage from './profilePage';
+import SignUp from './singUp';
   
 class WebsiteRouter extends Component {
     render() {
@@ -16,6 +18,8 @@ class WebsiteRouter extends Component {
             <Routes>
               <Route path="/signin" element={<SignIn/>}/>
               <Route path="/" element={<HomePage/>}/>
+              <Route path="/profile" element={<ProfilePage/>}/>
+              <Route path="/signup" element={<SignUp/>}/>
             </Routes>
           </BrowserRouter>
         </React.Fragment>
