@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import './styles/signIn.css';
-//import Button from '@mui/material/Button';
+import Button from '@mui/material/Button';
 //import Stack from '@mui/material/Stack';
 //import PropTypes from 'prop-types';
 
@@ -17,6 +17,9 @@ class SignIn extends Component {
                     Password:
                     <br />
                     <input type="text" placeholder="Input Password Here"></input>
+                    <br />
+                    <br />
+                    <Button id="button" variant="contained" size="large" onClick={()=>{window.location.href='/profile'}}>Login</Button>
                 </body>
             </React.Fragment>
         );

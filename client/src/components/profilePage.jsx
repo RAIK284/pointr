@@ -1,16 +1,58 @@
 import React, { Component } from "react";
 import { MuiNavbar, NavItem } from 'mui-navbar';
+import Drawer from '@mui/material/Drawer';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import CssBaseline from '@mui/material/CssBaseline';
+import Box from '@mui/material/Box';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
+//reference: https://mui.com/components/drawers/
+
+import './styles/profilePage.css';
+
+
+const drawerWidth = 240;
 class ProfilePage extends Component {
     render() {
         return (
-            <MuiNavbar
-                logoText="Mui Navbar"
-                background="#07cdff"
-                navItemPosition="left"
-            >
-                <NavItem to="/">Home</NavItem>
-                <NavItem to="/signin">About</NavItem>
-            </MuiNavbar>
+            <React.Fragment>
+                <Box sx={{ display: 'flex' }}>
+                    <CssBaseline />
+                    <AppBar
+                        position="fixed"
+                        sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}
+                    >
+                        <Toolbar>
+                            <Typography id="header" variant="h6" noWrap component="div">
+                                Welcome, Name<br />
+                                Hi, I'm name, and I like to hobby! Message me your favorite quote.
+                            </Typography>
+                        </Toolbar>
+                    </AppBar>
+                    <Drawer
+                        sx={{
+                            width: drawerWidth,
+                            flexShrink: 0,
+                            '& .MuiDrawer-paper': { width: drawerWidth, boxSizing: 'border-box', },
+                        }}
+                        variant="permanent"
+                        anchor="left"
+                    >
+                        <List>
+                            {['Profile', 'Messages', 'Store', 'Explore', 'Leaderboard'].map((text, index) => (
+                                <ListItem button key={text}>
+                                    <ListItemText primary={text} />
+                                </ListItem>
+                            ))}
+                        </List>
+                    </Drawer>
+                </Box>
+            </React.Fragment>
         );
     }
 }
