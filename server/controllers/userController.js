@@ -1,8 +1,9 @@
 const mongoConnection = require("../utils/database");
 
-const createUser = (user) => {
+const createUser = (req, res) => {
     const db = mongoConnection.getDb();
-    db.collection('users').insertOne(user);
+    db.collection('users').insertOne(req.body);
+    res.sendStatus(200);
 }
 
 const readUser = (req, res) => {
@@ -16,15 +17,33 @@ const readUser = (req, res) => {
 
 const updateUser = (req, res) => {
     const db = mongoConnection.getDb();
-    const username = req.body.sender
-    console.log(req.body.sender)
-    db.collection('users').findOneAndUpdate({username: req.body.receiver}, { $addToSet: { messagesReceived: req.body } })
 
-    console.log(req.body)
+    for (key in req.body) {
+        db.collection('users').updateOne(
+            {username: req.query.username},
+            {$set: {[key]: req.body[key]}}
+        )
+    }
 }
+
+const deleteUser = (req, res) => {
+    const db = mongoConnection.getDb();
+
+    db.collection('users').deleteOne({username: req.body.username})
+}
+
+// const updateUser = (req, res) => {
+//     const db = mongoConnection.getDb();
+//     const username = req.body.sender
+//     console.log(req.body.sender)
+//     db.collection('users').findOneAndUpdate({username: req.body.receiver}, { $addToSet: { messagesReceived: req.body } })
+//
+//     console.log(req.body)
+// }
 
 module.exports = {
     createUser,
     readUser,
-    updateUser
+    updateUser,
+    deleteUser
 }
