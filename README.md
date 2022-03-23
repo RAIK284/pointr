@@ -101,6 +101,9 @@ fetch("http://localhost:8080/api/user", {
 
 `PATCH` **/api/user**
 
+**Required Params**
+* username - the username of the user that is having information updated
+
 **Success Response**
 * Code: 200
 
@@ -187,4 +190,105 @@ fetch("http://localhost:8080/api/user", {
     "messagingPoints": 50
   }
 ]
+```
+
+`GET` **/api/token**
+
+**Required Params**
+* name - the name of the token you want information for
+
+**Sample Call**
+
+```js
+    fetch('http://localhost:8080/api/token?name=tokenOne')
+        .then(response => response.json())
+        .then(data => console.log(data));
+```
+
+**Success Response**
+* Code: 200
+* Response Example:
+```json
+{
+  "_id": "623b408efa6d95874620a0cd",
+  "name": "firstToken",
+  "value": 250,
+  "image": "./imgpath/imgOne.png"
+}
+```
+
+`POST` **/api/token**
+
+**Success Response**
+* Code: 200
+
+**Sample Call**
+
+* JSON Body: jsonData
+```json
+{
+  "name": "tokenToBeCreated",
+  "value": 200,
+  "image": "./imgpath/image.png"
+}
+```
+* Javascript
+```js
+fetch("http://localhost:8080/api/token", {
+            method: "POST",
+            headers: {'Content-Type': 'application/json'},
+            body: jsonData
+        }).then(res => {
+            console.log("Request complete! response:", res);
+        });
+```
+
+`PATCH` **/api/token**
+
+**Required Params**
+* name - the name of the token to have information updated
+
+**Success Response**
+* Code: 200
+
+**Sample Call**
+* JSON Body: jsonData
+```json
+{
+  "value": 100
+}
+```
+
+* Javascript
+```js
+fetch("http://localhost:8080/api/token", {
+            method: "PATCH",
+            headers: {'Content-Type': 'application/json'},
+            body: jsonData
+        }).then(res => {
+            console.log("Request complete! response:", res);
+        });
+```
+
+`DELETE` **/api/token**
+
+**Success Response**
+* Code: 200
+
+**Sample Call**
+* JSON Body: jsonData
+```json
+{
+  "name": "name_of_token_to_be_deleted"
+}
+```
+* Javascript
+```js
+fetch("http://localhost:8080/api/token", {
+            method: "DELETE",
+            headers: {'Content-Type': 'application/json'},
+            body: jsonData
+        }).then(res => {
+            console.log("Request complete! response:", res);
+        });
 ```
