@@ -157,7 +157,7 @@ fetch("http://localhost:8080/api/user", {
 **Sample Call**
 
 ```js
-    fetch('http://localhost:8080/api/user?top=10')
+    fetch('http://localhost:8080/api/user?top=5')
         .then(response => response.json())
         .then(data => console.log(data));
 ```
