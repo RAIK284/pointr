@@ -16,3 +16,133 @@
 
 
 Error fix: taskkill /im node.exe /f
+
+<h2> API Documentation </h2>
+
+`GET` **/api/user**
+
+**Params**
+* username
+
+
+**Sample Call**
+
+```js
+    fetch('http://localhost:8080/api/user?username=bsimpleman')
+        .then(response => response.json())
+        .then(data => console.log(data));
+```
+
+**Success Response**
+* Code: 200
+* Response Example:
+```json
+{
+  "id": "",
+  "username": "",
+  "name": "",
+  "bio": "",
+  "email": "",
+  "profileImg": "",
+  "phoneNumber": 0,
+  "messagingPoints": 0,
+  "funds": 0,
+  "inventoryId": "",
+  "lastLogin": "2022-02-23T03:27:13.535Z",
+  "isPrivate": false,
+  "messagesReceived": []
+  }
+```
+
+`POST` **/api/user**
+
+**Success Response**
+* Code: 200
+
+
+**Sample Call**
+
+* JSON Body: jsonData
+```json
+{
+  "username": "bsimpleman",
+  "name": "Blake Simpleman",
+  "age": 20,
+  "bio": "A test user",
+  "email": "blakeman90911@gmail.com",
+  "profileImg": "https://raw.githubusercontent.com/RAIK284/pointr/main/server/images",
+  "phoneNumber": 4029490831,
+  "messagingPoints": 100,
+  "funds": 200,
+  "inventoryId": "inventory-blake",
+  "lastLogin": "2022-02-23T03:27:13.535Z",
+  "isPrivate": false,
+  "messagesReceived": [
+    {
+      "timestamp": "2022-02-23T03:31:49.200Z",
+      "sender": "testUser",
+      "receiver": "bsimpleman",
+      "messageBody": "This message is a test",
+      "isRead": false
+    }
+  ]
+}
+```
+* Javascript
+```js
+fetch("http://localhost:8080/api/user", {
+            method: "POST",
+            headers: {'Content-Type': 'application/json'},
+            body: jsonData
+        }).then(res => {
+            console.log("Request complete! response:", res);
+        });
+```
+
+`PATCH` **/api/user**
+
+**Success Response**
+* Code: 200
+
+
+**Sample Call**
+* JSON Body: jsonData
+```json
+{
+  "age": "21",
+  "bio": "This is a new bio to be updated via a PATCH request",
+  "email": "newEmail@gmail.com"
+}
+```
+
+* Javascript
+```js
+fetch("http://localhost:8080/api/user", {
+            method: "PATCH",
+            headers: {'Content-Type': 'application/json'},
+            body: jsonData
+        }).then(res => {
+            console.log("Request complete! response:", res);
+        });
+```
+
+`DELETE` **/api/user**
+
+**Sample Call**
+* JSON Body: jsonData
+```json
+{
+  "username": "user_to_be_deleted"
+}
+```
+* Javascript
+```js
+fetch("http://localhost:8080/api/user", {
+            method: "DELETE",
+            headers: {'Content-Type': 'application/json'},
+            body: jsonData
+        }).then(res => {
+            console.log("Request complete! response:", res);
+        });
+```
+
