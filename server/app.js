@@ -18,6 +18,7 @@ app.post("/post", (req, res) => {
 // Pass in the express app to the routes, so it can listen for api calls
 require('./routes/userRoutes')(app);
 require('./routes/leaderboardRoutes')(app);
+require('./routes/messagingTokenRoutes')(app);
 
 const PORT = process.env.PORT || 8080;
 
