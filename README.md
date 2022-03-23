@@ -119,7 +119,7 @@ fetch("http://localhost:8080/api/user", {
 
 * Javascript
 ```js
-fetch("http://localhost:8080/api/user", {
+fetch("http://localhost:8080/api/user?username=bsimpleman", {
             method: "PATCH",
             headers: {'Content-Type': 'application/json'},
             body: jsonData
@@ -261,7 +261,7 @@ fetch("http://localhost:8080/api/token", {
 
 * Javascript
 ```js
-fetch("http://localhost:8080/api/token", {
+fetch("http://localhost:8080/api/token?name=tokenOne", {
             method: "PATCH",
             headers: {'Content-Type': 'application/json'},
             body: jsonData
