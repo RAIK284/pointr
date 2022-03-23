@@ -11,7 +11,7 @@
 }
 
 body {
-    background:linear-gradient(to left top, blue, red);
+    background:linear-gradient(to left top, blue, red); /* currently all pages have the gradient, working on fixing */
     background-attachment: fixed; /*edit*/
 }
 .button{
