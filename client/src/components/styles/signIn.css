@@ -10,8 +10,10 @@
     background-color: #ffffff;
 }
 
-html{background-color: linear-gradient(to bottom left, #02BA90, #0064FF)}
-
+body {
+    background:linear-gradient(to left top, blue, red);
+    background-attachment: fixed; /*edit*/
+}
 .button{
     margin-left: 22%;
     margin-bottom: 20px;
