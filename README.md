@@ -21,8 +21,8 @@ Error fix: taskkill /im node.exe /f
 
 `GET` **/api/user**
 
-**Params**
-* username
+**Required Params**
+* username - the username of the username you want to get information for
 
 
 **Sample Call**
@@ -104,7 +104,6 @@ fetch("http://localhost:8080/api/user", {
 **Success Response**
 * Code: 200
 
-
 **Sample Call**
 * JSON Body: jsonData
 ```json
@@ -128,6 +127,9 @@ fetch("http://localhost:8080/api/user", {
 
 `DELETE` **/api/user**
 
+**Success Response**
+* Code: 200
+
 **Sample Call**
 * JSON Body: jsonData
 ```json
@@ -145,4 +147,19 @@ fetch("http://localhost:8080/api/user", {
             console.log("Request complete! response:", res);
         });
 ```
+
+`GET` **/api/leaderboard**
+
+**Optional Params**
+* top - returns the top amount of users for the number requested. Ex: top=5 returns the top 5 users
+
+
+**Sample Call**
+
+```js
+    fetch('http://localhost:8080/api/user?top=10')
+        .then(response => response.json())
+        .then(data => console.log(data));
+```
+
 

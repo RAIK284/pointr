@@ -4,7 +4,7 @@ module.exports = (app) => {
     const express = require("express");
     const router = express.Router();
 
-    router.get('/api/leaderboard', userController.readUser);
+    router.get('/api/leaderboard', leaderboardController.readLeaderboard);
 
     app.use('/', router);
 };
