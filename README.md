@@ -19,6 +19,8 @@ Error fix: taskkill /im node.exe /f
 
 <h2> API Documentation </h2>
 
+<h3> User Endpoint </h3>
+
 `GET` **/api/user**
 
 **Required Params**
@@ -150,6 +152,8 @@ fetch("http://localhost:8080/api/user", {
             console.log("Request complete! response:", res);
         });
 ```
+<br>
+<h3> Leaderboard Endpoint </h3>
 
 `GET` **/api/leaderboard**
 
@@ -191,6 +195,8 @@ fetch("http://localhost:8080/api/user", {
   }
 ]
 ```
+
+<h3> Token Endpoint </h3>
 
 `GET` **/api/token**
 
