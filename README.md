@@ -24,7 +24,7 @@ Error fix: taskkill /im node.exe /f
 `GET` **/api/user**
 
 **Required Params**
-* username - the username of the username you want to get information for
+* username - the username of the user to get information about
 
 
 **Sample Call**
