@@ -161,5 +161,30 @@ fetch("http://localhost:8080/api/user", {
         .then(response => response.json())
         .then(data => console.log(data));
 ```
-
-
+**Success Response**
+* Code: 200
+* Response Example:
+```json
+[
+  {
+    "username": "scooper22",
+    "messagingPoints": 500
+  },
+  {
+    "username": "sortTest3",
+    "messagingPoints": 350
+  },
+  {
+    "username": "sortTest2",
+    "messagingPoints": 350
+  },
+  {
+    "username": "bsimpleman",
+    "messagingPoints": 100
+  },
+  {
+    "username": "sortTest",
+    "messagingPoints": 50
+  }
+]
+```
