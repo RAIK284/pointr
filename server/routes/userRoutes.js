@@ -6,7 +6,11 @@ module.exports = (app) => {
 
     router.get('/api/user', userController.readUser);
 
-    router.post('/api/user', userController.updateUser);
+    router.post('/api/user', userController.createUser);
+
+    router.patch('/api/user', userController.updateUser);
+
+    router.delete('/api/user', userController.deleteUser);
 
     app.use('/', router);
 };
