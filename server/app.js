@@ -19,6 +19,7 @@ app.post("/post", (req, res) => {
 require('./routes/userRoutes')(app);
 require('./routes/leaderboardRoutes')(app);
 require('./routes/messagingTokenRoutes')(app);
+require('./routes/storeItemRoutes')(app);
 
 const PORT = process.env.PORT || 8080;
 

@@ -298,3 +298,110 @@ fetch("http://localhost:8080/api/token", {
             console.log("Request complete! response:", res);
         });
 ```
+
+---
+<h3> Store Item Endpoint </h3>
+
+`GET` **/api/storeItem**
+
+**Optional Params**
+* name - the name of the token you want information for. Calling without this param returns all store items
+
+**Sample Call**
+
+```js
+    fetch('http://localhost:8080/api/storeItem?name=Item-One')
+        .then(response => response.json())
+        .then(data => console.log(data));
+```
+
+**Success Response**
+* Code: 200
+* Response Example:
+```json
+{
+  "name": "Item-Two",
+  "price": 200,
+  "image": "storeItemFolder/imageTwo.png",
+  "description": "This is the second item",
+  "userList": []
+}
+```
+
+`POST` **/api/storeItem**
+
+**Success Response**
+* Code: 200
+
+**Sample Call**
+
+* JSON Body: jsonData
+```json
+{
+  "name": "Item-To-Be-Created",
+  "price": 200,
+  "image": "storeItemFolder/itemImage.png",
+  "description": "This is a new store item",
+  "userList": []
+}
+```
+* Javascript
+```js
+fetch("http://localhost:8080/api/storeItem", {
+            method: "POST",
+            headers: {'Content-Type': 'application/json'},
+            body: jsonData
+        }).then(res => {
+            console.log("Request complete! response:", res);
+        });
+```
+
+`PATCH` **/api/storeItem**
+
+**Required Params**
+* name - the name of the store item to have information updated
+
+**Success Response**
+* Code: 200
+
+**Sample Call**
+* JSON Body: jsonData
+```json
+{
+  "description": "Here's a new description for the store item"
+}
+```
+
+* Javascript
+```js
+fetch("http://localhost:8080/api/token?name=Item-One", {
+            method: "PATCH",
+            headers: {'Content-Type': 'application/json'},
+            body: jsonData
+        }).then(res => {
+            console.log("Request complete! response:", res);
+        });
+```
+
+`DELETE` **/api/storeItem**
+
+**Success Response**
+* Code: 200
+
+**Sample Call**
+* JSON Body: jsonData
+```json
+{
+  "name": "name-of-store-item-to-be-deleted"
+}
+```
+* Javascript
+```js
+fetch("http://localhost:8080/api/storeItem", {
+            method: "DELETE",
+            headers: {'Content-Type': 'application/json'},
+            body: jsonData
+        }).then(res => {
+            console.log("Request complete! response:", res);
+        });
+```

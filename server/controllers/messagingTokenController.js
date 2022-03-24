@@ -17,8 +17,8 @@ const readToken = (req, res) => {
 
 const updateToken = async (req, res) => {
     const db = mongoConnection.getDb();
-    for (key in req.body) {
-        await updateUserHelper(db, key, req);
+    for (let key in req.body) {
+        await updateTokenHelper(db, key, req);
     }
     res.status(200).send('Updated user');
 }
