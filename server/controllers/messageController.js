@@ -42,7 +42,8 @@ const readMessage = async (req, res) => {
 
 const deleteMessage = (req, res) => {
     const db = mongoConnection.getDb();
-    db.collection('messages').deleteOne({_id: req.body.id}).then(() => {
+    const objectID = require('mongodb').ObjectId;
+    db.collection('messages').deleteOne({"_id": new objectID(req.query.id)}).then(() => {
         res.status(200).send('Deleted message');
     });
 }
