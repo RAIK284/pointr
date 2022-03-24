@@ -1,4 +1,5 @@
 const mongoConnection = require("../utils/database");
+const {ObjectId: objectID} = require("mongodb");
 
 const createMessage = (req, res) => {
     const db = mongoConnection.getDb();
@@ -31,7 +32,8 @@ const readMessage = async (req, res) => {
         });
         res.send(messageList);
     } else if (req.query.id) {
-            db.collection('messages').findOne({_id: "ObjectId(" + req.query.id + ")"})
+        const objectID = require('mongodb').ObjectId;
+            db.collection('messages').findOne({"_id": new objectID(req.query.id)})
                 .then(item => res.send(item));
     } else {
         res.send("Invalid query")
@@ -40,7 +42,6 @@ const readMessage = async (req, res) => {
 
 const deleteMessage = (req, res) => {
     const db = mongoConnection.getDb();
-
     db.collection('messages').deleteOne({_id: req.body.id}).then(() => {
         res.status(200).send('Deleted message');
     });

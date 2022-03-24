@@ -405,3 +405,96 @@ fetch("http://localhost:8080/api/storeItem", {
             console.log("Request complete! response:", res);
         });
 ```
+
+---
+<h3> Message Endpoint </h3>
+
+`GET` **/api/message**
+
+**Optional Params**
+* id - Returns a message with a specific id
+* sender - Returns all messages sent from a username
+* receiver - Returns all messages received by a username
+
+**Sample Call**
+
+```js
+    fetch('http://localhost:8080/api/message?sender=bsimpleman')
+        .then(response => response.json())
+        .then(data => console.log(data));
+```
+
+**Success Response**
+* Code: 200
+* Response Example:
+```json
+[
+  {
+    "_id": "623cd7beb5ddad67c58c0faf",
+    "timestamp": "2022-02-23T03:31:49.200Z",
+    "sender": "bsimpleman",
+    "receiver": "bsimpleman",
+    "messageBody": "This is a new message added through an api endpoint",
+    "isRead": false
+  },
+  {
+    "_id": "623cd7d4b5ddad67c58c0fb0",
+    "timestamp": "2022-02-23T03:31:49.200Z",
+    "sender": "bsimpleman",
+    "receiver": "scooper22",
+    "messageBody": "This message is sent by bsimpleman to scooper22 with an api endpoint",
+    "isRead": false
+  }
+]
+```
+
+`POST` **/api/message**
+
+**Success Response**
+* Code: 200
+
+**Sample Call**
+
+* JSON Body: jsonData
+```json
+{
+  "timestamp": "2022-02-23T03:31:49.200Z",
+  "sender": "bsimpleman",
+  "receiver": "scooper22",
+  "messageBody": "This is a new message added through an api endpoint",
+  "isRead": false
+}
+```
+* Javascript
+```js
+fetch("http://localhost:8080/api/message", {
+            method: "POST",
+            headers: {'Content-Type': 'application/json'},
+            body: jsonData
+        }).then(res => {
+            console.log("Request complete! response:", res);
+        });
+```
+
+`DELETE` **/api/message**
+
+**Success Response**
+* Code: 200
+
+**Sample Call**
+* JSON Body: jsonData
+```json
+{
+  "_id": "id-of-message-to-be-deleted"
+}
+```
+* Javascript
+```js
+fetch("http://localhost:8080/api/message", {
+            method: "DELETE",
+            headers: {'Content-Type': 'application/json'},
+            body: jsonData
+        }).then(res => {
+            console.log("Request complete! response:", res);
+        });
+```
