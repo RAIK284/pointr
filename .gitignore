@@ -98,3 +98,5 @@ node_modules
 /client/node_modules/.cache/babel-loader/f68d6dca0c452f11c1e3dc979043b210.json
 /client/node_modules/.cache/babel-loader/f9a07283f23fd33beb9b7d1ef6683db3.json
 /client/node_modules/.cache/babel-loader/ffa6c107483f573819d4eb08db72460c.json
+/client/node_modules/.cache/.eslintcache
+/client/node_modules/.cache/.eslintcache

@@ -7,7 +7,14 @@
     margin-top: 15px;
     margin-bottom: 35px;
     height: 160px;
+    background-color: #ffffff;
 }
+
+body {
+    background:linear-gradient(to left top, blue, red); /* currently all pages have the gradient, working on fixing */
+    background-attachment: fixed; /*edit*/
+}
+
 .button{
     margin-left: 22%;
     margin-bottom: 20px;
