@@ -1,5 +1,4 @@
 const messageController = require("../controllers/messageController");
-const express = require("express");
 
 module.exports = (app) => {
     const express = require("express");

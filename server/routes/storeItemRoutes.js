@@ -1,5 +1,4 @@
 const storeItemController = require("../controllers/storeItemController");
-const express = require("express");
 
 module.exports = (app) => {
     const express = require("express");
