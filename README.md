@@ -47,15 +47,7 @@ Error fix: taskkill /im node.exe /f
   "inventoryId": "inventory-blake",
   "lastLogin": "2022-02-23T03:27:13.535Z",
   "isPrivate": false,
-  "messagesReceived": [
-    {
-      "timestamp": "2022-02-23T03:31:49.200Z",
-      "sender": "testUser",
-      "receiver": "bsimpleman",
-      "messageBody": "This message is a test",
-      "isRead": false
-    }
-  ]
+  "messagesReceived": []
 }
 ```
 * Javascript
