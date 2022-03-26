@@ -6,7 +6,6 @@ const readLeaderboard = async (req, res) => {
     if (req.query.top) {
         numRequested = req.query.top;
     }
-    const db = mongoConnection.getDb();
     const data = await getLeaderboardData();
     // If there was a top amount of users requested only send back those, otherwise send back every user sorted
     if (numRequested !== -1) {
@@ -28,7 +27,7 @@ const getLeaderboardData = async () => {
             "messagingPoints": user.messagingPoints
         });
     })
-    const sortedList = (await sortUserList(await userList))
+    const sortedList = (await sortUserList(userList))
     const result = await sortedList;
     return result;
 }

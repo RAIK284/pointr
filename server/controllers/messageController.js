@@ -1,5 +1,4 @@
 const mongoConnection = require("../utils/database");
-const {ObjectId: objectID} = require("mongodb");
 
 const createMessage = (req, res) => {
     const db = mongoConnection.getDb();
