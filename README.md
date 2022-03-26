@@ -19,6 +19,92 @@ Error fix: taskkill /im node.exe /f
 
 <h2> API Documentation </h2>
 
+<h3> Sign Up Endpoint </h3>
+
+`POST` **/api/signup**
+
+- Using this endpoint will encrypt the password details of the user
+
+**Success Response**
+* Code: 200
+
+
+**Sample Call**
+
+* JSON Body: jsonData
+```json
+{
+  "username": "bsimpleman",
+  "name": "Blake Simpleman",
+  "age": 20,
+  "bio": "A test user",
+  "email": "blakeman90911@gmail.com",
+  "password": "password123",
+  "profileImg": "https://raw.githubusercontent.com/RAIK284/pointr/main/server/images",
+  "phoneNumber": 4029490831,
+  "messagingPoints": 100,
+  "funds": 200,
+  "inventoryId": "inventory-blake",
+  "lastLogin": "2022-02-23T03:27:13.535Z",
+  "isPrivate": false,
+  "messagesReceived": [
+    {
+      "timestamp": "2022-02-23T03:31:49.200Z",
+      "sender": "testUser",
+      "receiver": "bsimpleman",
+      "messageBody": "This message is a test",
+      "isRead": false
+    }
+  ]
+}
+```
+* Javascript
+```js
+fetch("http://localhost:8080/api/signup", {
+            method: "POST",
+            headers: {'Content-Type': 'application/json'},
+            body: jsonData
+        }).then(res => {
+            console.log("Request complete! response:", res);
+        });
+```
+
+---
+
+<h3> Login Endpoint </h3>
+
+`POST` **/api/login**
+
+- Using this endpoint will verify the user's email and password match
+
+**Success Response**
+* Code: 200
+
+**Failure Response**
+* Code: 401
+
+**Sample Call**
+
+* JSON Body: jsonData
+```json
+{
+  "email": "user@gmail.com",
+  "password": "password123"
+}
+```
+* Javascript
+```js
+fetch("http://localhost:8080/api/login", {
+            method: "POST",
+            headers: {'Content-Type': 'application/json'},
+            body: jsonData
+        }).then(res => {
+            console.log("Request complete! response:", res);
+        });
+```
+
+---
+
 <h3> User Endpoint </h3>
 
 `GET` **/api/user**
@@ -57,6 +143,8 @@ Error fix: taskkill /im node.exe /f
 ```
 
 `POST` **/api/user**
+
+- Only use this endpoint for testing - it will not encrypt passwords. For creating a new user use /api/signup instead
 
 **Success Response**
 * Code: 200
