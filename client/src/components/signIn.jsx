@@ -15,7 +15,7 @@ class SignIn extends Component {
                             Log In to Pointr
                         </text>
                         <br />
-                        <input type="text" placeholder="Input Username Here" className="br1"></input>
+                        <input type="text" placeholder="Input Email Here" className="br1"></input>
                         <br />
                         
                         <br />
