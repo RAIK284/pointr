@@ -1,22 +1,41 @@
 
 .signIn{
-    border: 3px solid #c4c4c4;
-    border-radius: 4px;
-    width: 40%;
-    margin-left: 30%;
-    margin-top: 15px;
-    margin-bottom: 35px;
-    height: 160px;
-    background-color: #ffffff;
+    position: absolute;
+    background: #ffffff;
+    border: 3px solid #ffffff;
+    border-radius: 10px;
+    width: 692px;
+    height: 380px;
+    left: calc(50% - 692px/2);
+    top: calc(50% - 380px/2);
+   
 }
 
-body {
-    background:linear-gradient(to left top, blue, red); /* currently all pages have the gradient, working on fixing */
-    background-attachment: fixed; /*edit*/
-}
+
+body#SI{
+    background: linear-gradient(247.13deg, rgba(2, 186, 144, 0.8) 0%, rgba(101, 215, 192, 0.8) 42.71%, rgba(0, 100, 255, 0.8) 100%);
+    background-attachment: fixed; 
+    backdrop-filter: blur(50px);
+    height: 100vh;
+
+} 
+
+*{
+    font-family: 'Poppins', sans-serif;
+    }
+
 .button{
-    margin-left: 22%;
-    margin-bottom: 20px;
+    background-color:rgba(0, 100, 255, 0.8);
+    color: #ffffff;
+    position: absolute;
+    width: 144.63px;
+    height: 46.34px;
+    left: calc(50% - 144.63px/2 - 210.61px);
+    top: calc(50% - 46.34px/2 + 144.91px);
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    /*margin-left: 22%;
+    margin-bottom: 20px;*/
 }
 
 p{
@@ -26,3 +45,48 @@ p{
 h1{
     margin-bottom: 1px;
 }
+
+.br1 {
+    position: absolute;
+    width: 549.59px;
+    height: 46.34px;
+    left: calc(50% - 549.59px/2 - 8.2px);
+    top: calc(50% - 46.34px/2 - 67.83px);
+    
+    border: 3px solid rgba(51, 51, 51, 0.5);
+    box-sizing: border-box;
+    border-radius: 20px;
+
+    font-family: 'Poppins';
+    font-style: regular;
+    font-weight: 200;
+    font-size: 19px;
+    line-height: 126%;
+    letter-spacing: -0.015em;
+
+}
+
+.br2{
+    position: absolute;
+    width: 549.59px;
+    height: 46.34px;
+    left: calc(50% - 549.59px/2 - 8.2px);
+    top: calc(50% - 46.34px/2 + 40.17px);
+
+    border: 3px solid rgba(51, 51, 51, 0.5);
+    box-sizing: border-box;
+    border-radius: 20px;
+
+    font-family: 'Poppins';
+    font-style: regular;
+    font-weight: 200;
+    font-size: 19px;
+}
+
+
+
+position: relative;
+width: 1512px;
+height: 982px;
+
+background: linear-gradient(247.13deg, rgba(2, 186, 144, 0.8) 0%, rgba(101, 215, 192, 0.8) 42.71%, rgba(0, 100, 255, 0.8) 100%);
