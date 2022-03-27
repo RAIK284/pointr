@@ -10,11 +10,10 @@ class SignIn extends Component {
             <React.Fragment >
                 
                 <body id="SI">
-                    <style>
-                        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
-                        </style>
                     <div className="signIn">
-                        
+                        <text className="label">
+                            Log In to Pointr
+                        </text>
                         <br />
                         <input type="text" placeholder="Input Username Here" className="br1"></input>
                         <br />
@@ -23,7 +22,7 @@ class SignIn extends Component {
                         <input type="text" placeholder="Input Password Here" className="br2"></input>
                         <br />
                         <br />
-                        <Button className="button" variant="contained" size="large" onClick={()=>{window.location.href='/profile'}}>Login</Button>
+                        <Button variant="contained" size="large" className= "button" onClick={()=>{window.location.href='/profile'}}>Login</Button>
                     </div>
                 </body>
             </React.Fragment>
