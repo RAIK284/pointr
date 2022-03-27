@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+.signIn{
+    position: absolute;
+    background: #ffffff;
+    border: 3px solid #ffffff;
+    border-radius: 10px;
+    width: 692px;
+    height: 380px;
+    left: calc(50% - 692px/2);
+    top: calc(50% - 380px/2);
+   
+}
+
+
+body#SI{
+    background: linear-gradient(247.13deg, rgba(2, 186, 144, 0.8) 0%, rgba(101, 215, 192, 0.8) 42.71%, rgba(0, 100, 255, 0.8) 100%);
+    background-attachment: fixed; 
+    backdrop-filter: blur(50px);
+    height: 100vh;
+
+} 
+
+
+button#loginbutton{
+    background-color:#0064FF;
+    color: #ffffff;
+    position: absolute;
+    width: 144.63px;
+    height: 46.34px;
+    left: calc(50% - 144.63px/2 - 210.61px);
+    top: calc(50% - 46.34px/2 + 144.91px);
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+    font-family: Poppins;
+    font-weight: 700;
+    font-size: 19px;
+    text-align: center;
+
+    
+}
+
+p{
+    margin-top: 0px;
+}
+
+h1{
+    margin-bottom: 1px;
+}
+
+.br1 {
+    position: absolute;
+    width: 549.59px;
+    height: 46.34px;
+    left: calc(50% - 549.59px/2 - 8.2px);
+    top: calc(50% - 46.34px/2 - 67.83px);
+    
+    border: 3px solid rgba(51, 51, 51, 0.5);
+    box-sizing: border-box;
+    border-radius: 20px;
+
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: 19px;
+ 
+
+}
+
+.br2{
+    position: absolute;
+    width: 549.59px;
+    height: 46.34px;
+    left: calc(50% - 549.59px/2 - 8.2px);
+    top: calc(50% - 46.34px/2 + 40.17px);
+
+    border: 3px solid rgba(51, 51, 51, 0.5);
+    box-sizing: border-box;
+    border-radius: 20px;
+
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: 19px;
+
+}
+
+.label{
+    position:absolute;
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    /* or 120% */
+
+    letter-spacing: -0.015em;
+
+    color: #0064FF;
+    left: calc(50% - 620.8px/2 + 27.4px);
+    top: calc(50% - 41.71px/2 - 134.15px);
+
+}

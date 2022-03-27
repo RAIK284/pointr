@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import './styles/signIn.css';
+import './styles/signUp.css';
 import Button from '@mui/material/Button';
 //import Stack from '@mui/material/Stack';
 //import PropTypes from 'prop-types';
