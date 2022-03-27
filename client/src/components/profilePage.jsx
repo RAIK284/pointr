@@ -52,6 +52,20 @@ class ProfilePage extends Component {
                         </List>
                     </Drawer>
                 </Box>
+                <div id="content">
+                    <br />
+                    <br />
+                    <h2>
+                        Leaderboard Rank 1
+                    </h2>
+                    <br />
+                    <br />
+                    <p>Slider here!!!(Need to develop!)</p>
+                    <br />
+                    <br />
+                    <p>messaging points 100</p>
+                    <p>FUNds 20,000</p>
+                </div>
             </React.Fragment>
         );
     }

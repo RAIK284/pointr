@@ -1,9 +1,11 @@
-
-
 .MuiPaper-root .MuiPaper-elevation .MuiPaper-elevation0 .MuiDrawer-paper {
     background-color: #0064FF;
 }
 
 #header {
     background-color: #65D7C0;
+}
+
+#content {
+    margin-left: 18rem;
 }
