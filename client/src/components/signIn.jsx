@@ -15,14 +15,14 @@ class SignIn extends Component {
                             Log In to Pointr
                         </text>
                         <br />
-                        <input type="text" placeholder="Input Email Here" className="br1"></input>
+                        <input type="text" placeholder="  Input Email Here" className="br1"></input>
                         <br />
                         
                         <br />
-                        <input type="text" placeholder="Input Password Here" className="br2"></input>
+                        <input type="text" placeholder="  Input Password Here" className="br2"></input>
                         <br />
                         <br />
-                        <Button variant="contained" size="large" className= "button" onClick={()=>{window.location.href='/profile'}}>Login</Button>
+                        <Button variant="contained" size="large" id= "loginbutton" onClick={()=>{window.location.href='/profile'}}>Login</Button>
                     </div>
                 </body>
             </React.Fragment>

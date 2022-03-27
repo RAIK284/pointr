@@ -21,16 +21,14 @@ body#SI{
 } 
 
 
-.button{
-    /*background-color:rgba(0, 100, 255, 0.8);*/
+button#loginbutton{
     background-color:#0064FF;
-    /*FIX THIS--> Looks like a diff color than .label but its the same hex code*/
     color: #ffffff;
     position: absolute;
     width: 144.63px;
     height: 46.34px;
     left: calc(50% - 144.63px/2 - 210.61px);
-    top: calc(50% - 46.34px/2 + 15px);
+    top: calc(50% - 46.34px/2 + 144.91px);
 
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
@@ -39,8 +37,7 @@ body#SI{
     font-size: 19px;
     text-align: center;
 
-    margin-left: calc(50% - 144.63px/2 - 210.61px);
-    margin-top: calc(50% - 46.34px/2 + 144.91px);
+    
 }
 
 p{
