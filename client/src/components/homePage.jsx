@@ -14,7 +14,7 @@ class HomePage extends Component {
                     <NavItem to="/">Contact</NavItem>
                     <NavItem to="/">About</NavItem>
                     <NavItem to="/signin">Log In</NavItem>
-                </MuiNavbar>
+                </MuiNavbar> 
                 <div id='column-right'>
                     <h1>Welcome to <br /> Pointr.</h1>
                     <h2>The new way to be<br />rewarded for positivity</h2>
