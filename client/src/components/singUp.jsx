@@ -8,18 +8,33 @@ class SignUp extends Component {
     render() {
         return (
             <React.Fragment >
-                Sign Up!
-                <body className="signIn">
-                    Username:
-                    <br />
-                    <input type="text" placeholder="Input Username Here"></input>
-                    <br />
-                    Password:
-                    <br />
-                    <input type="text" placeholder="Input Password Here"></input>
-                    <br />
-                    <br />
-                    <Button id="button" variant="contained" size="large" onClick={()=>{window.location.href='/profile'}}>Sign Up</Button>
+                
+                <body id="SU">
+                    <div className="rightRectangle"></div>
+                        <div className="signUp">
+                            Name:
+                            <br />
+                            <input type="text" placeholder="Enter your name"></input>
+                            <br />
+                            Email:
+                            <br />
+                            <input type="text" placeholder="Enter your email address"></input>
+                            <br />
+                            Username:
+                            <br />
+                            <input type="text" placeholder="Enter a username"></input>
+                            <br />
+                            Password:
+                            <br />
+                            <input type="text" placeholder="Enter a password"></input>
+                            <br />
+                            
+                            <input type="text" placeholder="Confirm password"></input>
+                            <br />
+                            <br />
+                            <Button id="signupbutton" variant="contained" size="large" onClick={()=>{window.location.href='/profile'}}>Sign Up</Button>
+                        </div>
+                    
                 </body>
             </React.Fragment>
         );
