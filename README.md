@@ -101,8 +101,10 @@ fetch("http://localhost:8080/api/login", {
 
 `GET` **/api/user**
 
-**Required Params**
+**Optional Params**
 * username - the username of the user to get information about
+* email - the email of the user to get information about
+* id - ObjectID of the user in the database to get information about
 
 
 **Sample Call**

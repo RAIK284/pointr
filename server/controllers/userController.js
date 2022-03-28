@@ -1,5 +1,6 @@
 const mongoConnection = require("../utils/database");
 const encrypt = require("../utils/encrypt")
+const {ObjectId: objectID} = require("mongodb");
 
 const signupUser = async (req, res) => {
     const db = mongoConnection.getDb();
@@ -28,12 +29,20 @@ const createUser = async (req, res) => {
 }
 
 const readUser = (req, res) => {
-    if (!req.query.username) {
-        return res.send("You must add a query for a specific user");
-    }
     const db = mongoConnection.getDb();
-    db.collection('users').findOne({username: req.query.username})
-        .then(user => res.send(user));
+    if (!req.query.username && !req.query.email && !req.query.id) {
+        return res.send("You must add a query for a specific user");
+    } else if (req.query.username) {
+        db.collection('users').findOne({username: req.query.username})
+            .then(user => res.status(200).send(user));
+    } else if (req.query.email) {
+        db.collection('users').findOne({email: req.query.email})
+            .then(user => res.status(200).send(user));
+    } else if (req.query.id) {
+        const objectID = require('mongodb').ObjectId;
+        db.collection('users').findOne({"_id": new objectID(req.query.id)})
+            .then(user => res.status(200).send(user));
+    }
 }
 
 const updateUser = async (req, res) => {
