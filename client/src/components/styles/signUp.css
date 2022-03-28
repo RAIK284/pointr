@@ -1,14 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
-.signIn{
+.signUp{
     position: absolute;
-    background: #ffffff;
-    border: 3px solid #ffffff;
-    border-radius: 10px;
-    width: 692px;
-    height: 380px;
-    left: calc(50% - 692px/2);
-    top: calc(50% - 380px/2);
+    
+    
+    width: 633px;
+    height: 561.34px;
+    left: 783px;
+    top: 220px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 24px;
+    color: #333333;
+
+
+letter-spacing: -0.015em;
    
+}
+
+.entryRectangle{
+    position: absolute;
+    width: 630px;
+    height: 46.34px;
+
+    border: 3px solid rgba(51, 51, 51, 0.3);
+    box-sizing: border-box;
+    border-radius: 20px;
 }
 
 
@@ -48,5 +67,43 @@ button#signupbutton {
     top: calc(50% - 982px/2);
 
     background: #FFFFFF;
+}
+
+.suTitle{
+    position: absolute;
+    width: 621px;
+    height: 45px;
+    left: calc(50% - 621px/2 + 349.5px);
+    top: calc(50% - 45px/2 - 397.5px);
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 36px;
+    /* or 72% */
+
+    letter-spacing: -0.015em;
+
+    color: #0064FF;
+}
+
+.suSubtitle{
+    position: absolute;
+    width: 479px;
+    height: 36px;
+    left: 795px;
+    top: 137px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 36px;
+    /* identical to box height, or 120% */
+
+    letter-spacing: -0.015em;
+
+    color: rgba(51, 51, 51, 0.5);
 
 }

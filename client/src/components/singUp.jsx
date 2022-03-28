@@ -11,25 +11,32 @@ class SignUp extends Component {
                 
                 <body id="SU">
                     <div className="rightRectangle"></div>
+                    <text className="suTitle">
+                        Welcome to Pointr!
+                    </text>
+                    
+                    <text className="suSubtitle">
+                        Sign up for a free account today.
+                    </text>
                         <div className="signUp">
                             Name:
                             <br />
-                            <input type="text" placeholder="Enter your name"></input>
+                            <input type="text" placeholder="Enter your name" className="entryRectangle"></input>
                             <br />
                             Email:
                             <br />
-                            <input type="text" placeholder="Enter your email address"></input>
+                            <input type="text" placeholder="Enter your email address" className="entryRectangle"></input>
                             <br />
                             Username:
                             <br />
-                            <input type="text" placeholder="Enter a username"></input>
+                            <input type="text" placeholder="Enter a username" className="entryRectangle"></input>
                             <br />
                             Password:
                             <br />
-                            <input type="text" placeholder="Enter a password"></input>
+                            <input type="text" placeholder="Enter a password" className="entryRectangle"></input>
                             <br />
                             
-                            <input type="text" placeholder="Confirm password"></input>
+                            <input type="text" placeholder="Confirm password" className="entryRectangle"></input>
                             <br />
                             <br />
                             <Button id="signupbutton" variant="contained" size="large" onClick={()=>{window.location.href='/profile'}}>Sign Up</Button>
