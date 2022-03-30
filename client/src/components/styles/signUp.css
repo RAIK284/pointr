@@ -28,6 +28,17 @@ letter-spacing: -0.015em;
     border: 3px solid rgba(51, 51, 51, 0.3);
     box-sizing: border-box;
     border-radius: 20px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    /* or 126% */
+
+    letter-spacing: -0.015em;
+
+    color: rgba(51, 51, 51, 0.5);
 }
 
 
@@ -71,13 +82,12 @@ button#signupbutton {
 }
 
 .suTitle{
-    position: fixed;
+    position: absolute;
     width: 621px;
     height: 45px;
-    margin-left: 795px;
-    margin-top: 71px;
-   /* left: calc(50% - 621px/2 + 349.5px);
-    top: calc(50% - 45px/2 - 397.5px); */
+    
+    left: calc(50% - 621px/2 + 349.5px);
+    top: calc(50% - 45px/2 - 397.5px);
 
 
     font-family: 'Poppins';
@@ -110,4 +120,21 @@ button#signupbutton {
 
     color: rgba(51, 51, 51, 0.5);
 
+}
+
+.entryLabel {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 24px;
+    /* or 126% */
+
+    letter-spacing: -0.015em;
+
+    color: #333333;
+}
+
+.containerSU{
+    padding: 60px;
 }
