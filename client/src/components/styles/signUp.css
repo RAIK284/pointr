@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
-.signUp{
+/* .signUp{
     position: absolute;
     
     
@@ -18,7 +18,7 @@
 
 letter-spacing: -0.015em;
    
-}
+} */
 
 .entryRectangle{
     position: absolute;
@@ -60,13 +60,13 @@ button#signupbutton {
 
 .rightRectangle{
     display: inline-block;
-    position: absolute;
-    width: 786px;
-    height: 982px;
-    left: calc(50% - 786px/2 + 363px);
-    top: calc(50% - 982px/2);
+    position:fixed; 
+    top:0; 
+    left:50%;
+    width:50%;
+    height:100%;
+    background-color:#ffffff;
 
-    background: #FFFFFF;
 }
 
 .suTitle{

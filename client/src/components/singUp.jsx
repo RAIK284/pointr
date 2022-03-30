@@ -18,10 +18,11 @@ class SignUp extends Component {
                     <text className="suSubtitle">
                         Sign up for a free account today.
                     </text>
-                        <div className="signUp">
+                        <div>
                             Name:
                             <br />
-                            <input type="text" placeholder="Enter your name" className="entryRectangle" style={{position: "absolute", left: `786px`, top: `262px`}}></input>
+                            <input type="text" placeholder="Enter your name" className="entryRectangle" style={{position: "absolute", left: `calc(50% - 630px/2 + 345px)`,
+top: `calc(50% - 46.34px/2 - 205.83px)`}}></input>
                             <br />
                             Email:
                             <br />
