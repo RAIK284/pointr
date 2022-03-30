@@ -21,22 +21,22 @@ class SignUp extends Component {
                         <div className="signUp">
                             Name:
                             <br />
-                            <input type="text" placeholder="Enter your name" className="entryRectangle"></input>
+                            <input type="text" placeholder="Enter your name" className="entryRectangle" style={{position: "absolute", left: `786px`, top: `262px`}}></input>
                             <br />
                             Email:
                             <br />
-                            <input type="text" placeholder="Enter your email address" className="entryRectangle"></input>
+                            <input type="text" placeholder="Enter your email address" className="entryRectangle" style={{position: "absolute",left: `786px`, top: `400px`}}></input>
                             <br />
                             Username:
                             <br />
-                            <input type="text" placeholder="Enter a username" className="entryRectangle"></input>
+                            <input type="text" placeholder="Enter a username" className="entryRectangle" style={{position: "absolute",left: `786px`, top: `531px`}}></input>
                             <br />
                             Password:
                             <br />
-                            <input type="text" placeholder="Enter a password" className="entryRectangle"></input>
+                            <input type="text" placeholder="Enter a password" className="entryRectangle" style={{position: "absolute",left: `786px`, top: `660px`}}></input>
                             <br />
                             
-                            <input type="text" placeholder="Confirm password" className="entryRectangle"></input>
+                            <input type="text" placeholder="Confirm password" className="entryRectangle" style={{position: "absolute",left: `786px`, top: `735px`}}></input>
                             <br />
                             <br />
                             <Button id="signupbutton" variant="contained" size="large" onClick={()=>{window.location.href='/profile'}}>Sign Up</Button>
