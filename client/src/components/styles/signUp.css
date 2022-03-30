@@ -36,6 +36,7 @@ body#SU{
     backdrop-filter: blur(50px);
     background-attachment: fixed; 
     height: 100vh;
+    width: 100vw;
 
 } 
 
@@ -70,11 +71,14 @@ button#signupbutton {
 }
 
 .suTitle{
-    position: absolute;
+    position: fixed;
     width: 621px;
     height: 45px;
-    left: calc(50% - 621px/2 + 349.5px);
-    top: calc(50% - 45px/2 - 397.5px);
+    margin-left: 795px;
+    margin-top: 71px;
+   /* left: calc(50% - 621px/2 + 349.5px);
+    top: calc(50% - 45px/2 - 397.5px); */
+
 
     font-family: 'Poppins';
     font-style: normal;
