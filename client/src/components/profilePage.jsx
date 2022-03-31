@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import Carousel from './carousel.jsx';
 import car from './images/car.jpg';
+import ducky from './images/ducky.png'
 //reference: https://mui.com/components/drawers/
 
 import './styles/profilePage.css';
@@ -68,7 +69,13 @@ class ProfilePage extends Component {
                     <br />
                     <p>messaging points 100</p>
                     <p>FUNds 20,000</p>
-                    <Carousel height={300} width={300} numslides={2} image={car}></Carousel>
+                    <Carousel 
+                    height={300} 
+                    width={300} 
+                    numslides={2} 
+                    images={[car, ducky]}
+                    visibleSlides={1}
+                    ></Carousel>
                 </div>
             </React.Fragment>
         );

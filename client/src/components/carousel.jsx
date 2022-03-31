@@ -13,12 +13,23 @@ class Carousel extends React.Component {
               naturalSlideHeight={this.props.height}
               totalSlides={this.props.numslides}
               isIntrinsicHeight={true}
+              visibleSlides={this.props.visibleSlides}
             >
               <Slider>
                 <Slide index={0}>
-                    <img height={this.props.height} width={this.props.width} alt="Kachowski" src={this.props.image}/>
+                    <img 
+                    height={this.props.height} 
+                    width={this.props.width} 
+                    alt="Kachowski" 
+                    src={this.props.images[0]}/>
                 </Slide>
-                <Slide index={1}>I am the second Slide.</Slide>
+                <Slide index={1}>
+                <img 
+                    height={this.props.height} 
+                    width={this.props.width} 
+                    alt="Kachowski" 
+                    src={this.props.images[1]}/>
+                </Slide>
               </Slider>
               <ButtonBack>Back</ButtonBack>
               <ButtonNext>Next</ButtonNext>
@@ -31,7 +42,8 @@ Carousel.propTypes = {
     width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired,
     numslides: PropTypes.number.isRequired,
-    car: PropTypes.string.isRequired,
+    images: PropTypes.array.isRequired,
+    visibleslides: PropTypes.number.isRequired,
 };
 
   export default Carousel;
