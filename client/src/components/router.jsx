@@ -21,7 +21,7 @@ class WebsiteRouter extends Component {
               <Route path="/" element={<HomePage/>}/>
               <Route path="/profile" element={<ProfilePage/>}/>
               <Route path="/signup" element={<SignUp/>}/>
-              <Route path="/messaging" element={<MessagingPage/>}/>
+              <Route path="/messages" element={<MessagingPage/>}/>
             </Routes>
           </BrowserRouter>
         </React.Fragment>
