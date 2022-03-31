@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import './styles/messagingPage.css';
 import Button from '@mui/material/Button';
+import MessageDisplayBox from "./messageDisplayBox";
 
 class MessagingPage extends Component {
     render() {
@@ -12,28 +13,27 @@ class MessagingPage extends Component {
 
                 </h1>
 
-                <Button  uppercase={false} variant="text" id= "newMessage" onClick={()=>{window.location.href='/singIn'}}>
+                <Button variant="text" id= "newMessage" onClick={()=>{window.location.href='/'}}>
                     new message
                 </Button>
 
-                <div className="messageDisplay">
-                        <text className="Name">
-                            [Name]
-                        </text>
 
-                        <div></div>
+                <MessageDisplayBox id="box1">
+                    
+                </MessageDisplayBox>
 
-                        <text className="username">
-                            [Insert username Here]
-                        </text>
 
-                        <div></div>
+                <MessageDisplayBox id="box2">
+                    
+                </MessageDisplayBox>
 
-                        <text className="messageBody">
-                            [Insert messageBody Here]
-                        </text>
 
-                </div>
+                <MessageDisplayBox id="box3">
+
+                </MessageDisplayBox>
+
+
+
 
 
  
