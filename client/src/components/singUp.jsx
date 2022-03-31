@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import './styles/signUp.css';
 import Button from '@mui/material/Button';
+import {Link} from 'react-router-dom';
 //import Stack from '@mui/material/Stack';
 //import PropTypes from 'prop-types';
 
@@ -14,8 +15,11 @@ class SignUp extends Component {
                     <text className="suTitle">
                         Welcome to Pointr!
                     </text>
+
+                
                     
                     <text className="suSubtitle">
+
                         Sign up for a free account today.
                     </text>
                         <form>
@@ -47,7 +51,7 @@ class SignUp extends Component {
                                 <Button id="signupbutton" variant="contained" size="large" onClick={()=>{window.location.href='/profile'}}>Sign Up</Button>
                             </div>
                         </form>
-                    
+                        
                 </body>
             </React.Fragment>
         );
