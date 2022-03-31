@@ -86,7 +86,7 @@ button#signupbutton {
     width: 621px;
     height: 45px;
     
-    left: calc(50% - 621px/2 + 349.5px);
+    left: calc(50% - 284.39px/2 + 190.54px);
     top: calc(50% - 45px/2 - 360px);
 
 
@@ -106,7 +106,7 @@ button#signupbutton {
     position: absolute;
     width: 479px;
     height: 36px;
-    left: calc(50% - 621px/2 + 349.5px);
+    left: calc(50% - 284.39px/2 + 190.54px);
     top: calc(50% - 45px/2 - 300px);
 
     font-family: 'Poppins';
