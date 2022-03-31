@@ -64,8 +64,8 @@ button#signupbutton {
     position: absolute;
     width: 197px;
     height: 77px;
-    left: calc(50% - 197px/2 + 301.5px);
-    top: calc(50% - 77px/2 + 387.5px);
+    left: calc(50% - 197px/2 + 325px);
+    top: calc(50% - 77px/2 + 349px);
 
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
@@ -87,7 +87,7 @@ button#signupbutton {
     height: 45px;
     
     left: calc(50% - 621px/2 + 349.5px);
-    top: calc(50% - 45px/2 - 397.5px);
+    top: calc(50% - 45px/2 - 360px);
 
 
     font-family: 'Poppins';
@@ -106,8 +106,8 @@ button#signupbutton {
     position: absolute;
     width: 479px;
     height: 36px;
-    left: 795px;
-    top: 137px;
+    left: calc(50% - 621px/2 + 349.5px);
+    top: calc(50% - 45px/2 - 300px);
 
     font-family: 'Poppins';
     font-style: normal;
