@@ -11,6 +11,8 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
+import Carousel from './carousel.jsx';
+import car from './images/car.jpg';
 //reference: https://mui.com/components/drawers/
 
 import './styles/profilePage.css';
@@ -21,6 +23,7 @@ class ProfilePage extends Component {
     render() {
         return (
             <React.Fragment>
+                
                 <Box sx={{ display: 'flex' }}>
                     <CssBaseline />
                     <AppBar
@@ -65,6 +68,7 @@ class ProfilePage extends Component {
                     <br />
                     <p>messaging points 100</p>
                     <p>FUNds 20,000</p>
+                    <Carousel height={300} width={300} numslides={2} image={car}></Carousel>
                 </div>
             </React.Fragment>
         );
