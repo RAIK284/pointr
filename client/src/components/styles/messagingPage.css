@@ -63,6 +63,8 @@ button#newMessage{
     text-align: center;
     letter-spacing: -0.015em;
     text-decoration-line: underline;
+
+    text-transform: lowercase;
     
     color: #0064FF;
 }
