@@ -13,9 +13,32 @@ import { color } from '@mui/system';
 // reference: https://github.com/express-labs/pure-react-carousel
 
 const drawerWidth = 240;
-
 class HeaderDrawer extends React.Component {
     render() {
+        const changePage  =  (index) =>
+        {
+            switch(index)
+            {
+                case 0:
+                    window.location.href="/profile"
+                    break;
+                case 1:
+                    window.location.href="/message"
+                    break;
+                case 2:
+                    window.location.href="/store"
+                    break;
+                case 3:
+                    window.location.href="/explore"
+                    break;
+                case 4:
+                    window.location.href="/leaderboard"
+                break;
+                default:
+                    break;
+            }
+        }
+        
         return (
             <React.Fragment>
                 <Drawer
@@ -40,7 +63,7 @@ class HeaderDrawer extends React.Component {
                                 </ListItem>
                                 : 
                                 <ListItem button key={text}>
-                                    <ListItemText secondary={text} />
+                                    <ListItemText onClick={()=>{changePage(index)}} secondary={text} />
                                 </ListItem>
                             }
                             </div>
