@@ -6,6 +6,7 @@ import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
+import { alpha } from '@mui/material/styles';
 import ListItemText from '@mui/material/ListItemText';
 import car from './images/car.jpg'
 import { color } from '@mui/system';
@@ -43,10 +44,20 @@ class HeaderDrawer extends React.Component {
             <React.Fragment>
                 <Drawer
                 sx={{
-                    backgroundColor: "pink",
+                    ".MuiPaper-root": {
+                        bgcolor: '#0064FF',
+                    },
+                    ".inactive": {
+                        color: '#FFFFFF',
+                        opacity: 0.5
+
+                    },
+                    ".active": {
+                        color: '#FFFFFF',
+                    },
+
                     width: drawerWidth,
                     flexShrink: 0,
-                    color: '0064FF',
                     '& .MuiDrawer-paper': { width: drawerWidth, boxSizing: 'border-box', },
                 }}
                 variant="permanent"
@@ -59,20 +70,17 @@ class HeaderDrawer extends React.Component {
                             {(index === this.props.index) 
                                 ?  
                                 <ListItem button key={text}>
-                                    <ListItemText primary={text} />
+                                    <ListItemText className="active" primary={text} />
                                 </ListItem>
                                 : 
                                 <ListItem button key={text}>
-                                    <ListItemText onClick={()=>{changePage(index)}} secondary={text} />
+                                    <ListItemText className="inactive" onClick={()=>{changePage(index)}} primary={text} />
                                 </ListItem>
                             }
                             </div>
                             ))}
                         </List>
                 </Drawer>
-                <div id="header">
-                    HELLO!
-                </div>
             </React.Fragment>
         );
     }
