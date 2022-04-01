@@ -18,27 +18,34 @@ h1#heading{
     letter-spacing: -0.015em;
 
     color: #333333;
+
+    row-gap: 5%;
+    column-gap: 5%;
 } 
 
 messageDisplayBox#box1{
-    position: absolute;
-    width: 250px;
-    height: 250px;
+    position: relative;
+
     left: 736px;
     top: 219px;
 }
 
 messageDisplayBox#box2{
-    position: absolute;
-    width: 250px;
-    height: 250px;
+    position: relative;
+
     left: 1102px;
     top: 219px;
 }
 
+#box3{
+    position: relative;
+    left: 0px;
+    top: 0px;
+}
+
 button#newMessage{
 
-    position: absolute;
+    position: relative;
     width: 234px;
     height: 45px;
     left: 1102px;

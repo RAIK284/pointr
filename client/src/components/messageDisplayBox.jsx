@@ -10,7 +10,7 @@ class MessageDisplayBox extends Component {
                 <div className="messageDisplay">
                     
                     <div>
-                        <text id="name">
+                        <text id="name" >
                             [Name]
                         </text>
                     </div>
