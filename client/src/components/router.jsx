@@ -13,7 +13,8 @@ import MessagePage from './messagePage';
 import StorePage from './storePage';
 import ExplorePage from './explorePage';
 import LeaderBoardPage from './leaderboardPage';
-  
+import SettignsPage from './settingsPage';
+
 class WebsiteRouter extends Component {
     render() {
       return (
@@ -28,6 +29,7 @@ class WebsiteRouter extends Component {
               <Route path="/store" element={<StorePage/>}/>
               <Route path="/explore" element={<ExplorePage/>}/>
               <Route path="/leaderboard" element={<LeaderBoardPage/>}/>
+              <Route path="/settings" element={<SettignsPage/>}/>
             </Routes>
           </BrowserRouter>
         </React.Fragment>

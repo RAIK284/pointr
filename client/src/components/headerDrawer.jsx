@@ -34,7 +34,10 @@ class HeaderDrawer extends React.Component {
                     break;
                 case 4:
                     window.location.href="/leaderboard"
-                break;
+                    break;
+                case 5:
+                    window.location.href="/settings"
+                    break;
                 default:
                     break;
             }
@@ -65,7 +68,7 @@ class HeaderDrawer extends React.Component {
                 >
                     <img src={car} alt="car"/>
                     <List>
-                        {['Profile', 'Messages', 'Store', 'Explore', 'Leaderboard'].map((text, index) => (
+                        {['Profile', 'Messages', 'Store', 'Explore', 'Leaderboard', 'Settings'].map((text, index) => (
                             <div>
                             {(index === this.props.index) 
                                 ?  
