@@ -1,0 +1,17 @@
+#header
+{
+    width: 800px;
+    margin: auto;
+}
+.MuiPaper-root
+{
+    background-color: #0064FF;
+}
+.MuiDrawer-paper
+{
+    background-color: #0064FF;
+}
+.MuiPaper-root .MuiPaper-elevation .MuiDrawer-paper .MuiDrawer-paperAnchorLeft .MuiDrawer-paperAnchorDockedLeft 
+{
+    background-color: #0064FF;
+}
