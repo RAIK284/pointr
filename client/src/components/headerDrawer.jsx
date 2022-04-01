@@ -70,11 +70,19 @@ class HeaderDrawer extends React.Component {
                             {(index === this.props.index) 
                                 ?  
                                 <ListItem button key={text}>
-                                    <ListItemText className="active" primary={text} />
+                                    <ListItemText>
+                                        <div className="active">
+                                            {text}
+                                        </div>
+                                    </ListItemText>
                                 </ListItem>
                                 : 
                                 <ListItem button key={text}>
-                                    <ListItemText className="inactive" onClick={()=>{changePage(index)}} primary={text} />
+                                    <ListItemText className="inactive" onClick={()=>{changePage(index)}}>
+                                        <div className="inactive">
+                                            {text}
+                                        </div>
+                                    </ListItemText>
                                 </ListItem>
                             }
                             </div>
