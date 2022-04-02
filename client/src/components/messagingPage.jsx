@@ -17,23 +17,15 @@ class MessagingPage extends Component {
                     new message
                 </Button>
 
-                {/* <div> */}
-                    <MessageDisplayBox id="box1">
-                        
-                    </MessageDisplayBox>
-                {/* </div> */}
+                <div id="messageDisplayBoxes">
 
-                {/* <div> */}
-                    <MessageDisplayBox id="box2">
-                        
-                    </MessageDisplayBox>
-                {/* </div> */}
+                    <MessageDisplayBox id="box1"> </MessageDisplayBox>
+            
+                    <MessageDisplayBox id="box2"> </MessageDisplayBox>
+ 
+                    <MessageDisplayBox id="box3"></MessageDisplayBox>
 
-                {/* <div> */}
-                    <MessageDisplayBox id="box3">
-
-                    </MessageDisplayBox>
-                {/* </div> */}
+                </div>
 
 
 

@@ -1,9 +1,3 @@
-
-
----Messaging Page CSS---
-
-
-
 h1#heading{
     width: 359px;
     height: 105px;
@@ -23,30 +17,15 @@ h1#heading{
     letter-spacing: -0.015em;
 
     color: #333333;
-
-    row-gap: 5%;
-    column-gap: 5%;
 } 
 
-/* messageDisplayBox#box1{
-    position: relative;
+#messageDisplayBoxes{
+    display: flex;
+    flex-direction: row;
 
-    left: 736px;
-    top: 219px;
+    justify-content: space-evenly; /* This line is what spaces it evenly but the start and end lines are weird */
+
 }
-
-messageDisplayBox#box2{
-    position: relative;
-
-    left: 1102px;
-    top: 219px;
-} */
-
-/* #box3{
-    position: relative;
-    left: 0px;
-    top: 0px;
-} */
 
 button#newMessage{
 
@@ -74,7 +53,7 @@ button#newMessage{
     color: #0064FF;
 }
 
-#main-container {
-    display: flex;
+/* #main-container {
+    display: flex; 
     width: 100%;
-}
+} */
