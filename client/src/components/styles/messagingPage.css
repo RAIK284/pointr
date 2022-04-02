@@ -1,3 +1,10 @@
+#messagingBackground{
+    width: 100vw;
+    height: 100vh;
+
+    background-color: antiquewhite;
+}
+
 h1#heading{
     width: 359px;
     height: 105px;
@@ -20,10 +27,29 @@ h1#heading{
 } 
 
 #messageDisplayBoxes{
+    width: 60%;
+
     display: flex;
     flex-direction: row;
+    column-gap: 10%;
+    row-gap: 5%;
+    justify-content: space-evenly;
 
-    justify-content: space-evenly; /* This line is what spaces it evenly but the start and end lines are weird */
+    flex-wrap: wrap;
+
+
+
+
+
+    /* left: 371px; */
+
+    /*issue with width is that when you inspect page you can see that the left and right of the container is too far to the 
+    left and right side. SO, the task is to get this flexbox container to have left side aligned with heading and right side 
+    is the width of the screen */
+    /* width: 100%; */
+    /* max-width: 1280px; this num is what google says widest computer usually is */
+
+
 
 }
 
@@ -52,8 +78,3 @@ button#newMessage{
     
     color: #0064FF;
 }
-
-/* #main-container {
-    display: flex; 
-    width: 100%;
-} */

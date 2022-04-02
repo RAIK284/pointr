@@ -7,30 +7,38 @@ class MessagingPage extends Component {
     render() {
         return (
             <React.Fragment >
-                <h1 id="heading">
+                <div id="messagingBackground">
+                    <h1 id="heading">
+                        Messages
+                    </h1>
 
-                    Messages
+                    <Button variant="text" id= "newMessage" onClick={()=>{window.location.href='/'}}>
+                        new message
+                    </Button>
 
-                </h1>
+                    <div id="messageDisplayBoxes">
+                        {/* The way this is displaying is NOT how it should be. We should have a call
+                        to the api, and loop throug every message. Then, we display a box for every message. That way
+                        for ex if someone only has 2 messages only 2 boxes show up */}
 
-                <Button variant="text" id= "newMessage" onClick={()=>{window.location.href='/'}}>
-                    new message
-                </Button>
+                        <MessageDisplayBox id="box1"> </MessageDisplayBox>
+                
+                        <MessageDisplayBox id="box2"> </MessageDisplayBox>
+    
+                        <MessageDisplayBox id="box3"></MessageDisplayBox>
 
-                <div id="messageDisplayBoxes">
+                        <MessageDisplayBox id="box4"></MessageDisplayBox>
 
-                    <MessageDisplayBox id="box1"> </MessageDisplayBox>
-            
-                    <MessageDisplayBox id="box2"> </MessageDisplayBox>
- 
-                    <MessageDisplayBox id="box3"></MessageDisplayBox>
+                        <MessageDisplayBox id="box5"></MessageDisplayBox>
+
+                        <MessageDisplayBox id="box6"></MessageDisplayBox>
+
+                    </div>
+
+
+
 
                 </div>
-
-
-
-
- 
             </React.Fragment>
         );
 
