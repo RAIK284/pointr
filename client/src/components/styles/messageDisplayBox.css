@@ -1,5 +1,5 @@
 .messageDisplay{
-    position: absolute;
+    position: relative;
     width: 250px;
     height: 250px;
     left: 371px;
@@ -15,7 +15,7 @@
     align-items: center;
     font-family: 'Poppins';
     color: #333333;
-    flex-direction: row;
+    flex-direction: column;
 
 }
 
@@ -56,4 +56,50 @@
     margin-right: 5%;
     margin-top: 10%;
     margin-bottom: 10%;
+}
+
+h1#heading{
+    position: absolute;
+    width: 359px;
+    height: 105px;
+    left: 371px;
+    top: 64px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 70px;
+    line-height: 105px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.015em;
+
+    color: #333333;
+
+    row-gap: 5%;
+    column-gap: 5%;
+} 
+
+#box1{
+    position: relative;
+
+    /* left: 736px;
+    top: 219px; */
+}
+
+#box2{
+    position: relative;
+
+    /* left: 1102px;
+    top: 219px; */
+}
+
+#box3{
+    position: relative;
+
+    /* left: 0px;
+    top: 0px; */
 }

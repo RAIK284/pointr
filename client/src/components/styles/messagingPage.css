@@ -1,5 +1,10 @@
+
+
+---Messaging Page CSS---
+
+
+
 h1#heading{
-    position: absolute;
     width: 359px;
     height: 105px;
     left: 371px;
@@ -23,7 +28,7 @@ h1#heading{
     column-gap: 5%;
 } 
 
-messageDisplayBox#box1{
+/* messageDisplayBox#box1{
     position: relative;
 
     left: 736px;
@@ -35,13 +40,13 @@ messageDisplayBox#box2{
 
     left: 1102px;
     top: 219px;
-}
+} */
 
-#box3{
+/* #box3{
     position: relative;
     left: 0px;
     top: 0px;
-}
+} */
 
 button#newMessage{
 
@@ -67,4 +72,9 @@ button#newMessage{
     text-transform: lowercase;
     
     color: #0064FF;
+}
+
+#main-container {
+    display: flex;
+    width: 100%;
 }
