@@ -33,6 +33,46 @@ class MessagingPage extends Component {
 
                         <MessageDisplayBox id="box6"></MessageDisplayBox>
 
+                        <MessageDisplayBox id="box7"> </MessageDisplayBox>
+                
+                        <MessageDisplayBox id="box8"> </MessageDisplayBox>
+    
+                        <MessageDisplayBox id="box9"></MessageDisplayBox>
+
+                        <MessageDisplayBox id="box10"></MessageDisplayBox>
+
+                        <MessageDisplayBox id="box11"></MessageDisplayBox>
+
+                        <MessageDisplayBox id="box12"></MessageDisplayBox>
+                      
+                        <MessageDisplayBox id="box13"> </MessageDisplayBox>
+                
+                        <MessageDisplayBox id="box14"> </MessageDisplayBox>
+
+                        <MessageDisplayBox id="box15"></MessageDisplayBox>
+
+                        <MessageDisplayBox id="box16"></MessageDisplayBox>
+
+                        <MessageDisplayBox id="box17"></MessageDisplayBox>
+
+                        <MessageDisplayBox id="box18"></MessageDisplayBox>
+
+                        <MessageDisplayBox id="box19"> </MessageDisplayBox>
+                
+                        <MessageDisplayBox id="box20"> </MessageDisplayBox>
+
+                        <MessageDisplayBox id="box21"></MessageDisplayBox>
+
+                        <MessageDisplayBox id="box22"></MessageDisplayBox>
+
+                        <MessageDisplayBox id="box23"></MessageDisplayBox>
+
+                        <MessageDisplayBox id="box24"></MessageDisplayBox>
+                
+
+                
+
+
                     </div>
 
 
