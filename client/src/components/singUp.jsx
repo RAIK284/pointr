@@ -11,52 +11,61 @@ class SignUp extends Component {
             <React.Fragment >
                 
                 <body id="SU">
-                    <div className="rightRectangle"></div>
-                    <text className="suTitle">
-                        Welcome to Pointr!
-                    </text>
-
-                
+                <div id="main-container">
+                  
+                    <div id="right-container">
                     
-                    <text className="suSubtitle">
+                        <div className="suTitle">
+                            <text>
+                            Welcome to Pointr!
+                            </text>
+                        </div>
+                    
+                        <div className="suSubtitle">
+                            <text>
+                            Sign up for a free account today.
+                            </text>
+                        </div>
+                
 
-                        Sign up for a free account today.
-                    </text>
+                        <div id="info-container">
                         <form>
-                            <div>
-                                <label for="name" style={{position: "absolute",left: 'calc(50% - 284.39px/2 + 190.54px)', top: 'calc(50% - 27.8px/2 - 240px)'}} className="entryLabel">Name</label>
+                            
+                                <label for="name" className="entryLabel">Name</label>
                                 <br />
-                                <input type="text" placeholder="Enter your name" className="entryRectangle" style={{position: "absolute", left: 'calc(50% - 284.39px/2 + 190.54px)',top: `calc(50% - 46.34px/2 - 190px)`}} required></input>
+                                <input type="text" placeholder="Enter your name" className="entry" required></input>
                                 <br />
-                                
-                                <label for="email" style={{position:"absolute", left: 'calc(50% - 284.39px/2 + 190.54px)',top: 'calc(50% - 27.8px/2 - 114.1px)'}} className="entryLabel">Email</label>
+                                <label for="email"  className="entryLabel">Email</label>
                                 <br />
-                                <input type="text" placeholder="Enter your email address" className="entryRectangle" style={{position:"absolute",left: 'calc(50% - 284.39px/2 + 190.54px)',top: 'calc(50% - 46.34px/2 - 67.83px)'}} required></input>
-                                <br />
-
-                                <label for="username" style={{position:"absolute", left: 'calc(50% - 284.39px/2 + 190.54px)',top: 'calc(50% - 27.8px/2 + 13.9px)'}} className="entryLabel">Username</label>
-                                <br />
-                                <input type="text" placeholder="Enter a username" className="entryRectangle" style={{position:"absolute",left: 'calc(50% - 284.39px/2 + 190.54px)',top: 'calc(50% - 46.34px/2 + 63.17px)'}} required></input>
+                                <input type="text" placeholder="Enter your email address" className="entry"  required></input>
                                 <br />
 
-                                <label for="password" style={{position:"absolute", left: 'calc(50% - 284.39px/2 + 190.54px)',top: 'calc(50% - 27.8px/2 + 144.9px)'}} className="entryLabel">Password</label>
-
-                                
+                                <label for="username"  className="entryLabel">Username</label>
                                 <br />
-                                <input type="text" placeholder="Enter a password" className="entryRectangle" style={{position: "absolute", left: 'calc(50% - 284.39px/2 + 190.54px)',top: 'calc(50% - 46.34px/2 + 192.17px)'}} required></input>
+                                <input type="text" placeholder="Enter a username" className="entry" required></input>
                                 <br />
-                                <input type="text" placeholder="Confirm password" className="entryRectangle" style={{position: "absolute", left: 'calc(50% - 284.39px/2 + 190.54px)', top: 'calc(50% - 46.34px/2 + 267.17px)'}} requried></input>
+                                <label for="password"  className="entryLabel">Password</label>
+                                <br />
+                                <input type="text" placeholder="Enter a password" className="entry" required></input>
+                                <br />
+                                <input type="text" placeholder="Confirm password" className="entry"  requried></input>
                                 <br />
                                 <br />
                                 <Button id="signupbutton" variant="contained" size="large" onClick={()=>{window.location.href='/profile'}}>Sign Up</Button>
+                                </form>
                             </div>
-                        </form>
+                            
+                        
+                        </div>
+
+                    </div>
                         
                 </body>
             </React.Fragment>
         );
     }
 }
+
 
 // SignIn.propTypes = {
 //     field1: PropTypes.string.isRequired,
