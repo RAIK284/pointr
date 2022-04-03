@@ -11,6 +11,10 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
+import Carousel from './carousel.jsx';
+import car from './images/car.jpg';
+import ducky from './images/ducky.png'
+import HeaderDrawer from "./headerDrawer.jsx";
 //reference: https://mui.com/components/drawers/
 
 import './styles/profilePage.css';
@@ -21,37 +25,8 @@ class ProfilePage extends Component {
     render() {
         return (
             <React.Fragment>
-                <Box sx={{ display: 'flex' }}>
-                    <CssBaseline />
-                    <AppBar
-                        position="fixed"
-                        sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}
-                    >
-                        <Toolbar>
-                            <Typography id="header" variant="h6" noWrap component="div">
-                                Welcome, Name<br />
-                                Hi, I'm name, and I like to hobby! Message me your favorite quote.
-                            </Typography>
-                        </Toolbar>
-                    </AppBar>
-                    <Drawer
-                        sx={{
-                            width: drawerWidth,
-                            flexShrink: 0,
-                            '& .MuiDrawer-paper': { width: drawerWidth, boxSizing: 'border-box', },
-                        }}
-                        variant="permanent"
-                        anchor="left"
-                    >
-                        <List>
-                            {['Profile', 'Messages', 'Store', 'Explore', 'Leaderboard'].map((text, index) => (
-                                <ListItem button key={text}>
-                                    <ListItemText primary={text} />
-                                </ListItem>
-                            ))}
-                        </List>
-                    </Drawer>
-                </Box>
+                
+            <HeaderDrawer index={0}></HeaderDrawer>
                 <div id="content">
                     <br />
                     <br />
@@ -65,6 +40,13 @@ class ProfilePage extends Component {
                     <br />
                     <p>messaging points 100</p>
                     <p>FUNds 20,000</p>
+                    <Carousel 
+                    height={300} 
+                    width={300} 
+                    numslides={2} 
+                    images={[car, ducky]}
+                    visibleSlides={1}
+                    ></Carousel>
                 </div>
             </React.Fragment>
         );

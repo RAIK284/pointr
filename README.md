@@ -101,8 +101,10 @@ fetch("http://localhost:8080/api/login", {
 
 `GET` **/api/user**
 
-**Required Params**
+**Optional Params**
 * username - the username of the user to get information about
+* email - the email of the user to get information about
+* id - ObjectID of the user in the database to get information about
 
 
 **Sample Call**
@@ -244,7 +246,7 @@ fetch("http://localhost:8080/api/user", {
 **Sample Call**
 
 ```js
-    fetch('http://localhost:8080/api/user?top=5')
+    fetch('http://localhost:8080/api/leaderboard?top=5')
         .then(response => response.json())
         .then(data => console.log(data));
 ```
