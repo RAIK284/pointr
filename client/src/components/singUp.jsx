@@ -22,43 +22,38 @@ class SignUp extends Component {
                         </div>
                     
                         <div className="suSubtitle">
-                            <text>
+                            <text >
                             Sign up for a free account today.
                             </text>
                         </div>
                 
 
                         <div id="info-container">
-                        <form>
-                            
                                 <label for="name" className="entryLabel">Name</label>
-                                <br />
+                                
                                 <input type="text" placeholder="Enter your name" className="entry" required></input>
-                                <br />
+                                
                                 <label for="email"  className="entryLabel">Email</label>
-                                <br />
+                                
                                 <input type="text" placeholder="Enter your email address" className="entry"  required></input>
-                                <br />
+                               
 
                                 <label for="username"  className="entryLabel">Username</label>
-                                <br />
+                               
                                 <input type="text" placeholder="Enter a username" className="entry" required></input>
-                                <br />
+                                
                                 <label for="password"  className="entryLabel">Password</label>
-                                <br />
                                 <input type="text" placeholder="Enter a password" className="entry" required></input>
-                                <br />
                                 <input type="text" placeholder="Confirm password" className="entry"  requried></input>
-                                <br />
-                                <br />
-                                <Button id="signupbutton" variant="contained" size="large" onClick={()=>{window.location.href='/profile'}}>Sign Up</Button>
-                                </form>
-                            </div>
-                            
-                        
+                              
+                                
                         </div>
-
+                        
+                        <Button id="signupbutton" variant="contained" size="large" onClick={()=>{window.location.href='/profile'}}>Sign Up</Button>
+                        
                     </div>
+                    
+                </div>
                         
                 </body>
             </React.Fragment>

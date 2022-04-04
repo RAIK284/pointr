@@ -1,45 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
-/* .signUp{
-    position: absolute;
-    
-    
-    width: 633px;
-    height: 561.34px;
-    left: 783px;
-    top: 220px;
-
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 19px;
-    line-height: 24px;
-    color: #333333;
-
-
-letter-spacing: -0.015em;
-   
-} */
-
-.entryRectangle{
-    position: absolute;
-    width: 630px;
-    height: 46.34px;
-
-    border: 3px solid rgba(51, 51, 51, 0.3);
-    box-sizing: border-box;
-    border-radius: 20px;
-
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 24px;
-    /* or 126% */
-
-    letter-spacing: -0.015em;
-
-    color: rgba(51, 51, 51, 0.5);
-}
 
 
 body#SU{
@@ -49,10 +8,19 @@ body#SU{
     padding: 0;
     margin: 0;
     
-    /*height: 100vh;
-    width: 100vw; */
+    height: 100vh;
+    width: 100vw;
 
 } 
+
+#right-container {
+    height: 100vh;
+    width: 50vw;
+    background-color: white;
+    vertical-align: top;
+    float: top;
+}
+
 
 button#signupbutton {
     background-color:#0064FF;
@@ -64,11 +32,12 @@ button#signupbutton {
     font-size: 20px;
     text-align: center;
 
-    position: absolute;
-    width: 127.92px;
-    height: 50px;
-    left: calc(50% - 197px/2 + 370px);
-    top: calc(50% - 77px/2 + 370px);
+   
+    height: 8%;
+    width: 20%;
+    margin-left: 35%; 
+    margin-bottom: 5%; 
+    vertical-align: center;
 
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
@@ -85,10 +54,12 @@ button#signupbutton {
 }
 
 
-
-
 .suTitle{
-    vertical-align: top;
+    
+
+    margin-top: 5%;
+    margin-left: 5%;
+    line-height: 0;
 
     font-family: 'Poppins';
     font-style: normal;
@@ -105,12 +76,17 @@ button#signupbutton {
 .suSubtitle{
     
     vertical-align: top;
+
+    margin-top: 5%;
+    margin-left: 5%;
+    line-height: 0;
+
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
     font-size: 30px;
     line-height: 36px;
-    /* identical to box height, or 120% */
+    
 
     letter-spacing: -0.015em;
 
@@ -118,22 +94,6 @@ button#signupbutton {
 
 }
 
-.entryLabel {
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 19px;
-    line-height: 24px;
-    /* or 126% */
-
-    letter-spacing: -0.015em;
-
-    color: #333333;
-}
-
-.containerSU{
-    padding: 60px;
-}
 
 .link{
     position: absolute;
@@ -163,16 +123,39 @@ button#signupbutton {
     flex-wrap: wrap;
     flex-direction: row;
 
-    height: 60%;
-    width: 100%;
+    height: 70%;
+    width: 100%; 
 
     overflow: hidden;
-    margin-top: 5%;
+    margin-left: 2%;
 
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     align-content: flex-start;
 }
+
+
+
+
+.entryLabel {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 0;
+    /* or 126% */
+
+    width: 60%;
+
+    letter-spacing: -0.015em;
+
+    margin-left: 5%;
+    margin-top: 5%;
+    padding: 0;
+
+    color: #333333;
+}
+
 
 .entry {
     border: 3px solid rgba(51, 51, 51, 0.3);
@@ -185,7 +168,7 @@ button#signupbutton {
     font-size: 15px;
     line-height: 0;
 
-    width: 60%;
+    width: 80%;
     height: 7%;
     margin: 2.5%;
     padding-left: 2%;
@@ -201,12 +184,7 @@ button#signupbutton {
     width: 100vw;
     display: flex;
     justify-content: right;
+    margin-top: 0;
+
 }
 
-#right-container {
-    height: 100%;
-    width: 50%;
-    background-color: white;
-    vertical-align: top;
-    float: top;
-}
