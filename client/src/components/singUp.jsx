@@ -11,11 +11,7 @@ class SignUp extends Component {
             <React.Fragment >
                 
                 <body id="SU">
-                <div id="link">
-                      <text>
-                          Already have an account? Log In.
-                      </text>
-                  </div>
+               
                 <div id="main-container">
                  
                     <div id="right-container">
