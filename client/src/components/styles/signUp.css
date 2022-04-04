@@ -96,12 +96,10 @@ button#signupbutton {
 
 
 .link{
-    position: absolute;
-    width: 402px;
-    height: 38px;
+    
     /* fix these positions */
-    margin-left: 142px; 
-    margin-top: 889px;
+    margin-left: 10%; 
+    margin-bottom: 90%;
 
     font-family: 'Poppins';
     font-style: normal;
@@ -110,7 +108,7 @@ button#signupbutton {
     line-height: 38px;
     /* identical to box height */
 
-    display: flex;
+   
     align-items: center;
     text-align: center;
     letter-spacing: -0.015em;
