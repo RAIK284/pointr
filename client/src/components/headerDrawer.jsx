@@ -79,28 +79,15 @@ class HeaderDrawer extends React.Component {
                         </ListItemText>
                         {['Profile', 'Messages', 'Store', 'Explore', 'Leaderboard', 'Settings'].map((text, index) => (
                             <div>
-                            {(index === this.props.index) 
+                            {(index === this.props.index && text !== 'Settings') 
                                 ?  
-                                <div>
-                                    {(text === 'Settings')
-                                    ?
-                                    <ListItem button key={text}>
-                                        <ListItemText className="settings" onClick={()=>{changePage(index)}}>
-                                            <div className="settings">
-                                                {text}
-                                            </div>
-                                        </ListItemText>
-                                    </ListItem>
-                                    :
-                                    <ListItem button key={text}>
-                                        <ListItemText>
-                                            <div className="active">
-                                                {text}
-                                            </div>
-                                        </ListItemText>
-                                    </ListItem>
-                                    }
-                                </div>
+                                <ListItem button key={text}>
+                                    <ListItemText>
+                                        <div className="active">
+                                            {text}
+                                        </div>
+                                    </ListItemText>
+                                </ListItem>
                                 : 
                                 <div>
                                     {(text === 'Settings')
