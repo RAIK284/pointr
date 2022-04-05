@@ -3,25 +3,33 @@ import './styles/messageDisplayBox.css';
 import Button from '@mui/material/Button';
 
 class MessageDisplayBox extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: this.props.name,
+            username: this.props.username,
+            messageBody: this.props.messageBody
+        }
+    }
     render() {
         return (
             <React.Fragment >
-                
+
                 <div className="messageDisplay">
-                    
+
                     <div>
                         <text id="name" >
-                            [Name]
+                            {this.props.name}
                         </text>
                     </div>
                     <div>
                         <text id="username">
-                            [Insert username Here]
+                            {this.props.username}
                         </text>
                     </div>
                     <div>
                         <text id="messageBody">
-                            [example message of positivity is here :) Go you!]
+                            {this.props.messageBody}
                         </text>
                     </div>
 
@@ -30,6 +38,6 @@ class MessageDisplayBox extends Component {
             </React.Fragment>
         );
 
-    }   
+    }
 }
 export default MessageDisplayBox;
