@@ -33,9 +33,11 @@ h2 {
 }
 button#homepagebutton {
     position: relative;
-    background: #2A9D8F;
+    background: #0064FF;
     border-radius: 6px;
     
+    
+
     color: white;
     font-family: 'Poppins';
     font-style: normal;
@@ -53,7 +55,7 @@ button#homepagebutton {
 
 .emailentry{
 
-    border: 4px solid #2A9D8F;
+    border: 4px solid rgba(51, 51, 51, 0.5);
     box-sizing: border-box;
     border-radius: 20px;
 
@@ -61,7 +63,7 @@ button#homepagebutton {
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
-    color: #2A9D8F;
+    color: rgba(51, 51, 51);
     line-height: 0;
 
 
