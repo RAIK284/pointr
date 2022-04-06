@@ -5,26 +5,6 @@
     /* background-color: antiquewhite; */
 }
 
-#heading{
-    width: 359px;
-    height: 105px;
-    left: 371px;
-    top: 64px;
-
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 70px;
-    line-height: 105px;
-
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: -0.015em;
-
-    color: #333333;
-} 
-
 #messageDisplayBoxes{
     position: relative;
     width: 60%;
@@ -56,7 +36,7 @@
 button#newMessage{
 
     position: relative;
-    width: 15%;
+    width: 25%;
     height: 5%;
     left: 70%;
     top: 15%;
@@ -64,7 +44,7 @@ button#newMessage{
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
-    font-size: 175%;
+    font-size: 2vw;
     line-height: 5%;
     /* identical to box height */
     

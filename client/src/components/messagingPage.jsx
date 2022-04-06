@@ -9,7 +9,8 @@ class MessagingPage extends Component {
         return (
             <React.Fragment >
                 <div id="messagingBackground">
-                    <InternalHeading id="heading" title="Messages"></InternalHeading>
+                    
+                    <InternalHeading title="Messages"></InternalHeading>
 
                     <Button variant="text" id= "newMessage" onClick={()=>{window.location.href='/'}}>
                         new message
@@ -68,14 +69,7 @@ class MessagingPage extends Component {
 
                         <MessageDisplayBox id="box24"></MessageDisplayBox>
                 
-
-                
-
-
                     </div>
-
-
-
 
                 </div>
             </React.Fragment>
