@@ -21,7 +21,7 @@ class MessageDisplayBox extends Component {
                     </div>
                     <div>
                         <text id="messageBody">
-                            [example message of positivity is here :) Go you!]
+                            [example message of positivity is here :) Go you! Here are even more words. ]
                         </text>
                     </div>
 
