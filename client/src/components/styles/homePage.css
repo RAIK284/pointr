@@ -13,12 +13,11 @@ h1 {
 }
 h2 {
     font-size: 45px;
-    color: #333333;
-    margin-right: 5px;
+    color: rgba(51, 51, 51, 0.8);    
 
     font-family: 'Poppins';
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 45px;
     
     display:flex;
@@ -28,6 +27,7 @@ h2 {
     margin-right: 20px;
 }
 button#homepagebutton {
+    position: relative;
     background: #2A9D8F;
     border-radius: 6px;
     
@@ -45,7 +45,29 @@ button#homepagebutton {
 }
 
 .emailentry{
-    background: #FFFFFF;
+
+    border: 4px solid #2A9D8F;
+    box-sizing: border-box;
+    border-radius: 20px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    color: #2A9D8F;
+    line-height: 0;
+
+    width: 80%; 
+    height: 0%;
+    margin: 2.5%;
+    padding-left: 0%;
+
+    letter-spacing: -0.015em;
+
+    
+
+
+    /* background: #FFFFFF;
     border: 4px solid #2A9D8F;
     box-sizing: border-box;
     border-radius: 6px;
@@ -61,14 +83,11 @@ button#homepagebutton {
     display: flex;
     align-items: center;
     text-align: center;
-    letter-spacing: -0.015em;
+    letter-spacing: -0.015em; */
     
     width: 496px;
     height: 60px;
-    
 
-
-   
 }
 
 body {
