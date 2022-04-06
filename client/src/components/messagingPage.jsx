@@ -3,13 +3,16 @@ import './styles/messagingPage.css';
 import Button from '@mui/material/Button';
 import MessageDisplayBox from "./messageDisplayBox";
 import InternalHeading from "./internalHeading";
+import HeaderDrawer from "./headerDrawer";
 
 class MessagingPage extends Component {
     render() {
         return (
             <React.Fragment >
                 <div id="messagingBackground">
-                    
+
+                    <HeaderDrawer index={1}></HeaderDrawer>
+                  
                     <InternalHeading title="Messages"></InternalHeading>
 
                     <Button variant="text" id= "newMessage" onClick={()=>{window.location.href='/'}}>
