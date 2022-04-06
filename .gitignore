@@ -131,3 +131,4 @@ client/node_modules/minimist/test/proto.js
 client/node_modules/minimist/test/short.js
 client/node_modules/minimist/test/stop_early.js
 
+*.pack

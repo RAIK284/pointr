@@ -18,7 +18,8 @@ class HomePage extends Component {
                 <div id='column-right'>
                     <h1>Welcome to <br /> Pointr.</h1>
                     <h2>The new way to be<br />rewarded for positivity</h2>
-                    <Button id="button" variant="contained" size="large" onClick={()=>{window.location.href='/signup'}}>Sign Up</Button>
+                    <input type="text" className="emailentry" placeholder="Enter your email address..."></input>
+                    <Button id ="homepagebutton" variant="contained" size="large" onClick={()=>{window.location.href='/signup'}}>Sign Up</Button>
                 </div>
                 
             </React.Fragment>

@@ -1,0 +1,88 @@
+.trophyDisplay{ /* need to format */
+    position: relative;
+    width: 20vw;
+    height: 50vh;
+    /* left: 40%;
+    top: 25vh; */
+
+    background: rgba(0, 100, 255, 0.3);
+    border-radius: 20px;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+
+    text-align: center;
+    align-items: center;
+    font-family: 'Poppins';
+    color: #333333;
+    flex-direction: column;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+}
+
+#trophyTitle{ /* need to format */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 60px;
+ 
+    letter-spacing: -0.015em;
+}
+
+
+#trophyDescription{ /* need to format */
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 38px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.015em;
+    text-align: left;
+
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#trophyCost{
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 45px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.015em;
+
+    color: #FFFFFF;
+
+}
+
+button#addToProfile{
+
+    background: #02BA90;
+    border-radius: 6px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+    width: 10vw;
+    height: 5vh;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 45px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.015em;
+
+    color: #FFFFFF;
+
+}
