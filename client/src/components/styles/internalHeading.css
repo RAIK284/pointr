@@ -1,0 +1,20 @@
+h1#heading{
+    width: 359px;
+    height: 105px;
+    left: 371px;
+    top: 64px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 70px;
+    line-height: 105px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.015em;
+
+    color: #333333;
+} 
