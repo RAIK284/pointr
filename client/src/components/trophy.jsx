@@ -3,23 +3,26 @@ import './styles/trophy.css';
 import Button from '@mui/material/Button';
 
 class Trophy extends Component {
+
     render() {
         return (
             <React.Fragment >
-                <div id="trophyDisplay">
+                    
+                
+                <div className="trophyDisplay">
                     <div>
                         <img></img>
                     </div>
 
-                    <div className="trophyTitle">
+                    <div id="trophyTitle">
                         <text>Trophy Title</text>
                     </div>
 
-                    <div className="trophyDescription">
+                    <div id="trophyDescription">
                         <text>This is where the trophy's description will go.</text>
                     </div>
 
-                    <div className="trophyCost">
+                    <div id="trophyCost">
                         <text>Cost: 100</text> 
                     </div>
 
