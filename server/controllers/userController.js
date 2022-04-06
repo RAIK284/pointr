@@ -14,9 +14,8 @@ const loginUser = async (req, res) => {
     const db = mongoConnection.getDb();
     const email = await req.body.email;
     const password = await req.body.password;
-    const validEmail = await db.collection('users').find({email: req.query.email});
+    const validEmail = await db.collection('users').find({email: req.body.email});
     const arrayEmail = await validEmail.toArray();
-    console.log(arrayEmail);
     if (arrayEmail.length === 0) {
         res.status(401).send("Invalid email");
         return;
