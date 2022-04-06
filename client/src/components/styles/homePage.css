@@ -10,6 +10,9 @@ h1 {
     font-size: 90px;
 
     display: flex;
+
+    text-align: right;
+
 }
 h2 {
     font-size: 45px;
@@ -20,7 +23,9 @@ h2 {
     font-weight: 500;
     font-size: 45px;
     
+    text-align: right;
     display:flex;
+    margin: 4%;
 }
 #column-right {
     float: right;
@@ -60,14 +65,8 @@ button#homepagebutton {
     line-height: 0;
 
 
-
     margin: 4%;
-    
-
-
     letter-spacing: -0.015em;
-
-
 
     width: 496px;
     height: 60px;
