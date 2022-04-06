@@ -8,11 +8,8 @@ import {validateUser} from './scripts/signinValidation.js';
 class SignIn extends Component {
     render() {
 
-        const changePage = () =>
-        {
-            var response = validateUser();
+        const checkresponse = async (response) => {
             console.log(response)
-
             if (response !== -1) {
                 //Switch to profile page.
                 //window.location.href='/profile'
@@ -23,6 +20,11 @@ class SignIn extends Component {
                 console.log("Wrong!");
                 console.log(response);
             }
+        }
+
+        const changePage = async () =>
+        {
+            const response = validateUser().then(response => checkresponse(response));
         }
 
         return (

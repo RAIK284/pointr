@@ -9,8 +9,8 @@ async function validateUser()  {
 
     //Construct data object based on email and password fields.
     const jsonUserDataObject = {
-        "email": email,
-        "password": password
+        "email": email.value,
+        "password": password.value
     };
 
     //Turn the data into a JSON object.
@@ -21,8 +21,6 @@ async function validateUser()  {
         method: "POST",
         headers: {'Content-Type': 'application/json'},
         body: jsonUserData
-    }).then(res => {
-        console.log("Request complete! response:", res);
     });
 
     //console.log(response)
@@ -32,9 +30,10 @@ async function validateUser()  {
         console.log("User signed in successfully")
         const userFetchString = 'http://localhost:8080/api/user?email=' + email;
         const response = await fetch(userFetchString);
-        const userData = await response.json();
-        console.log(userData)
-        return userData;
+        // The response from signin only tells you if the user is valid. Does not return the actual user's data. Call the user endpoint to get that data.
+        // const userData = await response.json();
+        // console.log(userData)
+        return 1;
     } else {
         console.log("Incorrect email/password")
         return -1;
