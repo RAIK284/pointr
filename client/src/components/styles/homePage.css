@@ -3,24 +3,81 @@ h1 {
     margin-bottom: 30px;
     font-size: 90px;
     color: #0064FF;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 90px;
+
+    display: flex;
+
+    text-align: right;
+
 }
 h2 {
     font-size: 45px;
-    color: #333333;
-    margin-right: 5px;
+    color: rgba(51, 51, 51, 0.8);    
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 45px;
+    
+    text-align: right;
+    display:flex;
+    margin: 4%;
 }
 #column-right {
     float: right;
     margin-right: 20px;
 }
-#button {
-    background-color: #2A9D8F;
-    color: white;
-}
-<<<<<<< HEAD
+button#homepagebutton {
+    position: relative;
+    background: #0064FF;
+    border-radius: 6px;
+    
+    
 
-=======
->>>>>>> main
+    color: white;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 45px;
+   
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    margin: 4%;
+}
+
+.emailentry{
+
+    border: 4px solid rgba(51, 51, 51, 0.5);
+    box-sizing: border-box;
+    border-radius: 20px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    color: rgba(51, 51, 51);
+    line-height: 0;
+
+
+    margin: 4%;
+    letter-spacing: -0.015em;
+
+    width: 496px;
+    height: 60px;
+
+
+}
+
+
+
 body {
     background-color: #ffffff;
 }
