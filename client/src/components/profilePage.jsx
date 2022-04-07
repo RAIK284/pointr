@@ -26,28 +26,37 @@ class ProfilePage extends Component {
         return (
             <React.Fragment>
                 
-            <HeaderDrawer index={0}></HeaderDrawer>
-                <div id="content">
-                    <br />
-                    <br />
-                    <h2>
-                        Leaderboard Rank 1
-                    </h2>
-                    <br />
-                    <br />
-                    <p>Slider here!!!(Need to develop!)</p>
-                    <br />
-                    <br />
-                    <p>messaging points 100</p>
-                    <p>FUNds 20,000</p>
-                    <Carousel 
+            <div id="header">
+                <p id="welcome">
+                    Welcome, Name.
+                </p>
+                <p id="sub">
+                    Hi! I'm name, and I like to hobby! Message me your favorite quote.
+                </p>
+            </div>
+
+            <HeaderDrawer index={0} />
+
+            <div id="content">
+                <br />
+                <br />
+                <h2>
+                    Leaderboard Rank 1
+                </h2>
+                <br />
+                <br />
+                <Carousel 
                     height={300} 
                     width={300} 
                     numslides={2} 
                     images={[car, ducky]}
                     visibleSlides={1}
-                    ></Carousel>
-                </div>
+                />
+                <br />
+                <br />
+                <p>messaging points 100</p>
+                <p>FUNds 20,000</p>
+            </div>
             </React.Fragment>
         );
     }
