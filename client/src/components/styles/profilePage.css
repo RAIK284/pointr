@@ -3,24 +3,11 @@
 }
 
 #header {
-    margin-left: 14rem;
-    padding-left: 4rem;
     background-color: #65D7C0;
 }
-#welcome
-{
-    font-size: 70px;
-    display: inline;
-    font-family: Poppins;
-}
-#sub
-{
-    font-size: 25px;
-    font-family: Poppins;
-}
+
 #content {
     margin-left: 18rem;
-    font-family: Poppins;
 }
 image 
 {

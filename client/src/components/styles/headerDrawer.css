@@ -2,26 +2,9 @@
 {
     font-size: 30px; 
     font-family: Poppins;
-    margin-bottom: 1rem;
 }
 .active
 {
     font-size: 30px;
-    font-family: Poppins;
-    margin-bottom: 1rem;
-}
-.settings
-{
-    margin-top: 2rem;
-    font-size: 25px;
-    font-family: Poppins;
-    text-decoration: underline;
-    text-align: center;
-}
-.username
-{
-    margin-bottom: 1rem;
-    color: white;
-    font-size: 35px;
     font-family: Poppins;
 }
