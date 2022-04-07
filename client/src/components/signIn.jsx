@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import './styles/signIn.css';
 import Button from '@mui/material/Button';
 import {validateUser} from './scripts/signinValidation.js';
+import { response } from "express";
 //import Stack from '@mui/material/Stack';
 //import PropTypes from 'prop-types';
 
@@ -12,7 +13,7 @@ class SignIn extends Component {
             console.log(response)
             if (response !== -1) {
                 //Switch to profile page.
-                //window.location.href='/profile'
+                window.location.href='/profile'
                 console.log("Successul!");
                 console.log(response);
             } else {
