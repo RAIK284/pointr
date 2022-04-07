@@ -8,7 +8,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import { alpha } from '@mui/material/styles';
 import ListItemText from '@mui/material/ListItemText';
-import car from './images/car.jpg'
+import ducky from './images/ducky.png'
 import { color } from '@mui/system';
 
 // reference: https://github.com/express-labs/pure-react-carousel
@@ -66,7 +66,7 @@ class HeaderDrawer extends React.Component {
                 variant="permanent"
                 anchor="left"
                 >
-                    <img src={car} alt="car"/>
+                    <img src={ducky} alt="car"/>
                     <List>
                         {['Profile', 'Messages', 'Store', 'Explore', 'Leaderboard', 'Settings'].map((text, index) => (
                             <div>

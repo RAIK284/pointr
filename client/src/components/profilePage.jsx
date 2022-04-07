@@ -12,7 +12,6 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import Carousel from './carousel.jsx';
-import car from './images/car.jpg';
 import ducky from './images/ducky.png'
 import HeaderDrawer from "./headerDrawer.jsx";
 //reference: https://mui.com/components/drawers/
@@ -44,7 +43,7 @@ class ProfilePage extends Component {
                     height={300} 
                     width={300} 
                     numslides={2} 
-                    images={[car, ducky]}
+                    images={[ducky, ducky]}
                     visibleSlides={1}
                     ></Carousel>
                 </div>
