@@ -24,7 +24,7 @@ class HeaderDrawer extends React.Component {
                     window.location.href="/profile"
                     break;
                 case 1:
-                    window.location.href="/messages"
+                    window.location.href="/message"
                     break;
                 case 2:
                     window.location.href="/store"
@@ -58,6 +58,10 @@ class HeaderDrawer extends React.Component {
                     ".active": {
                         color: '#FFFFFF',
                     },
+                    ".settings": {
+                        color: '#FFFFFF',
+                        opacity: 0.5
+                    },
 
                     width: drawerWidth,
                     flexShrink: 0,
@@ -68,9 +72,14 @@ class HeaderDrawer extends React.Component {
                 >
                     <img src={car} alt="car"/>
                     <List>
+                        <ListItemText className="username">
+                            <div className="username">
+                                @username
+                            </div>
+                        </ListItemText>
                         {['Profile', 'Messages', 'Store', 'Explore', 'Leaderboard', 'Settings'].map((text, index) => (
                             <div>
-                            {(index === this.props.index) 
+                            {(index === this.props.index && text !== 'Settings') 
                                 ?  
                                 <ListItem button key={text}>
                                     <ListItemText>
@@ -80,13 +89,26 @@ class HeaderDrawer extends React.Component {
                                     </ListItemText>
                                 </ListItem>
                                 : 
-                                <ListItem button key={text}>
-                                    <ListItemText className="inactive" onClick={()=>{changePage(index)}}>
-                                        <div className="inactive">
-                                            {text}
-                                        </div>
-                                    </ListItemText>
-                                </ListItem>
+                                <div>
+                                    {(text === 'Settings')
+                                    ?
+                                    <ListItem button key={text}>
+                                        <ListItemText className="settings" onClick={()=>{changePage(index)}}>
+                                            <div className="settings">
+                                                {text}
+                                            </div>
+                                        </ListItemText>
+                                    </ListItem>
+                                    :
+                                    <ListItem button key={text}>
+                                        <ListItemText className="inactive" onClick={()=>{changePage(index)}}>
+                                            <div className="inactive">
+                                                {text}
+                                            </div>
+                                        </ListItemText>
+                                    </ListItem>
+                                }
+                                </div>
                             }
                             </div>
                             ))}
