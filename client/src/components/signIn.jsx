@@ -1,11 +1,33 @@
 import React, { Component } from "react";
 import './styles/signIn.css';
 import Button from '@mui/material/Button';
+import {validateUser} from './scripts/signinValidation.js';
+import { response } from "express";
 //import Stack from '@mui/material/Stack';
 //import PropTypes from 'prop-types';
 
 class SignIn extends Component {
     render() {
+
+        const checkresponse = async (response) => {
+            console.log(response)
+            if (response !== -1) {
+                //Switch to profile page.
+                window.location.href='/profile'
+                console.log("Successul!");
+                console.log(response);
+            } else {
+                //Display error and do nothing.
+                console.log("Wrong!");
+                console.log(response);
+            }
+        }
+
+        const changePage = async () =>
+        {
+            const response = validateUser().then(response => checkresponse(response));
+        }
+
         return (
             <React.Fragment >
                 
@@ -15,14 +37,14 @@ class SignIn extends Component {
                             Log In to Pointr
                         </text>
                         <br />
-                        <input type="text" placeholder="Username" className="br1"></input>
+                        <input type="text" placeholder="Username" id='email' className="br1"></input>
                         <br />
                         
                         <br />
-                        <input type="text" placeholder="Password" className="br2"></input>
+                        <input type="text" placeholder="Password" id='password' className="br2"></input>
                         <br />
                         <br />
-                        <Button variant="contained" size="large" id= "loginbutton" onClick={()=>{window.location.href='/profile'}}>Login</Button>
+                        <Button variant="contained" size="large" id= "loginbutton" onClick={()=>{changePage()}}>Login</Button>
                     </div>
                 </body>
             </React.Fragment>
@@ -34,6 +56,5 @@ class SignIn extends Component {
 //     field1: PropTypes.string.isRequired,
 //     field2: PropTypes.string.isRequired,
 // };
-
 
 export default SignIn;
