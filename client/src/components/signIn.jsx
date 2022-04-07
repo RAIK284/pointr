@@ -20,7 +20,6 @@ class SignIn extends Component {
                 console.log("Wrong!");
                 console.log(response);
             }
-            window.location.href="/profile"
         }
 
         const changePage = async () =>
@@ -44,7 +43,7 @@ class SignIn extends Component {
                         <input type="text" placeholder="Password" id="password" className="br2"></input>
                         <br />
                         <br />
-                        <Button variant="contained" size="large" id= "loginbutton" onClick={()=>{window.location.href="/profile"}}>Login</Button>
+                        <Button variant="contained" size="large" id= "loginbutton" onClick={()=>{changePage()}}>Login</Button>
                     </div>
                 </body>
             </React.Fragment>

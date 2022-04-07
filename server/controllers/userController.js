@@ -11,14 +11,21 @@ const signupUser = async (req, res) => {
 }
 
 const loginUser = async (req, res) => {
+    const db = mongoConnection.getDb();
     const email = await req.body.email;
     const password = await req.body.password;
-    const isCorrectPassword = await encrypt.checkHash(password, email);
-    if (isCorrectPassword) {
-        res.status(200).send('Email and password match!')
-    } else {
-        res.status(401).send('Incorrect password')
+    const validEmail = await db.collection('users').find({email: req.body.email});
+    const arrayEmail = await validEmail.toArray();
+    if (arrayEmail.length === 0) {
+        res.status(401).send("Invalid email");
+        return;
     }
+    const isCorrectPassword = await encrypt.checkHash(password, email);
+        if (isCorrectPassword) {
+            res.status(200).send('Email and password match!')
+        } else {
+            res.status(401).send('Incorrect password')
+        }
 }
 
 const createUser = async (req, res) => {
