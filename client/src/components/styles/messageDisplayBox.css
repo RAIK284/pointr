@@ -12,7 +12,8 @@
     border-radius: 20px;
 
     text-align: center;
-    align-items: center;
+    /* align-items: center; */
+    align-items: stretch;
     font-family: 'Poppins';
     color: #333333;
     flex-direction: column;
@@ -25,8 +26,8 @@
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
-    font-size: 40px;
-    line-height: 60px;
+    font-size: 2vw;
+    line-height: 3vw;
  
     letter-spacing: -0.015em;
 
@@ -35,8 +36,8 @@
 #username{
     font-style: italic;
     font-weight: 400;
-    font-size: 15px;
-    line-height: 27px;
+    font-size: 0.8vw;
+    line-height: 1.4vw;
     letter-spacing: -0.015em;
 
     margin-left: 5%;
@@ -47,8 +48,8 @@
 #messageBody{
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
-    line-height: 38px;
+    font-size: 0.9vw;
+    line-height: 2vw;
     display: flex;
     align-items: center;
     letter-spacing: -0.015em;

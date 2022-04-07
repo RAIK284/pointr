@@ -6,10 +6,7 @@ import './styles/carousel.css'
 
 // reference: https://github.com/express-labs/pure-react-carousel
 class Carousel extends React.Component {
-
     render() {
-
-      const images = this.props.images
         return (
             <CarouselProvider
               naturalSlideWidth={this.props.width}
@@ -18,24 +15,8 @@ class Carousel extends React.Component {
               isIntrinsicHeight={true}
               visibleSlides={this.props.visibleSlides}
             >
-              <Slider className="slider">
-                <div>
-                  {
-                  images.map((image,index) =>
-                    <Slide index={index} classname="img">
-                      <img 
-                      height={this.props.height} 
-                      width={this.props.width} 
-                      alt="Kachowski"
-                      className="img" 
-                      src={image}
-                      />
-                    </Slide>
-                  )
-                  }
-                </div>
-                
-                {/* <Slide index={0}>
+              <Slider>
+                <Slide index={0}>
                     <img 
                     height={this.props.height} 
                     width={this.props.width} 
@@ -48,7 +29,7 @@ class Carousel extends React.Component {
                     width={this.props.width} 
                     alt="Kachowski" 
                     src={this.props.images[1]}/>
-                </Slide> */}
+                </Slide>
               </Slider>
               <ButtonBack>Back</ButtonBack>
               <ButtonNext>Next</ButtonNext>

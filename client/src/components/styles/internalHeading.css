@@ -1,0 +1,23 @@
+h1#heading{
+    width: 25vw;
+    height: 10vh;
+    
+    left: 28%;
+    top: 4%;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 5vw;
+    line-height: 105px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.015em;
+
+    color: #333333;
+
+    /* THIS IS THE STUFF i HAVE TO CHANGE TO MAKE RELATIVE */
+} 

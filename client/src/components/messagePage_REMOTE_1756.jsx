@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import HeaderDrawer from "./headerDrawer.jsx";
 //reference: https://mui.com/components/drawers/
 
-class StorePage extends Component {
+class MessagePage extends Component {
     render() {
         return (
             <React.Fragment>
                 
-            <HeaderDrawer index={2}></HeaderDrawer>
+            <HeaderDrawer index={1}></HeaderDrawer>
                 <div id="content">
                 </div>
             </React.Fragment>
@@ -15,4 +15,4 @@ class StorePage extends Component {
     }
 }
 
-export default StorePage;
+export default MessagePage;
