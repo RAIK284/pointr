@@ -5,6 +5,12 @@
     /* background-color: antiquewhite; */
 }
 
+/* newMessage#newMessagePopup{
+    left: 371px;
+    top: 64px;
+    color: black;
+} */
+
 h1#heading{
     width: 359px;
     height: 105px;
@@ -30,7 +36,7 @@ h1#heading{
     position: relative;
     width: 60%;
     height: 65%;
-    left: 371px;
+    left: 28%;
     top: 25%;
 
     display: flex;
@@ -57,16 +63,16 @@ h1#heading{
 button#newMessage{
 
     position: relative;
-    width: 234px;
-    height: 45px;
-    left: 1102px;
-    top: 101px;
+    width: 25%;
+    height: 5%;
+    left: 70%;
+    top: 15%;
     
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
-    font-size: 30px;
-    line-height: 45px;
+    font-size: 2vw;
+    line-height: 5%;
     /* identical to box height */
     
     display: flex;

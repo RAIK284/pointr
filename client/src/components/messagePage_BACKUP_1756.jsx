@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import HeaderDrawer from "./headerDrawer.jsx";
+<<<<<<< HEAD
 import './styles/messagingPage.css';
 import Button from '@mui/material/Button';
 import MessageDisplayBox from "./messageDisplayBox";
 import NewMessage from "./newMessage.jsx";
 import { useState } from 'react';
+=======
+>>>>>>> origin/main
 //reference: https://mui.com/components/drawers/
 
 class MessagePage extends Component {
@@ -16,6 +19,7 @@ class MessagePage extends Component {
         return (
             
             <React.Fragment>
+<<<<<<< HEAD
 
 
                 <HeaderDrawer index={1}></HeaderDrawer>
@@ -91,6 +95,11 @@ class MessagePage extends Component {
 
 
 
+=======
+                
+            <HeaderDrawer index={1}></HeaderDrawer>
+                <div id="content">
+>>>>>>> origin/main
                 </div>
             </React.Fragment>
         );
