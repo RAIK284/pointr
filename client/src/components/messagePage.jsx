@@ -3,18 +3,29 @@ import HeaderDrawer from "./headerDrawer.jsx";
 import './styles/messagingPage.css';
 import Button from '@mui/material/Button';
 import MessageDisplayBox from "./messageDisplayBox";
+import NewMessage from "./newMessage.jsx";
+import { useState } from 'react';
 //reference: https://mui.com/components/drawers/
 
 class MessagePage extends Component {
+
     render() {
+
+        // const [buttonPopup, setButtonPopup] = useState(false);
+
         return (
+            
             <React.Fragment>
-            <HeaderDrawer index={1}></HeaderDrawer>
-            <div id="messagingBackground">
+
+
+                <HeaderDrawer index={1}></HeaderDrawer>
+                <div id="messagingBackground">
+
+
                     <h1 id="heading">
                         Messages
                     </h1>
-                    <Button variant="text" id= "newMessage" onClick={()=>{window.location.href='/'}}>
+                    <Button variant="text" id= "newMessage" /*onClick={()=> setButtonPopup(true)}*/>
                         new message
                     </Button>
 
@@ -46,7 +57,7 @@ class MessagePage extends Component {
                         <MessageDisplayBox id="box11"></MessageDisplayBox>
 
                         <MessageDisplayBox id="box12"></MessageDisplayBox>
-                      
+                    
                         <MessageDisplayBox id="box13"> </MessageDisplayBox>
                 
                         <MessageDisplayBox id="box14"> </MessageDisplayBox>
@@ -71,7 +82,16 @@ class MessagePage extends Component {
 
                         <MessageDisplayBox id="box24"></MessageDisplayBox>
                     </div>
-            </div>
+
+                    {/* new message popup code here */}
+                    <NewMessage trigger={true}>
+                        <h2>My Popup</h2>
+                        <p>This is my button triggered popup</p>
+                    </NewMessage>
+
+
+
+                </div>
             </React.Fragment>
         );
     }
