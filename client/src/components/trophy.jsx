@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import './styles/trophy.css';
 import Button from '@mui/material/Button';
+import ducky from './images/ducky.png'
+
 
 class Trophy extends Component {
 
@@ -11,7 +13,7 @@ class Trophy extends Component {
                 
                 <div className="trophyDisplay">
                     <div>
-                        <img></img>
+                        <img src={ducky}/>
                     </div>
 
                     <div id="trophyTitle">
