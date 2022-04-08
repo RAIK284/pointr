@@ -11,6 +11,7 @@
 {
     font-size: 70px;
     display: inline;
+    font-weight: bold;
     font-family: Poppins;
 }
 #sub
@@ -26,4 +27,20 @@ image
 {
     height: 15px;
     width: 15px
+}
+#leaderboard
+{
+    font-size: 40px;
+}
+.rank
+{
+    color: blue;
+    display: inline;
+    font-weight: bold;
+}
+.stats
+{
+    display: inline;
+    font-size: 40px;
+    margin-right: 18rem;
 }

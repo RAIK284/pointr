@@ -28,9 +28,9 @@ class ProfilePage extends Component {
             <div id="content">
                 <br />
                 <br />
-                <h2>
-                    Leaderboard Rank 1
-                </h2>
+                <p id="leaderboard">
+                    Leaderboard Rank <div class="rank">1</div>                
+                </p>
                 <br />
                 <br />
                 <Carousel 
@@ -42,8 +42,8 @@ class ProfilePage extends Component {
                 />
                 <br />
                 <br />
-                <p>messaging points 100</p>
-                <p>FUNds 20,000</p>
+                <p class="stats">messaging points <div class="rank">100</div></p>
+                <p class="stats">FUNds <div class="rank">20,000</div></p>
             </div>
             </React.Fragment>
         );
