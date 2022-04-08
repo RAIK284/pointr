@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import HeaderDrawer from "./headerDrawer.jsx";
 //reference: https://mui.com/components/drawers/
 
-class SettignsPage extends Component {
+class SettingsPage extends Component {
     render() {
         return (
             <React.Fragment>
@@ -15,4 +15,4 @@ class SettignsPage extends Component {
     }
 }
 
-export default SettignsPage;
+export default SettingsPage;
