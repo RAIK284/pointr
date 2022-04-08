@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import HeaderDrawer from "./headerDrawer.jsx";
 import InternalHeading from "./internalHeading"
 import Button from '@mui/material/Button';
-import './styles/settingsPage.css';
+import './styles/signUp.css';
 import {verifyPassword} from "./scripts/signUpValidation.js"
 import {verifyEmail} from "./scripts/signUpValidation.js"
 import {verifyName} from "./scripts/signUpValidation.js"
