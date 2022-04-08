@@ -8,6 +8,10 @@ module.exports = (app) => {
 
     router.post('/api/login', userController.loginUser);
 
+    router.get('/api/existingUser', userController.isExistingUser);
+
+    router.get('/api/existingEmail', userController.isExistingEmail);
+
     router.get('/api/user', userController.readUser);
 
     router.post('/api/user', userController.createUser);
