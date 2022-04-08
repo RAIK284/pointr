@@ -11,6 +11,9 @@ import ProfilePage from './profilePage';
 import SignUp from './singUp';
 import MessagingPage from './messagingPage';
 import StorePage from './storePage';
+import LeaderBoardPage from './leaderboardPage';
+import SettingsPage from './settingsPage';
+import ExplorePage from './explorePage';
   
 class WebsiteRouter extends Component {
     render() {
@@ -24,6 +27,9 @@ class WebsiteRouter extends Component {
               <Route path="/signup" element={<SignUp/>}/>
               <Route path="/messages" element={<MessagingPage/>}/>
               <Route path="/store" element={<StorePage/>}/>
+              <Route path="/leaderboard" element={<LeaderBoardPage/>}/>
+              <Route path="/settings" element={<SettingsPage/>}/>
+              <Route path="/explore" element={<ExplorePage/>}/>
             </Routes>
           </BrowserRouter>
         </React.Fragment>
