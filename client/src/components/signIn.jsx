@@ -7,7 +7,6 @@ import {validateUser} from './scripts/signInValidation.js';
 
 class SignIn extends Component {
     render() {
-
         const checkresponse = async (response) => {
             console.log(response)
             if (response !== -1) {
