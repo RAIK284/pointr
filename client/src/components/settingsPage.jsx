@@ -115,11 +115,11 @@ class SettingsPage extends Component {
                     <label htmlFor="bio" className="entryLabel">Change bio</label>
                     <input id = "bio" type="text" name="bio" value={this.state.bio} onChange={this.handleChange} placeholder="Enter new bio" className="entry" required></input>
 
-                    <label htmlFor="bio" className="entryLabel">Display my information publicly</label>
-                    <input type="checkbox" name="privacy" checked={this.state.isPrivate} onChange={this.handleChange} required></input>
+                    <label htmlFor="privacy" className="entryLabel">Display my information publicly</label>
+                    <input type="checkbox" name="privacy" checked={this.state.isPrivate} onChange={this.handleChange} onClick={ () => { this.setState({ isPrivate: !this.state.isPrivate })}} required></input>
 
-                    <label htmlFor="bio" className="entryLabel">Receive email notifications</label>
-                    <input type="checkbox" name="notifications" checked={this.state.notifications} onChange={this.handleChange} required></input>
+                    <label htmlFor="notifications" className="entryLabel">Receive email notifications</label>
+                    <input type="checkbox" name="notification" checked={this.state.notifications} onChange={this.handleChange} onClick={ () => {this.setState({ notifications: !this.state.notifications })}} required></input>
 
                     <Button variant="contained" size="large" onClick={async () => await this.handleSubmit()}>Save</Button>
                    {/* This will be a logout button. <Button variant="contained" size="large" onClick={}>Logout</Button>*/}
