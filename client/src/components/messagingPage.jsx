@@ -4,11 +4,14 @@ import Button from '@mui/material/Button';
 import MessageDisplayBox from "./messageDisplayBox";
 import InternalHeading from "./internalHeading";
 import HeaderDrawer from "./headerDrawer";
+import NewMessage from "./newMessage";
 
 class MessagingPage extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            newMessage: false
+        }
     }
 
     async componentDidMount() {
@@ -35,7 +38,7 @@ class MessagingPage extends Component {
                   
                     <InternalHeading title="Messages"></InternalHeading>
 
-                    <Button variant="text" id= "newMessage" onClick={()=>{window.location.href='/'}}>
+                    <Button variant="text" id= "newMessage" onClick={()=> this.setState({newMessage: true})}>
                         new message
                     </Button>
 
@@ -47,6 +50,14 @@ class MessagingPage extends Component {
                     </div>
 
                 </div>
+
+                <NewMessage trigger={this.state.newMessage}>
+                    <h2>My Popup</h2>
+                    <p>This is my button triggered popup</p>
+                    <button className = 'closeButton' onClick={()=> this.setState({newMessage: false})}>
+                        XX
+                    </button>
+                </NewMessage>
             </React.Fragment>
         );
 

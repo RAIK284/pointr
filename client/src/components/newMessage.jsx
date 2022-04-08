@@ -8,7 +8,9 @@ function NewMessage(props){
 
             <div className = 'newMessage'>
                 <div className = 'newMessageInner'>
-                    <button className = 'closeButton'>X</button>
+                    {/* <button className = 'closeButton' onClick={()=> this.setState({newMessage: false})}>
+                        X
+                    </button> */}
                     {props.children}
                 </div>
 
@@ -18,3 +20,32 @@ function NewMessage(props){
 }
 
 export default NewMessage
+
+// import MessagingPage from "./messagingPage";
+
+
+// class NewMessage extends Component {
+//     constructor(props) {
+//         super(props);
+//         this.newMessage = this.newMessage.bind(this)
+
+//     }
+
+//     render() {
+//         return(
+//             <React.Fragment >
+    
+//                 <div className = 'newMessage'>
+//                     <div className = 'newMessageInner'>
+//                         <button className = 'closeButton' onClick={()=> this.setState({newMessage: false})}>
+//                             X
+//                         </button>
+//                     </div>
+    
+//                 </div>
+//             </React.Fragment>
+    
+//         )
+    
+//     }
+// }
