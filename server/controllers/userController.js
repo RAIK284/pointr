@@ -78,9 +78,14 @@ const readUser = (req, res) => {
 
 const updateUser = async (req, res) => {
     const db = mongoConnection.getDb();
+    if (req.body.password !== undefined) {
+        req.body.password = await encrypt.createHash(req.body.password);
+    }
+    console.log(req.body.password)
     for (let key in req.body) {
         await updateUserHelper(db, key, req);
     }
+
     res.status(200).send('Updated user');
 }
 
