@@ -12,7 +12,7 @@ class Trophy extends Component {
                     
                 
                 <div className="trophyDisplay">
-                    <div>
+                    <div id="trophyImage">
                         <img src={ducky}/>
                     </div>
 

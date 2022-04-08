@@ -20,6 +20,11 @@
     margin-bottom: 2.5%;
 }
 
+#trophyImage{
+    height: auto;
+    width: auto;
+}
+
 #trophyTitle{ /* need to format */
     font-family: 'Poppins';
     font-style: normal;
