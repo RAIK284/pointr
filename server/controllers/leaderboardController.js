@@ -19,13 +19,15 @@ const readLeaderboard = async (req, res) => {
 const getLeaderboardData = async () => {
     const db = mongoConnection.getDb();
     const userList = [];
-    // Passing in an empty object for the search parameter in find() gives back even item in the collection
+    // Passing in an empty object for the search parameter in find() gives back every item in the collection
     const users = await db.collection('users').find({}).toArray();
     await users.forEach((user) => {
-        userList.push({
-            "username": user.username,
-            "messagingPoints": user.messagingPoints
-        });
+        if (user.isPrivate === false) {
+            userList.push({
+                "username": user.username,
+                "messagingPoints": user.messagingPoints
+            });
+        }
     })
     const sortedList = (await sortUserList(userList))
     const result = await sortedList;
