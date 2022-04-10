@@ -68,6 +68,7 @@ html, root, body {
     height: 2rem;
     width: 2rem;
     margin-left: 3rem;
+    margin-top: 0.5rem;
 }
 
 .checkboxLabel {
