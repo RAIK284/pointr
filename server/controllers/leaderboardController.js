@@ -25,7 +25,7 @@ const getLeaderboardData = async () => {
         if (user.isPrivate === false) {
             userList.push({
                 "username": user.username,
-                "messagingPoints": user.messagingPoints
+                "allTimeFunds": user.allTimeFunds
             });
         }
     })
@@ -35,12 +35,13 @@ const getLeaderboardData = async () => {
 }
 
 const sortUserList = async (userList) => {
-    // Sorts the returned user objects by their messagingPoints
-    userList.sort((a,b) => (a.messagingPoints < b.messagingPoints) ? 1 : -1);
+    // Sorts the returned user objects by their allTimeFunds
+    userList.sort((a,b) => (a.allTimeFunds < b.allTimeFunds) ? 1 : -1);
     return userList;
 }
 
 const getTopUsers = async (data, numRequested) => {
+    // Uses the "top" query to make an array containing only the amount of users requested
     const result = [];
     for (let i = 0; i < numRequested; i++) {
         result.push(data[i]);

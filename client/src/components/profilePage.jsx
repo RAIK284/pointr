@@ -19,6 +19,7 @@ class ProfilePage extends Component {
             trophies: [],
             messagingPoints: 0,
             funds: 0,
+            allTimefunds: 0,
             leaderboardRank: "?"}
     }
 
@@ -36,8 +37,9 @@ class ProfilePage extends Component {
                 bio: data.bio,
                 trophies: data.trophies,
                 messagingPoints: data.messagingPoints,
-                funds: data.funds
-            }))
+                funds: data.funds,
+                allTimeFunds: data.allTimeFunds
+            }));
     }
 
     async getLeaderboardInformation () {

@@ -12,7 +12,8 @@ const jsonBody = {
     "inventoryId": "",
     "lastLogin": "",
     "isPrivate": false,
-    "messagesReceived": []
+    "notifications" : false,
+    "trophies": []
 }
 
 // Names can only be characters a-z
