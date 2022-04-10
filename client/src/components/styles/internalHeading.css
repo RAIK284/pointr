@@ -1,9 +1,12 @@
 h1#heading{
-    width: 25vw;
-    height: 10vh;
+    position: static;
+    width: 25%;
+    height: 10%;
     
-    left: 28%;
+    left: 25%;
     top: 4%;
+
+    margin-left: 25%;
 
     font-family: 'Poppins';
     font-style: normal;

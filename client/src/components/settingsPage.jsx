@@ -96,8 +96,8 @@ class SettingsPage extends Component {
     render() {
         return (
             <React.Fragment>
+                <InternalHeading className={"settings-heading"} title="Settings"></InternalHeading>
                     <div id="content">
-                        <InternalHeading className={"settings-heading"} title="Settings"></InternalHeading>
                         <HeaderDrawer index={5}></HeaderDrawer>
                         <div id="main-settings-container">
                             <label htmlFor="name" className="entryLabel">Change name</label>
