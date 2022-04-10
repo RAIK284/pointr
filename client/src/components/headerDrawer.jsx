@@ -25,7 +25,7 @@ class HeaderDrawer extends React.Component {
                     window.location.href="/profile"
                     break;
                 case 1:
-                    window.location.href="/message"
+                    window.location.href="/messages"
                     break;
                 case 2:
                     window.location.href="/store"

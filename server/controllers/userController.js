@@ -28,6 +28,30 @@ const loginUser = async (req, res) => {
         }
 }
 
+const isExistingUser = async (req, res) => {
+    const db = mongoConnection.getDb();
+    const validUsername = await db.collection('users').find({username: req.query.username});
+    const arrayUsername = await validUsername.toArray();
+    if (arrayUsername.length > 0 ) {
+        res.status(401).send("Existing user");
+        return;
+    } else {
+        res.status(200).send("User does not exist")
+    }
+}
+
+const isExistingEmail = async (req, res) => {
+    const db = mongoConnection.getDb();
+    const validEmail = await db.collection('users').find({email: req.query.email});
+    const arrayEmail = await validEmail.toArray();
+    if (arrayEmail.length > 0) {
+        res.status(401).send("Email in use");
+        return;
+    } else {
+        res.status(200).send("Email does not exist")
+    }
+}
+
 const createUser = async (req, res) => {
     const db = mongoConnection.getDb();
     const user = req.body;
@@ -54,9 +78,14 @@ const readUser = (req, res) => {
 
 const updateUser = async (req, res) => {
     const db = mongoConnection.getDb();
+    if (req.body.password !== undefined) {
+        req.body.password = await encrypt.createHash(req.body.password);
+    }
+    console.log(req.body.password)
     for (let key in req.body) {
         await updateUserHelper(db, key, req);
     }
+
     res.status(200).send('Updated user');
 }
 
@@ -81,5 +110,7 @@ module.exports = {
     updateUser,
     deleteUser,
     signupUser,
-    loginUser
+    loginUser,
+    isExistingUser,
+    isExistingEmail
 }

@@ -10,16 +10,64 @@ import './styles/profilePage.css';
 
 const drawerWidth = 240;
 class ProfilePage extends Component {
+    constructor(props) {
+        super(props);
+        this.state =
+            {name: '',
+            username: '',
+            bio: '',
+            trophies: [],
+            messagingPoints: 0,
+            funds: 0,
+            leaderboardRank: "?"}
+    }
+
+    async componentDidMount() {
+        await this.getUserInformation();
+        await this.getLeaderboardInformation();
+    }
+
+    async getUserInformation() {
+        await fetch('http://localhost:8080/api/user?username=bsimpleman')
+            .then(response => response.json())
+            .then(data => this.setState({
+                name: data.name,
+                username: data.username,
+                bio: data.bio,
+                trophies: data.trophies,
+                messagingPoints: data.messagingPoints,
+                funds: data.funds
+            }))
+    }
+
+    async getLeaderboardInformation () {
+        await fetch('http://localhost:8080/api/leaderboard')
+            .then(response => response.json())
+            .then(data => {this.getUserRank(data)})
+    }
+
+    async getUserRank(data) {
+        let rank = 1;
+        data.forEach((user) => {
+            if (user.username === this.state.username) {
+                this.setState({leaderboardRank: rank})
+            } else {
+                rank++;
+            }
+        })
+    }
+
+
     render() {
         return (
             <React.Fragment>
                 
             <div id="header">
                 <p id="welcome">
-                    Welcome Name.
+                    Welcome {this.state.name}
                 </p>
                 <p id="sub">
-                    Hi! I'm name, and I like to hobby! Message me your favorite quote.
+                    {this.state.bio}
                 </p>
             </div>
 
@@ -29,7 +77,7 @@ class ProfilePage extends Component {
                 <br />
                 <br />
                 <p id="leaderboard">
-                    Leaderboard Rank <div class="rank">1</div>                
+                    Leaderboard Rank <div class="rank">{this.state.leaderboardRank}</div>
                 </p>
                 <br />
                 <br />
@@ -42,8 +90,8 @@ class ProfilePage extends Component {
                 />
                 <br />
                 <br />
-                <p class="stats">messaging points <div class="rank">100</div></p>
-                <p class="stats">FUNds <div class="rank">20,000</div></p>
+                <p class="stats">messaging points <div class="rank"> {this.state.messagingPoints}</div></p>
+                <p class="stats">FUNds <div class="rank">{this.state.funds} </div></p>
             </div>
             </React.Fragment>
         );

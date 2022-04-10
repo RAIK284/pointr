@@ -8,7 +8,7 @@ import {
     Route  } from "react-router-dom";
 import HomePage from './homePage';
 import ProfilePage from './profilePage';
-import SignUp from './singUp';
+import SignUp from './signUp';
 import MessagingPage from './messagingPage';
 import StorePage from './storePage';
 import ExplorePage from './explorePage'
