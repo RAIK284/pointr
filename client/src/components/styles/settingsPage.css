@@ -16,13 +16,25 @@ html, root, body {
     justify-content: right;
 }
 
-.entryLabel {
+.settingsLabel {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 0;
+    /* or 126% */
+
+    letter-spacing: -0.015em;
+    padding: 0;
+
+    color: #333333;
+
     padding-left: 2%;
     width: 100%;
     margin: 1%;
 }
 
-.entry {
+.settingsEntry {
     border: 3px solid rgba(51, 51, 51, 0.3);
     box-sizing: border-box;
     border-radius: 20px;

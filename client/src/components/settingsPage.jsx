@@ -100,15 +100,15 @@ class SettingsPage extends Component {
                         <InternalHeading className={"settings-heading"} title="Settings"></InternalHeading>
                         <HeaderDrawer index={5}></HeaderDrawer>
                         <div id="main-settings-container">
-                            <label htmlFor="name" className="entryLabel">Change name</label>
-                            <input type="text" name="name" value={this.state.name} onChange={this.handleChange} placeholder="Enter new name" className="entry" required></input>
+                            <label htmlFor="name" className="settingsLabel">Change name</label>
+                            <input type="text" name="name" value={this.state.name} onChange={this.handleChange} placeholder="Enter new name" className="settingsEntry" required></input>
 
-                            <label htmlFor="password" className="entryLabel">Change password</label>
-                            <input type="text" name="password" value={this.state.password} onChange={this.handleChange} placeholder="Enter new password" className="entry" required></input>
-                            <input type="text" name="passwordConfirmation" value={this.state.passwordConfirmation} onChange={this.handleChange} placeholder="Confirm new password" className="entry" required></input>
+                            <label htmlFor="password" className="settingsLabel">Change password</label>
+                            <input type="text" name="password" value={this.state.password} onChange={this.handleChange} placeholder="Enter new password" className="settingsEntry" required></input>
+                            <input type="text" name="passwordConfirmation" value={this.state.passwordConfirmation} onChange={this.handleChange} placeholder="Confirm new password" className="settingsEntry" required></input>
 
-                            <label htmlFor="bio" className="entryLabel">Change bio</label>
-                            <input id = "bio" type="text" name="bio" value={this.state.bio} onChange={this.handleChange} placeholder="Enter new bio" className="entry" required></input>
+                            <label htmlFor="bio" className="settingsLabel">Change bio</label>
+                            <input id = "bio" type="text" name="bio" value={this.state.bio} onChange={this.handleChange} placeholder="Enter new bio" className="settingsEntry" required></input>
                             {/* This will be a logout button. <Button variant="contained" size="large" onClick={}>Logout</Button>*/}
                         </div>
                         <div id={"bottom-options"}>
