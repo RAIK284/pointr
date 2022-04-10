@@ -22,8 +22,6 @@ class MessagingPage extends Component {
         console.log(this.state.data)
         let messages = [];
 
-        console.log()
-
         for (let i = 0; i < this.state.data.length; i++) {
             messages.push(<MessageDisplayBox name={this.state.data[i].name} username={this.state.data[i].sender} messageBody={this.state.data[i].messageBody}></MessageDisplayBox>);
         }

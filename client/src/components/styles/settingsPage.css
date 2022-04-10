@@ -5,12 +5,13 @@ html, root, body {
 }
 
 #main-settings-container {
+    float: top;
     display: flex;
     flex-wrap: wrap;
     height: 100%;
     width: 90%;
 
-    margin-top: 13%;
+    margin-top: 3%;
 
     align-content: flex-start;
     justify-content: right;
