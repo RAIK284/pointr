@@ -9,7 +9,6 @@
     width: 60%;
     height: 65%;
     left: 371px;
-    top: 25%;
 
     display: flex;
     flex-direction: row;
@@ -31,25 +30,4 @@
 
 
 
-}
-
-h1#heading{
-    width: 359px;
-    height: 105px;
-    left: 371px;
-    top: 64px;
-
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 70px;
-    line-height: 105px;
- 
-
-    display: flex;
-  
-    text-align: center;
-    letter-spacing: -0.015em;
-
-    color: #333333;
 }

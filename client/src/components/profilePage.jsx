@@ -84,10 +84,10 @@ class ProfilePage extends Component {
                 <br />
                 <br />
                 <Carousel 
-                    height={300} 
-                    width={300} 
-                    numslides={6} 
-                    images={[ducky, ducky, ducky, ducky, ducky, ducky]}
+                    height={200} 
+                    width={200} 
+                    numslides={4} 
+                    images={[ducky, ducky, ducky, ducky]}
                     visibleSlides={3}
                 />
                 <br />

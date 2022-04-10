@@ -84,7 +84,7 @@ export function verifyPassword(password) {
     if ([...password].length < 8){
         return "Password is too short! It must be at least 8 characters long"
     } else if ([...password].length > 30) {
-        return "Passwords must be under 25 characters long"
+        return "Passwords must be under 30 characters long"
     } else if (!password.match(/^[0-9A-Za-z]+$/)) {
         return "Invalid password. Only characters a-z and 0-9 are allowed"
     } else if (!(/\d/.test(password))) {
@@ -94,5 +94,4 @@ export function verifyPassword(password) {
     } else {
         return true;
     }
-
 }

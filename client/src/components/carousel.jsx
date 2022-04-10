@@ -17,9 +17,10 @@ class Carousel extends React.Component {
               totalSlides={this.props.numslides}
               isIntrinsicHeight={true}
               visibleSlides={this.props.visibleSlides}
+              step={1}
             >
-              <Slider className="slider">
-                <div>
+              <Slider>
+                <div classname="slider">
                   {
                   images.map((image,index) =>
                     <Slide index={index} classname="img">
