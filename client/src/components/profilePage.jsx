@@ -19,7 +19,7 @@ class ProfilePage extends Component {
             trophies: [],
             messagingPoints: 0,
             funds: 0,
-            leaderboardRank: 0}
+            leaderboardRank: "?"}
     }
 
     async componentDidMount() {
