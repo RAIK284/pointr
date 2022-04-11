@@ -26,6 +26,7 @@
     width: 64%;
     height: 41%;
     margin-top: 15%;
+    display: inline-block;
     
 }
 
@@ -68,9 +69,11 @@
     font-size: 30px;
     line-height: 45px;
 
-    display: flex;
-    
+    display: inline-block;
     text-align: center;
+
+    
+   
     letter-spacing: -0.015em;
 
     color: #333333;
@@ -116,7 +119,7 @@ button#addToProfile{
     border-radius: 20px;
 
     text-align: center;
-    align-items: stretch;
+    align-items: center;
     font-family: 'Poppins';
     color: #333333;
     flex-direction: column;
