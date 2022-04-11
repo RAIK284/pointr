@@ -11,24 +11,14 @@ class Trophy extends Component {
             <React.Fragment >
                     
                 
-                <div className="trophyDisplay">
-                    <div id="trophyImage">
-                        <img src={ducky}/>
+                <div className="storeDisplay">
+                     
+                        <img src={ducky} id="trophyImageSmall"/>
+
+                    <div id="trophyCostSmall">
+                        <text>100 fds</text> 
                     </div>
 
-                    <div id="trophyTitle">
-                        <text>Trophy Title</text>
-                    </div>
-
-                    <div id="trophyDescription">
-                        <text>This is where the trophy's description will go.</text>
-                    </div>
-
-                    <div id="trophyCost">
-                        <text>Cost: 100</text> 
-                    </div>
-
-                    <Button variant="contained" id="addToProfile" onClick={()=>{window.location.href='/store'}}>Add to My Profile</Button>
 
                 </div>
                 

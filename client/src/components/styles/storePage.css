@@ -1,15 +1,15 @@
-#storeBackground{
+/* #storeBackground{
     width: 100vw;
     height: 100vh;
 
-}
+}*/
 
 #trophyDisplay{
     position: relative;
-    width: 60%;
-    height: 65%;
-    left: 371px;
-    top: 25%;
+    width: 71vw;
+    height: 43vh;
+    margin-top: 51vh;
+    margin-left: 25vw;
 
     display: flex;
     flex-direction: row;

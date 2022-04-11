@@ -1,9 +1,8 @@
-.trophyDisplay{ /* need to format */
+/*.trophyDisplay{
     position: relative;
     width: 20vw;
     height: 50vh;
-    /* left: 40%;
-    top: 25vh; */
+    
 
     background: rgba(0, 100, 255, 0.3);
     border-radius: 20px;
@@ -12,18 +11,22 @@
     border-radius: 20px;
 
     text-align: center;
-    align-items: center;
+    align-items: stretch;
     font-family: 'Poppins';
     color: #333333;
     flex-direction: column;
-    margin-top: 2.5%;
+    /*margin-top: 2.5%;
     margin-bottom: 2.5%;
-}
+} */
 
-#trophyImage{
+#trophyImageSmall{
     object-fit: contain;
-    max-width: 100%;
-    max-height: 100%;
+    /*background-size: contain;
+    background-repeat: no-repeat; */
+    width: 64%;
+    height: 41%;
+    margin-top: 15%;
+    
 }
 
 #trophyTitle{ /* need to format */
@@ -34,6 +37,8 @@
     line-height: 60px;
  
     letter-spacing: -0.015em;
+
+    margin-top: 30%;
 }
 
 
@@ -53,18 +58,23 @@
     margin-bottom: 5%;
 }
 
-#trophyCost{
+#trophyCostSmall{
+    margin-left: 14%;
+    margin-top: 20%;
+    
     font-family: 'Poppins';
-    font-style: italic;
+    font-style: normal;
     font-weight: 700;
     font-size: 30px;
     line-height: 45px;
+
     display: flex;
-    align-items: center;
+    
     text-align: center;
     letter-spacing: -0.015em;
 
-    color: #FFFFFF;
+    color: #333333;
+   
 
 }
 
@@ -90,5 +100,28 @@ button#addToProfile{
     letter-spacing: -0.015em;
 
     color: #FFFFFF;
+
+}
+
+.storeDisplay{
+    position: relative;
+    width: 20%;
+    height: 75%;
+    top: 10%;
+
+    background: rgba(0, 100, 255, 0.3);
+    border-radius: 20px;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+
+    text-align: center;
+    align-items: stretch;
+    font-family: 'Poppins';
+    color: #333333;
+    flex-direction: column;
+}
+
+.singleDisplay{
 
 }
