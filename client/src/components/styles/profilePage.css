@@ -5,6 +5,7 @@
 #header {
     margin-left: 14rem;
     padding-left: 4rem;
+    padding-top: 3%;
     background-color: #65D7C0;
 }
 #welcome
@@ -31,6 +32,7 @@ image
 #leaderboard
 {
     font-size: 40px;
+    margin: 0 0 3%;
 }
 .rank
 {
@@ -43,4 +45,38 @@ image
     display: inline;
     font-size: 40px;
     margin-right: 18rem;
+}
+
+#stats-container {
+    margin-top: 7.5%;
+}
+
+#carousel-container {
+    display: inline-block;
+    width: 90%;
+
+    margin-top: 1%;
+
+    border-radius: 25px;
+    background: rgba(51, 51, 51, 0.1);
+
+}
+
+.trophiesLabel {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 0;
+    /* or 126% */
+
+    width: 60%;
+
+    letter-spacing: -0.015em;
+
+
+    margin-top: 10%;
+    padding: 0;
+
+    color: #333333;
 }

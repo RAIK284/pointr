@@ -25,6 +25,8 @@ require('./routes/leaderboardRoutes')(app);
 require('./routes/messagingTokenRoutes')(app);
 require('./routes/storeItemRoutes')(app);
 require('./routes/messageRoutes')(app);
+require('./routes/trophyRoutes')(app);
+
 
 // Listen to our environment port, or port 8080 if the environment port has not been set
 const PORT = process.env.PORT || 8080;
