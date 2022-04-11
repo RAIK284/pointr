@@ -41,6 +41,44 @@
     border-radius: 20px;
 }
 
+#mostPopTitle{
+  position:relative;
+  margin-left: 3%;
+  margin-top: 1%;
+
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 68px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.015em;
+
+  color: #333333;
+
+}
+
+#mostPopSubtitle{
+  position:relative;
+  margin-left: 3%;
+  margin-top: 2%;
+
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 45px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.015em;
+
+  color: #333333;
+
+}
+
 
 .storeBackground{
   height:100vh;

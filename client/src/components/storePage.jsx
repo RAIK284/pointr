@@ -34,7 +34,8 @@ class StorePage extends Component {
                 </div>
 
                 <div id="mostPopularDisplay">
-
+                    <text id="mostPopTitle">Today's Most Popular</text>
+                    <text id="mostPopSubtitle">Explore today's most popular trophies!</text>
                 </div>
 
 
