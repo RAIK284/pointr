@@ -15,9 +15,7 @@ class StorePage extends Component {
             trophySingle : false
         }
     }
-  /* state = {
-      isOpen : false
-  } */
+  
     render() {
         return (
             
@@ -42,15 +40,16 @@ class StorePage extends Component {
                          <TrophySingle className="singleDisplay" isOpen={this.state.isOpen} onClose={(e) => this.setState({ isOpen: false })}></TrophySingle>
                     </div> */}
                     
-                    <TrophySingle className="singleDisplay" trigger={this.state.trophySingle}>
-                        <h2>My Popup</h2>
-                        <p>This is my button triggered popup</p>
-                        <button className = 'closeButton' onClick={()=> this.setState({newMessage: false})}>
+                    <TrophySingle trigger={this.state.trophySingle}>
+                        {/* <h2>My Popup</h2>
+                        <p>This is my button triggered popup</p> */}
+                        {/* <button className = 'closeButton' onClick={()=> this.setState({newMessage: false})}>
                             XX
-                        </button>
+                        </button> */}
                     </TrophySingle>
 
-            
+                   
+
                     
                    
 

@@ -41,7 +41,22 @@
 }
 
 .singleDisplay{
+    position: relative;
+    width: 30%;
+    height: 80%;
+    
+    flex-direction: column;
+    
 
+    background: #0265FF;
+    border: 6px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 20px;
+   
+
+}
+
+.trophySingleBG {
     position: fixed;
     top: 0;
     left: 0;
@@ -54,32 +69,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-   /*  position: absolute;
-    width: 589px;
-    height: 810px;
-    left: 462px;
-    top: 86px;
-    /*width: 30%;
-    height: 82vh; 
-    margin-left: 35%;
-    margin-top: 5%;*/
-   
-    
-    
-
-    /* background: #0265FF;
-    border: 6px solid #FFFFFF;
-    box-sizing: border-box;
-    border-radius: 20px;
-
-    text-align: center;
-    align-items: stretch;
-    font-family: 'Poppins';
-    color: #333333;
-    flex-direction: column;  */
-    
-
 }
 
 #trophyImageSmall{
@@ -232,10 +221,4 @@ button#closeButton {
 };
 
 
-.fill-window {
-    height: 100%;
-    position: absolute;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-}
+
