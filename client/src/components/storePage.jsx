@@ -30,9 +30,13 @@ class StorePage extends Component {
             <div className="storeBackground">
                 <div id="fundsAmountWrapper">
                     <text id="fundsAmountText">FUNDs available:</text>
-                   
                     <var id="fundsAmountNum">20,000</var>
                 </div>
+
+                <div id="mostPopularDisplay">
+
+                </div>
+
 
                 <div id="trophyDisplay" onClick={()=> this.setState({trophySingle: true})}>
                 
