@@ -79,7 +79,7 @@
 
 }
 
-#mostPopImg{
+.mostPopImg{
   width:17%;
   height:70%;
   object-fit: contain;
@@ -89,6 +89,13 @@
   margin-left: 78%;
 }
 
+.mostPopImg:hover{
+  position: relative; 
+             top: -10px;
+    
+    transition: margin 0.8s linear;
+    cursor:pointer;
+}
 
 .storeBackground{
   height:100vh;
