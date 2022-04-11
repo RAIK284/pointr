@@ -42,15 +42,15 @@
 
 .singleDisplay{
 
-    position: relative;
-    /*width: 589px;
+    position: absolute;
+    width: 589px;
     height: 810px;
     left: 462px;
-    top: 86px;*/
-    width: 30%;
+    top: 86px;
+    /*width: 30%;
     height: 82vh; 
     margin-left: 35%;
-    margin-top: 5%;
+    margin-top: 5%;*/
    
     
     
@@ -205,4 +205,24 @@ button#addToProfile{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+
+button#closeButton {
+   
+    borderRadius: '50%';
+    border: 'none';
+    width: '30px';
+    height: '30px';
+    fontWeight: 'bold';
+    alignSelf: 'flex-end';
+};
+
+
+.fill-window {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
 }

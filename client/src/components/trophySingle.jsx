@@ -3,17 +3,6 @@ import './styles/trophy.css';
 import Button from '@mui/material/Button';
 import ducky from './images/ducky.png'
 
-let dialogCloseButtonStyles = {
-    marginBottom: '15px',
-    padding: '3px 8px',
-    cursor: 'pointer',
-    borderRadius: '50%',
-    border: 'none',
-    width: '30px',
-    height: '30px',
-    fontWeight: 'bold',
-    alignSelf: 'flex-end'
-};
 
 
 class TrophySingle extends Component{
@@ -24,7 +13,7 @@ class TrophySingle extends Component{
     <React.Fragment>
 
             <div className="singleDisplay">
-            <button style={dialogCloseButtonStyles} onClick={this.props.onClose}>x</button>
+            <button id="closeButton" onClick={this.props.onClose}>x</button>
 
                      
                 <img src={ducky} id="trophyImageLarge"/>
@@ -34,7 +23,7 @@ class TrophySingle extends Component{
                      <text>Trophy Title</text>
                  </div>
 
-              <div id="trophyDescription">
+                 <div id="trophyDescription">
                      <text>This is where the trophy's description will go.</text>
                   </div> 
 

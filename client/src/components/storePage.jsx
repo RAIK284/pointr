@@ -21,14 +21,21 @@ class StorePage extends Component {
                 
            <HeaderDrawer index={2}></HeaderDrawer>
             <InternalHeading title="Store"></InternalHeading>
-            
-                   <div id="trophyDisplay" >
+                <div className="storeBackground">
+                    <div id="trophyDisplay" >
                         <Trophy className="storeDisplay"></Trophy>
-                        
+                        <div className="fill-window">
+                         <TrophySingle className="singleDisplay" isOpen={this.state.isOpen} onClose={(e) => this.setState({ isOpen: false })}></TrophySingle>
+                        </div>
                     </div>
-            <TrophySingle className="singleDisplay" isOpen={this.state.isOpen} onClose={(e) => this.setState({ isOpen: false })}>
-                            <h3>Single Trophy</h3>
-            </TrophySingle>
+
+                    
+                  
+                </div>
+                    
+                   
+
+            
                     
             </React.Fragment>
         );
