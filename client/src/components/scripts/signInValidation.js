@@ -33,13 +33,13 @@ async function validateUser()  {
         // The response from signin only tells you if the user is valid. Does not return the actual user's data. Call the user endpoint to get that data.
         // const userData = await response.json();
         // console.log(userData)
-        return 1;
+        //return 1;
     } else {
         console.log("Incorrect email/password")
         return -1;
     }
 
-    return response.status;
+    return response;
 }
 
 export {validateUser};

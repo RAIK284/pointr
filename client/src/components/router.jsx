@@ -1,7 +1,7 @@
 import { useHistory } from 'react-router-dom';
 import React, { Component } from "react";
 //import HomePage from "./homePage";
-import SignIn from './signIn';
+import SignIn, { response1 } from './signIn';
 import {
     BrowserRouter,
     Routes,
@@ -23,7 +23,7 @@ class WebsiteRouter extends Component {
             <Routes>
               <Route path="/signin" element={<SignIn/>}/>
               <Route path="/" element={<HomePage/>}/>
-              <Route path="/profile" element={<ProfilePage/>}/>
+              <Route path="/profile" element={<ProfilePage userdata={response1.json}/>}/>
               <Route path="/signup" element={<SignUp/>}/>
               <Route path="/messages" element={<MessagingPage/>}/>
               <Route path="/store" element={<StorePage/>}/>

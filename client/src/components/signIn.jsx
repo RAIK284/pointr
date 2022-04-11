@@ -2,12 +2,16 @@ import React, { Component } from "react";
 import './styles/signIn.css';
 import Button from '@mui/material/Button';
 import {validateUser} from './scripts/signInValidation.js';
+import { response } from "express";
 //import Stack from '@mui/material/Stack';
 //import PropTypes from 'prop-types';
+
+let response1 = null;
 
 class SignIn extends Component {
     render() {
         const checkresponse = async (response) => {
+            response1 = response
             console.log(response)
             if (response !== -1) {
                 //Switch to profile page.
@@ -57,3 +61,4 @@ class SignIn extends Component {
 
 
 export default SignIn;
+export { response1 };

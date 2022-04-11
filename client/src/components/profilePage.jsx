@@ -98,9 +98,8 @@ class ProfilePage extends Component {
     }
 }
 
-// SignIn.propTypes = {
-//     field1: PropTypes.string.isRequired,
-//     field2: PropTypes.string.isRequired,
-// };
+ProfilePage.propTypes = {
+    userdata: PropTypes.object.isRequired,
+};
 
 export default ProfilePage;
