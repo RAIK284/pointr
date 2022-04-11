@@ -11,7 +11,7 @@ function TrophySingle(props){
             <div className="singleDisplay">
             
                      
-                     <img src={ducky} id="trophyImage"/>
+                <img src={ducky} id="trophyImageLarge"/>
                 
 
                  <div id="trophyTitle">
@@ -22,11 +22,13 @@ function TrophySingle(props){
                      <text>This is where the trophy's description will go.</text>
                   </div> 
 
-                 <div id="trophyCost">
-                     <text>Cost: 100</text> 
+                 <div id="trophyCostLarge">
+                     <text>Cost: 100 FUNds</text> 
                  </div>
 
-                 <Button variant="contained" id="addToProfile" onClick={()=>{window.location.href='/store'}}>Add to My Profile</Button>
+                <div id="buttonWrapper">
+                    <Button variant="contained" id="addToProfile" onClick={()=>{window.location.href='/store'}}>Add to My Profile</Button>
+                </div>
 
              </div>
 

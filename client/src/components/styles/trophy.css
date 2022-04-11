@@ -79,26 +79,47 @@
     margin-left: 20%;
 }
 
-#trophyTitle{ /* need to format */
+#trophyImageLarge{
+    object-fit: contain;
+    width: 64%;
+    height: 41%;
+    margin-top: 10%;
+    display: flex;
+    
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#trophyTitle{ 
+    position: relative;
+    margin-top: 5%;
+
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
-    font-size: 45px;
-    line-height: 68px;
+    font-size: 50px;
+    line-height: 45px;
     display: flex;
-    align-items: center;
+   
     text-align: center;
     letter-spacing: -0.015em;
-
+    
     color: #FFFFFF;
+
+    justify-content: center;
+
 
 }
 
 
-#trophyDescription{ /* need to format */
+#trophyDescription{ 
+    
+    position: relative;
+    margin-top: 5%;
     font-family: 'Poppins';
     font-style: normal;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 30px;
     line-height: 45px;
     display: flex;
@@ -107,6 +128,9 @@
     letter-spacing: -0.015em;
     
     color: #FFFFFF;
+
+    justify-content: center;
+
 }
 
 #trophyCostSmall{
@@ -131,29 +155,54 @@
 
 }
 
-button#addToProfile{
+#trophyCostLarge{
+  
+    position: relative;
+    margin-top: 5%;
+    
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 45px;
 
+    display: flex;
+    text-align: center;
+
+    
+   
+    letter-spacing: -0.015em;
+
+    color: #FFFFFF;
+    justify-content: center;
+}
+
+button#addToProfile{
+    
     background: #02BA90;
     border-radius: 6px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
+    margin-top: 5%;
+    
     width: 53%;
     height: 7%;
 
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
-    font-size: 25px;
+    font-size: 20px;
     line-height: 45px;
-    /* identical to box height */
-
-    display: flex;
-    align-items: center;
-    text-align: center;
     letter-spacing: -0.015em;
 
     color: #FFFFFF;
-
     
+}
 
+#buttonWrapper{
+    position: relative;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
