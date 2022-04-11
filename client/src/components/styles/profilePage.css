@@ -3,14 +3,44 @@
 }
 
 #header {
+    margin-left: 14rem;
+    padding-left: 4rem;
     background-color: #65D7C0;
 }
-
+#welcome
+{
+    font-size: 70px;
+    display: inline;
+    font-weight: bold;
+    font-family: Poppins;
+}
+#sub
+{
+    font-size: 25px;
+    font-family: Poppins;
+}
 #content {
     margin-left: 18rem;
+    font-family: Poppins;
 }
 image 
 {
     height: 15px;
     width: 15px
+}
+#leaderboard
+{
+    font-size: 40px;
+}
+.rank
+{
+    color: blue;
+    display: inline;
+    font-weight: bold;
+}
+.stats
+{
+    display: inline;
+    font-size: 40px;
+    margin-right: 18rem;
 }

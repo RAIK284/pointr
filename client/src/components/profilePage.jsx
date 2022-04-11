@@ -1,17 +1,6 @@
 import React, { Component } from "react";
-import { MuiNavbar, NavItem } from 'mui-navbar';
-import Drawer from '@mui/material/Drawer';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import CssBaseline from '@mui/material/CssBaseline';
-import Box from '@mui/material/Box';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
 import Carousel from './carousel.jsx';
+//import car from './images/car.jpg';
 import ducky from './images/ducky.png'
 import HeaderDrawer from "./headerDrawer.jsx";
 //reference: https://mui.com/components/drawers/
@@ -21,32 +10,91 @@ import './styles/profilePage.css';
 
 const drawerWidth = 240;
 class ProfilePage extends Component {
+    constructor(props) {
+        super(props);
+        this.state =
+            {name: '',
+            username: '',
+            bio: '',
+            trophies: [],
+            messagingPoints: 0,
+            funds: 0,
+            allTimefunds: 0,
+            leaderboardRank: "?"}
+    }
+
+    async componentDidMount() {
+        await this.getUserInformation();
+        await this.getLeaderboardInformation();
+    }
+
+    async getUserInformation() {
+        await fetch('http://localhost:8080/api/user?username=bsimpleman')
+            .then(response => response.json())
+            .then(data => this.setState({
+                name: data.name,
+                username: data.username,
+                bio: data.bio,
+                trophies: data.trophies,
+                messagingPoints: data.messagingPoints,
+                funds: data.funds,
+                allTimeFunds: data.allTimeFunds
+            }));
+    }
+
+    async getLeaderboardInformation () {
+        await fetch('http://localhost:8080/api/leaderboard')
+            .then(response => response.json())
+            .then(data => {this.getUserRank(data)})
+    }
+
+    async getUserRank(data) {
+        let rank = 1;
+        data.forEach((user) => {
+            if (user.username === this.state.username) {
+                this.setState({leaderboardRank: rank})
+            } else {
+                rank++;
+            }
+        })
+    }
+
+
     render() {
         return (
             <React.Fragment>
                 
-            <HeaderDrawer index={0}></HeaderDrawer>
-                <div id="content">
-                    <br />
-                    <br />
-                    <h2>
-                        Leaderboard Rank 1
-                    </h2>
-                    <br />
-                    <br />
-                    <p>Slider here!!!(Need to develop!)</p>
-                    <br />
-                    <br />
-                    <p>messaging points 100</p>
-                    <p>FUNds 20,000</p>
-                    <Carousel 
-                    height={300} 
-                    width={300} 
-                    numslides={2} 
-                    images={[ducky, ducky]}
-                    visibleSlides={1}
-                    ></Carousel>
-                </div>
+            <div id="header">
+                <p id="welcome">
+                    Welcome {this.state.name}
+                </p>
+                <p id="sub">
+                    {this.state.bio}
+                </p>
+            </div>
+
+            <HeaderDrawer index={0} />
+
+            <div id="content">
+                <br />
+                <br />
+                <p id="leaderboard">
+                    Leaderboard Rank <div class="rank">{this.state.leaderboardRank}</div>
+                </p>
+                <br />
+                <br />
+                <Carousel 
+                    height={200} 
+                    width={200} 
+                    numslides={4} 
+                    images={[ducky, ducky, ducky, ducky]}
+                    visibleSlides={3}
+                />
+                <br />
+                <br />
+                <p class="stats">messaging points <div class="rank"> {this.state.messagingPoints}</div></p>
+                <p class="stats">FUNds <div class="rank">{this.state.funds} </div></p>
+            </div>
             </React.Fragment>
         );
     }

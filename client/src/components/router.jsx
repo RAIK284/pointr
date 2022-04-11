@@ -8,13 +8,13 @@ import {
     Route  } from "react-router-dom";
 import HomePage from './homePage';
 import ProfilePage from './profilePage';
-import SignUp from './singUp';
+import SignUp from './signUp';
 import MessagingPage from './messagingPage';
 import StorePage from './storePage';
-import LeaderBoardPage from './leaderboardPage';
-import SettingsPage from './settingsPage';
-import ExplorePage from './explorePage';
-  
+import ExplorePage from './explorePage'
+import LeaderboardPage from './leaderboardPage'
+import SettingsPage from './settingsPage'
+
 class WebsiteRouter extends Component {
     render() {
       return (
@@ -27,9 +27,9 @@ class WebsiteRouter extends Component {
               <Route path="/signup" element={<SignUp/>}/>
               <Route path="/messages" element={<MessagingPage/>}/>
               <Route path="/store" element={<StorePage/>}/>
-              <Route path="/leaderboard" element={<LeaderBoardPage/>}/>
-              <Route path="/settings" element={<SettingsPage/>}/>
               <Route path="/explore" element={<ExplorePage/>}/>
+              <Route path="/leaderboard" element={<LeaderboardPage/>}/>
+              <Route path="/settings" element={<SettingsPage/>}/>
             </Routes>
           </BrowserRouter>
         </React.Fragment>
