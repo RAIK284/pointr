@@ -23,21 +23,30 @@ class StorePage extends Component {
 
         
             
-                
+
            <HeaderDrawer index={2}></HeaderDrawer>
             <InternalHeading title="Store"></InternalHeading>
-                
-                    <div id="trophyDisplay" onClick={()=> this.setState({trophySingle: true})}>
-                    
-                        <Trophy className="storeDisplay"></Trophy>
-                    </div>
 
-                 
-                    <TrophySingle trigger={this.state.trophySingle}>
-                        <div >
-                            <Button variant="text" id="closeButton" onClick={()=> this.setState({trophySingle: false})}> X </Button>
-                        </div>
-                    </TrophySingle>
+            <div className="storeBackground">
+                <div id="fundsAmountWrapper">
+                    <text id="fundsAmountText">FUNDs available:</text>
+                   
+                    <var id="fundsAmountNum">20,000</var>
+                </div>
+
+                <div id="trophyDisplay" onClick={()=> this.setState({trophySingle: true})}>
+                
+                    <Trophy className="storeDisplay"></Trophy>
+                </div>
+
+                
+                <TrophySingle trigger={this.state.trophySingle}>
+                    <div >
+                        <Button variant="text" id="closeButton" onClick={()=> this.setState({trophySingle: false})}> X </Button>
+                    </div>
+                </TrophySingle>
+            </div>
+           
                 
                     
 
