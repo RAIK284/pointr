@@ -20,8 +20,8 @@ const jsonBody = {
 export function verifyName(name) {
     if ([...name].length === 0) {
         return "Please input a name!"
-    } else if ([...name].length > 50) {
-        return "Names must be under 50 characters long"
+    } else if ([...name].length > 40) {
+        return "Names must be under 40 characters long"
     } else if (!name.match(/^[-_ a-zA-Z]+$/)) {
         return "Invalid name. Only characters a-z are allowed"
     } else {
