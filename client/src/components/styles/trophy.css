@@ -21,13 +21,12 @@
 
 #trophyImageSmall{
     object-fit: contain;
-    /*background-size: contain;
-    background-repeat: no-repeat; */
+    
     width: 64%;
     height: 41%;
-    margin-top: 15%;
-    display: inline-block;
-    
+    margin-top: 20%;
+    display: flex;
+    margin-left: 20%;
 }
 
 #trophyTitle{ /* need to format */
@@ -60,7 +59,7 @@
 }
 
 #trophyCostSmall{
-    margin-left: 14%;
+    
     margin-top: 20%;
     
     font-family: 'Poppins';
@@ -69,7 +68,7 @@
     font-size: 30px;
     line-height: 45px;
 
-    display: inline-block;
+    display: flex;
     text-align: center;
 
     
@@ -77,7 +76,7 @@
     letter-spacing: -0.015em;
 
     color: #333333;
-   
+    justify-content: center;
 
 }
 
@@ -123,6 +122,8 @@ button#addToProfile{
     font-family: 'Poppins';
     color: #333333;
     flex-direction: column;
+  
+    
 }
 
 .singleDisplay{

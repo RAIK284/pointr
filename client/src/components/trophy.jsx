@@ -13,7 +13,7 @@ class Trophy extends Component {
                 
                 <div className="storeDisplay">
                      
-                        <img src={ducky} id="trophyImageSmall"/>
+                    <img src={ducky} id="trophyImageSmall"/>
 
                     <div id="trophyCostSmall">
                         <text>100 fds</text> 
@@ -22,6 +22,7 @@ class Trophy extends Component {
 
                 </div>
                 
+
 
             </React.Fragment>
         );

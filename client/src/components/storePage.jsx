@@ -15,8 +15,7 @@ class StorePage extends Component {
                 <div id="storeBackground">
 
                     <div id="trophyDisplay">
-                        <Trophy id="Ttest"></Trophy>
-
+                        <Trophy className="storedisplay"></Trophy>
                     </div>
                 </div>
             </React.Fragment>
