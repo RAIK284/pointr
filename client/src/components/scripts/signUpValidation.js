@@ -72,7 +72,7 @@ export async function createUser(name, username, email, password) {
 
 export function verifyEmail(email) {
     if ([...email].length === 0) {
-        return "Please enter an email!"
+        return "Please input an email!"
     } else if (!(/\S+@\S+\.\S+/.test(email))) {
         return "Invalid email!"
     } else {
@@ -85,8 +85,8 @@ export function verifyPassword(password) {
         return "Password is too short! It must be at least 8 characters long"
     } else if ([...password].length > 30) {
         return "Passwords must be under 30 characters long"
-    } else if (!password.match(/^[0-9A-Za-z]+$/)) {
-        return "Invalid password. Only characters a-z and 0-9 are allowed"
+    } else if (!password.match("^[a-zA-Z0-9!@#$&()\\-`.+,/\"]*$")) {
+        return "Invalid password. Only characters a-z, 0-9, and special characters excluding spaces are allowed"
     } else if (!(/\d/.test(password))) {
         return "Password must contain a number"
     } else if (password.toLowerCase() === password) {
