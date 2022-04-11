@@ -5,6 +5,7 @@ import Trophy from "./trophy.jsx";
 import InternalHeading from "./internalHeading.jsx";
 import Button from '@mui/material/Button';
 import TrophySingle from "./trophySingle.jsx";
+import ball from './images/trophy-icons/ball.png'
 
 //reference: https://mui.com/components/drawers/
 
@@ -34,8 +35,12 @@ class StorePage extends Component {
                 </div>
 
                 <div id="mostPopularDisplay">
+                    
                     <text id="mostPopTitle">Today's Most Popular</text>
                     <text id="mostPopSubtitle">Explore today's most popular trophies!</text>
+
+                    <img src={ball} id="mostPopImg"/> 
+                    
                 </div>
 
 

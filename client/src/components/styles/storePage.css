@@ -42,8 +42,8 @@
 }
 
 #mostPopTitle{
-  position:relative;
-  margin-left: 3%;
+/*   position:relative;
+ */  margin-left: 3%;
   margin-top: 1%;
 
 
@@ -62,8 +62,8 @@
 }
 
 #mostPopSubtitle{
-  position:relative;
-  margin-left: 3%;
+/*   position:relative;
+ */  margin-left: 3%;
   margin-top: 2%;
 
   font-family: 'Poppins';
@@ -77,6 +77,16 @@
 
   color: #333333;
 
+}
+
+#mostPopImg{
+  width:17%;
+  height:70%;
+  object-fit: contain;
+
+  margin-top: -12%;
+  display: flex;
+  margin-left: 78%;
 }
 
 
