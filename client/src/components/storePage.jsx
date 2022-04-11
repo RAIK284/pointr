@@ -11,17 +11,14 @@ class StorePage extends Component {
             <React.Fragment>
                 
             <HeaderDrawer index={2}></HeaderDrawer>
-            <InternalHeading title="FUNds Store"></InternalHeading>
-                <div id="storeBackground">
+            <InternalHeading title="Store"></InternalHeading>
+                
 
                     <div id="trophyDisplay">
-                        <Trophy className="storedisplay"></Trophy>
+                        <Trophy className="storeDisplay"></Trophy>
                         {/* add trophies here */}
 
-
-
                     </div>
-                </div>
             </React.Fragment>
         );
     }
