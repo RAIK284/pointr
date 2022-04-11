@@ -36,7 +36,8 @@
     align-items: center;
   
     flex-direction: column;
-  
+    
+    transition: margin 0.2s ease-in-out;
     
 }
 
@@ -210,15 +211,13 @@ button#addToProfile{
 }
 
 
-button#closeButton {
-   
-    borderRadius: '50%';
-    border: 'none';
-    width: '30px';
-    height: '30px';
-    fontWeight: 'bold';
-    alignSelf: 'flex-end';
-};
+.storeDisplay:hover{
+    position: relative; 
+             top: -10px;
+    box-shadow: 0 10px #FFFFFF;
+    transition: margin 0.8s linear;
+    cursor:pointer;
+}
 
 
 

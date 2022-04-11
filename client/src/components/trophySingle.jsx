@@ -29,9 +29,11 @@ function TrophySingle(props) {
 
                    
    
-                   <div id="buttonWrapper">
+                   <div id="buttonWrapper"> 
                        <Button variant="contained" id="addToProfile" onClick={()=>{window.location.href='/store'}}>Add to My Profile</Button>
-                   </div>  
+                   </div>
+
+                    
                    {props.children}
                 </div>
             </div>
