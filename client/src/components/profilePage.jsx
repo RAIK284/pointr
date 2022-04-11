@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 import Carousel from './carousel.jsx';
-//import car from './images/car.jpg';
-import ducky from './images/ducky.png'
+import dice from './images/trophy-icons/dice.png'
+import trophy from './images/trophy-icons/trophy.png'
+import star from './images/trophy-icons/star.png'
+import ball from './images/trophy-icons/ball.png'
+import crystal from './images/trophy-icons/crystal.png'
+import clover from './images/trophy-icons/clover.png'
+import sword from './images/trophy-icons/sword.png'
+import prize from './images/trophy-icons/prize.png'
 import HeaderDrawer from "./headerDrawer.jsx";
 //reference: https://mui.com/components/drawers/
 
@@ -24,7 +30,7 @@ class ProfilePage extends Component {
     }
 
     async componentDidMount() {
-        await this.getUserInformation();
+        this.getUserInformation().then(() => {this.setTrophies()})
         await this.getLeaderboardInformation();
     }
 
@@ -59,8 +65,26 @@ class ProfilePage extends Component {
         })
     }
 
-
     render() {
+
+        const imageObjects = {
+            "ball": ball,
+            "star" : star,
+            "dice": dice,
+            "crystal": crystal,
+            "trophy": trophy,
+            "crystal": crystal,
+            "clover": clover,
+            "prize": prize,
+            "sword": sword
+        }
+
+        let trophyImages = [];
+        for (let i = 0; i < this.state.trophies.length; i++) {
+            console.log(this.state.trophies[i].image)
+            trophyImages.push(<img src={imageObjects[this.state.trophies[i].image]}/>);
+        }
+
         return (
             <React.Fragment>
                 
@@ -83,17 +107,17 @@ class ProfilePage extends Component {
                 </p>
                 <br />
                 <br />
-                <Carousel 
-                    height={200} 
-                    width={200} 
-                    numslides={4} 
-                    images={[ducky, ducky, ducky, ducky]}
-                    visibleSlides={3}
-                />
+                <div id={"carousel-container"}>
+                    <div id={"carousel-wrapper"}>
+                        {trophyImages}
+                    </div>
+                </div>
                 <br />
                 <br />
-                <p class="stats">messaging points <div class="rank"> {this.state.messagingPoints}</div></p>
-                <p class="stats">FUNds <div class="rank">{this.state.funds} </div></p>
+                <div id={"stats-container"}>
+                    <span className="stats">messaging points <p className="rank">{this.state.messagingPoints} </p></span>
+                    <span className="stats">FUNds <p className="rank">{this.state.funds} </p></span>
+                </div>
             </div>
             </React.Fragment>
         );

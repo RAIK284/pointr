@@ -50,6 +50,7 @@ class HeaderDrawer extends React.Component {
                 sx={{
                     ".MuiPaper-root": {
                         bgcolor: '#0064FF',
+                        borderRadius: "0px 25px 25px 0px"
                     },
                     ".inactive": {
                         color: '#FFFFFF',

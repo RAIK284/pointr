@@ -11,52 +11,81 @@ class Carousel extends React.Component {
 
       const images = this.props.images
         return (
-            <CarouselProvider
-              naturalSlideWidth={this.props.width}
-              naturalSlideHeight={this.props.height}
-              totalSlides={this.props.numslides}
-              isIntrinsicHeight={true}
-              visibleSlides={this.props.visibleSlides}
-              step={1}
-            >
-              <Slider>
-                <div classname="slider">
-                  {
-                  images.map((image,index) =>
-                    <Slide index={index} classname="img">
-                      <img 
-                      height={this.props.height} 
-                      width={this.props.width} 
-                      alt="Kachowski"
-                      className="img" 
-                      src={image}
-                      />
-                    </Slide>
-                  )
-                  }
-                </div>
-                
-                {/* <Slide index={0}>
-                    <img 
-                    height={this.props.height} 
-                    width={this.props.width} 
-                    alt="Kachowski" 
-                    src={this.props.images[0]}/>
-                </Slide>
-                <Slide index={1}>
-                <img 
-                    height={this.props.height} 
-                    width={this.props.width} 
-                    alt="Kachowski" 
-                    src={this.props.images[1]}/>
-                </Slide> */}
-              </Slider>
-              <ButtonBack>Back</ButtonBack>
-              <ButtonNext>Next</ButtonNext>
-            </CarouselProvider>
+            <div id={"carousel-wrapper"}>
+                <CarouselProvider
+                    naturalSlideWidth={this.props.width}
+                    naturalSlideHeight={this.props.height}
+                    totalSlides={this.props.numslides}
+                    isIntrinsicHeight={true}
+                    visibleSlides={this.props.visibleSlides}
+                    step={1}
+                >
+                    <Slider>
+                        <div classname="slider">
+                            {
+                                images.map((image,index) =>
+                                    <Slider index={index} classname="img">
+                                        <img
+                                            height={this.props.height}
+                                            width={this.props.width}
+                                            alt="Kachowski"
+                                            className="img"
+                                            src={image}
+                                        />
+                                    </Slider>
+                                )
+                            }
+                        </div>
+                    </Slider>
+                </CarouselProvider>
+            </div>
         );
     }
   }
+
+// <CarouselProvider
+//     naturalSlideWidth={this.props.width}
+//     naturalSlideHeight={this.props.height}
+//     totalSlides={this.props.numslides}
+//     isIntrinsicHeight={true}
+//     visibleSlides={this.props.visibleSlides}
+//     step={1}
+// >
+//     <Slider>
+//         <div classname="slider">
+//             {
+//                 images.map((image,index) =>
+//                     <Slide index={index} classname="img">
+//                         <img
+//                             height={this.props.height}
+//                             width={this.props.width}
+//                             alt="Kachowski"
+//                             className="img"
+//                             src={image}
+//                         />
+//                     </Slide>
+//                 )
+//             }
+//         </div>
+//
+//         {/* <Slide index={0}>
+//                     <img
+//                     height={this.props.height}
+//                     width={this.props.width}
+//                     alt="Kachowski"
+//                     src={this.props.images[0]}/>
+//                 </Slide>
+//                 <Slide index={1}>
+//                 <img
+//                     height={this.props.height}
+//                     width={this.props.width}
+//                     alt="Kachowski"
+//                     src={this.props.images[1]}/>
+//                 </Slide> */}
+//     </Slider>
+//     <ButtonBack>Back</ButtonBack>
+//     <ButtonNext>Next</ButtonNext>
+// </CarouselProvider>
 
 Carousel.propTypes = {
     width: PropTypes.number.isRequired,
