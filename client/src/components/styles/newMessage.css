@@ -32,34 +32,48 @@
     border-radius: 20px;
 }
 
-.newMessageInner .messageEntryBox {
+.newMessageInner .sendTo {
     position: relative;
-    width: 90%;
-    height: 30%;
+
     left: 5%;
     top: 5%;
 
-    border: 5px solid #FFFFFF;
-    box-sizing: border-box;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2vw;
+    line-height: 2vh;
+    display: flex;
+    /* letter-spacing: -0.015em; */
+    color: #FFFFFF;
+
+    margin-top: 2%;
+    margin-bottom: 5%;
+
+    
+}
+.newMessageInner .messageEntryBox {
+    position: relative;
+    width: 90%;
+    height: 35%;
+    left: 5%;
+    top: 5%;
+
     border-radius: 20px;
+    background: rgba(101, 215, 192, 0.72);
 
-    /* display: flex;
-    flex-direction: row;
-    column-gap: 10%;
-    row-gap: 5%;
-    justify-content: space-evenly;
+    padding: 1%;
+    font-family: 'Poppins';
+    color: white;
+    font-size: 1.5vw;
 
-    flex-wrap: wrap;
-    overflow-y: scroll; */
-
-    /* color: #FFFFFF; */
 }
 .newMessageInner .tokensBox {
     position: relative;
     width: 50%;
     height: 30%;
     left: 5%;
-    top: 30%;
+    top: 10%;
 
     border: 5px solid #FFFFFF;
     box-sizing: border-box;
@@ -76,11 +90,16 @@
 
     color: #FFFFFF;
 
-    
-    /* background-color: aqua; */
 }
-/* .newMessageInner .closeButton {
+
+#send{
     position: absolute;
-    top: 16px;
-    right: 16px;
-} */
+    width: 180px;
+    height: 77px;
+    left: calc(50% - 180px/2 + 458px);
+    top: calc(50% - 77px/2 + 256.5px);
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    color: pink;
+    background-color: aqua;
+}

@@ -8,9 +8,8 @@ function NewMessage(props){
 
             <div className = 'newMessage'>
                 <div className = 'newMessageInner'>
-                    {/* <button className = 'closeButton' onClick={()=> this.setState({newMessage: false})}>
-                        X
-                    </button> */}
+                    
+                    <text className = 'sendTo'>Send a message to: </text>
 
                     <input className = 'messageEntryBox' type="text" placeholder="Type your message here..."></input>
 
@@ -18,6 +17,11 @@ function NewMessage(props){
                     <div className = 'tokensBox'>
                         [emojis will go here]
                     </div>
+
+                    <Button variant="text" id= "send">
+                        Send
+                    </Button>
+
 
                     {props.children}
                 </div>
