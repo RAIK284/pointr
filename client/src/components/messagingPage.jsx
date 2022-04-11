@@ -52,10 +52,8 @@ class MessagingPage extends Component {
                 </div>
 
                 <NewMessage trigger={this.state.newMessage}>
-                    <h2>My Popup</h2>
-                    <p>This is my button triggered popup</p>
                     <button className = 'closeButton' onClick={()=> this.setState({newMessage: false})}>
-                        XX
+                        X
                     </button>
                 </NewMessage>
             </React.Fragment>

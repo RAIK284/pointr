@@ -94,12 +94,39 @@
 
 #send{
     position: absolute;
-    width: 180px;
-    height: 77px;
-    left: calc(50% - 180px/2 + 458px);
-    top: calc(50% - 77px/2 + 256.5px);
+    width: 15%;
+    height: 15%;
 
+    left: 80%;
+    top: 80%;
+    
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    color: pink;
-    background-color: aqua;
+    color: #2A9D8F;
+    background-color: white;
+
+    font-family: 'Poppins';
+    font-style: bold;
+    font-size: 2vw;
+}
+
+.closeButton {
+    position: relative;
+    background: #264653;
+    border: 0;
+    left: 95%;
+    bottom: 85%;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.5vw;
+    /* line-height: 60px; */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.015em;
+
+    color: #FFFFFF;
+
+
 }
