@@ -23,8 +23,6 @@ async function validateUser()  {
         body: jsonUserData
     });
 
-    //console.log(response)
-
     //If the user login is valid, print to console and response status is 200. Else, print and status is 401.
     if (response.status === 200) {
         console.log("User signed in successfully")

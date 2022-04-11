@@ -42,6 +42,32 @@ export function verifyUsername(username) {
     }
 }
 
+export function verifyEmail(email) {
+    if ([...email].length === 0) {
+        return "Please input an email!"
+    } else if (!(/\S+@\S+\.\S+/.test(email))) {
+        return "Invalid email!"
+    } else {
+        return true;
+    }
+}
+
+export function verifyPassword(password) {
+    if ([...password].length < 8){
+        return "Password is too short! It must be at least 8 characters long"
+    } else if ([...password].length > 30) {
+        return "Passwords must be under 30 characters long"
+    } else if (!password.match("^[a-zA-Z0-9!@#$&()\\-`.+,/\"]*$")) {
+        return "Invalid password. Only characters a-z, 0-9, and special characters excluding spaces are allowed"
+    } else if (!(/\d/.test(password))) {
+        return "Password must contain a number"
+    } else if (password.toLowerCase() === password) {
+        return "Password must contain a capital letter"
+    } else {
+        return true;
+    }
+}
+
 export async function isExistingUsername(username) {
     const users = await fetch('http://localhost:8080/api/existingUser?username=' + username);
     const response = await users;
@@ -68,30 +94,4 @@ export async function createUser(name, username, email, password) {
         headers: {'Content-Type': 'application/json'},
         body: newUserJSON
     });
-}
-
-export function verifyEmail(email) {
-    if ([...email].length === 0) {
-        return "Please input an email!"
-    } else if (!(/\S+@\S+\.\S+/.test(email))) {
-        return "Invalid email!"
-    } else {
-        return true;
-    }
-}
-
-export function verifyPassword(password) {
-    if ([...password].length < 8){
-        return "Password is too short! It must be at least 8 characters long"
-    } else if ([...password].length > 30) {
-        return "Passwords must be under 30 characters long"
-    } else if (!password.match("^[a-zA-Z0-9!@#$&()\\-`.+,/\"]*$")) {
-        return "Invalid password. Only characters a-z, 0-9, and special characters excluding spaces are allowed"
-    } else if (!(/\d/.test(password))) {
-        return "Password must contain a number"
-    } else if (password.toLowerCase() === password) {
-        return "Password must contain a capital letter"
-    } else {
-        return true;
-    }
 }

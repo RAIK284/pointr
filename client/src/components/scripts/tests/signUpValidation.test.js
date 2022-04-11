@@ -1,10 +1,9 @@
-const {verifyName} = require("./signUpValidation")
-const {verifyUsername} = require("./signUpValidation")
-const {verifyEmail} = require("./signUpValidation")
-const {verifyPassword} = require("./signUpValidation")
-const {isExistingEmail} = require("./signUpValidation")
-const {isExistingUsername} = require("./signUpValidation")
-const {createUser} = require("./signUpValidation")
+const {verifyName} = require("../signUpValidation")
+const {verifyUsername} = require("../signUpValidation")
+const {verifyEmail} = require("../signUpValidation")
+const {verifyPassword} = require("../signUpValidation")
+const {isExistingEmail} = require("../signUpValidation")
+const {isExistingUsername} = require("../signUpValidation")
 
 
 // --------------- Unit tests for Verifying Names ---------------
@@ -138,7 +137,7 @@ test('Existing email accounts return a response code of 401', () => {
 
 test('Non-existant email accounts return a response code of 200', () => {
     // This test email is not contained in the database, and since it is not valid to be used it should always be considered "available" by this test
-    const email = "test email@gmail.com"
+    const email = "test email account@gmail.com"
     return isExistingEmail(email).then(data => {
         expect(data).toEqual(200);
     });
@@ -163,6 +162,3 @@ test('Non-existant usernames return a response code of 200', () => {
         expect(data).toEqual(200);
     });
 });
-
-// --------------- Async Unit Tests for the "createUser" Signup Function ---------------
-
