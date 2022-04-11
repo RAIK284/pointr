@@ -30,8 +30,9 @@ class ProfilePage extends Component {
     }
 
     async componentDidMount() {
-        this.getUserInformation().then(() => {this.setTrophies()})
+        await this.getUserInformation()
         await this.getLeaderboardInformation();
+        this.setTrophies()
     }
 
     async getUserInformation() {
@@ -55,6 +56,7 @@ class ProfilePage extends Component {
     }
 
     async getUserRank(data) {
+        console.log(data)
         let rank = 1;
         data.forEach((user) => {
             if (user.username === this.state.username) {
@@ -81,7 +83,6 @@ class ProfilePage extends Component {
 
         let trophyImages = [];
         for (let i = 0; i < this.state.trophies.length; i++) {
-            console.log(this.state.trophies[i].image)
             trophyImages.push(<img src={imageObjects[this.state.trophies[i].image]}/>);
         }
 
@@ -90,7 +91,7 @@ class ProfilePage extends Component {
                 
             <div id="header">
                 <p id="welcome">
-                    Welcome {this.state.name}
+                    Welcome, {this.state.name}
                 </p>
                 <p id="sub">
                     {this.state.bio}
