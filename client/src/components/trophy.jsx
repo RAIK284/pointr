@@ -22,11 +22,12 @@ class Trophy extends Component {
 
                 </div>
                 
-
+            
 
             </React.Fragment>
         );
 
     }   
+    
 }
 export default Trophy;
