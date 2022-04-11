@@ -4,29 +4,31 @@ import './styles/storePage.css';
 import Trophy from "./trophy.jsx";
 import InternalHeading from "./internalHeading.jsx";
 import TrophySingle from "./trophySingle.jsx";
-import { useState } from "react";
+
 //reference: https://mui.com/components/drawers/
 
 class StorePage extends Component {
-  
+  state = {
+      isOpen : false
+  }
     render() {
         return (
             
             <React.Fragment>
-                <button>open popup</button>
-            <TrophySingle trigger={false} className="singleDisplay">
-                            <h3>Single Trophy</h3>
-            </TrophySingle>
+
+        
+            
                 
-            <HeaderDrawer index={2}></HeaderDrawer>
+           <HeaderDrawer index={2}></HeaderDrawer>
             <InternalHeading title="Store"></InternalHeading>
             
-                   <div id="trophyDisplay">
+                   <div id="trophyDisplay" >
                         <Trophy className="storeDisplay"></Trophy>
                         
-
                     </div>
-
+            <TrophySingle className="singleDisplay" isOpen={this.state.isOpen} onClose={(e) => this.setState({ isOpen: false })}>
+                            <h3>Single Trophy</h3>
+            </TrophySingle>
                     
             </React.Fragment>
         );

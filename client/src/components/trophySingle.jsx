@@ -3,13 +3,29 @@ import './styles/trophy.css';
 import Button from '@mui/material/Button';
 import ducky from './images/ducky.png'
 
+let dialogCloseButtonStyles = {
+    marginBottom: '15px',
+    padding: '3px 8px',
+    cursor: 'pointer',
+    borderRadius: '50%',
+    border: 'none',
+    width: '30px',
+    height: '30px',
+    fontWeight: 'bold',
+    alignSelf: 'flex-end'
+};
 
-function TrophySingle(props){
-    return (props.trigger) ? (
-        <React.Fragment >
+
+class TrophySingle extends Component{
+    
+    render() {
+
+    let trophysingle = (
+    <React.Fragment>
 
             <div className="singleDisplay">
-            
+            <button style={dialogCloseButtonStyles} onClick={this.props.onClose}>x</button>
+
                      
                 <img src={ducky} id="trophyImageLarge"/>
                 
@@ -32,14 +48,21 @@ function TrophySingle(props){
 
              </div>
 
-                <div className = 'singleInner'>
-                    <button className = "trophyclosebutton">X</button>
-                    {props.children}
-                </div>
+                
+ </React.Fragment>
+    );
 
-            
-        </React.Fragment>
-    ) :"";
-}
+    if (! this.props.isOpen) {
+        trophysingle = null;
+    }
+    return (
+        <div>
+            {trophysingle}
+        </div>
+    );
+       
+    }
+    
+        }
 
 export default TrophySingle
