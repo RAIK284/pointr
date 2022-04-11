@@ -14,18 +14,18 @@ class StorePage extends Component {
             
             <React.Fragment>
                 <button>open popup</button>
-            <TrophySingle trigger={true} className="singleDisplay">
+            <TrophySingle trigger={false} className="singleDisplay">
                             <h3>Single Trophy</h3>
             </TrophySingle>
                 
             <HeaderDrawer index={2}></HeaderDrawer>
             <InternalHeading title="Store"></InternalHeading>
             
-                   {/* <div id="trophyDisplay">
+                   <div id="trophyDisplay">
                         <Trophy className="storeDisplay"></Trophy>
                         
 
-                    </div> */}
+                    </div>
 
                     
             </React.Fragment>
