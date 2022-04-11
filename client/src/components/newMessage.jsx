@@ -11,6 +11,14 @@ function NewMessage(props){
                     {/* <button className = 'closeButton' onClick={()=> this.setState({newMessage: false})}>
                         X
                     </button> */}
+
+                    <input className = 'messageEntryBox' type="text" placeholder="Type your message here..."></input>
+
+
+                    <div className = 'tokensBox'>
+                        [emojis will go here]
+                    </div>
+
                     {props.children}
                 </div>
 

@@ -14,15 +14,73 @@
 }
 
 .newMessageInner {
-    position: relative;
+    /* position: relative;
     padding: 32px;
     width: 100%;
     max-width: 640px;
     background-color: aqua;
+ */
+    position: relative;
+    width: 60%;
+    height: 65%;
+    left: 0%;
+    top: 10%;
+
+    background: #264653;
+    border: 5px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 20px;
 }
 
-.newMessageInner .closeButton {
+.newMessageInner .messageEntryBox {
+    position: relative;
+    width: 90%;
+    height: 30%;
+    left: 5%;
+    top: 5%;
+
+    border: 5px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 20px;
+
+    /* display: flex;
+    flex-direction: row;
+    column-gap: 10%;
+    row-gap: 5%;
+    justify-content: space-evenly;
+
+    flex-wrap: wrap;
+    overflow-y: scroll; */
+
+    /* color: #FFFFFF; */
+}
+.newMessageInner .tokensBox {
+    position: relative;
+    width: 50%;
+    height: 30%;
+    left: 5%;
+    top: 30%;
+
+    border: 5px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: row;
+    column-gap: 10%;
+    row-gap: 5%;
+    justify-content: space-evenly;
+
+    flex-wrap: wrap;
+    overflow-y: scroll;
+
+    color: #FFFFFF;
+
+    
+    /* background-color: aqua; */
+}
+/* .newMessageInner .closeButton {
     position: absolute;
     top: 16px;
     right: 16px;
-}
+} */
