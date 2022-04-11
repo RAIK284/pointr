@@ -107,6 +107,7 @@ class ProfilePage extends Component {
                 </p>
                 <br />
                 <br />
+                <label htmlFor="trophies" className="trophiesLabel">Trophies</label>
                 <div id={"carousel-container"}>
                     <div id={"carousel-wrapper"}>
                         {trophyImages}
