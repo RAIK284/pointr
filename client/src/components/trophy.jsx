@@ -24,20 +24,15 @@ class Trophy extends Component {
                     
 
                    <div id="trophyCostSmall">
-                        <text>100 fds</text> 
+                        <var>100 </var> 
+                        <text>&nbsp;fds</text>
                     </div>
-
-                    <button variant="text" onClick={(e) => this.setState({ isOpen: true })}>
-                        +
-                    </button>
 
                     
 
 
                 </div>
-                <TrophySingle className="singleDisplay" isOpen={this.state.isOpen} onClose={(e) => this.setState({ isOpen: false })}>
-                            <h3>Single Trophy</h3>
-            </TrophySingle>
+                
                 
                 
             

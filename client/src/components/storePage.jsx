@@ -24,29 +24,22 @@ class StorePage extends Component {
         
             
                 
-           {/* <HeaderDrawer index={2}></HeaderDrawer>
-            <InternalHeading title="Store"></InternalHeading> */}
+           <HeaderDrawer index={2}></HeaderDrawer>
+            <InternalHeading title="Store"></InternalHeading>
                 
-                    <div id="trophyDisplay" >
+                    <div id="trophyDisplay" onClick={()=> this.setState({trophySingle: true})}>
                     
                         <Trophy className="storeDisplay"></Trophy>
-                        
                     </div>
 
-                    <Button variant="text" onClick={()=> this.setState({trophySingle: true})}>
-                        popup
-                    </Button>
-                    {/* <div>
-                         <TrophySingle className="singleDisplay" isOpen={this.state.isOpen} onClose={(e) => this.setState({ isOpen: false })}></TrophySingle>
-                    </div> */}
-                    
+                 
                     <TrophySingle trigger={this.state.trophySingle}>
-                        {/* <h2>My Popup</h2>
-                        <p>This is my button triggered popup</p> */}
-                        {/* <button className = 'closeButton' onClick={()=> this.setState({newMessage: false})}>
-                            XX
-                        </button> */}
+                        <div >
+                            <Button variant="text" id="closeButton" onClick={()=> this.setState({trophySingle: false})}> X </Button>
+                        </div>
                     </TrophySingle>
+                
+                    
 
                    
 
