@@ -1,33 +1,20 @@
 import React, { Component } from "react";
 import './styles/trophy.css';
 import Button from '@mui/material/Button';
-import ducky from './images/ducky.png'
 
+function TrophySingle(){
+    return (
+        <React.Fragment >
 
-class TrophySingle extends Component {
-
-    render() {
-        return (
-            <React.Fragment >
+            <div className = "singleDisplay">
+                <div className = 'singleInner'>
+                    <button className = 'closeButton'>X</button>
                     
-                
-                <div className="storeDisplay">
-                     
-                    <img src={ducky} id="trophyImageSmall"/>
-
-                    <div id="trophyCostSmall">
-                        <text>100 fds</text> 
-                    </div>
-
-
                 </div>
-                
-            
 
-            </React.Fragment>
-        );
-
-    }   
-    
+            </div>
+        </React.Fragment>
+    ) 
 }
-export default TrophySingle;
+
+export default TrophySingle
