@@ -10,7 +10,8 @@ function NewMessage(props){
                 <div className = 'newMessageInner'>
                     
                     <text className = 'sendTo'>Send a message to: </text>
-                    <input className = 'sendTo' type="text" placeholder="send to email"></input>
+                    
+                    <input className = 'sendToEntryBox' type="text" placeholder="send to email"></input>
 
 
                     <input className = 'messageEntryBox' type="text" placeholder="Type your message here..."></input>
