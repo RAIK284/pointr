@@ -96,12 +96,7 @@
 }
 
 .mostPopImg:hover{
-  /* position: relative; 
-             top: -10px; */
-    
-    transition: margin 0.8s linear;
-    
-    cursor:pointer;
+  cursor: pointer;
 }
 
 #MPTitle{
