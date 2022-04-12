@@ -2,6 +2,8 @@ import { React, useState } from 'react';
 import TextField from "@mui/material/TextField";
 import List from './List';
 import data from "./ListData.json";
+import './styles/explorePage.css';
+
 
 /* code inspired by this tutorial: https://dev.to/salehmubashar/search-bar-in-react-js-545l */
 
@@ -17,10 +19,10 @@ let inputHandler = (e) => {
 
 return (
   <div className="main">
-    <h1>React Search</h1>
+    
     <div className="search">
       <TextField
-        id="outlined-basic"
+        
         onChange={inputHandler}
         variant="outlined"
         fullWidth
