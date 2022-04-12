@@ -37,6 +37,7 @@
 
     left: 5%;
     top: 5%;
+    width: 10%;
 
     font-family: 'Poppins';
     font-style: normal;
@@ -93,7 +94,7 @@
 }
 
 #send{
-    position: absolute;
+    position: relative;
     width: 15%;
     height: 15%;
 
@@ -107,6 +108,14 @@
     font-family: 'Poppins';
     font-style: bold;
     font-size: 2vw;
+}
+
+.sendTo {
+    position: relative;
+    width: 10%;
+    height: 5%;
+    right: 50%;
+    color: black;
 }
 
 .closeButton {
