@@ -162,3 +162,4 @@ test('Non-existant usernames return a response code of 200', () => {
         expect(data).toEqual(200);
     });
 });
+

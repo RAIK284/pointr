@@ -13,7 +13,7 @@ afterEach(async () => {
 // Setup - this setup includes the createUser function which is the function we are testing
 async function createNewTestUser() {
 
-// This data is intentionally invalid to be used as an actual user. The createUser function plays no part in validation, it only stores new data which.
+// This data is intentionally invalid to be used as an actual user. The createUser function plays no part in validation, it only stores new data.
 // To avoid conflicts with real users this invalid data will be used.
     const newUserData = {
         "name": "test name 123",
