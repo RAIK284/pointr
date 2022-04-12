@@ -38,9 +38,11 @@ class StorePage extends Component {
                     
                     <text id="mostPopTitle">Today's Most Popular</text>
                     <text id="mostPopSubtitle">Explore today's most popular trophies!</text>
-                    <text id="MPTitle">Crazy Crystal Ball</text>
-
-                    <img src={ball} className="mostPopImg" onClick={()=> this.setState({trophySingle: true})}/> 
+                    <div>
+                        <text id="MPTitle">Crazy Crystal Ball</text>
+                        <img src={ball} className="mostPopImg" onClick={()=> this.setState({trophySingle: true})}/> 
+                    </div>
+                    
                     
                 </div>
 
