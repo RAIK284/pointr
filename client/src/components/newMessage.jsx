@@ -1,6 +1,8 @@
 import React, { Component, useState} from "react";
 import './styles/newMessage.css';
 import Button from '@mui/material/Button';
+// import TokensBox from "./tokensBox";
+import TokenCostButton from "./tokenCostButton";
 
 function NewMessage(props){
 
@@ -67,8 +69,19 @@ function NewMessage(props){
                     <input className = 'messageEntryBox' name={"messageBody"} type="text" onChange={e => setMessageBody(e.target.value)} placeholder="Type your message here..."></input>
 
 
-                    <div className = 'tokensBox'>
-                        [emojis will go here]
+                    <div className="tokensBox">
+                    
+                        <TokenCostButton onClick={e => setMessageBody(e.target.value.concat("[EMOJI]"))}></TokenCostButton>
+                        {/* <TokenCostButton></TokenCostButton>
+                        <TokenCostButton></TokenCostButton>
+                        <TokenCostButton></TokenCostButton>
+                        <TokenCostButton></TokenCostButton>
+                        <TokenCostButton></TokenCostButton>
+                        <TokenCostButton></TokenCostButton>
+                        <TokenCostButton></TokenCostButton>
+                        <TokenCostButton></TokenCostButton>
+                        <TokenCostButton></TokenCostButton> */}
+
                     </div>
 
                     <Button variant="text" id= "send" onClick={() => handleInput()}>

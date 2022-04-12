@@ -3,15 +3,7 @@
     height: 100vh;
     float: top;
 
-    /* background-color: antiquewhite; */
 }
-
-
-/* newMessage#newMessagePopup{
-    left: 371px;
-    top: 64px;
-    color: black;
-} */
 
 #messageDisplayBoxes{
     position: relative;
