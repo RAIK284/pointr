@@ -125,10 +125,6 @@
 }
 
 button#closeButton {
-  position:relative;
-  margin-left: 85%;
-  margin-top: -140%;
-
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 900;
@@ -141,6 +137,12 @@ button#closeButton {
 
   color: #FFFFFF;
 
+}
+
+#closeButtonWrapper{
+  position: relative;
+  top: -92%;
+  left: 85%;
 }
 
 #fundsAmountWrapper{
