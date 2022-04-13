@@ -35,11 +35,7 @@ class StorePage extends Component {
         return (
             
             <React.Fragment>
-
-        
-            
-
-           <HeaderDrawer index={2}></HeaderDrawer>
+            <HeaderDrawer index={2}></HeaderDrawer>
             <InternalHeading title="Store"></InternalHeading>
 
             <div className="storeBackground">
@@ -62,6 +58,14 @@ class StorePage extends Component {
 
 
                 <div id="trophyDisplay">
+                    <Trophy key={0} index={0} onClick={()=> {this.changeState(0)}} cost={100} image={"trophy"}></Trophy>
+                    <TrophySingle key={0} trigger={this.state.trophyStatus[0]} title={"Trophy"} description={"This is a description"} cost={100} image={"trophy"}>
+                        <div >
+                            <Button variant="text" id="closeButton" onClick={()=> {this.changeState(0)}}> X </Button>
+                        </div>
+                    </TrophySingle>
+
+
                     {this.state.trophies.map((trophy, i) => <Trophy key={i} index={i} onClick={()=> {this.changeState(i)}} cost={trophy.price} image={trophy.image}></Trophy>)}
                     {this.state.trophies.map((trophy, i) => <TrophySingle key={i} trigger={this.state.trophyStatus[i]} title={trophy.name} description={trophy.description} cost={trophy.price} image={trophy.image}>
                         <div >
