@@ -60,7 +60,7 @@ class StorePage extends Component {
                 <div id="trophyDisplay">
                     <Trophy key={0} index={0} onClick={()=> {this.changeState(0)}} cost={100} image={"trophy"}></Trophy>
                     <TrophySingle key={0} trigger={this.state.trophyStatus[0]} title={"Trophy"} description={"This is a description"} cost={100} image={"trophy"}>
-                        <div >
+                        <div id="closeButtonWrapper">
                             <Button variant="text" id="closeButton" onClick={()=> {this.changeState(0)}}> X </Button>
                         </div>
                     </TrophySingle>
