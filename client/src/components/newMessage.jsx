@@ -22,18 +22,51 @@ function NewMessage(props){
         setMessageData()
     }
 
-    const getMessageValue = () => {
+    var dict = {
+        0x1B780: 10,//mushroom worth 10 pts
+        0x1B64A: 15//heart eyes worth 15 pts
+    }
+    const getMessageValue = (messageBody) => {
+        console.log("In getMessageValue function")
+        console.log(messageBody)
+        // console.log(messageBody.length)
+
+        var totalValue = 0
+
+        for (var i = 0; i < messageBody.length; i++) {
+            // if the character is not ASCII
+            if (messageBody.charCodeAt(i) > 127)
+                
+                // every emoji is 2 characters
+                // emoji id is charCode
+                var emojiID = messageBody.charCodeAt(i)+messageBody.charCodeAt(i+1)
+
+                // if emoji is in our approved list, add its value
+                if (dict[emojiID] != null) {
+                    console.log("INSIDE IF")
+                    console.log(emojiID)// this emoji id is wrong... only f***s up when theres a char btwn emojis
+                    console.log(dict[emojiID])
+                    totalValue += dict[emojiID]
+                }
+
+                // skip next char since emojis take up 2 chars
+                i++
+
+        }
+
+        console.log(totalValue)
 
     }
 
+
     const setMessageData = async () => {
-        getMessageValue();
+        getMessageValue(messageBody);
         messageObject.timestamp = new Date().toUTCString()
         messageObject.receiver = email;
         messageObject.messageBody = messageBody;
 
-        console.log(messageBody)
-        console.log(email)
+        // console.log(messageBody)
+        // console.log(email)
         await postMessage(messageObject);
         await subtractMessageValue(messageObject);
 
@@ -54,10 +87,8 @@ function NewMessage(props){
         })
         .catch((error) => {
             console.log('error: ' + error);
-            console.log("POST REQUEST ERRORED")
+            console.log("POST REQUEST TO SEND MESSAGE CAUSED ERRORS")
         })
-
-        console.log("HEREEEEE")
 
     }
 
