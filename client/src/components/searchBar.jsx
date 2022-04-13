@@ -21,12 +21,14 @@ return (
   <div className="main">
     
     <div className="search">
-      <TextField
+      <TextField 
+        id="searchEntry"
         
         onChange={inputHandler}
         variant="outlined"
         fullWidth
-        label="Search"
+        label="Enter a username..."
+        InputLabelProps={{ 'Poppins': 'enter a username' }}
       />
     </div>
     <List input={inputText} />
