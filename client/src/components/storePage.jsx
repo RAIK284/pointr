@@ -12,9 +12,23 @@ import ball from './images/trophy-icons/ball.png'
 class StorePage extends Component {
     constructor(props) {
         super(props);
-        this.state={
-            trophySingle : false
-        }
+        this.state =
+            {trophies: [],
+                trophyStatus: []}
+    }
+
+    componentDidMount() {
+        fetch('http://localhost:8080/api/storeItem')
+            .then(response => response.json())
+            .then((data) => {this.setState({trophies: data})})
+            .then(() => {this.setState({trophyStatus : Array(this.state.trophies.length).fill(false)})})
+    }
+
+    changeState(index) {
+        const status = this.state.trophyStatus;
+        status[index] = !status[index];
+        this.setState({trophyStatus: status})
+        console.log(this.state)
     }
   
     render() {
@@ -47,17 +61,14 @@ class StorePage extends Component {
                 </div>
 
 
-                <div id="trophyDisplay" onClick={()=> this.setState({trophySingle: true})}>
-                
-                    <Trophy className="storeDisplay"></Trophy>
+                <div id="trophyDisplay" onClick={this.props.onClick}>
+                    {this.state.trophies.map((trophy, i) => <Trophy key={i} index={i} onClick={()=> {this.changeState(i)}} cost={trophy.price} image={trophy.image}></Trophy>)}
+                    {this.state.trophies.map((trophy, i) => <TrophySingle key={i} trigger={this.state.trophyStatus[i]} title={trophy.name} description={trophy.description} cost={trophy.price} image={trophy.image}>
+                        <div >
+                            <Button variant="text" id="closeButton" onClick={()=> {this.changeState(i)}}> X </Button>
+                        </div>
+                    </TrophySingle>)}
                 </div>
-
-                
-                <TrophySingle trigger={this.state.trophySingle}>
-                    <div >
-                        <Button variant="text" id="closeButton" onClick={()=> this.setState({trophySingle: false})}> X </Button>
-                    </div>
-                </TrophySingle>
             </div>
            
                 
