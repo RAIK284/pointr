@@ -2,7 +2,7 @@ import { React, useState } from 'react';
 import TextField from "@mui/material/TextField";
 import List from './List';
 import data from "./ListData.json";
-import './styles/explorePage.css';
+import './styles/searchBar.css';
 
 
 /* code inspired by this tutorial: https://dev.to/salehmubashar/search-bar-in-react-js-545l */
