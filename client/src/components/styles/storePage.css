@@ -124,10 +124,10 @@
   background-color: #FFFFFF;
 }
 
-#closeButton {
+button#closeButton {
   position:relative;
   margin-left: 85%;
-  margin-top: -150%;
+  margin-top: -140%;
 
   font-family: 'Poppins';
   font-style: normal;
