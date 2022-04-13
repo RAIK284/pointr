@@ -36,6 +36,7 @@ function NewMessage(props){
         console.log(email)
         await postMessage(messageObject);
         await subtractMessageValue(messageObject);
+
     }
 
     const postMessage = async (messageObject) => {
@@ -45,7 +46,19 @@ function NewMessage(props){
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: jsonData
-        });
+        })
+        .then((response) => {
+            if(response.status === 200) {
+                alert("Message Sent :)")
+            }
+        })
+        .catch((error) => {
+            console.log('error: ' + error);
+            console.log("POST REQUEST ERRORED")
+        })
+
+        console.log("HEREEEEE")
+
     }
 
     const subtractMessageValue = async (messageObject) => {
