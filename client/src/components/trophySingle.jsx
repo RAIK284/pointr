@@ -53,7 +53,7 @@ function TrophySingle(props) {
                         <text>Cost: </text>
                         <var>{trophyCost}</var> {/* may not be the proper data type for the cost */}
                     </div>
-                    
+
                     <div id="buttonWrapper">
                         <Button variant="contained" id="addToProfile" onClick={()=>{window.location.href='/store'}}>Add to My Profile</Button>
                     </div>
