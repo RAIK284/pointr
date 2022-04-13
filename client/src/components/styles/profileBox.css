@@ -1,0 +1,36 @@
+.box1 
+{
+    background-color: #65D7C0;
+    width: 1065px;
+    padding: 1rem;
+    border-radius: 20px;
+    border: 4px solid rgba(2, 186, 144, 1);
+    margin-bottom: 1rem;
+}
+.box2
+{
+    background-color: #B3D1FF;
+    width: 1065px;
+    padding: 1rem;
+    border-radius: 20px;
+    border: 4px solid rgba(0, 100, 255, 1);
+    margin-bottom: 1rem;
+}
+#image
+{
+    height: 120px;
+    width: 120px;
+}
+.name
+{
+    margin-bottom: .5rem;
+    font-weight: bold;
+    font-size: 40px;
+    margin-left: 9rem;
+}
+.bio
+{
+    margin-left: 9rem;
+    font-size: 30px;
+    margin-bottom: 0rem;
+}

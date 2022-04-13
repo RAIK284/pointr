@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import HeaderDrawer from "./headerDrawer.jsx";
-//reference: https://mui.com/components/drawers/
 import "./styles/explorePage.css";
 import searchicon from "./images/search.svg"
+import ProfileList from "./profileList"
 
 class ExplorePage extends Component {
     render() {
@@ -16,9 +16,7 @@ class ExplorePage extends Component {
                     <img id="img" alt="search" src={searchicon}/>
                     <br />
                     <br />
-                    <p>This should be a loop component for displaying
-                        profiles!
-                    </p>
+                    <ProfileList numProfiles={3}/>
                 </div>
             </React.Fragment>
         );
