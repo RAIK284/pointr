@@ -61,7 +61,7 @@ class StorePage extends Component {
                 </div>
 
 
-                <div id="trophyDisplay" onClick={this.props.onClick}>
+                <div id="trophyDisplay">
                     {this.state.trophies.map((trophy, i) => <Trophy key={i} index={i} onClick={()=> {this.changeState(i)}} cost={trophy.price} image={trophy.image}></Trophy>)}
                     {this.state.trophies.map((trophy, i) => <TrophySingle key={i} trigger={this.state.trophyStatus[i]} title={trophy.name} description={trophy.description} cost={trophy.price} image={trophy.image}>
                         <div >

@@ -50,7 +50,7 @@ class Trophy extends Component {
 
                     <div id="trophyCostSmall">
                         <var>{this.state.cost} </var>
-                        <text></text>
+                        <text>&nbsp;fds</text>
                     </div>
 
 
