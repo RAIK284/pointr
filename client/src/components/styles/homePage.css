@@ -83,3 +83,13 @@ body {
     width:100vw;
     background-color: #ffffff;
 }
+
+#pictureWrapper{
+    position: fixed;
+}
+
+#homePagePic{
+    width: 48%;
+    height: 75%;
+    border-radius: 50%;
+}

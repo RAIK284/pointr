@@ -16,10 +16,11 @@ class HomePage extends Component {
                     <NavItem to="/">About</NavItem>
                     <NavItem to="/signin">Log In</NavItem>
                 </MuiNavbar> 
-                <div>
-                <img src={homePagePic}/>
-                </div>
+                
                 <div id="body">
+                    <div id="pictureWrapper">
+                    <img src={homePagePic} id="homePagePic"/>
+                    </div>
                     <div id='column-right'>
                         <h1>Welcome to <br /> Pointr.</h1>
                         <h2>The new way to be<br />rewarded for positivity</h2>
