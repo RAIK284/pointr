@@ -80,7 +80,7 @@ class HeaderDrawer extends React.Component {
                             </div>
                         </ListItemText>
                         {['Profile', 'Messages', 'Store', 'Explore', 'Leaderboard', 'Settings'].map((text, index) => (
-                            <div>
+                            <div className="pageButtons">
                             {(index === this.props.index && text !== 'Settings') 
                                 ?  
                                 <ListItem button key={text}>

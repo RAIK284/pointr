@@ -4,8 +4,8 @@
     font-family: Poppins;
     margin-bottom: 1rem;
     font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
+    font-weight: 500;
+    font-size: 25px;
     line-height: 45px;
 }
 .active
@@ -13,8 +13,8 @@
     font-size: 30px;
     font-family: Poppins;
     font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
+    font-weight: 500;
+    font-size: 25px;
     line-height: 45px;
     margin-bottom: 1rem;
 }
@@ -43,8 +43,15 @@
    
     position: relative;
     top: 10%;
+    left: 5%;
+    justify-content: center;
 
 
+}
+
+.pageButtons{
+    position: relative;
+    top: 10%;
 }
 
 #profilePictureMask{
