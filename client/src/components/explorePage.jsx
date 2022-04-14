@@ -5,6 +5,7 @@ import "./styles/explorePage.css";
 import searchicon from "./images/search.svg"
 import ProfileList from "./profileList"
 import InternalHeading from "./internalHeading.jsx";
+import SearchBar from "./searchBar.jsx";
 
 
 class ExplorePage extends Component {
@@ -16,7 +17,8 @@ class ExplorePage extends Component {
             <InternalHeading title="Explore"></InternalHeading>
                 <div id="content">
                     {/* <p className="header">Explore</p> */}
-                    <input type="text" placeholder="Search for users..." className="search"></input>
+                    {/* <input type="text" placeholder="Search for users..." className="search"></input> */}
+                    <SearchBar className="search"></SearchBar>
                     <img id="img" alt="search" src={searchicon}/>
                     <br />
                     <br />
