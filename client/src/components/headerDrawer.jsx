@@ -11,6 +11,17 @@ import ListItemText from '@mui/material/ListItemText';
 // import car from './images/car.jpg'
 import ducky from './images/ducky.png'
 import { color } from '@mui/system';
+import { Hidden } from '@mui/material';
+import profileIcon from "./images/header-icons/profile.svg";
+import messageIcon from "./images/header-icons/message.svg";
+import storeIcon from "./images/header-icons/store.svg";
+import exploreIcon from "./images/header-icons/search.svg";
+import leaderboardIcon from "./images/header-icons/leaderboard.svg";
+
+
+
+
+
 
 // reference: https://github.com/express-labs/pure-react-carousel
 
@@ -51,6 +62,7 @@ class HeaderDrawer extends React.Component {
                     ".MuiPaper-root": {
                         bgcolor: '#0064FF',
                         borderRadius: "0px 25px 25px 0px"
+                        
                     },
                     ".inactive": {
                         color: '#FFFFFF',
@@ -80,7 +92,7 @@ class HeaderDrawer extends React.Component {
                             </div>
                         </ListItemText>
                         {['Profile', 'Messages', 'Store', 'Explore', 'Leaderboard', 'Settings'].map((text, index) => (
-                            <div>
+                            <div className="pageButtons">
                             {(index === this.props.index && text !== 'Settings') 
                                 ?  
                                 <ListItem button key={text}>

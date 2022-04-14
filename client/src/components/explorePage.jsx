@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import HeaderDrawer from "./headerDrawer.jsx";
 
 import "./styles/explorePage.css";
-import searchicon from "./images/search.svg"
+import searchicon from "./images/header-icons/search.svg"
 import ProfileList from "./profileList"
 import InternalHeading from "./internalHeading.jsx";
 import SearchBar from "./searchBar.jsx";
