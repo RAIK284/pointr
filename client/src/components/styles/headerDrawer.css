@@ -38,21 +38,23 @@
 {
     margin-bottom: 1rem;
     color: white;
-    font-size: 35px;
+
     font-family: Poppins;
     font-style: normal;
     font-weight: 700;
     font-size: 30px;
     line-height: 52px;
-   
+
     position: relative;
-    top: 10%;
-    left: 0%;
+    top: 10%; 
+    justify-content: center; 
+    padding: 3%;
 
 
 }
 
 .pageButtons{
+    align-content: space-evenly;
     position: relative;
     top: 10%;
 }
@@ -65,7 +67,7 @@
 
     position: relative;
     left: 10%;
-    top: 6%;
+    top: 5%;
 
     /* margin-left: 10%;
     margin-top: 6%; */
