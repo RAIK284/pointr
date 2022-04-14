@@ -26,8 +26,11 @@ return (
         
         onChange={inputHandler}
         variant="outlined"
+        size="normal"
         fullWidth
+       
         label="Enter a username..."
+        inputProps={{className:"searchPlaceholder"}}
         
       />
     </div>
