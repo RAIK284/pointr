@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { MuiNavbar, NavItem } from 'mui-navbar';
 import './styles/homePage.css';
 import Button from '@mui/material/Button';
+import homePagePic from "./images/header-icons/homePagePic.jpeg";
 class HomePage extends Component {
     render() {
         return (
@@ -15,6 +16,9 @@ class HomePage extends Component {
                     <NavItem to="/">About</NavItem>
                     <NavItem to="/signin">Log In</NavItem>
                 </MuiNavbar> 
+                <div>
+                <img src={homePagePic}/>
+                </div>
                 <div id="body">
                     <div id='column-right'>
                         <h1>Welcome to <br /> Pointr.</h1>
