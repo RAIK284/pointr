@@ -13,7 +13,7 @@
     font-size: 30px;
     font-family: Poppins;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 00;
     font-size: 25px;
     line-height: 45px;
     margin-bottom: 1rem;
@@ -48,9 +48,9 @@
     line-height: 52px;
 
     position: relative;
-    top: 10%; 
+    top: 8%; 
     justify-content: center; 
-    padding: 3%;
+    padding-left: 3%;
 
 
 }
