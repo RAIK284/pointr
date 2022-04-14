@@ -28,7 +28,7 @@ return (
         variant="outlined"
         fullWidth
         label="Enter a username..."
-        InputLabelProps={{ 'Poppins': 'enter a username' }}
+        
       />
     </div>
     <List input={inputText} />
