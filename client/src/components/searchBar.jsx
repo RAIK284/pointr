@@ -34,7 +34,7 @@ return (
         
       />
     </div>
-    <List input={inputText} />
+    <List input={inputText}/>
   </div>
 );
 }

@@ -14,8 +14,10 @@ import StorePage from './storePage';
 import ExplorePage from './explorePage'
 import LeaderboardPage from './leaderboardPage'
 import SettingsPage from './settingsPage'
-import ProfileList, {otherUser} from './profileList'
+// import ProfileList, {otherUser} from './profileList'
+// import {otherUserData} from './profileBox'
 import OtherUserPage from './otherUserPage';
+let otherUserData = []
 
 class WebsiteRouter extends Component {
     render() {
@@ -32,7 +34,7 @@ class WebsiteRouter extends Component {
               <Route path="/explore" element={<ExplorePage/>}/>
               <Route path="/leaderboard" element={<LeaderboardPage/>}/>
               <Route path="/settings" element={<SettingsPage/>}/>
-              <Route path="/otherUser" element={<OtherUserPage otherUser={otherUser}/>}/>
+              <Route path="/otherUser" element={<OtherUserPage otherUser={otherUserData}/>}/>
             </Routes>
           </BrowserRouter>
         </React.Fragment>

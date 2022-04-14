@@ -1,6 +1,7 @@
 import { React, useState } from 'react'
 import data from "./ListData.json"
-
+import ProfileBox from "./profileBox"
+let count = 0
 function List(props) {
     //create a new array by filtering the original array
     const filteredData = data.filter((el) => {
@@ -16,10 +17,20 @@ function List(props) {
     return (
         <ul>
             {filteredData.map((item) => (
-                <li key={item.id}>{item.text}</li>
+                <div>
+                    {
+                        count < 3
+                        ?
+                        <div onLoad={()=>{count++}}>
+                            <ProfileBox otherProfile={item}/>
+                        </div>
+                        :
+                        false
+                    }
+                </div>
+                
             ))}
         </ul>
     )
 }
-
 export default List

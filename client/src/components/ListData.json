@@ -1,31 +1,71 @@
 [{
     "id": 1,
-    "text": "Devpulse"
+    "text": "Devpulse",
+    "bio": "Hello there!",
+    "leaderboardRank": 5,
+    "image": "./images/ducky.png",
+    "funds": 10000
 }, {
     "id": 2,
-    "text": "Linklinks"
+    "text": "Linklinks",
+    "bio": "Hello there!",
+    "leaderboardRank": 5,
+    "image": "./images/ducky.png",
+    "funds": 10000
 }, {
     "id": 3,
-    "text": "Centizu"
+    "text": "Centizu",
+    "bio": "Hello there!",
+    "leaderboardRank": 5,
+    "image": "./images/ducky.png",
+    "funds": 10000
 }, {
     "id": 4,
-    "text": "Dynabox"
+    "text": "Dynabox",
+    "bio": "Hello there!",
+    "leaderboardRank": 5,
+    "image": "./images/ducky.png",
+    "funds": 10000
 }, {
     "id": 5,
-    "text": "Avaveo"
+    "text": "Avaveo",
+    "bio": "Hello there!",
+    "leaderboardRank": 5,
+    "image": "./images/ducky.png",
+    "funds": 10000
 }, {
     "id": 6,
-    "text": "Demivee"
+    "text": "Demivee",
+    "bio": "Hello there!",
+    "leaderboardRank": 5,
+    "image": "./images/ducky.png",
+    "funds": 10000
 }, {
     "id": 7,
-    "text": "Jayo"
+    "text": "Jayo",
+    "bio": "Hello there!",
+    "leaderboardRank": 5,
+    "image": "./images/ducky.png",
+    "funds": 10000
 }, {
     "id": 8,
-    "text": "Blognation"
+    "text": "Blognation",
+    "bio": "Hello there!",
+    "leaderboardRank": 5,
+    "image": "./images/ducky.png",
+    "funds": 10000
 }, {
     "id": 9,
-    "text": "Podcat"
+    "text": "Podcat",
+    "bio": "Hello there!",
+    "leaderboardRank": 5,
+    "image": "./images/ducky.png",
+    "funds": 10000
 }, {
     "id": 10,
-    "text": "Layo"
+    "text": "Layo",
+    "bio": "Hello there!",
+    "leaderboardRank": 5,
+    "image": "./images/ducky.png",
+    "funds": 10000
 }] 

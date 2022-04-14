@@ -22,10 +22,9 @@ class OtherUserPage extends Component {
             
             <div id="header">
             <img align='Left' id="otherImage" alt="profile pic" src={this.props.otherUser.image}/>
-                
                 <p id="welcome">
                     {/* need image here */}
-                    {this.props.otherUser.name}.
+                    {this.props.otherUser.text}.
                 </p>
                 <p id="sub">
                     {this.props.otherUser.bio}

@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import HeaderDrawer from "./headerDrawer.jsx";
-
 import "./styles/explorePage.css";
 import searchicon from "./images/header-icons/search.svg"
-import ProfileList from "./profileList"
 import InternalHeading from "./internalHeading.jsx";
 import SearchBar from "./searchBar.jsx";
 
@@ -22,7 +20,6 @@ class ExplorePage extends Component {
                     <img id="img" alt="search" src={searchicon}/>
                     <br />
                     <br />
-                    <ProfileList numProfiles={3}/>
                 </div>
 
                 
