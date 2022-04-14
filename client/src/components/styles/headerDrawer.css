@@ -28,7 +28,11 @@
     text-align: center;
 
     font-family: 'Poppins';
-    
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 38px;
+        
 }
 .username
 {
@@ -43,8 +47,7 @@
    
     position: relative;
     top: 10%;
-    left: 5%;
-    justify-content: center;
+    left: 0%;
 
 
 }
