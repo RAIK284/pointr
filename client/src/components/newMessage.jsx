@@ -1,4 +1,4 @@
-import React, { Component, useState} from "react";
+import React, { Component, useState, useEffect} from "react";
 import './styles/newMessage.css';
 import Button from '@mui/material/Button';
 // import TokensBox from "./tokensBox";
@@ -58,6 +58,10 @@ function NewMessage(props){
 
     }
 
+    useEffect(() => {
+        setMessageBody(messageBody)
+    }, [messageBody]);
+
 
     const setMessageData = async () => {
         getMessageValue(messageBody);
@@ -91,6 +95,9 @@ function NewMessage(props){
         })
 
     }
+
+
+    useEffect(() => console.log(messageBody), [messageBody]);
 
     const subtractMessageValue = async (messageObject) => {
         const jsonData = JSON.stringify(messageObject);
@@ -130,11 +137,9 @@ function NewMessage(props){
                         </div>
                     </div>
 
-                    <textarea className="messageEntryBox" name={"messageBody"} rows="4" cols="50" onChange={e => setMessageBody(e.target.value)} placeholder="Type your message here..."></textarea>
-
+                    <textarea className="messageEntryBox" value={messageBody} name={"messageBody"} rows="4" cols="50" onChange={e => setMessageBody(e.target.value)} placeholder="Type your message here..."></textarea>
                     <div className="tokensBox">
-                    
-                        <TokenCostButton onClick={e => setMessageBody(e.target.value.concat("[EMOJI]"))}></TokenCostButton>
+                        <TokenCostButton onClick={(e) => setMessageBody(messageBody + "test")}></TokenCostButton>
                         <TokenCostButton></TokenCostButton>
                         <TokenCostButton></TokenCostButton>
                         <TokenCostButton></TokenCostButton>
