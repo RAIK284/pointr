@@ -72,7 +72,7 @@ class HeaderDrawer extends React.Component {
                 variant="permanent"
                 anchor="left"
                 >
-                    <img src={ducky} alt="ducky"/>
+                    <img src={ducky} alt="ducky" id="profilePictureMask"/>
                     <List>
                         <ListItemText className="username">
                             <div className="username">
