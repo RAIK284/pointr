@@ -12,7 +12,16 @@ import ListItemText from '@mui/material/ListItemText';
 import ducky from './images/ducky.png'
 import { color } from '@mui/system';
 import { Hidden } from '@mui/material';
-import { profile, message, store, search, leaderboard} from "./images";
+import profileIcon from "./images/header-icons/profile.svg";
+import messageIcon from "./images/header-icons/message.svg";
+import storeIcon from "./images/header-icons/store.svg";
+import exploreIcon from "./images/header-icons/search.svg";
+import leaderboardIcon from "./images/header-icons/leaderboard.svg";
+
+
+
+
+
 
 // reference: https://github.com/express-labs/pure-react-carousel
 
