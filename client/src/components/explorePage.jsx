@@ -9,11 +9,11 @@ class ExplorePage extends Component {
         return (
             <React.Fragment>
                 
-           {/*  <HeaderDrawer index={3}></HeaderDrawer>
+            <HeaderDrawer index={3}></HeaderDrawer>
                 <div id="content">
-                </div> */}
+                </div>
 
-                <SearchBar></SearchBar>
+                
             </React.Fragment>
         );
     }
