@@ -7,17 +7,20 @@ import smiley from './images/smiley.png'
 class TokenCostButton extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            image: this.props.image,
+            points: this.props.points
+        }
     }
     render() {
         return (
             <React.Fragment >
                                     
                 <Button onClick={this.props.onClick}>
-                    <img src={smiley} id="emoji"></img>
+                    <img src={this.state.image} id="emoji"></img>
 
                     <div id="emoji">
-                        <text>100 pts</text>
+                        <text value = {this.state.points + " pts"}></text>
                     </div>
                 </Button>
 
