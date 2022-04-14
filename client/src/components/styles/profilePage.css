@@ -2,23 +2,43 @@
     background-color: #0064FF;
 }
 
+
+#headerWrapper{
+    width: 100vw;
+    height: 30vh;
+}
 #header {
-    margin-left: 14rem;
+    margin-left: 14%;
     padding-left: 4rem;
-    padding-top: 3%;
+    padding-top: 3%; 
+    overflow: hidden;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 20px;
     background-color: #65D7C0;
 }
 #welcome
 {
-    font-size: 70px;
+    
     display: inline;
-    font-weight: bold;
-    font-family: Poppins;
+    
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 70px;
+    letter-spacing: -0.015em;
+
+    color: #333333;
 }
 #sub
 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
     font-size: 25px;
-    font-family: Poppins;
+    
+    letter-spacing: -0.015em;
+
+    color: #333333;
 }
 #content {
     margin-left: 18rem;
