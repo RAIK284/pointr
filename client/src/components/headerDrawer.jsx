@@ -11,6 +11,8 @@ import ListItemText from '@mui/material/ListItemText';
 // import car from './images/car.jpg'
 import ducky from './images/ducky.png'
 import { color } from '@mui/system';
+import { Hidden } from '@mui/material';
+import { profile, message, store, search, leaderboard} from "./images";
 
 // reference: https://github.com/express-labs/pure-react-carousel
 
@@ -51,6 +53,7 @@ class HeaderDrawer extends React.Component {
                     ".MuiPaper-root": {
                         bgcolor: '#0064FF',
                         borderRadius: "0px 25px 25px 0px"
+                        
                     },
                     ".inactive": {
                         color: '#FFFFFF',
