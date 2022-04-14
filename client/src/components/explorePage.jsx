@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import HeaderDrawer from "./headerDrawer.jsx";
+
 import "./styles/explorePage.css";
 import searchicon from "./images/search.svg"
 import ProfileList from "./profileList"
 import InternalHeading from "./internalHeading.jsx";
+
 
 class ExplorePage extends Component {
     render() {
@@ -20,6 +22,8 @@ class ExplorePage extends Component {
                     <br />
                     <ProfileList numProfiles={3}/>
                 </div>
+
+                
             </React.Fragment>
         );
     }
