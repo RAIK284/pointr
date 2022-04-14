@@ -10,6 +10,8 @@ class MessagingPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            receivedMessages: {},
+            sentMessages: {},
             newMessage: false
         }
     }
@@ -17,17 +19,27 @@ class MessagingPage extends Component {
      componentDidMount() {
          fetch('http://localhost:8080/api/message?receiver=bsimpleman')
             .then(response => response.json())
-            .then(data => this.setState({data}))
+            .then(data => this.setState({receivedMessages: data}))
+
+         fetch('http://localhost:8080/api/message?sender=bsimpleman')
+             .then(response => response.json())
+             .then(data => this.setState({sentMessages: data}))
     }
 
     render() {
-        if(this.state.data === undefined) return <div>Loading...</div>
+        if(this.state.receivedMessages === undefined) return <div>Loading...</div>
         console.log(this.state.data)
-        let messages = [];
+        let sentMessages = [];
+        let receivedMessages = [];
 
-        for (let i = 0; i < this.state.data.length; i++) {
-            messages.push(<MessageDisplayBox name={this.state.data[i].name} username={this.state.data[i].sender} messageBody={this.state.data[i].messageBody}></MessageDisplayBox>);
+        for (let i = 0; i < this.state.sentMessages.length; i++) {
+            sentMessages.push(<MessageDisplayBox name={this.state.sentMessages[i].name} username={this.state.sentMessages[i].sender} messageBody={this.state.sentMessages[i].messageBody}></MessageDisplayBox>);
         }
+
+        for (let i = 0; i < this.state.receivedMessages.length; i++) {
+            receivedMessages.push(<MessageDisplayBox name={this.state.receivedMessages[i].name} username={this.state.receivedMessages[i].sender} messageBody={this.state.receivedMessages[i].messageBody}></MessageDisplayBox>);
+        }
+
         return (
             <React.Fragment >
                 <div id="messagingBackground">
@@ -40,11 +52,16 @@ class MessagingPage extends Component {
                         new message
                     </Button>
 
+                    <label className="toggle">
+                        <input type="checkbox"></input>
+                        <span className="labels" data-on="Sent" data-off="Recieved"></span>
+                    </label>
+
                     <div id="messageDisplayBoxes">
                         {/* The way this is displaying is NOT how it should be. We should have a call
                         to the api, and loop throug every message. Then, we display a box for every message. That way
                         for ex if someone only has 2 messages only 2 boxes show up */}
-                        {messages}
+                        {sentMessages}
                     </div>
 
                 </div>
