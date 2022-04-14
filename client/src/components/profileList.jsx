@@ -4,8 +4,18 @@ import PropTypes from 'prop-types';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ProfileBox from './profileBox'
+import ducky from './images/ducky.png'
 
 // reference: https://github.com/express-labs/pure-react-carousel
+
+// instead of otherUser equaling this, make it equal the proper object!
+let otherUser = {
+    name: 'bobby',
+    bio: 'hello there!',
+    leaderboardRank: 5,
+    image: ducky,
+    funds: 10000
+}
 class ProfileList extends React.Component {
     render() {
         const profileData = [["bobby", "hello there!"], 
@@ -14,6 +24,8 @@ class ProfileList extends React.Component {
             ["who is this?", "I am a mystery at large"], 
             ["who let the dogs out?", "Idk who?"], 
             ["Who? Who", "who what when where how?"]]
+
+        
         return (
             <React.Fragment>
                     <List>
@@ -41,3 +53,4 @@ class ProfileList extends React.Component {
 };
 
   export default ProfileList;
+  export {otherUser};
