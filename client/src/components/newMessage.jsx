@@ -10,6 +10,7 @@ function NewMessage(props){
     const [messageBody, setMessageBody] = useState('');
 
     const messageObject = {
+        "name": "Blake Simpleman",
         "timestamp": "",
         "sender": "bsimpleman",
         "receiver": "",
@@ -65,6 +66,7 @@ function NewMessage(props){
 
     const setMessageData = async () => {
         getMessageValue(messageBody);
+        messageObject.name = this.name;
         messageObject.timestamp = new Date().toUTCString()
         messageObject.receiver = email;
         messageObject.messageBody = messageBody;
