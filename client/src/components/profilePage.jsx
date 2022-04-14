@@ -90,7 +90,7 @@ class ProfilePage extends Component {
             
             <div id="header">
                 <p id="welcome">
-                    Welcome, {this.state.name}
+                    Welcome, {this.state.name}.
                 </p>
                 <p id="sub">
                     {this.state.bio}
