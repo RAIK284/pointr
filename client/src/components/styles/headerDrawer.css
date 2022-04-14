@@ -3,13 +3,22 @@
     font-size: 30px; 
     font-family: Poppins;
     margin-bottom: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 45px;
 }
 .active
 {
     font-size: 30px;
     font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 45px;
     margin-bottom: 1rem;
 }
+
 .settings
 {
     margin-top: 2rem;
@@ -17,6 +26,9 @@
     font-family: Poppins;
     text-decoration: underline;
     text-align: center;
+
+    font-family: 'Poppins';
+    
 }
 .username
 {
@@ -24,11 +36,29 @@
     color: white;
     font-size: 35px;
     font-family: Poppins;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 52px;
+   
+    position: relative;
+    top: 10%;
+
+
 }
 
 #profilePictureMask{
     height: 20%;
     width: 70%;
     border-radius: 50%;
+    object-fit: cover;
+
+    position: relative;
+    left: 10%;
+    top: 6%;
+
+    /* margin-left: 10%;
+    margin-top: 6%; */
     
 }
+
