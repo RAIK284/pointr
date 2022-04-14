@@ -85,41 +85,39 @@ class SignUp extends Component {
     render() {
         return (
             <React.Fragment >
-                
-                <body id="SU">
                 <div id="main-container">
                   
                     <div id="right-container">
                     
                         <div className="suTitle">
-                            <text>
+                            <p>
                             Welcome to Pointr!
-                            </text>
+                            </p>
                         </div>
                     
                         <div className="suSubtitle">
-                            <text >
+                            <p >
                             Sign up for a free account today.
-                            </text>
+                            </p>
                         </div>
                 
 
                         <div id="info-container">
-                                <label for="name" className="entryLabel">Name</label>
+                                <label  className="entryLabel">Name</label>
                                 
-                                <input type="text" name="name" value={this.state.name} onChange={this.handleChange} placeholder="Enter your name" className="entry" required></input>
+                                <input type="text" data-testid="name-input" name="name" value={this.state.name} onChange={this.handleChange} placeholder="Enter your name" className="entry" required></input>
                                 
-                                <label for="email"  className="entryLabel">Email</label>
+                                <label className="entryLabel">Email</label>
                                 
-                                <input type="text" name="email" alue={this.state.email} onChange={this.handleChange} placeholder="Enter your email address" className="entry"  required></input>
+                                <input type="text" name="email" data-testid="email-input" alue={this.state.email} onChange={this.handleChange} placeholder="Enter your email address" className="entry"  required></input>
 
-                                <label for="username"  className="entryLabel">Username</label>
+                                <label className="entryLabel">Username</label>
                                
-                                <input type="text" name="username" value={this.state.username} onChange={this.handleChange} placeholder="Enter a username" className="entry" required></input>
+                                <input type="text" name="username" data-testid="username-input" value={this.state.username} onChange={this.handleChange} placeholder="Enter a username" className="entry" required></input>
                                 
-                                <label for="password"  className="entryLabel">Password</label>
-                                <input type="password" name="password" value={this.state.password} onChange={this.handleChange} placeholder="Enter a password" className="entry" required></input>
-                                <input type="password" name="passwordConfirmation" value={this.state.passwordConfirmation} onChange={this.handleChange} placeholder="Confirm password" className="entry"  requried></input>
+                                <label className="entryLabel">Password</label>
+                                <input type="password" name="password"  data-testid="password-input" value={this.state.password} onChange={this.handleChange} placeholder="Enter a password" className="entry" required></input>
+                                <input type="password" name="passwordConfirmation" data-testid="passwordConfirmation-input" value={this.state.passwordConfirmation} onChange={this.handleChange} placeholder="Confirm password" className="entry"  required></input>
                         </div>
 
                         <Button id="signupbutton" variant="contained" size="large" onClick={async () => await this.handleSubmit()}>Sign Up</Button>
@@ -127,8 +125,6 @@ class SignUp extends Component {
                     </div>
                     
                 </div>
-                        
-                </body>
             </React.Fragment>
         );
     }
