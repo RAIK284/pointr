@@ -3,8 +3,74 @@ import './styles/newMessage.css';
 import Button from '@mui/material/Button';
 // import TokensBox from "./tokensBox";
 import TokenCostButton from "./tokenCostButton";
+import smiley from './images/smiley.png'
+
 
 function NewMessage(props){
+    // face with tears of joy: U+1F602: 10
+    // smiling face with sunglasses: U+1F60E: 10
+    // pile of poo: U+1F4A9: 5
+    // kiss mark: U+1F48B: 20
+    // hundred points: U+1F4AF: 100
+    // thumbs up: U+1F44D: 5
+    // frog: U+1F438: 1000000
+    // clinking glasses: U+1F942: 10
+    // glowing star: U+1F31F: 20
+    // fire: U+1F525: 5
+    
+    const emojiData = {
+        joyTears: {
+            image: smiley,
+            price: 10,
+            emoji: "😂"
+        },
+        sunglass: {
+            image: smiley,
+            price: 10,
+            emoji: "😎"
+        },
+        poo: {
+            image: smiley,
+            price: 5,
+            emoji: "💩"
+        },
+        kiss: {
+            image: smiley,
+            price: 20,
+            emoji: "💋"
+        },
+        hundred: {
+            image: smiley,
+            price: 100,
+            emoji: "💯"
+        },
+        thumbsUp: {
+            image: smiley,
+            price: 5,
+            emoji: "👍"
+        },
+        frog: {
+            image: smiley,
+            price: 1000,
+            emoji: "🐸"
+        },
+        clinkGlass: {
+            image: smiley,
+            price: 10,
+            emoji: "🥂"
+        },
+        glowStar: {
+            image: smiley,
+            price: 20,
+            emoji: "🌟"
+        },
+        fire: {
+            image: smiley,
+            price: 5,
+            emoji: "🔥"
+        },
+
+    }
 
     const [email, setEmail] = useState('');
     const [messageBody, setMessageBody] = useState('');
@@ -141,16 +207,65 @@ function NewMessage(props){
 
                     <textarea className="messageEntryBox" value={messageBody} name={"messageBody"} rows="4" cols="50" onChange={e => setMessageBody(e.target.value)} placeholder="Type your message here..."></textarea>
                     <div className="tokensBox">
-                        <TokenCostButton onClick={(e) => setMessageBody(messageBody + "test")}></TokenCostButton>
-                        <TokenCostButton></TokenCostButton>
-                        <TokenCostButton></TokenCostButton>
-                        <TokenCostButton></TokenCostButton>
-                        <TokenCostButton></TokenCostButton>
-                        <TokenCostButton></TokenCostButton>
-                        <TokenCostButton></TokenCostButton>
-                        <TokenCostButton></TokenCostButton>
-                        <TokenCostButton></TokenCostButton>
-                        <TokenCostButton></TokenCostButton>
+                        <TokenCostButton 
+                            image = {emojiData.smiley.image} 
+                            points = {emojiData.smiley.price} 
+                            onClick={(e) => setMessageBody(messageBody + emojiData.smiley.emoji)}>
+                        </TokenCostButton>
+
+                        <TokenCostButton 
+                            image = {emojiData.smiley.image} 
+                            points = {emojiData.smiley.price} 
+                            onClick={(e) => setMessageBody(messageBody + emojiData.smiley.emoji)}>
+                        </TokenCostButton>
+
+                        <TokenCostButton 
+                            image = {emojiData.smiley.image} 
+                            points = {emojiData.smiley.price} 
+                            onClick={(e) => setMessageBody(messageBody + emojiData.smiley.emoji)}>
+                        </TokenCostButton>
+
+                        <TokenCostButton 
+                            image = {emojiData.smiley.image} 
+                            points = {emojiData.smiley.price} 
+                            onClick={(e) => setMessageBody(messageBody + emojiData.smiley.emoji)}>
+                        </TokenCostButton>
+
+                        <TokenCostButton 
+                            image = {emojiData.smiley.image} 
+                            points = {emojiData.smiley.price} 
+                            onClick={(e) => setMessageBody(messageBody + emojiData.smiley.emoji)}>
+                        </TokenCostButton>
+
+                        <TokenCostButton 
+                            image = {emojiData.smiley.image} 
+                            points = {emojiData.smiley.price} 
+                            onClick={(e) => setMessageBody(messageBody + emojiData.smiley.emoji)}>
+                        </TokenCostButton>
+
+                        <TokenCostButton 
+                            image = {emojiData.smiley.image} 
+                            points = {emojiData.smiley.price} 
+                            onClick={(e) => setMessageBody(messageBody + emojiData.smiley.emoji)}>
+                        </TokenCostButton>
+
+                        <TokenCostButton 
+                            image = {emojiData.smiley.image} 
+                            points = {emojiData.smiley.price} 
+                            onClick={(e) => setMessageBody(messageBody + emojiData.smiley.emoji)}>
+                        </TokenCostButton>
+
+                        <TokenCostButton 
+                            image = {emojiData.smiley.image} 
+                            points = {emojiData.smiley.price} 
+                            onClick={(e) => setMessageBody(messageBody + emojiData.smiley.emoji)}>
+                        </TokenCostButton>
+
+                        <TokenCostButton 
+                            image = {emojiData.smiley.image} 
+                            points = {emojiData.smiley.price} 
+                            onClick={(e) => setMessageBody(messageBody + emojiData.smiley.emoji)}>
+                        </TokenCostButton>
 
                     </div>
 

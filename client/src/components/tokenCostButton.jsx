@@ -20,7 +20,9 @@ class TokenCostButton extends Component {
                     <img src={this.state.image} id="emoji"></img>
 
                     <div id="emoji">
-                        <text value = {this.state.points + " pts"}></text>
+                        <text>
+                            {this.state.points + " pts"}
+                        </text>
                     </div>
                 </Button>
 

@@ -7,6 +7,7 @@ import HeaderDrawer from "./headerDrawer";
 import NewMessage from "./newMessage";
 
 class MessagingPage extends Component {
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -35,7 +36,7 @@ class MessagingPage extends Component {
 
     render() {
         if(this.state.receivedMessages === undefined) return <div>Loading...</div>
-        console.log(this.state.data)
+
         let sentMessages = [];
         let receivedMessages = [];
 
