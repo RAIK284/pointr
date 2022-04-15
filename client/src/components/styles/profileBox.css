@@ -1,6 +1,6 @@
 .box1 
 {
-    background-color: #65D7C0;
+    background-color: #9BE5D6;
     width: 1065px;
     padding: 1rem;
     border-radius: 20px;
@@ -22,6 +22,7 @@
 {
     height: 120px;
     width: 120px;
+    border-radius:50%;
 }
 .name
 {
