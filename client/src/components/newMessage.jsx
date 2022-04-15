@@ -3,69 +3,70 @@ import './styles/newMessage.css';
 import Button from '@mui/material/Button';
 // import TokensBox from "./tokensBox";
 import TokenCostButton from "./tokenCostButton";
+////
 import smiley from './images/smiley.png'
+import joyTears from './images/emojis/joyTears.png'
+import sunglass from './images/emojis/sunglass.png'
+import poo from './images/emojis/poo.png'
+import kiss from './images/emojis/kiss.png'
+import hundred from './images/emojis/hundred.png'
+import thumbsUp from './images/emojis/thumbsUp.png'
+import frog from './images/emojis/frog.png'
+import clinkGlass from './images/emojis/clinkGlass.png'
+import glowStar from './images/emojis/glowStar.png'
+import fire from './images/emojis/fire.png'
 
 
 function NewMessage(props){
-    // face with tears of joy: U+1F602: 10
-    // smiling face with sunglasses: U+1F60E: 10
-    // pile of poo: U+1F4A9: 5
-    // kiss mark: U+1F48B: 20
-    // hundred points: U+1F4AF: 100
-    // thumbs up: U+1F44D: 5
-    // frog: U+1F438: 1000000
-    // clinking glasses: U+1F942: 10
-    // glowing star: U+1F31F: 20
-    // fire: U+1F525: 5
-    
+
     const emojiData = {
         joyTears: {
-            image: smiley,
+            image: joyTears,
             price: 10,
             emoji: "😂"
         },
         sunglass: {
-            image: smiley,
+            image: sunglass,
             price: 10,
             emoji: "😎"
         },
         poo: {
-            image: smiley,
+            image: poo,
             price: 5,
             emoji: "💩"
         },
         kiss: {
-            image: smiley,
+            image: kiss,
             price: 20,
             emoji: "💋"
         },
         hundred: {
-            image: smiley,
+            image: hundred,
             price: 100,
             emoji: "💯"
         },
         thumbsUp: {
-            image: smiley,
-            price: 5,
+            image: thumbsUp,
+            price: 15,
             emoji: "👍"
         },
         frog: {
-            image: smiley,
-            price: 1000,
+            image: frog,
+            price: 50,
             emoji: "🐸"
         },
         clinkGlass: {
-            image: smiley,
+            image: clinkGlass,
             price: 10,
             emoji: "🥂"
         },
         glowStar: {
-            image: smiley,
+            image: glowStar,
             price: 20,
             emoji: "🌟"
         },
         fire: {
-            image: smiley,
+            image: fire,
             price: 5,
             emoji: "🔥"
         }
