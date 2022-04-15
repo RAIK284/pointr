@@ -296,8 +296,4 @@ describe("<SettingsPage />", () => {
 
         expect(component.state.password === testDataValue);
     });
-
 });
-
-
-
