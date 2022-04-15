@@ -34,3 +34,19 @@
     font-size: 30px;
     margin-bottom: 0rem;
 }
+
+.box1:hover{
+    position: relative; 
+             top: -10px;
+    box-shadow: 0 10px #FFFFFF;
+    transition: margin 0.8s linear;
+    cursor:pointer;
+}
+
+.box2:hover{
+    position: relative; 
+    top: -10px;
+    box-shadow: 0 10px #FFFFFF;
+    transition: margin 0.8s linear;
+    cursor:pointer;
+}
