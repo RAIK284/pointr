@@ -1,6 +1,8 @@
 import { React, useState } from 'react'
 import data from "./ListData.json"
 import ProfileBox from "./profileBox"
+import "./styles/explorePage.css";
+
 let count = 0
 function List(props) {
     //create a new array by filtering the original array
@@ -15,13 +17,14 @@ function List(props) {
         }
     })
     return (
+        <div className="resultsDisplay">
         <ul>
             {filteredData.map((item) => (
                 <div>
                     {
                         count < 3
                         ?
-                        <div onLoad={()=>{count++}}>
+                        <div onLoad={()=>{count++}} >
                             <ProfileBox otherProfile={item}/>
                         </div>
                         :
@@ -31,6 +34,8 @@ function List(props) {
                 
             ))}
         </ul>
+
+        </div>
     )
 }
 export default List

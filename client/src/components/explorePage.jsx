@@ -13,14 +13,16 @@ class ExplorePage extends Component {
                 
             <HeaderDrawer index={3}></HeaderDrawer>
             <InternalHeading title="Explore"></InternalHeading>
+            
                 <div id="content">
-                    {/* <p className="header">Explore</p> */}
-                    {/* <input type="text" placeholder="Search for users..." className="search"></input> */}
-                    <SearchBar className="search"></SearchBar>
-                    <img id="img" alt="search" src={searchicon}/>
-                    <br />
-                    <br />
-                </div>
+                        {/* <p className="header">Explore</p> */}
+                        {/* <input type="text" placeholder="Search for users..." className="search"></input> */}
+                        <SearchBar className="search"></SearchBar>
+{/*                         <img id="img" alt="search" src={searchicon}/>
+ */}                        <br />
+                        <br />
+                    </div>
+                
 
                 
             </React.Fragment>
