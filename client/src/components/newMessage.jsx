@@ -94,20 +94,28 @@ function NewMessage(props){
         0x1B780: 10,//mushroom worth 10 pts
         0x1B64A: 15//heart eyes worth 15 pts
     }
+
+    function removeEmojis(str) {
+        var emojiRE = /(\P{EPres})|(\P{ExtPict})/gu;
+        return str.replace(emojiRE, '');
+    }
+
     const getMessageValue = (messageBody) => {
         console.log("In getMessageValue function")
         console.log(messageBody)
         // console.log(messageBody.length)
 
+        var messageBodyPostCull = removeEmojis(messageBody)
+
         var totalValue = 0
 
-        for (var i = 0; i < messageBody.length; i++) {
+        for (var i = 0; i < messageBodyPostCull.length; i++) {
             // if the character is not ASCII
-            if (messageBody.charCodeAt(i) > 127)
+            if (messageBodyPostCull.charCodeAt(i) > 127)
                 
                 // every emoji is 2 characters
                 // emoji id is charCode
-                var emojiID = messageBody.charCodeAt(i)+messageBody.charCodeAt(i+1)
+                var emojiID = messageBodyPostCull.charCodeAt(i)+messageBodyPostCull.charCodeAt(i+1)
 
                 // if emoji is in our approved list, add its value
                 if (dict[emojiID] != null) {
