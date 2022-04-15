@@ -95,7 +95,7 @@ function NewMessage(props){
         0x1B64A: 15//heart eyes worth 15 pts
     }
 
-    function removeEmojis(str) {
+    function removeNonEmojis(str) {
         var emojiRE = /(\P{EPres})|(\P{ExtPict})/gu;
         return str.replace(emojiRE, '');
     }
@@ -105,7 +105,7 @@ function NewMessage(props){
         console.log(messageBody)
         // console.log(messageBody.length)
 
-        var messageBodyPostCull = removeEmojis(messageBody)
+        var messageBodyPostCull = removeNonEmojis(messageBody)
 
         var totalValue = 0
 
