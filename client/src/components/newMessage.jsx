@@ -68,7 +68,7 @@ function NewMessage(props){
             image: smiley,
             price: 5,
             emoji: "🔥"
-        },
+        }
 
     }
 
@@ -208,63 +208,63 @@ function NewMessage(props){
                     <textarea className="messageEntryBox" value={messageBody} name={"messageBody"} rows="4" cols="50" onChange={e => setMessageBody(e.target.value)} placeholder="Type your message here..."></textarea>
                     <div className="tokensBox">
                         <TokenCostButton 
-                            image = {emojiData.smiley.image} 
-                            points = {emojiData.smiley.price} 
-                            onClick={(e) => setMessageBody(messageBody + emojiData.smiley.emoji)}>
+                            image = {emojiData.joyTears.image} 
+                            points = {emojiData.joyTears.price} 
+                            onClick={(e) => setMessageBody(messageBody + emojiData.joyTears.emoji)}>
                         </TokenCostButton>
 
                         <TokenCostButton 
-                            image = {emojiData.smiley.image} 
-                            points = {emojiData.smiley.price} 
-                            onClick={(e) => setMessageBody(messageBody + emojiData.smiley.emoji)}>
+                            image = {emojiData.sunglass.image} 
+                            points = {emojiData.sunglass.price} 
+                            onClick={(e) => setMessageBody(messageBody + emojiData.sunglass.emoji)}>
                         </TokenCostButton>
 
                         <TokenCostButton 
-                            image = {emojiData.smiley.image} 
-                            points = {emojiData.smiley.price} 
-                            onClick={(e) => setMessageBody(messageBody + emojiData.smiley.emoji)}>
+                            image = {emojiData.poo.image} 
+                            points = {emojiData.poo.price} 
+                            onClick={(e) => setMessageBody(messageBody + emojiData.poo.emoji)}>
                         </TokenCostButton>
 
                         <TokenCostButton 
-                            image = {emojiData.smiley.image} 
-                            points = {emojiData.smiley.price} 
-                            onClick={(e) => setMessageBody(messageBody + emojiData.smiley.emoji)}>
+                            image = {emojiData.kiss.image} 
+                            points = {emojiData.kiss.price} 
+                            onClick={(e) => setMessageBody(messageBody + emojiData.kiss.emoji)}>
                         </TokenCostButton>
 
                         <TokenCostButton 
-                            image = {emojiData.smiley.image} 
-                            points = {emojiData.smiley.price} 
-                            onClick={(e) => setMessageBody(messageBody + emojiData.smiley.emoji)}>
+                            image = {emojiData.hundred.image} 
+                            points = {emojiData.hundred.price} 
+                            onClick={(e) => setMessageBody(messageBody + emojiData.hundred.emoji)}>
                         </TokenCostButton>
 
                         <TokenCostButton 
-                            image = {emojiData.smiley.image} 
-                            points = {emojiData.smiley.price} 
-                            onClick={(e) => setMessageBody(messageBody + emojiData.smiley.emoji)}>
+                            image = {emojiData.thumbsUp.image} 
+                            points = {emojiData.thumbsUp.price} 
+                            onClick={(e) => setMessageBody(messageBody + emojiData.thumbsUp.emoji)}>
                         </TokenCostButton>
 
                         <TokenCostButton 
-                            image = {emojiData.smiley.image} 
-                            points = {emojiData.smiley.price} 
-                            onClick={(e) => setMessageBody(messageBody + emojiData.smiley.emoji)}>
+                            image = {emojiData.frog.image} 
+                            points = {emojiData.frog.price} 
+                            onClick={(e) => setMessageBody(messageBody + emojiData.frog.emoji)}>
                         </TokenCostButton>
 
                         <TokenCostButton 
-                            image = {emojiData.smiley.image} 
-                            points = {emojiData.smiley.price} 
-                            onClick={(e) => setMessageBody(messageBody + emojiData.smiley.emoji)}>
+                            image = {emojiData.clinkGlass.image} 
+                            points = {emojiData.clinkGlass.price} 
+                            onClick={(e) => setMessageBody(messageBody + emojiData.clinkGlass.emoji)}>
                         </TokenCostButton>
 
                         <TokenCostButton 
-                            image = {emojiData.smiley.image} 
-                            points = {emojiData.smiley.price} 
-                            onClick={(e) => setMessageBody(messageBody + emojiData.smiley.emoji)}>
+                            image = {emojiData.glowStar.image} 
+                            points = {emojiData.glowStar.price} 
+                            onClick={(e) => setMessageBody(messageBody + emojiData.glowStar.emoji)}>
                         </TokenCostButton>
 
                         <TokenCostButton 
-                            image = {emojiData.smiley.image} 
-                            points = {emojiData.smiley.price} 
-                            onClick={(e) => setMessageBody(messageBody + emojiData.smiley.emoji)}>
+                            image = {emojiData.fire.image} 
+                            points = {emojiData.fire.price} 
+                            onClick={(e) => setMessageBody(messageBody + emojiData.fire.emoji)}>
                         </TokenCostButton>
 
                     </div>
@@ -284,32 +284,3 @@ function NewMessage(props){
 }
 
 export default NewMessage
-
-// import MessagingPage from "./messagingPage";
-
-
-// class NewMessage extends Component {
-//     constructor(props) {
-//         super(props);
-//         this.newMessage = this.newMessage.bind(this)
-
-//     }
-
-//     render() {
-//         return(
-//             <React.Fragment >
-    
-//                 <div className = 'newMessage'>
-//                     <div className = 'newMessageInner'>
-//                         <button className = 'closeButton' onClick={()=> this.setState({newMessage: false})}>
-//                             X
-//                         </button>
-//                     </div>
-    
-//                 </div>
-//             </React.Fragment>
-    
-//         )
-    
-//     }
-// }
