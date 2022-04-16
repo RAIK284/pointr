@@ -34,9 +34,9 @@ return (
        
         label="Search for a user..."
    
-        InputProps={{ style: { fontFamily:'Poppins'} }}
-        InputLabelProps={{ style: { fontFamily:'Poppins', fontWeight: '500px',borderWidth:'3px'}  }}
         
+        InputLabelProps={{ style: { fontFamily:'Poppins', fontWeight: '700px',borderWidth:'3px'}  }}
+        borderWidth='5px'
       />
     </div>
 
