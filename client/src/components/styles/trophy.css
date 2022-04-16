@@ -27,7 +27,8 @@
     margin-top: 3%;
 
     background: rgba(0, 100, 255, 0.3);
-    border-radius: 20px;
+    border: 3px solid rgba(0, 100, 255, 1);
+
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
@@ -51,6 +52,7 @@
 
     background: #0265FF;
     border: 6px solid #FFFFFF;
+
     box-sizing: border-box;
     border-radius: 20px;
    
