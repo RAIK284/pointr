@@ -165,6 +165,7 @@ body {
     font-weight: 500;
     font-size: 25px;
     line-height: 60px;
+    
     display: flex;
     
     letter-spacing: -0.015em;
@@ -174,11 +175,12 @@ body {
     background: #9BE5D6;
     border: 3px solid #02BA90;
     height: 4rem;
-    width: 30rem;
+    width: 25rem;
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-    padding: 1%;
+    justify-content: center;
+
 
     
 }
