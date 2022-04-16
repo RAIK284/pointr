@@ -1,10 +1,8 @@
 import React, { Component, useState, useEffect} from "react";
 import './styles/newMessage.css';
 import Button from '@mui/material/Button';
-// import TokensBox from "./tokensBox";
 import TokenCostButton from "./tokenCostButton";
-////
-import smiley from './images/smiley.png'
+
 import joyTears from './images/emojis/joyTears.png'
 import sunglass from './images/emojis/sunglass.png'
 import poo from './images/emojis/poo.png'
@@ -47,12 +45,12 @@ function NewMessage(props){
         },
         thumbsUp: {
             image: thumbsUp,
-            price: 15,
+            price: 5,
             emoji: "👍"
         },
         frog: {
             image: frog,
-            price: 50,
+            price: 100,
             emoji: "🐸"
         },
         clinkGlass: {
@@ -70,8 +68,8 @@ function NewMessage(props){
             price: 5,
             emoji: "🔥"
         }
-
     }
+
 
     const [email, setEmail] = useState('');
     const [messageBody, setMessageBody] = useState('');
@@ -91,37 +89,50 @@ function NewMessage(props){
     }
 
     var dict = {
-        0x1B780: 10,//mushroom worth 10 pts
-        0x1B64A: 15//heart eyes worth 15 pts
+        '😂': emojiData.joyTears.price,
+        '😎': emojiData.sunglass.price,
+        '💩': emojiData.poo.price,
+        '💋': emojiData.kiss.price,
+        '💯': emojiData.hundred.price,
+        '👍': emojiData.thumbsUp.price,
+        '🐸': emojiData.frog.price,
+        '🥂': emojiData.clinkGlass.price,
+        '🌟': emojiData.glowStar.price,
+        '🔥': emojiData.fire.price
+    }
+    
+    
+    function removeEmojis(str) {
+        var emojiRE = /(\P{EPres})|(\P{ExtPict})/gu;
+        return str.replace(emojiRE, '');
     }
     const getMessageValue = (messageBody) => {
         console.log("In getMessageValue function")
         console.log(messageBody)
-        // console.log(messageBody.length)
+
+        var messageBodyPostCull = removeEmojis(messageBody)
 
         var totalValue = 0
 
-        for (var i = 0; i < messageBody.length; i++) {
+        for (var i = 0; i < messageBodyPostCull.length; i++) {
             // if the character is not ASCII
-            if (messageBody.charCodeAt(i) > 127)
+            if (messageBodyPostCull.charCodeAt(i) > 127)
                 
-                // every emoji is 2 characters
-                // emoji id is charCode
-                var emojiID = messageBody.charCodeAt(i)+messageBody.charCodeAt(i+1)
+                var emojiIcon = messageBodyPostCull.charAt(i) + messageBodyPostCull.charAt(i+1)
 
-                // if emoji is in our approved list, add its value
-                if (dict[emojiID] != null) {
-                    console.log("INSIDE IF")
-                    console.log(emojiID)// this emoji id is wrong... only f***s up when theres a char btwn emojis
-                    console.log(dict[emojiID])
-                    totalValue += dict[emojiID]
+                // if the emoji is in our selected list
+                if (dict[emojiIcon] != null) {
+ 
+                    totalValue += dict[emojiIcon]
+   
                 }
-
                 // skip next char since emojis take up 2 chars
                 i++
 
         }
 
+        
+        console.log("totalValue: ")
         console.log(totalValue)
 
     }
@@ -132,7 +143,7 @@ function NewMessage(props){
 
 
     const setMessageData = async () => {
-        getMessageValue(messageBody);
+        messageObject.value = getMessageValue(messageBody);
         messageObject.name = this.name;
         messageObject.timestamp = new Date().toUTCString()
         messageObject.receiver = email;
