@@ -12,13 +12,20 @@ import ball from './images/trophy-icons/ball.png'
 class StorePage extends Component {
     constructor(props) {
         super(props);
-        this.state =
-            {trophies: [],
-                trophyStatus: []}
+        this.state = {
+            trophies: [],
+            trophyStatus: []
+            mostPopularTrophy: {},
+            mostPopularTrophyStatus: false}
     }
 
     componentDidMount() {
         fetch('http://localhost:8080/api/storeItem')
+            .then(response => response.json())
+            .then((data) => {this.setState({trophies: data})})
+            .then(() => {this.setState({trophyStatus : Array(this.state.trophies.length).fill(false)})})
+
+        fetch('http://localhost:8080/api/mostPopularStoreItem')
             .then(response => response.json())
             .then((data) => {this.setState({trophies: data})})
             .then(() => {this.setState({trophyStatus : Array(this.state.trophies.length).fill(false)})})
@@ -45,24 +52,18 @@ class StorePage extends Component {
                 </div>
 
                 <div id="mostPopularDisplay">
-                    
                     <text id="mostPopTitle">Today's Most Popular</text>
                     <text id="mostPopSubtitle">Explore today's most popular trophies!</text>
                     <div className="mpCard">
                         <text id="MPTitle">Crazy Crystal Ball</text>
                         <img src={ball} className="mostPopImg" onClick={()=> this.setState({trophySingle: true})}/> 
                     </div>
-                    
-                    
                 </div>
 
 
                 <div id="trophyDisplay">
-                    <Trophy key={0} index={0} onClick={()=> {this.changeState(0)}} cost={100} image={"trophy"}></Trophy>
-                    <TrophySingle key={0} trigger={this.state.trophyStatus[0]} onClick={()=> {this.changeState(0)}}  title={"Trophy"} description={"This is a description"} cost={100} image={"trophy"}></TrophySingle>
-
                     {this.state.trophies.map((trophy, i) => <Trophy key={i} index={i} onClick={()=> {this.changeState(i)}} cost={trophy.price} image={trophy.image}></Trophy>)}
-                    {this.state.trophies.map((trophy, i) => <TrophySingle key={i} trigger={this.state.trophyStatus[i]} title={trophy.name} description={trophy.description} cost={trophy.price} image={trophy.image}>
+                    {this.state.trophies.map((trophy, i) => <TrophySingle key={i} trigger={this.state.trophyStatus[i]} onClick={()=> {this.changeState(i)}} title={trophy.name} description={trophy.description} cost={trophy.price} image={trophy.image}>
                     </TrophySingle>)}
                 </div>
             </div>
