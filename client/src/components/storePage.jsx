@@ -12,18 +12,52 @@ import ball from './images/trophy-icons/ball.png'
 class StorePage extends Component {
     constructor(props) {
         super(props);
+<<<<<<< Updated upstream
         this.state={
             trophySingle : false
         }
+=======
+        this.state = {
+            funds: 0,
+            trophies: [],
+            trophyStatus: [],
+            mostPopularTrophyData: {},
+            mostPopularTrophyStatus: false}
     }
-  
+
+    componentDidMount() {
+        fetch('http://localhost:8080/api/storeItem') .then(response => response.json()) .then((data) => {this.setState({
+            trophies: data,
+            trophyStatus : Array(data.length).fill(false)
+        })})
+
+        fetch('http://localhost:8080/api/mostPopularStoreItem')
+            .then(response => response.json())
+            .then((data) => fetch('http://localhost:8080/api/storeItem?name=' + data.name))
+            .then(response => response.json())
+            .then((data) => {this.setState({mostPopularTrophyData: data})})
+
+        fetch('http://localhost:8080/api/user?username=bsimpleman')
+            .then(response => response.json())
+            .then(data => this.setState({
+                funds: data.funds,
+            }));
+    }
+
+    changeState(index) {
+        const status = this.state.trophyStatus;
+        status[index] = !status[index];
+        this.setState({trophyStatus: status})
+>>>>>>> Stashed changes
+    }
+
     render() {
         return (
-            
+
             <React.Fragment>
 
-        
-            
+
+
 
            <HeaderDrawer index={2}></HeaderDrawer>
             <InternalHeading title="Store"></InternalHeading>
@@ -31,7 +65,7 @@ class StorePage extends Component {
             <div className="storeBackground">
                 <div id="fundsAmountWrapper">
                     <text id="fundsAmountText">FUNDs available:</text>
-                    <var id="fundsAmountNum">20,000</var>
+                    <var id="fundsAmountNum">{this.state.funds}</var>
                 </div>
 
                 <div id="mostPopularDisplay">
@@ -59,8 +93,8 @@ class StorePage extends Component {
                     </div>
                 </TrophySingle>
             </div>
-           
-                
+
+
                     
 
                    
