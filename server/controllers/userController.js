@@ -1,6 +1,15 @@
 const mongoConnection = require("../utils/database");
 const encrypt = require("../utils/encrypt")
+const jwt = require('jsonwebtoken');
 const {ObjectId: objectID} = require("mongodb");
+
+const createToken = async (user) => {
+    const db = mongoConnection.getDb();
+    const token = jwt.sign({_id: user.username}, 'Z5YWzh5F2D', {expiresIn: '7 days'});
+    console.log(user)
+    db.collection('users').updateOne({username: user.username}, {$push: {"tokens" : token}});
+    return token;
+}
 
 const signupUser = async (req, res) => {
     const db = mongoConnection.getDb();
@@ -22,7 +31,9 @@ const loginUser = async (req, res) => {
     }
     const isCorrectPassword = await encrypt.checkHash(password, email);
         if (isCorrectPassword) {
-            res.status(200).send('Email and password match!')
+            const user = await db.collection('users').findOne({email: req.body.email});
+            const token = await createToken(user)
+            res.status(200).send({user, token})
         } else {
             res.status(401).send('Incorrect password')
         }
