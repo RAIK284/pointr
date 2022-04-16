@@ -9,11 +9,20 @@ module.exports = (app) => {
 
     router.post('/api/login', userController.loginUser);
 
+    router.post('/api/logout', auth, userController.logoutUser);
+
+    router.post('/api/logoutAllSessions', auth, userController.logoutAllUserSessions);
+
     router.get('/api/existingUser', userController.isExistingUser);
 
     router.get('/api/existingEmail', userController.isExistingEmail);
 
-    router.get('/api/user', auth, userController.readUser);
+    router.get('/api/user', userController.readUser);
+
+    // This endpoint returns data on the currently signed in user, based off information from an authentication token
+    router.get('/api/user/self', auth, async (req, res) => {
+        res.send(req.user);
+    });
 
     router.post('/api/user', userController.createUser);
 

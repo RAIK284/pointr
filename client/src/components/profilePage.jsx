@@ -35,7 +35,11 @@ class ProfilePage extends Component {
     }
 
     async getUserInformation() {
-        await fetch('http://localhost:8080/api/user?username=bsimpleman')
+
+        await fetch('http://localhost:8080/api/user/self', {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
+        })
             .then(response => response.json())
             .then(data => this.setState({
                 name: data.name,

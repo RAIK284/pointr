@@ -16,8 +16,11 @@ const signupUser = async (req, res) => {
     const user = req.body;
     user.password = await encrypt.createHash(user.password);
     db.collection('users').insertOne(user);
-    res.status(200).send('Created user');
+    const token = await createToken(user);
+    res.status(200).send({user, token})
 }
+
+
 
 const loginUser = async (req, res) => {
     const db = mongoConnection.getDb();
@@ -37,6 +40,35 @@ const loginUser = async (req, res) => {
         } else {
             res.status(401).send('Incorrect password')
         }
+}
+
+const logoutUser = async (req, res) => {
+    const db = mongoConnection.getDb();
+    try {
+        req.user.tokens = req.user.tokens.filter((token) => {
+            return token.token !== req.token
+        });
+        await db.collection('users').updateOne(
+            {username: req.user.username},
+            {$set: {tokens: req.user.tokens}}
+        )
+        res.sendStatus(200)
+    } catch (e) {
+        res.status(500).send();
+    }
+}
+
+const logoutAllUserSessions = async (req, res) => {
+    const db = mongoConnection.getDb();
+    try {
+        await db.collection('users').updateOne(
+            {username: req.user.username},
+            {$set: {tokens: []}}
+        )
+        res.sendStatus(200)
+    } catch (e) {
+        res.status(500).send();
+    }
 }
 
 const isExistingUser = async (req, res) => {
@@ -122,6 +154,8 @@ module.exports = {
     deleteUser,
     signupUser,
     loginUser,
+    logoutUser,
+    logoutAllUserSessions,
     isExistingUser,
     isExistingEmail
 }
