@@ -76,16 +76,18 @@ body {
 
 button#homepagebutton {
   
-    background: #0064FF;
+    background: #FFFFFF;
     border-radius: 6px;
     
+    width: 13rem;
+    height: 4rem;
     
 
-    color: white;
+    color: #0064FF;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 30px;
     line-height: 45px;
    
 
@@ -94,6 +96,8 @@ button#homepagebutton {
     text-align: center;
 
 }
+
+
 
 
 #titleHeader{
@@ -118,7 +122,14 @@ button#homepagebutton {
 #homeSubtitleWrapper{
     position: relative;
     top: 10%;
-    margin-left: 50%;
+    margin-left: 18%;
+
+}
+
+#homeButtonWrapper{
+    position:relative;
+    top: 0%;
+    left: 77%;
 
 }
 
@@ -153,10 +164,13 @@ button#homepagebutton {
     
     
     height:50vh;
-    width:50vw;
+    width:100vw;
+    margin-top: 10vh;
+ 
 
     display: flex;
     flex-direction: row;
+    align-items:stretch;
     justify-content:space-evenly;
     
 }
@@ -201,7 +215,7 @@ button#homepagebutton {
 
 #ib1{
     background-color: #66D8C1;
-    margin: 0;
+   
 }
 
 .infoBoxWrapperLeft{

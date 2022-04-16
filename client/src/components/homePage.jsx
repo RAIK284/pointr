@@ -27,6 +27,10 @@ class HomePage extends Component {
                         <div id="homeSubtitleWrapper">
                             <text id="homeSubtitle">The new way to be positive</text>
                         </div>
+                        
+                        <div id="homeButtonWrapper">
+                        <Button id ="homepagebutton" variant="contained" size="large" onClick={()=>{window.location.href='/signup'}}>Sign Up</Button>
+                        </div>
 
                     </div>
 
