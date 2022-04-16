@@ -21,7 +21,7 @@ let inputHandler = (e) => {
 return (
   <div className="main">
     
-    <div className="main">
+    <div className="search">
     <TextField 
         id="searchEntry"
         
