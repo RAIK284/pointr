@@ -21,22 +21,25 @@ let inputHandler = (e) => {
 return (
   <div className="main">
     
-    <div className="search">
-      <TextField 
-        className="searchPlaceholder"
+    <div className="main">
+    <TextField 
         id="searchEntry"
         
         onChange={inputHandler}
         variant="outlined"
-        size="normal"
+        
+        
         fullWidth
        
-        label="Enter a username..."
+        label="Search for a user..."
+   
         /* InputProps={{ style: { fontFamily:'Poppins'} }} */
-        InputLabelProps={{ style: { fontFamily:'Poppins '}  }}
+        InputLabelProps={{ style: { fontFamily:'Poppins', fontWeight: '500px',borderWidth:'3px'}  }}
         
       />
     </div>
+
+    
     <List input={inputText}/>
   </div>
 );
