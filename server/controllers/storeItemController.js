@@ -22,6 +22,50 @@ const readStoreItem = async (req, res) => {
     }
 }
 
+const getTrophyList = async () => {
+    const db = mongoConnection.getDb();
+    const itemList = {};
+    // Passing in an empty object for the search parameter in find() gives back even item in the collection
+    const items = await db.collection('storeItems').find({}).toArray();
+    await items.forEach((item) => {
+        itemList[item.name] = 0;
+    });
+    return await itemList;
+}
+
+const getMostPopularTrophy = (trophyList) => {
+    const keys = Object.keys(trophyList);
+    let mostPopularValue = trophyList[keys[0]];
+    let mostPopular = keys[0];
+    for (const key of keys) {
+        const value = trophyList[key];
+        if (value > mostPopularValue) {
+            mostPopular = key;
+            mostPopularValue = value;
+        }
+    }
+    return mostPopular
+}
+
+const getTrophyCounts = async (trophyList) => {
+    const db = mongoConnection.getDb();
+    const users = await db.collection('users').find({}).toArray();
+    for (const user of users) {
+        for (const trophy of user.trophies) {
+            trophyList[trophy.name] = trophyList[trophy.name] + 1;
+        }
+    }
+    return trophyList;
+}
+
+const readMostPopularStoreItem = async (req, res) => {
+    const trophyList = await getTrophyList();
+    const trophyListCounts = getTrophyCounts(await trophyList);
+    const mostPopularTrophy = await getMostPopularTrophy(await trophyListCounts);
+    res.status(200).send({"name": mostPopularTrophy.toString()});
+}
+
+
 const updateStoreItem = async (req, res) => {
     const db = mongoConnection.getDb();
     for (let key in req.body) {
@@ -47,6 +91,7 @@ const deleteStoreItem = (req, res) => {
 
 module.exports = {
     createStoreItem,
+    readMostPopularStoreItem,
     readStoreItem,
     updateStoreItem,
     deleteStoreItem
