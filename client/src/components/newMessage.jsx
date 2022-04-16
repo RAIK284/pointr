@@ -106,11 +106,19 @@ function NewMessage(props){
         var emojiRE = /(\P{EPres})|(\P{ExtPict})/gu;
         return str.replace(emojiRE, '');
     }
+
+    function removeNonEmojis(str) {
+        var emojiRE = /(\P{EPres})|(\P{ExtPict})/gu;
+        return str.replace(emojiRE, '');
+    }
+
     const getMessageValue = (messageBody) => {
         console.log("In getMessageValue function")
         console.log(messageBody)
 
         var messageBodyPostCull = removeEmojis(messageBody)
+
+        var messageBodyPostCull = removeNonEmojis(messageBody)
 
         var totalValue = 0
 
