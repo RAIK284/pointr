@@ -31,27 +31,7 @@ h2 {
     float: right;
     margin-right: 20px;
 }
-button#homepagebutton {
-    position: relative;
-    background: #0064FF;
-    border-radius: 6px;
-    
-    
 
-    color: white;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 45px;
-   
-
-    display: flex;
-    align-items: center;
-    text-align: center;
-
-    margin: 4%;
-}
 
 .emailentry{
 
@@ -93,6 +73,28 @@ body {
     height: 75%;
     border-radius: 50%;
 }
+
+button#homepagebutton {
+  
+    background: #0064FF;
+    border-radius: 6px;
+    
+    
+
+    color: white;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 45px;
+   
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+}
+
 
 #titleHeader{
     width: 100vw;
@@ -148,8 +150,21 @@ body {
 }
 
 #rightBoxes{
+    position:fixed;
     margin-left:50%;
     
+    height:50vh;
+    width:50vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    
+}
+
+#leftContent{
+    position:fixed;
+
     height:50vh;
     width:50vw;
 
@@ -179,7 +194,7 @@ body {
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-    justify-content: center;
+    /* justify-content: center; */
 
 
     
@@ -191,7 +206,6 @@ body {
 }
 
 .infoBoxWrapperRight{
-    
     margin-top: 5%;
     margin-left: 20%;
 }
@@ -202,14 +216,12 @@ body {
     font-weight: 600;
     font-size: 70px;
     line-height: 105px;
-    display: flex;
-    align-items: center;
+    
     text-align: right;
     letter-spacing: -0.015em;
 
     color: #333333;
 
-    margin-left: 5%;
 
 }
 
@@ -219,11 +231,19 @@ body {
     font-weight: 400;
     font-size: 30px;
     line-height: 45px;
-    display: flex;
-    align-items: center;
+    
     text-align: right;
     letter-spacing: -0.015em;
 
     color: #333333;
+
+}
+
+.flex-container > div{
+    display: flex;
+    flex-direction: row;
+    background-color: #FFFFFF;
+    width: 100vw;
+    height: 50vh;
 
 }

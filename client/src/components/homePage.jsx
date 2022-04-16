@@ -28,12 +28,9 @@ class HomePage extends Component {
                         </div>
 
                     </div>
-                    <div id="easyTextWrapper">
-                        <text id="easyText">It's easy:</text>
-
-                    </div>
-
-                    {/* <div id="rightBoxes">
+                    
+                <div class="flex-container">
+                    <div id="rightBoxes">
 
                         <div className="infoBoxWrapperLeft">
                             <text className="infoBox">
@@ -53,16 +50,23 @@ class HomePage extends Component {
                             </text>
                         </div>
 
-                    </div> */}
+                    </div>
+                
+                <div id="leftContent">
+                    <div >
+                        <text id="easyText">It's easy:</text>
+                    </div>
 
                     <div>
                         <text id="startedText">Get started today.</text>
                     </div>
 
                     <div>
-                    <Button id ="homepagebutton" variant="contained" size="large" onClick={()=>{window.location.href='/signup'}}>Sign Up</Button>
-
+                        <Button id ="homepagebutton" variant="contained" size="large" onClick={()=>{window.location.href='/signup'}}>Sign Up</Button>
                     </div>
+
+                </div>
+            </div>   
 
 
                 
