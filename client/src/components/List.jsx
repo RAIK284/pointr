@@ -18,7 +18,7 @@ function List(props) {
     })
     return (
         <div className="resultsDisplay">
-        <ul>
+        {/* <ul> */}
             {filteredData.map((item) => (
                 <div>
                     {
@@ -34,8 +34,8 @@ function List(props) {
                 </div>
                 
             ))}
-        </ul>
-
+{/*         </ul>
+ */}
         </div>
     )
 }
