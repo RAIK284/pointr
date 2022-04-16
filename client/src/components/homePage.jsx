@@ -3,6 +3,7 @@ import { MuiNavbar, NavItem } from 'mui-navbar';
 import './styles/homePage.css';
 import Button from '@mui/material/Button';
 import homePagePic from "./images/header-icons/homePagePic.jpeg";
+import { color } from "@mui/system";
 class HomePage extends Component {
     render() {
         return (
@@ -28,8 +29,24 @@ class HomePage extends Component {
                         </div>
 
                     </div>
+
+                    <div id="rightBoxes">
+
+                            <div className="infoBox" style={{background: "#66D8C1"}}>
+                                
+                            </div>
+
+                            <div className="infoBox" style={{background: "#03B795"}}> 
+                                
+                            </div>
+
+                            <div className="infoBox" style={{background: "#0064FF"}}>
+                                
+                            </div>
+
+                    </div>
                     
-                <div class="flex-container">
+{/*                 <div class="flex-container">
                     <div id="rightBoxes">
 
                         <div className="infoBoxWrapperLeft">
@@ -66,7 +83,7 @@ class HomePage extends Component {
                     </div>
 
                 </div>
-            </div>   
+            </div>  */}  
 
 
                 
