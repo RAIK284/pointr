@@ -2,19 +2,13 @@ const express = require("express");
 const app = express();
 const mongoConnection = require('./utils/database')
 const dailyUpdate = require('./utils/dailyUpdate')
-const cors = require("cors");
+const cors = require('cors');
 
 // Use all the proper cors headers
 app.use(cors());
 
 // Allow our app to take in json data
-app.use(express.json())
-
-// Sample post request
-app.post("/post", (req, res) => {
-    console.log("Connected to React");
-    res.redirect("/");
-});
+app.use(express.json());
 
 // Startup the daily job. This job resets users points every day at midnight
 dailyUpdate.updateUsersJob;

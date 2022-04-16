@@ -7,7 +7,7 @@ const createToken = async (user) => {
     const db = mongoConnection.getDb();
     const token = jwt.sign({_id: user.username}, 'Z5YWzh5F2D', {expiresIn: '7 days'});
     console.log(user)
-    db.collection('users').updateOne({username: user.username}, {$push: {"tokens" : token}});
+    db.collection('users').updateOne({username: user.username}, {$push: {"tokens" : {"token" : token}}});
     return token;
 }
 

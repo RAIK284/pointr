@@ -1,4 +1,5 @@
 const userController = require("../controllers/userController");
+const auth = require('../middleware/auth');
 
 module.exports = (app) => {
     const express = require("express");
@@ -12,7 +13,7 @@ module.exports = (app) => {
 
     router.get('/api/existingEmail', userController.isExistingEmail);
 
-    router.get('/api/user', userController.readUser);
+    router.get('/api/user', auth, userController.readUser);
 
     router.post('/api/user', userController.createUser);
 
