@@ -3,7 +3,7 @@ import data from "./ListData.json"
 import ProfileBox from "./profileBox"
 import "./styles/explorePage.css";
 
-let count = 0
+/* let count = 0 */
 function List(props) {
     //create a new array by filtering the original array
     const filteredData = data.filter((el) => {
@@ -18,23 +18,24 @@ function List(props) {
     })
     return (
         <div className="resultsDisplay">
-        <ul>
+        {/* <ul> */}
             {filteredData.map((item) => (
                 <div>
                     {
-                        count < 3
-                        ?
-                        <div onLoad={()=>{count++}} >
+                        /* count < 3
+                        ? */
+                        /* onLoad={()=>{count++}} */
+                        <div  >
                             <ProfileBox otherProfile={item}/>
                         </div>
-                        :
-                        false
+                        /* :
+                        false */
                     }
                 </div>
                 
             ))}
-        </ul>
-
+{/*         </ul>
+ */}
         </div>
     )
 }
