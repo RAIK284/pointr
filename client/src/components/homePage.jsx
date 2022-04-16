@@ -16,6 +16,42 @@ class HomePage extends Component {
                     <NavItem to="/">About</NavItem>
                     <NavItem to="/signin">Log In</NavItem>
                 </MuiNavbar> 
+
+                <div>
+                    <div>
+                    <text>
+                        Welcome to Pointr.
+                    </text>
+                    </div>
+                    <div>
+                        <text>The new way to be positive</text>
+                    </div>
+
+                </div>
+            </React.Fragment>
+                
+        );
+    }
+}
+
+// SignIn.propTypes = {
+//     field1: PropTypes.string.isRequired,
+//     field2: PropTypes.string.isRequired,
+// };
+
+export default HomePage;
+
+
+{/* <React.Fragment>
+<MuiNavbar
+                    logoText="Pointr"
+                    background="#0064FF"
+                    navItemPosition="right"
+                >
+                    <NavItem to="/">Contact</NavItem>
+                    <NavItem to="/">About</NavItem>
+                    <NavItem to="/signin">Log In</NavItem>
+                </MuiNavbar> 
                 
                 <div id="body">
                     <div id="pictureWrapper">
@@ -30,14 +66,4 @@ class HomePage extends Component {
                 </div>
                 
                 
-            </React.Fragment>
-        );
-    }
-}
-
-// SignIn.propTypes = {
-//     field1: PropTypes.string.isRequired,
-//     field2: PropTypes.string.isRequired,
-// };
-
-export default HomePage;
+            </React.Fragment> */}
