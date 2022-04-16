@@ -31,19 +31,19 @@ class HomePage extends Component {
 
                     <div id="rightBoxes">
 
-                        <div className="infoBoxWraper">
+                        <div className="infoBoxWrapperLeft">
                             <text className="infoBox">
                                 Send a motivational note.
                             </text>
                         </div>
 
-                        <div className="infoBoxWrapper"> 
+                        <div className="infoBoxWrapperRight"> 
                             <text className="infoBox">
                                 Earn points for your positivity.
                             </text>
                         </div>
 
-                        <div className="infoBoxWrapper">
+                        <div className="infoBoxWrapperLeft">
                             <text className="infoBox">
                                 Buy trophies to inspire others!
                             </text>

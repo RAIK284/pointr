@@ -149,8 +149,14 @@ body {
 
 #rightBoxes{
     margin-left:50%;
-    height:60vh;
+    
+    height:50vh;
     width:50vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    
 }
 
 .infoBox{
@@ -177,7 +183,15 @@ body {
     
 }
 
-.infoBoxWrapper{
+.infoBoxWrapperLeft{
     position: relative;
     top: 5%;
+    left: 2%;
 }
+
+.infoBoxWrapperRight{
+    position: relative;
+    top: 5%;
+    left: 20%;
+}
+
