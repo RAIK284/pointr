@@ -74,13 +74,9 @@ function NewMessage(props){
                 }
                 // skip next char since emojis take up 2 chars
                 i++
-
         }
-
-        
         console.log("totalValue: ")
         console.log(totalValue)
-
     }
 
     useEffect(() => {
@@ -95,8 +91,9 @@ function NewMessage(props){
         messageObject.receiver = email;
         messageObject.messageBody = messageBody;
 
-        // console.log(messageBody)
-        // console.log(email)
+        console.log("Message Email: ")
+        console.log(messageObject.email)
+
         await postMessage(messageObject);
         await subtractMessageValue(messageObject);
 
@@ -122,7 +119,6 @@ function NewMessage(props){
 
     }
 
-
     useEffect(() => console.log(messageBody), [messageBody]);
 
     const subtractMessageValue = async (messageObject) => {
@@ -141,9 +137,10 @@ function NewMessage(props){
             <div className = 'newMessage'>
                 <div className = 'newMessageInner'>
                     <text className = 'sendTo'>Send a message to: </text>
-                    {/* <input className = 'sendToEntryBox' name={"email"} onChange={e => setEmail(e.target.value)} type="text" placeholder="send to email"></input> */}
-                    <div class="dropdown">
+                 
+                    {/* <div class="dropdown">
                         <span>Select User</span>
+                        <span contenteditable="true" data-placeholder = "Select User"></span>
                         <div class="dropdown-content">
                             <p onClick={e => setEmail(e.target.value)}>hard coded user 1</p>
                             <p>hard coded user 2</p>
@@ -161,9 +158,21 @@ function NewMessage(props){
                             <p>hard coded user 15</p>
 
                         </div>
+                    </div> */}
+
+                    <div className="box">
+                        <select>
+                            <option>Option 1</option>
+                            <option>Option 2</option>
+                            <option>Option 3</option>
+                            <option>Option 4</option>
+                            <option>Option 5</option>
+                        </select>
                     </div>
 
-                    <textarea className="messageEntryBox" value={messageBody} name={"messageBody"} rows="4" cols="50" onChange={e => setMessageBody(e.target.value)} placeholder="Type your message here..."></textarea>
+                    <div>
+                        <textarea className="messageEntryBox" value={messageBody} name={"messageBody"} rows="4" cols="50" onChange={e => setMessageBody(e.target.value)} placeholder="Type your message here..."></textarea>
+                    </div>
                     <div className="tokensBox">
                         <TokenCostButton 
                             image = {emojiData.joyTears.image} 
