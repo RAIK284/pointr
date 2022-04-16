@@ -11,6 +11,24 @@ import clover from './images/trophy-icons/clover.png'
 import sword from './images/trophy-icons/sword.png'
 import prize from './images/trophy-icons/prize.png'
 
+const addTrophy = (name, image) => {
+
+    const trophyData = {
+        name,
+        image
+    }
+
+    const trophyDataJSON = JSON.stringify(trophyData);
+
+    fetch("http://localhost:8080/api/trophy?username=bsimpleman", {
+        method: "POST",
+        headers: {'Content-Type': 'application/json'},
+        body: trophyDataJSON
+    });
+
+    alert('Trophy purchased! (Maybe we should have a popup for this?)')
+}
+
 
 
 function TrophySingle(props) {
@@ -55,7 +73,7 @@ function TrophySingle(props) {
                     </div>
 
                     <div id="buttonWrapper">
-                        <Button variant="contained" id="addToProfile" onClick={()=>{window.location.href='/store'}}>Add to My Profile</Button>
+                        <Button variant="contained" id="addToProfile" onClick={()=>{addTrophy(trophyTitle, trophyImage)}}>Add to My Profile</Button>
                     </div>
 
                     <div onClick={props.onClick}>

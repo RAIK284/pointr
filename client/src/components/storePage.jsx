@@ -32,7 +32,7 @@ class StorePage extends Component {
             trophies: data,
             trophyStatus : Array(data.length).fill(false)
         })})
-        
+
         fetch('http://localhost:8080/api/mostPopularStoreItem')
             .then(response => response.json())
             .then((data) => fetch('http://localhost:8080/api/storeItem?name=' + data.name))
@@ -86,13 +86,15 @@ class StorePage extends Component {
                     {this.state.trophies.map((trophy, i) => <Trophy key={i} index={i} onClick={()=> {this.changeState(i)}} cost={trophy.price} image={trophy.image}></Trophy>)}
                     {this.state.trophies.map((trophy, i) => <TrophySingle key={i} trigger={this.state.trophyStatus[i]} onClick={()=> {this.changeState(i)}} title={trophy.name} description={trophy.description} cost={trophy.price} image={trophy.image}>
                     </TrophySingle>)}
-                    {this.state.mostPopularTrophyData.hasOwnProperty('name') ? <TrophySingle trigger={this.state.mostPopularTrophyStatus}
-                                  onClick={()=> this.setState({mostPopularTrophyStatus: false})}
-                                  title={this.state.mostPopularTrophyData.name}
-                                  description={this.state.mostPopularTrophyData.description}
-                                  cost={this.state.mostPopularTrophyData.price}
-                                  image={this.state.mostPopularTrophyData.image}>
-                    </TrophySingle> : ""}
+                    {this.state.mostPopularTrophyData.hasOwnProperty('name') ?
+                        <TrophySingle
+                            trigger={this.state.mostPopularTrophyStatus}
+                            onClick={()=> this.setState({mostPopularTrophyStatus: false})}
+                            title={this.state.mostPopularTrophyData.name}
+                            description={this.state.mostPopularTrophyData.description}
+                            cost={this.state.mostPopularTrophyData.price}
+                            image={this.state.mostPopularTrophyData.image}>
+                        </TrophySingle> : ""}
                 </div>
             </div>
            
