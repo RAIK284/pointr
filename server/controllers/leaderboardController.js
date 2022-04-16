@@ -29,7 +29,6 @@ const getLeaderboardData = async () => {
             });
         }
     })
-    console.log(await users)
     const sortedList = (await sortUserList(userList))
     const result = await sortedList;
     return result;
