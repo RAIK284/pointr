@@ -7,27 +7,51 @@ class HomePage extends Component {
     render() {
         return (
             <React.Fragment>
-                <MuiNavbar
-                    logoText="Pointr"
-                    background="#0064FF"
-                    navItemPosition="right"
-                >
-                    <NavItem to="/">Contact</NavItem>
-                    <NavItem to="/">About</NavItem>
-                    <NavItem to="/signin">Log In</NavItem>
-                </MuiNavbar> 
+               
 
-                <div>
-                    <div>
-                    <text>
-                        Welcome to Pointr.
-                    </text>
-                    </div>
-                    <div>
-                        <text>The new way to be positive</text>
+                    <MuiNavbar
+                        logoText="Pointr"
+                        background="#0064FF"
+                        navItemPosition="right"
+                    >
+                        <NavItem to="/">Contact</NavItem>
+                        <NavItem to="/">About</NavItem>
+                        <NavItem to="/signin">Log In</NavItem>
+                    </MuiNavbar> 
+
+                    <div id="titleHeader">
+                        <div id="homeTitleWrapper">
+                            <text id="homeTitle">Welcome to Pointr.</text>
+                        </div>
+                        <div id="homeSubtitleWrapper">
+                            <text id="homeSubtitle">The new way to be positive</text>
+                        </div>
+
                     </div>
 
-                </div>
+                    <div id="rightBoxes">
+
+                        <div className="infoBoxWraper">
+                            <text className="infoBox">
+                                Send a motivational note.
+                            </text>
+                        </div>
+
+                        <div className="infoBoxWrapper"> 
+                            <text className="infoBox">
+                                Earn points for your positivity.
+                            </text>
+                        </div>
+
+                        <div className="infoBoxWrapper">
+                            <text className="infoBox">
+                                Buy trophies to inspire others!
+                            </text>
+                        </div>
+
+                    </div>
+
+                
             </React.Fragment>
                 
         );
