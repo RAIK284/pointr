@@ -30,12 +30,14 @@
     font-weight: bold;
     font-size: 40px;
     margin-left: 9rem;
+    color: #333333;
 }
 .bio
 {
     margin-left: 9rem;
     font-size: 30px;
     margin-bottom: 0rem;
+    color: #333333;
 }
 
 .box1:hover{

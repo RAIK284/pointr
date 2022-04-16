@@ -3,6 +3,7 @@ import TextField from "@mui/material/TextField";
 import List from './List';
 import data from "./ListData.json";
 import './styles/searchBar.css';
+import { fontFamily } from '@mui/system';
 
 
 /* code inspired by this tutorial: https://dev.to/salehmubashar/search-bar-in-react-js-545l */
@@ -22,6 +23,7 @@ return (
     
     <div className="search">
       <TextField 
+        className="searchPlaceholder"
         id="searchEntry"
         
         onChange={inputHandler}
@@ -30,7 +32,8 @@ return (
         fullWidth
        
         label="Enter a username..."
-        inputProps={{className:"searchPlaceholder"}}
+        /* InputProps={{ style: { fontFamily:'Poppins'} }} */
+        InputLabelProps={{ style: { fontFamily:'Poppins '}  }}
         
       />
     </div>

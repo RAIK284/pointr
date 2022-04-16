@@ -17,10 +17,12 @@ class ExplorePage extends Component {
                 <div id="content">
                         {/* <p className="header">Explore</p> */}
                         {/* <input type="text" placeholder="Search for users..." className="search"></input> */}
-                        <SearchBar className="search"></SearchBar>
-{/*                         <img id="img" alt="search" src={searchicon}/>
- */}                        <br />
-                        <br />
+                        <SearchBar ></SearchBar>
+
+                        <div>
+                            <img id="img" alt="search" src={searchicon}/>
+                        </div>
+                        
                     </div>
                 
 
