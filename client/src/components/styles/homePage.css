@@ -186,14 +186,44 @@ body {
 }
 
 .infoBoxWrapperLeft{
-    position: relative;
-    top: 5%;
-    left: 2%;
+    margin-top: 5%;
+    margin-left: 2%;
 }
 
 .infoBoxWrapperRight{
-    position: relative;
-    top: 5%;
-    left: 20%;
+    
+    margin-top: 5%;
+    margin-left: 20%;
 }
 
+#easyText{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 70px;
+    line-height: 105px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    letter-spacing: -0.015em;
+
+    color: #333333;
+
+    margin-left: 5%;
+
+}
+
+#startedText{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 45px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    letter-spacing: -0.015em;
+
+    color: #333333;
+
+}

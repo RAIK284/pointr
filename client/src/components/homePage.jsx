@@ -28,8 +28,12 @@ class HomePage extends Component {
                         </div>
 
                     </div>
+                    <div id="easyTextWrapper">
+                        <text id="easyText">It's easy:</text>
 
-                    <div id="rightBoxes">
+                    </div>
+
+                    {/* <div id="rightBoxes">
 
                         <div className="infoBoxWrapperLeft">
                             <text className="infoBox">
@@ -49,7 +53,17 @@ class HomePage extends Component {
                             </text>
                         </div>
 
+                    </div> */}
+
+                    <div>
+                        <text id="startedText">Get started today.</text>
                     </div>
+
+                    <div>
+                    <Button id ="homepagebutton" variant="contained" size="large" onClick={()=>{window.location.href='/signup'}}>Sign Up</Button>
+
+                    </div>
+
 
                 
             </React.Fragment>
