@@ -2,74 +2,12 @@ import React, { Component, useState, useEffect} from "react";
 import './styles/newMessage.css';
 import Button from '@mui/material/Button';
 import TokenCostButton from "./tokenCostButton";
-
-import joyTears from './images/emojis/joyTears.png'
-import sunglass from './images/emojis/sunglass.png'
-import poo from './images/emojis/poo.png'
-import kiss from './images/emojis/kiss.png'
-import hundred from './images/emojis/hundred.png'
-import thumbsUp from './images/emojis/thumbsUp.png'
-import frog from './images/emojis/frog.png'
-import clinkGlass from './images/emojis/clinkGlass.png'
-import glowStar from './images/emojis/glowStar.png'
-import fire from './images/emojis/fire.png'
+import emojiDataExport from './emojiData.js'
 
 
 function NewMessage(props){
 
-    const emojiData = {
-        joyTears: {
-            image: joyTears,
-            price: 10,
-            emoji: "😂"
-        },
-        sunglass: {
-            image: sunglass,
-            price: 10,
-            emoji: "😎"
-        },
-        poo: {
-            image: poo,
-            price: 5,
-            emoji: "💩"
-        },
-        kiss: {
-            image: kiss,
-            price: 20,
-            emoji: "💋"
-        },
-        hundred: {
-            image: hundred,
-            price: 100,
-            emoji: "💯"
-        },
-        thumbsUp: {
-            image: thumbsUp,
-            price: 5,
-            emoji: "👍"
-        },
-        frog: {
-            image: frog,
-            price: 100,
-            emoji: "🐸"
-        },
-        clinkGlass: {
-            image: clinkGlass,
-            price: 10,
-            emoji: "🥂"
-        },
-        glowStar: {
-            image: glowStar,
-            price: 20,
-            emoji: "🌟"
-        },
-        fire: {
-            image: fire,
-            price: 5,
-            emoji: "🔥"
-        }
-    }
-
+    const emojiData = emojiDataExport;
 
     const [email, setEmail] = useState('');
     const [messageBody, setMessageBody] = useState('');
