@@ -27,13 +27,14 @@ return (
         
         onChange={inputHandler}
         variant="outlined"
-        
+        size="normal"
+        margin="none"
         
         fullWidth
        
         label="Search for a user..."
    
-        /* InputProps={{ style: { fontFamily:'Poppins'} }} */
+        InputProps={{ style: { fontFamily:'Poppins'} }}
         InputLabelProps={{ style: { fontFamily:'Poppins', fontWeight: '500px',borderWidth:'3px'}  }}
         
       />
