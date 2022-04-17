@@ -16,7 +16,7 @@ import './styles/otherUserPage.css'
 
 class OtherUserPage extends Component {
     render() {
-
+        console.log(this.props.otherUser)
         return (
             <React.Fragment>
             
