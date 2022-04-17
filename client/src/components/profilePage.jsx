@@ -10,9 +10,12 @@ import sword from './images/trophy-icons/sword.png'
 import prize from './images/trophy-icons/prize.png'
 import HeaderDrawer from "./headerDrawer.jsx";
 //reference: https://mui.com/components/drawers/
-
+import {useParams} from "react-router-dom";
 import './styles/profilePage.css';
 
+function withParams(Component) {
+    return props => <Component {...props} params={useParams()} />;
+}
 
 const drawerWidth = 240;
 class ProfilePage extends Component {
@@ -30,13 +33,12 @@ class ProfilePage extends Component {
     }
 
     async componentDidMount() {
-        this.getUserInformation().then(() => {this.setTrophies()})
-        await this.getLeaderboardInformation();
+        this.getUserInformation().then(() => this.getLeaderboardInformation());
     }
 
     async getUserInformation() {
 
-        await fetch('http://localhost:8080/api/user/self', {
+         fetch('http://localhost:8080/api/user/self', {
             method: 'GET',
             headers: { 'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
         })
@@ -53,7 +55,7 @@ class ProfilePage extends Component {
     }
 
     async getLeaderboardInformation () {
-        await fetch('http://localhost:8080/api/leaderboard')
+        fetch('http://localhost:8080/api/leaderboard')
             .then(response => response.json())
             .then(data => {this.getUserRank(data)})
     }
@@ -70,6 +72,7 @@ class ProfilePage extends Component {
     }
 
     render() {
+
 
         const imageObjects = {
             "ball": ball,

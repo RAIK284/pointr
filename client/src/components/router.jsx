@@ -34,7 +34,7 @@ class WebsiteRouter extends Component {
               <Route path="/explore" element={<ExplorePage/>}/>
               <Route path="/leaderboard" element={<LeaderboardPage/>}/>
               <Route path="/settings" element={<SettingsPage/>}/>
-              <Route path="/otherUser" element={<OtherUserPage otherUser={otherUserData}/>}/>
+              <Route path="/user/:id" element={<OtherUserPage/>}/>
             </Routes>
           </BrowserRouter>
         </React.Fragment>
