@@ -20,9 +20,10 @@ const addTrophy = (name, image) => {
 
     const trophyDataJSON = JSON.stringify(trophyData);
 
-    fetch("http://localhost:8080/api/trophy?username=bsimpleman", {
+
+    fetch("http://localhost:8080/api/trophy", {
         method: "POST",
-        headers: {'Content-Type': 'application/json'},
+        headers: {'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
         body: trophyDataJSON
     });
 

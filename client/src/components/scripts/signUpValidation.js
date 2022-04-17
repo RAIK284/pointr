@@ -68,6 +68,12 @@ export async function createUser(name, username, email, password) {
         headers: {'Content-Type': 'application/json'},
         body: newUserJSON
     });
+
+    const responseData = await response.json();
+    console.log(response)
+    console.log(responseData)
+
+    localStorage.setItem('token', responseData.token);
 }
 
 export function verifyEmail(email) {

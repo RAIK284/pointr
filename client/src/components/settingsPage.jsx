@@ -64,6 +64,17 @@ class SettingsPage extends Component {
         }
     }
 
+    handleSignOut() {
+        console.log("here")
+        fetch("http://localhost:8080/api/signout", {
+            method: "POST",
+            headers: {'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
+        });
+        localStorage.clear();
+        window.location.href='/';
+
+    }
+
     async updateUser() {
         const newInfo = {}
         if (this.state.name !== undefined) {
@@ -126,7 +137,7 @@ class SettingsPage extends Component {
 
                         </div>
                         <div id={"settings-buttons"}>
-                            <Button id="logout" variant="contained" size="large" onClick={() => window.location.href='/'}>Log Out</Button>
+                            <Button id="logout" variant="contained" size="large" onClick={() => this.handleSignOut()}>Log Out</Button>
                             <Button id="save" variant="contained" size="large" onClick={async () => await this.handleSubmit()}>Save</Button>
                         </div>
                     </div>
