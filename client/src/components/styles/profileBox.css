@@ -1,0 +1,57 @@
+.box1 
+{
+    background-color: #9BE5D6;
+    width: 1065px;
+    padding: 1rem;
+    border-radius: 20px;
+    border: 4px solid rgba(2, 186, 144, 1);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    margin-bottom: 1rem;
+}
+.box2
+{
+    background-color: #B3D1FF;
+    width: 1065px;
+    padding: 1rem;
+    border-radius: 20px;
+    border: 4px solid rgba(0, 100, 255, 1);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    margin-bottom: 1rem;
+}
+#image
+{
+    height: 120px;
+    width: 120px;
+    border-radius:50%;
+}
+.name
+{
+    margin-bottom: .5rem;
+    font-weight: bold;
+    font-size: 40px;
+    margin-left: 9rem;
+    color: #333333;
+}
+.bio
+{
+    margin-left: 9rem;
+    font-size: 30px;
+    margin-bottom: 0rem;
+    color: #333333;
+}
+
+.box1:hover{
+    position: relative; 
+             top: -10px;
+    box-shadow: 0 0px rgba(0, 0, 0, 0);
+    transition: margin 0.8s linear;
+    cursor:pointer;
+}
+
+.box2:hover{
+    position: relative; 
+    top: -10px;
+    box-shadow: 0 0px rgba(0, 0, 0, 0);
+    transition: margin 0.8s linear;
+    cursor:pointer;
+}

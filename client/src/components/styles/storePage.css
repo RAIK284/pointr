@@ -5,7 +5,7 @@
 
     width: 71vw;
     height: 43vh;
-    margin-top: 30vh;
+    margin-top: 2%;
     margin-left: 25vw;
 
     display: flex;
@@ -21,14 +21,172 @@
 
 
     background-color: #FFFFFF;
-    border: 4px solid #0064FF;
-    ;
+    border: 3px solid #0064FF;
+    
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
 
+}
 
+#mostPopularDisplay{
+    position:relative;
+    width: 71vw;
+    height: 23vh;
+    margin-top: 3%;
+    margin-left: 25vw;
+
+    background: rgba(101, 215, 192, 0.4);
+    border: 3px solid #02BA90;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+#mostPopTitle{
+/*   position:relative;
+ */  margin-left: 3%;
+  margin-top: 1%;
+
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 68px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.015em;
+
+  color: #333333;
 
 }
+
+#mostPopSubtitle{
+/*   position:relative;
+ */  margin-left: 3%;
+  margin-top: 2%;
+
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 45px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.015em;
+
+  color: #333333;
+
+}
+
+.mostPopImg{
+  position:absolute; /* absolute positioning here */
+  margin-top: -13%;
+  margin-left: 78%;
+
+
+
+  width:17%;
+  height:70%;
+  object-fit: contain;
+
+
+  display: flex;
+  
+}
+
+.mostPopImg:hover{
+  cursor: pointer;
+}
+
+#MPTitle{
+  position:absolute; /* absolute positioning here */
+  margin-top: -2%;
+  margin-left: 78%;
+
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 68px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.015em;
+
+  color: #333333;
+}
+
+.storeBackground{
+  height:100vh;
+  width:100vw;
+  background-color: #FFFFFF;
+}
+
+button#closeButton {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 90px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.015em;
+
+  color: #FFFFFF;
+
+}
+
+#closeButtonWrapper{
+  position: relative;
+  top: -92%;
+  left: 85%;
+}
+
+#fundsAmountWrapper{
+  width: 16%;
+  height: 10%;
+  position:relative;
+  margin-right: 5%;
+  margin-left:80%;
+  margin-top:-8%;
+ 
+
+}
+
+#fundsAmountText{
+  display:flex;
+  justify-content: right;
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 45px;
+  letter-spacing: -0.015em;
+
+  color: #333333;
+
+}
+
+#fundsAmountNum{
+  display:flex;
+  justify-content: right;
+  
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 45px;
+  letter-spacing: -0.015em;
+
+  color: #333333;
+
+}
+
 
 
 

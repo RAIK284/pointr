@@ -17,6 +17,7 @@ body#SI{
     background-attachment: fixed; 
     backdrop-filter: blur(50px);
     height: 100vh;
+    width: 100vw;
 
 } 
 

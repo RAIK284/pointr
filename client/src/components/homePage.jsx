@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { MuiNavbar, NavItem } from 'mui-navbar';
 import './styles/homePage.css';
 import Button from '@mui/material/Button';
+import homePagePic from "./images/header-icons/homePagePic.jpeg";
 class HomePage extends Component {
     render() {
         return (
@@ -15,12 +16,19 @@ class HomePage extends Component {
                     <NavItem to="/">About</NavItem>
                     <NavItem to="/signin">Log In</NavItem>
                 </MuiNavbar> 
-                <div id='column-right'>
-                    <h1>Welcome to <br /> Pointr.</h1>
-                    <h2>The new way to be<br />rewarded for positivity</h2>
-                    <input type="text" className="emailentry" placeholder="Enter your email address..."></input>
-                    <Button id ="homepagebutton" variant="contained" size="large" onClick={()=>{window.location.href='/signup'}}>Sign Up</Button>
+                
+                <div id="body">
+                    <div id="pictureWrapper">
+                    <img src={homePagePic} id="homePagePic"/>
+                    </div>
+                    <div id='column-right'>
+                        <h1>Welcome to <br /> Pointr.</h1>
+                        <h2>The new way to be<br />rewarded for positivity</h2>
+                        <input type="text" className="emailentry" placeholder="Enter your email address..."></input>
+                        <Button id ="homepagebutton" variant="contained" size="large" onClick={()=>{window.location.href='/signup'}}>Sign Up</Button>
+                    </div>
                 </div>
+                
                 
             </React.Fragment>
         );
