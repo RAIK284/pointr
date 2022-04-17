@@ -204,7 +204,8 @@ button#homepagebutton {
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-    /* justify-content: center; */
+    justify-content: center;
+    align-items: center;
 
     width: 230px;
     height: 230px;
@@ -213,11 +214,14 @@ button#homepagebutton {
  
 }
 
-#ib1{
-    background-color: #66D8C1;
-   
+.icon{
+    width: 60%;
+    height: 60%;
 }
 
+#icon1{
+    fill: #24887C;
+}
 .infoBoxWrapperLeft{
     margin-top: 5%;
     margin-left: 2%;

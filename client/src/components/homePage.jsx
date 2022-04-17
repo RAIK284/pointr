@@ -4,6 +4,7 @@ import './styles/homePage.css';
 import Button from '@mui/material/Button';
 import homePagePic from "./images/header-icons/homePagePic.jpeg";
 import { color } from "@mui/system";
+import msgIcon from "./images/header-icons/message.svg";
 class HomePage extends Component {
     render() {
         return (
@@ -27,7 +28,7 @@ class HomePage extends Component {
                         <div id="homeSubtitleWrapper">
                             <text id="homeSubtitle">The new way to be positive</text>
                         </div>
-                        
+
                         <div id="homeButtonWrapper">
                         <Button id ="homepagebutton" variant="contained" size="large" onClick={()=>{window.location.href='/signup'}}>Sign Up</Button>
                         </div>
@@ -37,15 +38,15 @@ class HomePage extends Component {
                     <div id="rightBoxes">
 
                             <div className="infoBox" style={{background: "#66D8C1"}}>
-                                
+                                <img src={msgIcon} className="icon" id="icon1"></img>
                             </div>
 
                             <div className="infoBox" style={{background: "#03B795"}}> 
-                                
+                                <img></img>
                             </div>
 
                             <div className="infoBox" style={{background: "#0064FF"}}>
-                                
+                                <img></img>
                             </div>
 
                     </div>
