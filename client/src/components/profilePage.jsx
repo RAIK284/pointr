@@ -29,7 +29,7 @@ class ProfilePage extends Component {
             messagingPoints: 0,
             funds: 0,
             allTimefunds: 0,
-            leaderboardRank: "?"}
+            leaderboardRank: ""}
     }
 
     async componentDidMount() {
@@ -51,7 +51,7 @@ class ProfilePage extends Component {
                 messagingPoints: data.messagingPoints,
                 funds: data.funds,
                 allTimeFunds: data.allTimeFunds
-            }));
+            }))
     }
 
     async getLeaderboardInformation () {
@@ -63,8 +63,13 @@ class ProfilePage extends Component {
     async getUserRank(data) {
         let rank = 1;
         data.forEach((user) => {
+            console.log(user)
             if (user.username === this.state.username) {
-                this.setState({leaderboardRank: rank})
+                if (user.isPrivate !== false) {
+                    this.setState({leaderboardRank: rank})
+                } else {
+                    this.setState({leaderboardRank: "?"})
+                }
             } else {
                 rank++;
             }
@@ -72,7 +77,6 @@ class ProfilePage extends Component {
     }
 
     render() {
-
 
         const imageObjects = {
             "ball": ball,
@@ -92,9 +96,12 @@ class ProfilePage extends Component {
             trophyImages.push(<img src={imageObjects[this.state.trophies[i].image]}/>);
         }
 
+        if (this.state.leaderboardRank === "") {
+            this.getLeaderboardInformation();
+        }
+
         return (
             <React.Fragment>
-            
             <div id="header">
                 <p id="welcome">
                     Welcome, {this.state.name}.

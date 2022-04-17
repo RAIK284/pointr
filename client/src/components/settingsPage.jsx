@@ -120,7 +120,6 @@ class SettingsPage extends Component {
 
                             <label htmlFor="bio" className="settingsLabel">Change bio</label>
                             <input id = "bio" type="text" name="bio" value={this.state.bio} onChange={this.handleChange} placeholder="Enter new bio" className="settingsEntry" required></input>
-                            {/* This will be a logout button. <Button variant="contained" size="large" onClick={}>Logout</Button>*/}
                         </div>
                         <div id={"bottom-options"}>
                             <input type="checkbox"  className="settings-checkbox" name="privacy" checked={!this.state.isPrivate} onChange={this.handleChange} onClick={ () => { this.setState({ isPrivate: !this.state.isPrivate })}} required></input>
