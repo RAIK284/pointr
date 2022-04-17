@@ -44,7 +44,19 @@ class OtherUserPage extends Component {
         const response =  await fetch('http://localhost:8080/api/user?username=' + id)
         const data = await response.json();
         console.log(data)
-        this.setState(data)
+        if (data.isPrivate === false) {
+            this.setState(data)
+        } else {
+            this.setState({
+                name: data.name,
+                username: data.username,
+                bio: data.bio,
+                image: data.image,
+                trophies: [],
+                funds: "Private",
+                leaderboardRank: "Private"
+            })
+        }
         console.log(this.state)
     };
 
