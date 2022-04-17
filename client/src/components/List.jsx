@@ -1,12 +1,26 @@
-import { React, useState } from 'react'
-import data from "./ListData.json"
+import { React, useState, useEffect } from 'react'
+//import data from "./ListData.json"
 import ProfileBox from "./profileBox"
 import "./styles/explorePage.css";
 
-/* let count = 0 */
+
 function List(props) {
-    //create a new array by filtering the original array
-    const filteredData = data.filter((el) => {
+    const [userData, setUserData] = useState([]);
+
+    useEffect(() => {
+        async function fetchData() {
+            const res = await fetch('http://localhost:8080/api/usersInfo')
+            const json = await res.json();
+
+            setUserData(json);
+        }
+
+        fetchData();
+    }, [])
+
+    console.log(userData)
+    //const data = fetch()
+    const filteredData = userData.filter((el) => {
         //if no input the return the original
         if (props.input === '') {
             return el;
@@ -16,27 +30,28 @@ function List(props) {
             return el.text.toLowerCase().includes(props.input)
         }
     })
-    return (
+
+    return (userData !== []) ? (
         <div className="resultsDisplay">
         {/* <ul> */}
-            {filteredData.map((item) => (
-                <div>
-                    {
-                        /* count < 3
-                        ? */
-                        /* onLoad={()=>{count++}} */
-                        <div  >
-                            <ProfileBox otherProfile={item}/>
-                        </div>
-                        /* :
-                        false */
-                    }
+    {filteredData.map((item) => (
+        <div>
+            {
+                /* count < 3
+                ? */
+                /* onLoad={()=>{count++}} */
+                <div  >
+                    <ProfileBox otherProfile={item}/>
                 </div>
-                
-            ))}
-{/*         </ul>
- */}
+                /* :
+                false */
+            }
         </div>
-    )
+
+    ))}
+    {/*         </ul>
+ */}
+</div>
+) : '';
 }
 export default List

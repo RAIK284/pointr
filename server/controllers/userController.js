@@ -102,6 +102,38 @@ const createUser = async (req, res) => {
     res.status(200).send('Created user');
 }
 
+const getPublicUserData = async (req, res) => {
+    const db = mongoConnection.getDb();
+    const users = await db.collection('users').find({}).toArray();
+    const userList = []
+    let index = 0;
+    for (const user of users) {
+        index++;
+        if (user.isPrivate === false) {
+            userList.push({
+                name: user.name,
+                username: user.username,
+                bio: user.bio,
+                funds: user.funds,
+                trophies: user.trophies,
+                image: user.image,
+                isPrivate: "false"
+            })
+        } else {
+            userList.push({
+                name: user.name,
+                username: user.username,
+                bio: user.bio,
+                funds: "private",
+                trophies: "private",
+                image: user.image,
+                isPrivate: "true"
+            })
+        }
+    }
+    res.status(200).send(userList);
+}
+
 const readUser = (req, res) => {
     const db = mongoConnection.getDb();
     if (!req.query.username && !req.query.email && !req.query.id) {
@@ -156,6 +188,7 @@ module.exports = {
     loginUser,
     logoutUser,
     logoutAllUserSessions,
+    getPublicUserData,
     isExistingUser,
     isExistingEmail
 }

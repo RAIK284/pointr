@@ -17,6 +17,8 @@ module.exports = (app) => {
 
     router.get('/api/existingEmail', userController.isExistingEmail);
 
+    router.get('/api/usersInfo', userController.getPublicUserData);
+
     router.get('/api/user', userController.readUser);
 
     // This endpoint returns data on the currently signed in user, based off information from an authentication token
