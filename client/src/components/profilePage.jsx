@@ -50,7 +50,8 @@ class ProfilePage extends Component {
                 trophies: data.trophies,
                 messagingPoints: data.messagingPoints,
                 funds: data.funds,
-                allTimeFunds: data.allTimeFunds
+                allTimeFunds: data.allTimeFunds,
+                isPrivate: data.isPrivate
             }))
     }
 
@@ -61,19 +62,20 @@ class ProfilePage extends Component {
     }
 
     async getUserRank(data) {
+        let rankSet = false;
         let rank = 1;
         data.forEach((user) => {
             console.log(user)
             if (user.username === this.state.username) {
-                if (user.isPrivate !== false) {
-                    this.setState({leaderboardRank: rank})
-                } else {
-                    this.setState({leaderboardRank: "?"})
-                }
+                this.setState({leaderboardRank: rank});
+                rankSet = true;
             } else {
                 rank++;
             }
         })
+        if (!rankSet) {
+            this.setState({leaderboardRank: "?"});
+        }
     }
 
     render() {

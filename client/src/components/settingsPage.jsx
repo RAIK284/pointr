@@ -22,10 +22,13 @@ class SettingsPage extends Component {
     }
 
     async componentDidMount() {
-        fetch('http://localhost:8080/api/user?username=bsimpleman')
+        fetch('http://localhost:8080/api/user/self', {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
+        })
             .then(response => response.json())
             .then(data => this.setState({isPrivate: data.isPrivate,
-            notifications: data.notifications})).then(()=> console.log(this.state))
+            notifications: data.notifications, username: data.username})).then(()=> console.log(this.state))
     }
 
     handleChange(event) {
@@ -95,7 +98,9 @@ class SettingsPage extends Component {
 
         const jsonData = JSON.stringify(newInfo);
 
-        fetch("http://localhost:8080/api/user?username=bsimpleman", {
+        console.log(localStorage.getItem("token")._id)
+
+        fetch("http://localhost:8080/api/user?username=" + this.state.username, {
             method: "PATCH",
             headers: {'Content-Type': 'application/json'},
             body: jsonData

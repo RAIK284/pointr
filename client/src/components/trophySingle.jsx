@@ -30,8 +30,6 @@ const addTrophy = (name, image) => {
     alert('Trophy purchased! (Maybe we should have a popup for this?)')
 }
 
-
-
 function TrophySingle(props) {
 
     const [trophyTitle, setTrophyTitle] = useState(props.title);
