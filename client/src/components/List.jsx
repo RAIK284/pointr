@@ -27,7 +27,7 @@ function List(props) {
         }
         //return the item which contains the user input
         else {
-            return el.text.toLowerCase().includes(props.input)
+            return el.username.toLowerCase().includes(props.input)
         }
     })
 

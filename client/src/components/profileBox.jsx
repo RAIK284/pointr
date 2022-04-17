@@ -15,13 +15,13 @@ class ProfileBox extends Component {
             ?
               <div className="box1" onClick={()=>{window.location.href="/user/" + this.props.otherProfile.username}}>
                 <img align="Left" id="image" alt="profilepic" src={ducky}/>
-                <p className="name">@{this.props.otherProfile.name}</p>
+                <p className="name">@{this.props.otherProfile.username}</p>
                 <p className="bio">{this.props.otherProfile.bio}</p>
               </div>
             :
             <div className="box2" onClick={()=>{window.location.href="/user/" + this.props.otherProfile.username}}>
                 <img align="Left" id="image" alt="profilepic" src={ducky}/>
-                <p className="name">@{this.props.otherProfile.name}</p>
+                <p className="name">@{this.props.otherProfile.username}</p>
                 <p className="bio">{this.props.otherProfile.bio}</p>
               </div>
 
