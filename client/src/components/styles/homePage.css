@@ -209,7 +209,7 @@ button#homepagebutton {
 
     width: 230px;
     height: 230px;
-    margin: 0;
+    margin: auto;
  
  
 }
@@ -280,3 +280,50 @@ button#homepagebutton {
     height: 50vh;
 
 }
+
+.captionLower{
+    position:relative;
+    top: 5%;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 45px;
+    letter-spacing: -0.015em;
+  
+   text-align: center;
+    color: #333333;
+ 
+}
+
+.captionUpper{
+    position:relative;
+    bottom: 5%;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 45px;
+    letter-spacing: -0.015em;
+
+    text-align: center;
+   
+    color: #333333;
+   
+}
+
+.infoBoxWrapper{
+
+    height: 40vh;
+    width: 100vw;
+    justify-content: center;
+
+    border: 10px solid #000000;
+    
+    
+    
+}
+
+

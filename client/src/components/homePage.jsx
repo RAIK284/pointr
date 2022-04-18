@@ -38,19 +38,29 @@ class HomePage extends Component {
                     </div>
 
                     <div id="rightBoxes">
-
-                            <div className="infoBox" style={{background: "#66D8C1"}}>
-                                <img src={msgIcon} className="icon" id="icon1"></img>
+                            <div className="infoBoxWrapper">
+                                <div className="infoBox" style={{background: "#66D8C1"}}>
+                                    <img src={msgIcon} className="icon" id="icon1"></img>
+                                </div>
+                                <div className="captionLower">Send a motivational note.</div>
                             </div>
 
-                            <div className="infoBox" style={{background: "#03B795"}}> 
-                                <img src={trophyIcon} className="icon" id="icon2"></img>
+                            <div className="infoBoxWrapper">
+                            <div className="captionUpper">Earn points for your positivity.</div>
+                                <div className="infoBox" style={{background: "#03B795"}}> 
+                                    <img src={trophyIcon} className="icon" id="icon2"></img>
+                                </div>
+                                
                             </div>
 
-                            <div className="infoBox" style={{background: "#0064FF"}}>
-                                <img src={starIcon} className="icon" id="icon3"></img>
-                            </div>
 
+                            <div className="infoBoxWrapper">
+                                <div className="infoBox" style={{background: "#0064FF"}}>
+                                    <img src={starIcon} className="icon" id="icon3"></img>
+                                </div>
+                                <div className="captionLower">Buy trophies to inspire others!</div>
+
+                            </div>
                     </div>
                     
 {/*                 <div class="flex-container">
