@@ -220,8 +220,19 @@ button#homepagebutton {
 }
 
 #icon1{
-    fill: #24887C;
+    /* fill: #24887C; */
+    filter: invert(43%) sepia(73%) saturate(395%) hue-rotate(123deg) brightness(89%) contrast(90%);
 }
+
+#icon2{
+    filter: invert(95%) sepia(7%) saturate(1933%) hue-rotate(99deg) brightness(88%) contrast(94%);
+}
+
+#icon3{
+    filter: invert(79%) sepia(5%) saturate(3300%) hue-rotate(188deg) brightness(102%) contrast(101%);
+}
+
+
 .infoBoxWrapperLeft{
     margin-top: 5%;
     margin-left: 2%;

@@ -5,6 +5,8 @@ import Button from '@mui/material/Button';
 import homePagePic from "./images/header-icons/homePagePic.jpeg";
 import { color } from "@mui/system";
 import msgIcon from "./images/header-icons/message.svg";
+import trophyIcon from "./images/header-icons/leaderboard.svg";
+import starIcon from "./images/face-grin-stars.svg";
 class HomePage extends Component {
     render() {
         return (
@@ -42,11 +44,11 @@ class HomePage extends Component {
                             </div>
 
                             <div className="infoBox" style={{background: "#03B795"}}> 
-                                <img></img>
+                                <img src={trophyIcon} className="icon" id="icon2"></img>
                             </div>
 
                             <div className="infoBox" style={{background: "#0064FF"}}>
-                                <img></img>
+                                <img src={starIcon} className="icon" id="icon3"></img>
                             </div>
 
                     </div>
