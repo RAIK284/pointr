@@ -57,6 +57,33 @@ button#newMessage{
     color: #0064FF;
 }
 
+.closeButton {
+    position: relative;
+    background: #264653;
+    /* background: pink; */
+    border: 0;
+    /* top: 5vh;
+    left: 95vw; */
+    left: 95%;
+    bottom: 105%;
+    /* margin-bottom: 500%; */
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.5vw;
+    /* line-height: 60px; */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.015em;
+
+    color: #FFFFFF;
+
+
+}
+
+
 .toggle {
     --width: 10vw;
     --height: calc(var(--width) / 3);

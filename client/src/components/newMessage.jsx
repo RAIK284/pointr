@@ -24,6 +24,7 @@ function NewMessage(props){
 
     const handleInput = () => {
         setMessageData()
+        console.log(messageObject)
     }
 
     var dict = {
@@ -51,8 +52,6 @@ function NewMessage(props){
     }
 
     const getMessageValue = (messageBody) => {
-        console.log("In getMessageValue function")
-        console.log(messageBody)
 
         var messageBodyPostCull = removeEmojis(messageBody)
 
@@ -86,13 +85,15 @@ function NewMessage(props){
 
     const setMessageData = async () => {
         messageObject.value = getMessageValue(messageBody);
-        messageObject.name = this.name;
-        messageObject.timestamp = new Date().toUTCString()
-        messageObject.receiver = email;
+        // getMessageValue also works but wont set the value properly for some reason
+        // messageObject.name = this.name;
+        messageObject.name = messageObject.name;
+        messageObject.timestamp = new Date().toUTCString();
+        // messageObject.receiver = email;
+        messageObject.receiver = document.getElementById("selectedEmail".value);
+        // console.log(document.getElementById("selectedEmail").value);
+            // ^^ this prints the right thing but it won't get set as the message object receiver for some reason
         messageObject.messageBody = messageBody;
-
-        console.log("Message Email: ")
-        console.log(messageObject.email)
 
         await postMessage(messageObject);
         await subtractMessageValue(messageObject);
@@ -130,6 +131,20 @@ function NewMessage(props){
             body: jsonData
         });
     }
+////////////////////////////////////////////////////////////////////////////////
+    // const emailList = []
+    // getEmailList() {
+    //     fetch('http://localhost:8080/api/message?sender=bsimpleman')
+    //          .then(response => response.json())
+    //          .then(data => this.setState({emailList: data}))
+    // }
+
+    // for (let i = 0; i < emailList.length; i++) {
+    //     emailList.push(<Option>
+    //         emailList[i]
+    //     </Option>);
+    // }
+////////////////////////////////////////////////////////////////////////////////
 
     return(props.trigger) ? (
         <React.Fragment >
@@ -138,31 +153,10 @@ function NewMessage(props){
                 <div className = 'newMessageInner'>
                     <text className = 'sendTo'>Send a message to: </text>
                  
-                    {/* <div class="dropdown">
-                        <span>Select User</span>
-                        <span contenteditable="true" data-placeholder = "Select User"></span>
-                        <div class="dropdown-content">
-                            <p onClick={e => setEmail(e.target.value)}>hard coded user 1</p>
-                            <p>hard coded user 2</p>
-                            <p>hard coded user 3</p>
-                            <p>hard coded user 4</p>
-                            <p>hard coded user 5</p>
-                            <p>hard coded user 6</p>
-                            <p>hard coded user 7</p>
-                            <p>hard coded user 8</p>
-                            <p>hard coded user 9</p>
-                            <p>hard coded user 10</p>
-                            <p>hard coded user 12</p>
-                            <p>hard coded user 13</p>
-                            <p>hard coded user 14</p>
-                            <p>hard coded user 15</p>
-
-                        </div>
-                    </div> */}
-
                     <div className="box">
-                        <select>
-                            <option>Option 1</option>
+                        <select id="selectedEmail">
+                            {/* {emailList} */}
+                            <option>test@email.com</option>
                             <option>Option 2</option>
                             <option>Option 3</option>
                             <option>Option 4</option>

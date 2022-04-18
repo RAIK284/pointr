@@ -48,57 +48,7 @@
 
     margin-top: 2%;
     margin-bottom: 5%;
-}
-
-/* .newMessageInner .dropdown {
-    position: relative;
-    display: inline-block;
-
-    left: 40%;
-    top: -11%;
-    width: 40%;
-    height: 6%;
-    align-items: center;
-
-
-    background-color: white;
-    color: black;
-    font-family: 'Poppins';
-} */
-/* .newMessageInner .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 90%;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
-    z-index: 1;
-    font-family: 'Poppins';
-
-  } */
-  
-/* .newMessageInner .dropdown:hover .dropdown-content {
-    display: block;
-
-    height: 800%;
-    overflow: scroll;
-  } */
-
-/* Links inside the dropdown */
-/* .newMessageInner .dropdown-content p {
-    color: black;
-    padding: 12px 16px; */
-    /* text-decoration: none; */
-    /* display: block;
-    font-family: 'Poppins';
-
-  } */
-  
-  /* Change color of dropdown links on hover */
- /* .newMessageInner .dropdown-content p:hover {
-     background-color: #f1f1f1
-} */
-  
+} 
 
 .newMessageInner .messageEntryBox {
     position: relative;
@@ -136,7 +86,7 @@
     font-size: 2vw;
 }
 
-.closeButton {
+/* .closeButton {
     position: relative;
     background: #264653;
     border: 0;
@@ -146,9 +96,9 @@
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
-    font-size: 1.5vw;
+    font-size: 1.5vw; */
     /* line-height: 60px; */
-    display: flex;
+    /* display: flex;
     align-items: center;
     text-align: center;
     letter-spacing: -0.015em;
@@ -156,7 +106,7 @@
     color: #FFFFFF;
 
 
-}
+} */
 
 .tokensBox {
     position: relative;
@@ -210,7 +160,6 @@
     margin-left: 10%;
     margin-right: 10%;
 }
-
  
 .box {
 position: relative;

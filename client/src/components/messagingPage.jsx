@@ -67,9 +67,6 @@ class MessagingPage extends Component {
                         </label>
 
                         <div id="messageDisplayBoxes">
-                            {/* The way this is displaying is NOT how it should be. We should have a call
-                        to the api, and loop throug every message. Then, we display a box for every message. That way
-                        for ex if someone only has 2 messages only 2 boxes show up */}
                             {sentMessages}
                         </div>
 
