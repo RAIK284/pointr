@@ -31,27 +31,7 @@ h2 {
     float: right;
     margin-right: 20px;
 }
-button#homepagebutton {
-    position: relative;
-    background: #0064FF;
-    border-radius: 6px;
-    
-    
 
-    color: white;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 45px;
-   
-
-    display: flex;
-    align-items: center;
-    text-align: center;
-
-    margin: 4%;
-}
 
 .emailentry{
 
@@ -93,3 +73,255 @@ body {
     height: 75%;
     border-radius: 50%;
 }
+
+button#homepagebutton {
+  
+    background: #FFFFFF;
+    border-radius: 6px;
+    
+    width: 13rem;
+    height: 4rem;
+    
+
+    color: #0064FF;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 45px;
+   
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+}
+
+
+
+
+#titleHeader{
+    width: 100vw;
+    height: 40vh;
+
+    background: linear-gradient(86.57deg, #65D7C0 2.83%, #02BA90 39.01%, #0064FF 96.43%);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+
+}
+
+
+
+#homeTitleWrapper{
+    position:relative;
+    top: 5%;
+    left: 7%;
+}
+
+#homeSubtitleWrapper{
+    position: relative;
+    top: 10%;
+    margin-left: 18%;
+
+}
+
+#homeButtonWrapper{
+    position:relative;
+    top: 0%;
+    left: 77%;
+
+}
+
+#homeTitle{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 100px;
+    line-height: 150px;
+
+    letter-spacing: -0.015em;
+
+
+
+    color: #FFFFFF;
+
+}
+
+#homeSubtitle{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 45px;
+    line-height: 68px;
+    text-align: right;
+    letter-spacing: -0.015em;
+
+    color: #FFFFFF;
+}
+
+#rightBoxes{
+    
+    
+    height:50vh;
+    width:100vw;
+    margin-top: 10vh;
+ 
+
+    display: flex;
+    flex-direction: row;
+    align-items:stretch;
+    justify-content:space-evenly;
+    
+}
+
+#leftContent{
+    position:fixed;
+
+    height:50vh;
+    width:50vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    
+}
+
+.infoBox{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 60px;
+    
+    display: flex;
+    
+    letter-spacing: -0.015em;
+
+    color: #333333;
+
+    
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+
+    width: 230px;
+    height: 230px;
+    margin: auto;
+ 
+ 
+}
+
+.icon{
+    width: 60%;
+    height: 60%;
+    border: 2px #ffffff;
+}
+
+#icon1{
+    /* fill: #24887C; */
+    filter: invert(43%) sepia(73%) saturate(395%) hue-rotate(123deg) brightness(89%) contrast(90%);
+}
+
+#icon2{
+    filter: invert(95%) sepia(7%) saturate(1933%) hue-rotate(99deg) brightness(88%) contrast(94%);
+}
+
+#icon3{
+    filter: invert(79%) sepia(5%) saturate(3300%) hue-rotate(188deg) brightness(102%) contrast(101%);
+}
+
+
+.infoBoxWrapperLeft{
+    margin-top: 5%;
+    margin-left: 2%;
+}
+
+.infoBoxWrapperRight{
+    margin-top: 5%;
+    margin-left: 20%;
+}
+
+#easyText{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 70px;
+    line-height: 105px;
+    
+    text-align: right;
+    letter-spacing: -0.015em;
+
+    color: #333333;
+
+
+}
+
+#startedText{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 45px;
+    
+    text-align: right;
+    letter-spacing: -0.015em;
+
+    color: #333333;
+
+}
+
+.flex-container > div{
+    display: flex;
+    flex-direction: row;
+    background-color: #FFFFFF;
+    width: 100vw;
+    height: 50vh;
+
+}
+
+.captionLower{
+    position:relative;
+    top: 5%;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 45px;
+    letter-spacing: -0.015em;
+  
+   text-align: center;
+    color: #333333;
+ 
+}
+
+.captionUpper{
+    position:relative;
+    bottom: 5%;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 45px;
+    letter-spacing: -0.015em;
+
+    text-align: center;
+   
+    color: #333333;
+   
+}
+
+.infoBoxWrapper{
+
+    height: 40vh;
+    width: 100vw;
+    justify-content: center;
+    
+    
+}
+
+
