@@ -217,6 +217,7 @@ button#homepagebutton {
 .icon{
     width: 60%;
     height: 60%;
+    border: 2px #ffffff;
 }
 
 #icon1{
@@ -319,9 +320,6 @@ button#homepagebutton {
     height: 40vh;
     width: 100vw;
     justify-content: center;
-
-    border: 10px solid #000000;
-    
     
     
 }
