@@ -51,6 +51,7 @@ class MessagingPage extends Component {
         let receivedMessages = [];
 
         for (let i = this.state.sentMessages.length - 1; i > 0; i--) {
+            console.log(receivedMessages)
             sentMessages.push(<MessageDisplayBox name={this.state.sentMessages[i].name} username={this.state.sentMessages[i].sender} messageBody={this.state.sentMessages[i].messageBody}></MessageDisplayBox>);
         }
 

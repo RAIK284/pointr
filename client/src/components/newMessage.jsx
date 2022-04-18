@@ -18,7 +18,6 @@ function NewMessage(props){
     getUserInformation();
 
     async function getUserInformation() {
-
         fetch('http://localhost:8080/api/user/self', {
             method: 'GET',
             headers: { 'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
@@ -156,7 +155,8 @@ function NewMessage(props){
                             {/* look at store page */}
                             <option>username1</option>
                             <option>test@gmail.com</option>
-                            <option>prema@gmail.com</option>
+                            <option>message123</option>
+                            <option>test12345</option>
                         </select>
                     </div>
 
