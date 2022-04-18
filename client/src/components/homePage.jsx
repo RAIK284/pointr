@@ -17,6 +17,8 @@ class HomePage extends Component {
                         logoText="Pointr"
                         background="#0064FF"
                         navItemPosition="right"
+                        InputLabelProps={{ style: { fontFamily:'Poppins', fontWeight: '700px',borderWidth:'3px'}  }}
+
                     >
                         <NavItem to="/">Contact</NavItem>
                         <NavItem to="/">About</NavItem>
