@@ -75,7 +75,7 @@ function NewMessage(props){
                 i++
         }
         console.log("totalValue: ")
-        console.log(totalValue)
+        return totalValue
     }
 
     useEffect(() => {
@@ -85,14 +85,11 @@ function NewMessage(props){
 
     const setMessageData = async () => {
         messageObject.value = getMessageValue(messageBody);
-        // getMessageValue also works but wont set the value properly for some reason
-        // messageObject.name = this.name;
+
         messageObject.name = messageObject.name;
         messageObject.timestamp = new Date().toUTCString();
-        // messageObject.receiver = email;
-        messageObject.receiver = document.getElementById("selectedEmail".value);
-        // console.log(document.getElementById("selectedEmail").value);
-            // ^^ this prints the right thing but it won't get set as the message object receiver for some reason
+        messageObject.receiver = document.getElementById("selectedEmail").value;
+
         messageObject.messageBody = messageBody;
 
         await postMessage(messageObject);
@@ -131,20 +128,6 @@ function NewMessage(props){
             body: jsonData
         });
     }
-////////////////////////////////////////////////////////////////////////////////
-    // const emailList = []
-    // getEmailList() {
-    //     fetch('http://localhost:8080/api/message?sender=bsimpleman')
-    //          .then(response => response.json())
-    //          .then(data => this.setState({emailList: data}))
-    // }
-
-    // for (let i = 0; i < emailList.length; i++) {
-    //     emailList.push(<Option>
-    //         emailList[i]
-    //     </Option>);
-    // }
-////////////////////////////////////////////////////////////////////////////////
 
     return(props.trigger) ? (
         <React.Fragment >
@@ -156,11 +139,8 @@ function NewMessage(props){
                     <div className="box">
                         <select id="selectedEmail">
                             {/* {emailList} */}
-                            <option>test@email.com</option>
-                            <option>Option 2</option>
-                            <option>Option 3</option>
-                            <option>Option 4</option>
-                            <option>Option 5</option>
+                            {/* look at store page */}
+                            <option>username1</option>
                         </select>
                     </div>
 
