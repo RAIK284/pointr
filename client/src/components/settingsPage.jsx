@@ -53,12 +53,12 @@ class SettingsPage extends Component {
 
     handleData() {
         let valid = 1;
-        if (this.state.name !== undefined) {
+        if (this.state.name !== '') {
             if (verifyName(this.state.name) !== true) {
                 alert(verifyName(this.state.name));
                 valid = -1;
             }
-        } else if (this.state.password !== undefined) {
+        } else if (this.state.password !== '') {
             if (this.state.password !== this.state.passwordConfirmation) {
                 alert("Passwords do not match!");
                 valid = -1;
@@ -87,21 +87,17 @@ class SettingsPage extends Component {
 
     async updateUser() {
         const newInfo = {}
-        if (this.state.name !== undefined) {
+        if (this.state.name !== '') {
             newInfo.name = this.state.name
         }
-        if (this.state.password !== undefined) {
+        if (this.state.password !== '') {
             newInfo.password = this.state.password
         }
-        if (this.state.isPrivate !== undefined) {
-            newInfo.isPrivate = this.state.isPrivate
-        }
-        if (this.state.notifications !== undefined) {
-            newInfo.notifications = this.state.notifications
-        }
-        if (this.state.bio !== undefined) {
+        if (this.state.bio !== '') {
             newInfo.bio = this.state.bio
         }
+        newInfo.isPrivate = this.state.isPrivate
+        newInfo.notifications = this.state.notifications
 
         const jsonData = JSON.stringify(newInfo);
 
