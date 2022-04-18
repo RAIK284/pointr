@@ -39,7 +39,7 @@ class MessagingPage extends Component {
             .then(response => response.json())
             .then(data => this.setState({receivedMessages: data}))
 
-         fetch('http://localhost:8080/api/message?sender=bsimpleman')
+         fetch('http://localhost:8080/api/message?sender=' + this.state.username)
              .then(response => response.json())
              .then(data => this.setState({sentMessages: data}))
     }
@@ -50,11 +50,11 @@ class MessagingPage extends Component {
         let sentMessages = [];
         let receivedMessages = [];
 
-        for (let i = 0; i < this.state.sentMessages.length; i++) {
+        for (let i = this.state.sentMessages.length - 1; i > 0; i--) {
             sentMessages.push(<MessageDisplayBox name={this.state.sentMessages[i].name} username={this.state.sentMessages[i].sender} messageBody={this.state.sentMessages[i].messageBody}></MessageDisplayBox>);
         }
 
-        for (let i = 0; i < this.state.receivedMessages.length; i++) {
+        for (let i = this.state.receivedMessages.length - 1; i > 0; i--) {
             receivedMessages.push(<MessageDisplayBox name={this.state.receivedMessages[i].name} username={this.state.receivedMessages[i].sender} messageBody={this.state.receivedMessages[i].messageBody}></MessageDisplayBox>);
         }
 

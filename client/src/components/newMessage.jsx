@@ -11,11 +11,27 @@ function NewMessage(props){
 
     const [email, setEmail] = useState('');
     const [messageBody, setMessageBody] = useState('');
+    const [name, setName] = useState('');
+    const [sender, setSender] = useState('');
+    const [receiver, setReceiver] = useState('');
+
+    getUserInformation();
+
+    async function getUserInformation() {
+
+        fetch('http://localhost:8080/api/user/self', {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
+        })
+            .then(response => response.json())
+            .then(data => {setName(data.name); setSender(data.username)})
+    }
+
 
     const messageObject = {
-        "name": "Blake Simpleman",
+        "name": name,
         "timestamp": "",
-        "sender": "bsimpleman",
+        "sender": sender,
         "receiver": "",
         "value": "",
         "messageBody": "",
@@ -85,8 +101,6 @@ function NewMessage(props){
 
     const setMessageData = async () => {
         messageObject.value = getMessageValue(messageBody);
-
-        messageObject.name = messageObject.name;
         messageObject.timestamp = new Date().toUTCString();
         messageObject.receiver = document.getElementById("selectedEmail").value;
 
@@ -122,7 +136,7 @@ function NewMessage(props){
     const subtractMessageValue = async (messageObject) => {
         const jsonData = JSON.stringify(messageObject);
 
-        fetch("http://localhost:8080/api/user?username=bsimpleman", {
+        fetch("http://localhost:8080/api/user?username=" + sender, {
             method: "PATCH",
             headers: {'Content-Type': 'application/json'},
             body: jsonData
@@ -141,6 +155,8 @@ function NewMessage(props){
                             {/* {emailList} */}
                             {/* look at store page */}
                             <option>username1</option>
+                            <option>test@gmail.com</option>
+                            <option>prema@gmail.com</option>
                         </select>
                     </div>
 
