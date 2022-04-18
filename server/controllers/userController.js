@@ -1,14 +1,26 @@
 const mongoConnection = require("../utils/database");
 const encrypt = require("../utils/encrypt")
+const jwt = require('jsonwebtoken');
 const {ObjectId: objectID} = require("mongodb");
+
+const createToken = async (user) => {
+    const db = mongoConnection.getDb();
+    const token = jwt.sign({_id: user.username}, 'Z5YWzh5F2D', {expiresIn: '7 days'});
+    console.log(user)
+    db.collection('users').updateOne({username: user.username}, {$push: {"tokens" : {"token" : token}}});
+    return token;
+}
 
 const signupUser = async (req, res) => {
     const db = mongoConnection.getDb();
     const user = req.body;
     user.password = await encrypt.createHash(user.password);
     db.collection('users').insertOne(user);
-    res.status(200).send('Created user');
+    const token = await createToken(user);
+    res.status(200).send({user, token})
 }
+
+
 
 const loginUser = async (req, res) => {
     const db = mongoConnection.getDb();
@@ -22,10 +34,41 @@ const loginUser = async (req, res) => {
     }
     const isCorrectPassword = await encrypt.checkHash(password, email);
         if (isCorrectPassword) {
-            res.status(200).send('Email and password match!')
+            const user = await db.collection('users').findOne({email: req.body.email});
+            const token = await createToken(user)
+            res.status(200).send({user, token})
         } else {
             res.status(401).send('Incorrect password')
         }
+}
+
+const logoutUser = async (req, res) => {
+    const db = mongoConnection.getDb();
+    try {
+        req.user.tokens = req.user.tokens.filter((token) => {
+            return token.token !== req.token
+        });
+        await db.collection('users').updateOne(
+            {username: req.user.username},
+            {$set: {tokens: req.user.tokens}}
+        )
+        res.sendStatus(200)
+    } catch (e) {
+        res.status(500).send();
+    }
+}
+
+const logoutAllUserSessions = async (req, res) => {
+    const db = mongoConnection.getDb();
+    try {
+        await db.collection('users').updateOne(
+            {username: req.user.username},
+            {$set: {tokens: []}}
+        )
+        res.sendStatus(200)
+    } catch (e) {
+        res.status(500).send();
+    }
 }
 
 const isExistingUser = async (req, res) => {
@@ -57,6 +100,38 @@ const createUser = async (req, res) => {
     const user = req.body;
     db.collection('users').insertOne(user);
     res.status(200).send('Created user');
+}
+
+const getPublicUserData = async (req, res) => {
+    const db = mongoConnection.getDb();
+    const users = await db.collection('users').find({}).toArray();
+    const userList = []
+    let index = 0;
+    for (const user of users) {
+        index++;
+        if (user.isPrivate === false) {
+            userList.push({
+                name: user.name,
+                username: user.username,
+                bio: user.bio,
+                funds: user.funds,
+                trophies: user.trophies,
+                image: user.image,
+                isPrivate: "false"
+            })
+        } else {
+            userList.push({
+                name: user.name,
+                username: user.username,
+                bio: user.bio,
+                funds: "private",
+                trophies: "private",
+                image: user.image,
+                isPrivate: "true"
+            })
+        }
+    }
+    res.status(200).send(userList);
 }
 
 const readUser = (req, res) => {
@@ -111,6 +186,9 @@ module.exports = {
     deleteUser,
     signupUser,
     loginUser,
+    logoutUser,
+    logoutAllUserSessions,
+    getPublicUserData,
     isExistingUser,
     isExistingEmail
 }
