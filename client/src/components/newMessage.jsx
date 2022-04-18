@@ -14,6 +14,7 @@ function NewMessage(props){
     const [name, setName] = useState('');
     const [sender, setSender] = useState('');
     const [receiver, setReceiver] = useState('');
+    const [receiverName, setReceiverName] = useState('');
 
     getUserInformation();
 
@@ -26,9 +27,17 @@ function NewMessage(props){
             .then(data => {setName(data.name); setSender(data.username)})
     }
 
+    async function getReceiverName(messageObject) {
+        console.log("ran")
+        console.log(messageObject.receiver)
+        const response = await fetch('http://localhost:8080/api/user?username=' + messageObject.receiver);
+        const data = await response.json();
+        return data.name;
+    }
 
     const messageObject = {
         "name": name,
+        "receiverName": '',
         "timestamp": "",
         "sender": sender,
         "receiver": "",
@@ -105,12 +114,15 @@ function NewMessage(props){
 
         messageObject.messageBody = messageBody;
 
-        await postMessage(messageObject);
+        const receiverName = await getReceiverName(messageObject);
+        console.log("Receiver Name" + receiverName);
+        await postMessage(messageObject, receiverName);
         await subtractMessageValue(messageObject);
 
     }
 
-    const postMessage = async (messageObject) => {
+    const postMessage = async (messageObject, receiverName) => {
+        messageObject.receiverName = receiverName;
         const jsonData = JSON.stringify(messageObject);
 
         fetch("http://localhost:8080/api/message", {
