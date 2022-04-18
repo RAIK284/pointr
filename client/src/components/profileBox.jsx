@@ -3,10 +3,28 @@ import ducky from "./images/ducky.png"
 import "./styles/profileBox.css"
 import PropTypes from 'prop-types';
 
-class ProfileBox extends Component {
+let otherUser = 
+{
+  text:"Bobby",
+  bio:"hello there",
+  leaderboardRank: 7,
+  image: './images/ducky.png',
+  funds: 20000
+}
 
+const changeUser = (param) =>
+{
+  otherUser = param
+}
+
+class ProfileBox extends Component {
     render() {
-        console.log(this.props)
+
+
+      const changePage = () => 
+      {
+        window.location.href="/otherUser"
+      }
       return (
         <React.Fragment>
           <div>
@@ -35,3 +53,4 @@ class ProfileBox extends Component {
     otherProfile: PropTypes.object.isRequired,
 };
   export default ProfileBox;
+  export {otherUser};

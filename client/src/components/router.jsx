@@ -16,8 +16,9 @@ import LeaderboardPage from './leaderboardPage'
 import SettingsPage from './settingsPage'
 // import ProfileList, {otherUser} from './profileList'
 // import {otherUserData} from './profileBox'
+import { otherUser } from './profileBox';
 import OtherUserPage from './otherUserPage';
-let otherUserData = []
+// let otherUserData = []
 
 class WebsiteRouter extends Component {
     render() {

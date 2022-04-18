@@ -15,7 +15,14 @@ import {createUser} from "./scripts/signUpValidation.js"
 class SettingsPage extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            name: '',
+            bio: '',
+            password: '',
+            passwordConfirmation: '',
+            isPrivate: false,
+            notifications: false
+        }
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -117,23 +124,24 @@ class SettingsPage extends Component {
                         <HeaderDrawer index={5}></HeaderDrawer>
                         <div id="main-settings-container">
                             <label htmlFor="name" className="settingsLabel">Change name</label>
-                            <input type="text" name="name" value={this.state.name} onChange={this.handleChange} placeholder="Enter new name" className="settingsEntry" required></input>
+                            <input type="text" name="name" data-testid="name-input" value={this.state.name} onChange={this.handleChange} placeholder="Enter new name" className="settingsEntry" required></input>
 
                             <label htmlFor="password" className="settingsLabel">Change password</label>
-                            <input type="text" name="password" value={this.state.password} onChange={this.handleChange} placeholder="Enter new password" className="settingsEntry" required></input>
-                            <input type="text" name="passwordConfirmation" value={this.state.passwordConfirmation} onChange={this.handleChange} placeholder="Confirm new password" className="settingsEntry" required></input>
+                            <input type="text" name="password" data-testid="password-input" value={this.state.password} onChange={this.handleChange} placeholder="Enter new password" className="settingsEntry" required></input>
+                            <input type="text" name="passwordConfirmation" data-testid="passwordConfirmation-input" value={this.state.passwordConfirmation} onChange={this.handleChange} placeholder="Confirm new password" className="settingsEntry" required></input>
 
                             <label htmlFor="bio" className="settingsLabel">Change bio</label>
-                            <input id = "bio" type="text" name="bio" value={this.state.bio} onChange={this.handleChange} placeholder="Enter new bio" className="settingsEntry" required></input>
+                            <input id = "bio" type="text" name="bio" data-testid="bio-input" value={this.state.bio} onChange={this.handleChange} placeholder="Enter new bio" className="settingsEntry" required></input>
+                            {/* This will be a logout button. <Button variant="contained" size="large" onClick={}>Logout</Button>*/}
                         </div>
                         <div id={"bottom-options"}>
-                            <input type="checkbox"  className="settings-checkbox" name="privacy" checked={!this.state.isPrivate} onChange={this.handleChange} onClick={ () => { this.setState({ isPrivate: !this.state.isPrivate })}} required></input>
+                            <input type="checkbox"  className="settings-checkbox" data-testid="privacy-checkbox" name="privacy" checked={!this.state.isPrivate} onChange={this.handleChange} onClick={ () => { this.setState({ isPrivate: !this.state.isPrivate })}} required></input>
                             <label htmlFor="privacy" className="checkboxLabel">Display my information publicly</label>
                             <p id={"privacy-info"}>
                                 Enabling this will allow other users to see your tropies, FUNDs, and leaderboard rank.
                             </p>
                             <br/>
-                            <input type="checkbox"  className="settings-checkbox" name="notification" checked={this.state.notifications} onChange={this.handleChange} onClick={ () => {this.setState({ notifications: !this.state.notifications })}} required></input>
+                            <input type="checkbox"  className="settings-checkbox" name="notification" data-testid="notifications-checkbox" checked={this.state.notifications} onChange={this.handleChange} onClick={ () => {this.setState({ notifications: !this.state.notifications })}} required></input>
                             <label htmlFor="notifications" className="checkboxLabel">Receive email notifications</label>
                             <p id={"notifications-info"}>
                                 Notifications will be sent by email one week after your last message.

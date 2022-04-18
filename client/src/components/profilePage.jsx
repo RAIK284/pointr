@@ -94,7 +94,6 @@ class ProfilePage extends Component {
 
         let trophyImages = [];
         for (let i = 0; i < this.state.trophies.length; i++) {
-            console.log(this.state.trophies[i].image)
             trophyImages.push(<img src={imageObjects[this.state.trophies[i].image]}/>);
         }
 

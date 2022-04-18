@@ -98,7 +98,6 @@ class OtherUserPage extends Component {
             console.log(this.state.trophies[i].image)
             trophyImages.push(<img src={imageObjects[this.state.trophies[i].image]}/>);
         }
-
         return (
             <React.Fragment>
             
