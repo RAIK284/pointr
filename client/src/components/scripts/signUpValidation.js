@@ -7,7 +7,8 @@ const jsonBody = {
     "password": "",
     "profileImg": "./images/default.png",
     "phoneNumber": 4029490831,
-    "messagingPoints": 0,
+    "messagingPoints": 100,
+    "allTimeFunds": 0,
     "funds": 0,
     "inventoryId": "",
     "lastLogin": "",
@@ -94,4 +95,35 @@ export async function createUser(name, username, email, password) {
         headers: {'Content-Type': 'application/json'},
         body: newUserJSON
     });
+    const responseData = await response.json();
+    console.log(response)
+    console.log(responseData)
+
+    localStorage.setItem('token', responseData.token);
+}
+
+export function verifyEmail(email) {
+    if ([...email].length === 0) {
+        return "Please enter an email!"
+    } else if (!(/\S+@\S+\.\S+/.test(email))) {
+        return "Invalid email!"
+    } else {
+        return true;
+    }
+}
+
+export function verifyPassword(password) {
+    if ([...password].length < 8){
+        return "Password is too short! It must be at least 8 characters long"
+    } else if ([...password].length > 30) {
+        return "Passwords must be under 30 characters long"
+    } else if (!password.match(/^[0-9A-Za-z]+$/)) {
+        return "Invalid password. Only characters a-z and 0-9 are allowed"
+    } else if (!(/\d/.test(password))) {
+        return "Password must contain a number"
+    } else if (password.toLowerCase() === password) {
+        return "Password must contain a capital letter"
+    } else {
+        return true;
+    }
 }

@@ -8,26 +8,107 @@ import crystal from './images/trophy-icons/crystal.png'
 import clover from './images/trophy-icons/clover.png'
 import sword from './images/trophy-icons/sword.png'
 import prize from './images/trophy-icons/prize.png'
+import ducky from './images/ducky.png'
 import HeaderDrawer from "./headerDrawer.jsx";
+import { useParams } from "react-router-dom";
 //reference: https://mui.com/components/drawers/
 import PropTypes from 'prop-types';
 import './styles/profilePage.css';
 import './styles/otherUserPage.css'
 
+function withParams(Component) {
+    return props => <Component {...props} params={useParams()} />;
+}
+
 class OtherUserPage extends Component {
+    constructor(props) {
+        super(props);
+        this.state =
+            {name: '',
+                username: '',
+                bio: '',
+                image: '',
+                trophies: [],
+                messagingPoints: 0,
+                funds: 0,
+                allTimefunds: 0,
+                leaderboardRank: "?"}
+    }
+
+    componentDidMount() {
+        let { id } = this.props.params;
+        this.fetchData(id).then(() => this.getLeaderboardInformation());
+    }
+
+    fetchData = async (id) => {
+        const response =  await fetch('http://localhost:8080/api/user?username=' + id)
+        const data = await response.json();
+        console.log(data)
+        if (data.isPrivate === false) {
+            this.setState(data)
+        } else {
+            this.setState({
+                name: data.name,
+                username: data.username,
+                bio: data.bio,
+                image: data.image,
+                trophies: [],
+                funds: "Private",
+                leaderboardRank: "Private"
+            })
+        }
+        console.log(this.state)
+    };
+
+    async getLeaderboardInformation () {
+        await fetch('http://localhost:8080/api/leaderboard')
+            .then(response => response.json())
+            .then(data => {this.getUserRank(data)})
+    }
+
+    async getUserRank(data) {
+        let rank = 1;
+        data.forEach((user) => {
+            if (user.username === this.state.username) {
+                console.log("happened")
+                this.setState({leaderboardRank: rank})
+            } else {
+                rank++;
+            }
+        })
+    }
+
     render() {
-        console.log(this.props.otherUser)
+
+        const imageObjects = {
+            "ball": ball,
+            "star" : star,
+            "dice": dice,
+            "crystal": crystal,
+            "trophy": trophy,
+            "crystal": crystal,
+            "clover": clover,
+            "prize": prize,
+            "sword": sword
+        }
+
+
+        let trophyImages = [];
+        for (let i = 0; i < this.state.trophies.length; i++) {
+            console.log(this.state.trophies[i].image)
+            trophyImages.push(<img src={imageObjects[this.state.trophies[i].image]}/>);
+        }
         return (
             <React.Fragment>
             
             <div id="header">
-            <img align='Left' id="otherImage" alt="profile pic" src={this.props.otherUser.image}/>
+            <img align='Left' id="otherImage" alt="profile pic" src={ducky}/>
                 <p id="welcome">
                     {/* need image here */}
-                    {this.props.otherUser.text}.
+                    {this.state.name}.
                 </p>
                 <p id="sub">
-                    {this.props.otherUser.bio}
+                    {this.state.bio}
                 </p>
             </div>
 
@@ -37,7 +118,7 @@ class OtherUserPage extends Component {
                 <br />
                 <br />
                 <p id="leaderboard">
-                    Leaderboard Rank <div class="rank">{this.props.otherUser.leaderboardRank}</div>
+                    Leaderboard Rank <div class="rank">{this.state.leaderboardRank}</div>
                 </p>
                 <br />
                 <br />
@@ -45,10 +126,11 @@ class OtherUserPage extends Component {
                 <div id={"carousel-container"}>
                     <div id={"carousel-wrapper"}>
                         {/* insert images here{trophyImages} */}
+                        {trophyImages}
                     </div>
                 </div>
                 <div id={"stats-container"}>
-                    <span className="stats">FUNds <p className="rank">{this.props.otherUser.funds} </p></span>
+                    <span className="stats">FUNds <p className="rank">{this.state.funds} </p></span>
                     {/* send message button here */}
                 </div>
             </div>
@@ -61,4 +143,4 @@ OtherUserPage.propTypes = {
     otherUser: PropTypes.object.isRequired,
 };
 
-export default OtherUserPage;
+export default withParams(OtherUserPage);

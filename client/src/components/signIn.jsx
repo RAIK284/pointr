@@ -11,6 +11,7 @@ class SignIn extends Component {
             console.log(response)
             if (response !== -1) {
                 //Switch to profile page.
+                localStorage.setItem('token', response.token);
                 window.location.href='/profile'
                 console.log("Successul!");
                 console.log(response);

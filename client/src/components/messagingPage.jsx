@@ -10,12 +10,25 @@ class MessagingPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            newMessage: false
+            newMessage: false,
+            name: '',
+            username: '',
+            funds: 0
         }
     }
 
     async componentDidMount() {
-        await fetch('http://localhost:8080/api/message?receiver=bsimpleman')
+
+        await fetch('http://localhost:8080/api/user/self', {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
+        })
+            .then(response => response.json())
+            .then(data => this.setState({
+                username: data.username
+            }));
+
+        await fetch('http://localhost:8080/api/message?receiver=' + this.state.username)
             .then(response => response.json())
             .then(data => this.setState({data}))
     }

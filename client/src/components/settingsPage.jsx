@@ -29,10 +29,13 @@ class SettingsPage extends Component {
     }
 
     async componentDidMount() {
-        fetch('http://localhost:8080/api/user?username=bsimpleman')
+        fetch('http://localhost:8080/api/user/self', {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
+        })
             .then(response => response.json())
             .then(data => this.setState({isPrivate: data.isPrivate,
-            notifications: data.notifications})).then(()=> console.log(this.state))
+            notifications: data.notifications, username: data.username})).then(()=> console.log(this.state))
     }
 
     handleChange(event) {
@@ -71,6 +74,17 @@ class SettingsPage extends Component {
         }
     }
 
+    handleSignOut() {
+        console.log("here")
+        fetch("http://localhost:8080/api/signout", {
+            method: "POST",
+            headers: {'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
+        });
+        localStorage.clear();
+        window.location.href='/';
+
+    }
+
     async updateUser() {
         const newInfo = {}
         if (this.state.name !== undefined) {
@@ -91,7 +105,9 @@ class SettingsPage extends Component {
 
         const jsonData = JSON.stringify(newInfo);
 
-        fetch("http://localhost:8080/api/user?username=bsimpleman", {
+        console.log(localStorage.getItem("token")._id)
+
+        fetch("http://localhost:8080/api/user?username=" + this.state.username, {
             method: "PATCH",
             headers: {'Content-Type': 'application/json'},
             body: jsonData
@@ -133,8 +149,8 @@ class SettingsPage extends Component {
 
                         </div>
                         <div id={"settings-buttons"}>
-                            <Button id="logout" variant="contained" size="large" data-testid="logout-button" onClick={() => window.location.href='/'}>Log Out</Button>
-                            <Button id="save" variant="contained" size="large" data-testid="save-button" onClick={async () => await this.handleSubmit()}>Save</Button>
+                            <Button id="logout" variant="contained" size="large" onClick={() => this.handleSignOut()}>Log Out</Button>
+                            <Button id="save" variant="contained" size="large" onClick={async () => await this.handleSubmit()}>Save</Button>
                         </div>
                     </div>
 
