@@ -40,7 +40,7 @@ class SignIn extends Component {
                         <br />
                         
                         <br />
-                        <input type="text" placeholder="Password" id="password" className="br2"></input>
+                        <input type="password" placeholder="Password" id="password" className="br2"></input>
                         <br />
                         <br />
                         <Button variant="contained" size="large" id= "loginbutton" onClick={()=>{changePage()}}>Login</Button>
