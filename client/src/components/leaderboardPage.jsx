@@ -26,10 +26,12 @@ class LeaderBoardPage extends Component {
                         <div className="topThreeSingle">
                             <img src={duck} className="topProfilePic"></img>
                             <text className="topUsrnm" >@username</text>
+                            <var className="topFunds">1,000</var>
                         </div>
                         <div className="topThreeSingle">
                             <img src={duck} className="topProfilePic"></img>
                             <text className="topUsrnm" >@username</text>
+                            <var className="topFunds">500</var>
 
 
                         </div>
@@ -37,6 +39,7 @@ class LeaderBoardPage extends Component {
                         <div className="topThreeSingle">
                             <img src={duck} className="topProfilePic"></img>
                             <text className="topUsrnm" >@username</text>
+                            <var className="topFunds">250</var>
 
                         </div>
 
