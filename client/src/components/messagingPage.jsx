@@ -21,7 +21,6 @@ class MessagingPage extends Component {
     handleChange() {
         const newStatus = !this.state.viewStatus;
         this.setState({viewStatus: newStatus});
-        console.log(this.state.viewStatus);
     }
 
     async componentDidMount() {
@@ -51,12 +50,10 @@ class MessagingPage extends Component {
         let receivedMessages = [];
 
         for (let i = this.state.sentMessages.length - 1; i > 0; i--) {
-            console.log(receivedMessages)
             sentMessages.push(<MessageDisplayBox name={this.state.sentMessages[i].receiverName} username={this.state.sentMessages[i].receiver} messageBody={this.state.sentMessages[i].messageBody}></MessageDisplayBox>);
         }
 
         for (let i = this.state.receivedMessages.length - 1; i > 0; i--) {
-            console.log(this.state.receivedMessages[i])
             receivedMessages.push(<MessageDisplayBox name={this.state.receivedMessages[i].name} username={this.state.receivedMessages[i].sender} messageBody={this.state.receivedMessages[i].messageBody}></MessageDisplayBox>);
         }
 

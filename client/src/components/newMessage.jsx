@@ -6,6 +6,48 @@ import emojiDataExport from './emojiData.js'
 
 
 function NewMessage(props){
+    const [usernameList, setUsernameList] = useState([]);
+
+
+    useEffect(() => {
+        async function fetchData() {
+            const res = await fetch('http://localhost:8080/api/usersInfo')
+            const json = await res.json();
+
+            setUsernameList(json);
+        }
+
+        fetchData();
+    }, [])
+
+    // filterData();
+
+    // function filterData() {
+    //     const newList = usernameList;
+    //     const keys = Object.keys(newList);
+    //     let i = 0;
+    //     for (const key of keys) {
+    //         // console.log("DKS:FJSLDFJS:LDFJL")
+    //         // console.log(usernameList[Object.keys(usernameList)[i]])
+    //         console.log(newList[Object.keys(newList)[i]].username)
+    //         i++;
+    //         if (newList[Object.keys(newList)[i]].username === sender) {
+    //             console.log("DKS:FJSLDFJS:LDFJL")
+    //             console.log(newList[Object.keys(newList)[0]])
+    //             delete newList[Object.keys(newList)[i]]
+    //         }
+    //     }
+    //     setUsernameList(newList);
+    // }
+    
+
+
+    // console.log("USERNAME LIST")
+    // console.log(usernameList)
+
+
+
+
 
     const emojiData = emojiDataExport;
 
@@ -165,10 +207,8 @@ function NewMessage(props){
                         <select id="selectedEmail">
                             {/* {emailList} */}
                             {/* look at store page */}
-                            <option>username1</option>
-                            <option>test@gmail.com</option>
-                            <option>message123</option>
-                            <option>test12345</option>
+                            {usernameList.map((user) => (<option>{user.username}</option>))}
+
                         </select>
                     </div>
 
