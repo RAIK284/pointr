@@ -185,6 +185,11 @@ button#signupbutton {
     
 }
 
+.entryLabel::after{
+    content: "*";
+    color: red;
+}
+
 
 #main-container {
     height: 100vh;
