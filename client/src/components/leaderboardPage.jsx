@@ -6,6 +6,10 @@ import duck from "./images/ducky.png";
 
 
 //reference: https://mui.com/components/drawers/
+const tableData = [{ name: "@user1", funds: 200 },
+{ name: "@user2", funds: 150 },
+{ name: "@user3", funds: 100}, ]
+
 
 class LeaderBoardPage extends Component {
     render() {
@@ -47,10 +51,23 @@ class LeaderBoardPage extends Component {
 
 
                     <div id="allDisplay">
-                        
-                    </div>
-               
+                        <table>
+                            <tr>
+                            <th>Username</th>
+                            <th>FUNds</th>
+                            </tr>
+                            {tableData.map((val, key) => {
+                            return (
+                                <tr key={key}>
+                                <td>{val.name}</td>
+                                <td>{val.funds}</td>
+                                </tr>
+                            )
+                            })}
+                            </table>
+                            </div>         
             </div>
+
             </React.Fragment>
         );
     }
