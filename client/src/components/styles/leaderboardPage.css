@@ -1,0 +1,222 @@
+
+#fundsAmountWrapper{
+    width: 20%;
+    height: 10%;
+    position:relative;
+    margin-right: 5%;
+    margin-left:75%;
+    margin-top:-8%;
+   text-align: right;
+   justify-content: right;
+ 
+  
+  }
+  
+  #fundsAmountText{
+    
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 45px;
+    letter-spacing: -0.015em;
+  
+    color: #333333;
+  
+  }
+  
+  #fundsAmountNum{
+    
+  
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 45px;
+    letter-spacing: -0.015em;
+  
+    color: #333333;
+  
+  }
+
+  .lbBackground{
+    height:100vh;
+    width:100vw;
+    background-color: #FFFFFF;
+  }
+
+
+  #topThreeDisplay{
+    position:relative;
+    width: 71vw;
+    height: 30vh;
+    margin-top: 3%;
+    margin-left: 25vw;
+   
+    display: flex;
+    flex-direction: row;
+    align-items:stretch;
+    justify-content:space-between;
+
+
+
+   /*  background: rgba(101, 215, 192, 0.4);
+    border: 3px solid #02BA90;
+    
+    border-radius: 20px; */
+}
+
+.topThreeSingle{
+  width: 20%;
+  height: 100%;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.topThreeSingle:hover{
+  position: relative; 
+  top: -10px;
+  box-shadow: 0 10px #FFFFFF;
+  transition: margin 0.8s linear;
+  cursor:pointer;
+}
+
+.topProfilePic{
+  border-radius: 50%;
+  object-fit: contain;
+    
+  width: 60%;
+  height: 50%;
+  margin-top: 12%;
+  display: flex;
+  margin-left: 20%;
+  
+}
+
+.topUsrnm{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 23px;
+    line-height: 45px;
+    
+    letter-spacing: -0.015em;
+    
+    color: #FFFFFF;
+    position: relative;
+    left: 17%;
+    top: 3%;
+    
+}
+
+.topFunds{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 45px;
+  
+  letter-spacing: -0.015em;
+  
+  color: #FFFFFF;
+  
+  position: relative;
+  top: 15%;
+  right: 25%;
+}
+  
+
+#allDisplay{
+  position: relative;
+
+    width: 71vw;
+    height: 40vh;
+    margin-top: 2%;
+    margin-left: 25vw;
+
+    display: flex;
+    /* flex-direction: row;
+    column-gap: 10%;
+    row-gap: 5%; */
+
+    justify-content: center;
+    align-items: center;
+
+   /*  flex-wrap: wrap; */
+
+    
+    overflow-y: scroll;
+
+
+    background-color: #FFFFFF;
+    border: 4px solid #02BA90;
+    
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+
+}
+  
+#rankingTable{
+  /* border: 2px solid black; */
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  display: table;
+  margin: auto;
+  margin-left: 1%;
+  padding: 0;
+
+}
+
+td{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 45px;
+
+  color: #333333;
+  text-align: center;
+  border-bottom: 3px solid #02BA90;
+  padding: 1%;
+
+
+}
+
+#rank{
+  text-align: center; /* want it on the left */
+  font-weight: 600;
+  font-size: 25px;
+  width: 15%;
+}
+
+#name{
+  text-align: left;
+  font-size: 23px;
+  font-weight: 500;
+  width: 40%;
+}
+
+th{
+  font-family: 'Poppins';
+  font-style: bold;
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 45px;
+
+  color: #02BA90;
+  text-align: center;
+
+}
+
+tr:nth-child(even){
+  background-color: #CCF1EA;
+}
+
+tr:nth-child(odd){
+  background-color: #E0ECFF;
+}
