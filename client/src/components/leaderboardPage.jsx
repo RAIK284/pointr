@@ -14,7 +14,35 @@ const tableData = [{ name: "@user1", funds: 200, rank: 4 },
 
 
 class LeaderBoardPage extends Component {
+
+    fetchData = async () => {
+        const response =  await fetch('http://localhost:8080/api/leaderboard?top=3')
+        const data = await response.json();
+        console.log("HEREE")
+        console.log(data)
+        console.log(data[0].username)
+        console.log(data[0].allTimeFunds)
+        tableData[0] = 
+        {
+            name: data[0].username, 
+            funds: data[0].allTimeFunds
+        }
+        tableData[1] = 
+        {
+            name: data[1].username, 
+            funds: data[1].allTimeFunds
+        }
+        tableData[2] = 
+        {
+            name: data[2].username, 
+            funds: data[2].allTimeFunds
+        }
+    };
+    async componentDidMount() {
+        this.fetchData();
+    }
     render() {
+        
         return (
             <React.Fragment>
 
