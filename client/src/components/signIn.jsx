@@ -19,6 +19,7 @@ class SignIn extends Component {
                 //Display error and do nothing.
                 console.log("Wrong!");
                 console.log(response);
+                alert("Incorrect Username or Password entered!")
             }
         }
 
@@ -36,7 +37,7 @@ class SignIn extends Component {
                             Log In to Pointr
                         </text>
                         <br />
-                        <input type="text" placeholder="Username" id="email" className="br1"></input>
+                        <input type="text" placeholder="Email" id="email" className="br1"></input>
                         <br />
                         
                         <br />
