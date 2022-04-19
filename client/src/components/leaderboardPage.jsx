@@ -23,12 +23,12 @@ class LeaderBoardPage extends Component {
                     </div>
 
                     <div id="topThreeDisplay">
-                        <div className="topThreeSingle">
-                            <img src={duck} className="topProfilePic"></img>
+                        <div className="topThreeSingle" style={{background: "#E9C46A"}}>
+                            <img src={duck} className="topProfilePic"></img>  {/* need to add on-click to route to other profile */}
                             <text className="topUsrnm" >@username</text>
                             <var className="topFunds">1,000</var>
                         </div>
-                        <div className="topThreeSingle">
+                        <div className="topThreeSingle" style={{background: "#C0C0C5"}}>
                             <img src={duck} className="topProfilePic"></img>
                             <text className="topUsrnm" >@username</text>
                             <var className="topFunds">500</var>
@@ -36,7 +36,7 @@ class LeaderBoardPage extends Component {
 
                         </div>
 
-                        <div className="topThreeSingle">
+                        <div className="topThreeSingle" style={{background: "#BF6B07"}}>
                             <img src={duck} className="topProfilePic"></img>
                             <text className="topUsrnm" >@username</text>
                             <var className="topFunds">250</var>
