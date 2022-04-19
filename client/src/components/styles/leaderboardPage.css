@@ -146,14 +146,14 @@
     justify-content: center;
     align-items: center;
 
-    flex-wrap: wrap;
+   /*  flex-wrap: wrap; */
 
     
     overflow-y: scroll;
 
 
     background-color: #FFFFFF;
-    border: 3px solid #02BA90;
+    border: 4px solid #02BA90;
     
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
@@ -161,9 +161,15 @@
 }
   
 #rankingTable{
-  border: 2px solid black;
+  /* border: 2px solid black; */
   width: 100%;
   height: 100%;
+  border-collapse: collapse;
+  display: table;
+  margin: auto;
+  margin-left: 1%;
+  padding: 0;
+
 }
 
 td{
@@ -175,5 +181,42 @@ td{
 
   color: #333333;
   text-align: center;
+  border-bottom: 3px solid #02BA90;
+  padding: 1%;
+
+
 }
 
+#rank{
+  text-align: center; /* want it on the left */
+  font-weight: 600;
+  font-size: 25px;
+  width: 15%;
+}
+
+#name{
+  text-align: left;
+  font-size: 23px;
+  font-weight: 500;
+  width: 40%;
+}
+
+th{
+  font-family: 'Poppins';
+  font-style: bold;
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 45px;
+
+  color: #02BA90;
+  text-align: center;
+
+}
+
+tr:nth-child(even){
+  background-color: #CCF1EA;
+}
+
+tr:nth-child(odd){
+  background-color: #E0ECFF;
+}

@@ -6,7 +6,8 @@ import duck from "./images/ducky.png";
 
 
 //reference: https://mui.com/components/drawers/
-const tableData = [{ name: "@user1", funds: 200, rank: 4 }, /* fake data for rankings table, delete this const once connected to our database */
+/* fake data for rankings table, delete this const once connected to our database */
+const tableData = [{ name: "@user1", funds: 200, rank: 4 }, 
 { name: "@user2", funds: 150, rank: 5 },
 { name: "@user3", funds: 100, rank: 6}, { name: "@user3", funds: 90, rank: 7}, 
 { name: "@user4", funds: 80, rank: 8}, { name: "@user5", funds: 70, rank: 9}, { name: "@user6", funds: 60, rank: 10},]
@@ -54,15 +55,15 @@ class LeaderBoardPage extends Component {
                     <div id="allDisplay">
                         <table id="rankingTable">
                             <tr>
-                            <th>Rank</th>    
+                            {/* <th>Rank</th>    
                             <th>Username</th>
-                            <th>FUNds</th>
+                            <th>FUNds</th> */}
                             </tr>
                             {tableData.map((val, key) => { /* instead of tableData put in the list of usernames */
                             return (
                                 <tr key={key}>
-                                <td>{val.rank}</td>
-                                <td>{val.name}</td> { /* change "name" , "funds" , "rank" to be the variables set up in our database*/}
+                                <td id="rank">{val.rank}</td>
+                                <td id="name">{val.name}</td> { /* change "name" , "funds" , "rank" to be the variables set up in our database*/}
                                 <td>{val.funds}</td>
                                 
                                 </tr>
