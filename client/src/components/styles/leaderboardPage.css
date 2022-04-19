@@ -1,18 +1,19 @@
 
 #fundsAmountWrapper{
-    width: 16%;
+    width: 20%;
     height: 10%;
     position:relative;
     margin-right: 5%;
-    margin-left:80%;
+    margin-left:75%;
     margin-top:-8%;
    text-align: right;
    justify-content: right;
+ 
   
   }
   
   #fundsAmountText{
-    width: 120%;
+    
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
