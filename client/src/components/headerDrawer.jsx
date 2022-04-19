@@ -27,7 +27,20 @@ import leaderboardIcon from "./images/header-icons/leaderboard.svg";
 
 const drawerWidth = 240;
 class HeaderDrawer extends React.Component {
+    
+    
+
     render() {
+        let username = ""
+
+        if(this.props.username) 
+        {
+            username = this.props.username
+        }
+        else {
+            username = localStorage.getItem('username');
+        }
+            
         const changePage  =  (index) =>
         {
             switch(index)
@@ -88,7 +101,7 @@ class HeaderDrawer extends React.Component {
                     <List>
                         <ListItemText className="username">
                             <div className="username">
-                                @username
+                                @{username}
                             </div>
                         </ListItemText>
                         {['Profile', 'Messages', 'Store', 'Explore', 'Leaderboard', 'Settings'].map((text, index) => (
@@ -135,6 +148,7 @@ class HeaderDrawer extends React.Component {
 
   HeaderDrawer.propTypes = {
     index: PropTypes.number.isRequired,
+    username: PropTypes.string,
 };
 
   export default HeaderDrawer;

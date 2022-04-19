@@ -80,6 +80,7 @@ class ProfilePage extends Component {
 
     render() {
 
+        localStorage.setItem('username', this.state.username);
         const imageObjects = {
             "ball": ball,
             "star" : star,
@@ -112,7 +113,7 @@ class ProfilePage extends Component {
                 </p>
             </div>
 
-            <HeaderDrawer index={0} />
+            <HeaderDrawer index={0} username={this.state.username}/>
 
             <div id="content">
                 <br />
