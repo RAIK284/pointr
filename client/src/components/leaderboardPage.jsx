@@ -32,14 +32,14 @@ class LeaderBoardPage extends Component {
         console.log(data[0].allTimeFunds)
         this.setState({tableData: [{ name: data[0].username, funds: data[0].allTimeFunds, rank: 1}, 
         { name: data[1].username, funds: data[1].allTimeFunds, rank: 2}, 
-        { name: data[2].username, funds: data[1].allTimeFunds, rank: 3}, 
-        { name: data[3].username, funds: data[1].allTimeFunds, rank: 4}, 
-        { name: data[4].username, funds: data[1].allTimeFunds, rank: 5}, 
-        { name: data[5].username, funds: data[1].allTimeFunds, rank: 6}, 
-        { name: data[6].username, funds: data[1].allTimeFunds, rank: 7}, 
-        { name: data[7].username, funds: data[1].allTimeFunds, rank: 8}, 
-        { name: data[8].username, funds: data[1].allTimeFunds, rank: 9}, 
-        { name: data[9].username, funds: data[1].allTimeFunds, rank: 10}] 
+        { name: data[2].username, funds: data[2].allTimeFunds, rank: 3}, 
+        { name: data[3].username, funds: data[3].allTimeFunds, rank: 4}, 
+        { name: data[4].username, funds: data[4].allTimeFunds, rank: 5}, 
+        { name: data[5].username, funds: data[5].allTimeFunds, rank: 6}, 
+        { name: data[6].username, funds: data[6].allTimeFunds, rank: 7}, 
+        { name: data[7].username, funds: data[7].allTimeFunds, rank: 8}, 
+        { name: data[8].username, funds: data[8].allTimeFunds, rank: 9}, 
+        { name: data[9].username, funds: data[9].allTimeFunds, rank: 10}] 
         })
 
         console.log("Now we are here")
