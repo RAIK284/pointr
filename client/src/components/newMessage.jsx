@@ -203,7 +203,7 @@ function NewMessage(props){
         const newFundsValue = parseInt(newFunds);
         console.log("this is the receiver" + receiver)
         console.log("new funds" + newFunds)
-        if (newMessagingPoints > 0) {
+        if (newMessagingPoints >= 0) {
             const senderData = {
                 messagingPoints: newMessagingPoints
             }

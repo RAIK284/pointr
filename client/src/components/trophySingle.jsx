@@ -19,17 +19,17 @@ const addTrophy = (name, image, funds, trophyCost, username) => {
     }
 
     const trophyDataJSON = JSON.stringify(trophyData);
-
+    let newFunds;
     console.log(funds)
     console.log(trophyCost)
-    if (funds > trophyCost) {
+    if (funds >= trophyCost) {
         fetch("http://localhost:8080/api/trophy", {
             method: "POST",
             headers: {'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
             body: trophyDataJSON
         });
 
-        const newFunds = funds - trophyCost;
+        newFunds = funds - trophyCost;
         const newUserFunds = {funds: newFunds};
         const newUserFundsJSON = JSON.stringify(newUserFunds);
 
@@ -43,8 +43,10 @@ const addTrophy = (name, image, funds, trophyCost, username) => {
 
         alert('Trophy purchased! (Maybe we should have a popup for this?)');
     } else {
+
         alert("You can't afford this trophy!");
     }
+    return newFunds;
 }
 
 function TrophySingle(props) {
@@ -93,7 +95,7 @@ function TrophySingle(props) {
                     </div>
 
                     <div id="buttonWrapper">
-                        <Button variant="contained" id="addToProfile" onClick={()=>{addTrophy(trophyTitle, trophyImage, funds, trophyCost, username)}}>Add to My Profile</Button>
+                        <Button variant="contained" id="addToProfile" onClick={()=>{setFunds(addTrophy(trophyTitle, trophyImage, funds, trophyCost, username))}}>Add to My Profile</Button>
                     </div>
 
                     <div onClick={props.onClick}>

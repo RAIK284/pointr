@@ -22,7 +22,7 @@ class StorePage extends Component {
         super(props);
         this.state = {
             username: '',
-            funds: 0,
+            funds: -1,
             trophies: [],
             trophyStatus: [],
             mostPopularTrophyData: {},
@@ -95,9 +95,18 @@ class StorePage extends Component {
 
 
                 <div id="trophyDisplay">
-                    {this.state.trophies.map((trophy, i) => <Trophy key={i} index={i} onClick={()=> {this.changeState(i)}} cost={trophy.price} image={trophy.image}></Trophy>)}
-                    {this.state.trophies.map((trophy, i) => <TrophySingle key={i} trigger={this.state.trophyStatus[i]} onClick={()=> {this.changeState(i)}} title={trophy.name} description={trophy.description} cost={trophy.price} image={trophy.image} userFunds={this.state.funds} username={this.state.username}>
-                    </TrophySingle>)}
+                    {this.state.funds !== -1 ?
+                    this.state.trophies.map((trophy, i) => <Trophy key={i} index={i} onClick={()=> {this.changeState(i)}} cost={trophy.price} image={trophy.image}></Trophy>)
+                        : ""}
+                    {this.state.funds !== -1 ?
+                    this.state.trophies.map((trophy, i) => <TrophySingle key={i}
+                                                                          trigger={this.state.trophyStatus[i]}
+                                                                          onClick={()=> {this.changeState(i)}}
+                                                                          title={trophy.name} description={trophy.description}
+                                                                          cost={trophy.price} image={trophy.image}
+                                                                          userFunds={this.state.funds}
+                                                                          username={this.state.username}>
+                    </TrophySingle>) : ""}
                     {this.state.mostPopularTrophyData.hasOwnProperty('name') ?
                         <TrophySingle
                             trigger={this.state.mostPopularTrophyStatus}
