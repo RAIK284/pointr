@@ -57,6 +57,9 @@ function NewMessage(props){
     const [sender, setSender] = useState('');
     const [receiver, setReceiver] = useState('');
     const [receiverName, setReceiverName] = useState('');
+    const [receiverFunds, setReceiverFunds] = useState('');
+    const [senderMessagingPoints, setSenderMessagingPoints] = useState('');
+    const [messageValue, setMessageValue] = useState('');
 
     getUserInformation();
 
@@ -66,15 +69,20 @@ function NewMessage(props){
             headers: { 'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
         })
             .then(response => response.json())
-            .then(data => {setName(data.name); setSender(data.username)})
+            .then(data => {setName(data.name); setSender(data.username); setSenderMessagingPoints(data.messagingPoints)})
     }
 
     async function getReceiverName(messageObject) {
-        console.log("ran")
-        console.log(messageObject.receiver)
         const response = await fetch('http://localhost:8080/api/user?username=' + messageObject.receiver);
         const data = await response.json();
         return data.name;
+    }
+
+    async function getReceiverFunds() {
+        const response = await fetch('http://localhost:8080/api/user?username=' + messageObject.receiver);
+        const data = await response.json();
+        console.log("funds", data.funds)
+        return data.funds;
     }
 
     const messageObject = {
@@ -151,6 +159,7 @@ function NewMessage(props){
 
     const setMessageData = async () => {
         messageObject.value = getMessageValue(messageBody);
+        setMessageValue(getMessageValue(messageBody));
         messageObject.timestamp = new Date().toUTCString();
         messageObject.receiver = document.getElementById("selectedEmail").value;
 
@@ -158,9 +167,10 @@ function NewMessage(props){
 
         const receiverName = await getReceiverName(messageObject);
         console.log("Receiver Name" + receiverName);
-        await postMessage(messageObject, receiverName);
-        await subtractMessageValue(messageObject);
-
+        const messageSentStatus = await subtractMessageValue(messageObject);
+        if (messageSentStatus) {
+            await postMessage(messageObject, receiverName);
+        }
     }
 
     const postMessage = async (messageObject, receiverName) => {
@@ -187,13 +197,43 @@ function NewMessage(props){
     useEffect(() => console.log(messageBody), [messageBody]);
 
     const subtractMessageValue = async (messageObject) => {
-        const jsonData = JSON.stringify(messageObject);
+        const receiverFunds = await getReceiverFunds();
+        const newMessagingPoints = senderMessagingPoints - messageObject.value;
+        const newFunds = receiverFunds + messageObject.value;
+        const newFundsValue = parseInt(newFunds);
+        console.log("this is the receiver" + receiver)
+        console.log("new funds" + newFunds)
+        if (newMessagingPoints > 0) {
+            const senderData = {
+                messagingPoints: newMessagingPoints
+            }
 
-        fetch("http://localhost:8080/api/user?username=" + sender, {
-            method: "PATCH",
-            headers: {'Content-Type': 'application/json'},
-            body: jsonData
-        });
+            const receiverData = {
+                funds: newFundsValue
+            }
+
+            const senderDataJSON = JSON.stringify(senderData);
+            const receiverDataJSON = JSON.stringify(receiverData)
+
+            console.log(senderData)
+            console.log(receiverData)
+
+            fetch("http://localhost:8080/api/user?username=" + sender, {
+                method: "PATCH",
+                headers: {'Content-Type': 'application/json'},
+                body: senderDataJSON
+            });
+
+            fetch("http://localhost:8080/api/user?username=" + document.getElementById("selectedEmail").value, {
+                method: "PATCH",
+                headers: {'Content-Type': 'application/json'},
+                body: receiverDataJSON
+            });
+            return true;
+        } else {
+            alert("You don't have enough messaging points to send that!")
+            return false;
+        }
     }
 
     return(props.trigger) ? (

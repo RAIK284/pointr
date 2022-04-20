@@ -21,6 +21,8 @@ class StorePage extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            username: '',
+            funds: 0,
             trophies: [],
             trophyStatus: [],
             mostPopularTrophyData: {},
@@ -28,6 +30,16 @@ class StorePage extends Component {
     }
 
     componentDidMount() {
+        fetch('http://localhost:8080/api/user/self', {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
+        })
+            .then(response => response.json())
+            .then(data => this.setState({
+                username: data.username,
+                funds: data.funds
+            }))
+
         fetch('http://localhost:8080/api/storeItem') .then(response => response.json()) .then((data) => {this.setState({
             trophies: data,
             trophyStatus : Array(data.length).fill(false)
@@ -69,7 +81,7 @@ class StorePage extends Component {
             <div className="storeBackground">
                 <div id="fundsAmountWrapper">
                     <text id="fundsAmountText">FUNDs available:</text>
-                    <var id="fundsAmountNum">20,000</var>
+                    <var id="fundsAmountNum">{this.state.funds}</var>
                 </div>
 
                 <div id="mostPopularDisplay">
@@ -84,7 +96,7 @@ class StorePage extends Component {
 
                 <div id="trophyDisplay">
                     {this.state.trophies.map((trophy, i) => <Trophy key={i} index={i} onClick={()=> {this.changeState(i)}} cost={trophy.price} image={trophy.image}></Trophy>)}
-                    {this.state.trophies.map((trophy, i) => <TrophySingle key={i} trigger={this.state.trophyStatus[i]} onClick={()=> {this.changeState(i)}} title={trophy.name} description={trophy.description} cost={trophy.price} image={trophy.image}>
+                    {this.state.trophies.map((trophy, i) => <TrophySingle key={i} trigger={this.state.trophyStatus[i]} onClick={()=> {this.changeState(i)}} title={trophy.name} description={trophy.description} cost={trophy.price} image={trophy.image} userFunds={this.state.funds} username={this.state.username}>
                     </TrophySingle>)}
                     {this.state.mostPopularTrophyData.hasOwnProperty('name') ?
                         <TrophySingle
@@ -93,7 +105,9 @@ class StorePage extends Component {
                             title={this.state.mostPopularTrophyData.name}
                             description={this.state.mostPopularTrophyData.description}
                             cost={this.state.mostPopularTrophyData.price}
-                            image={this.state.mostPopularTrophyData.image}>
+                            image={this.state.mostPopularTrophyData.image}
+                            userFunds={this.state.funds}
+                            username={this.state.username}>
                         </TrophySingle> : ""}
                 </div>
             </div>
