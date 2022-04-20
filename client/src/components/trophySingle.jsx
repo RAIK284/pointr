@@ -11,7 +11,7 @@ import clover from './images/trophy-icons/clover.png'
 import sword from './images/trophy-icons/sword.png'
 import prize from './images/trophy-icons/prize.png'
 
-const addTrophy = (name, image, funds, trophyCost, username) => {
+const addTrophy = async (name, image, trophyCost, username) => {
 
     const trophyData = {
         name,
@@ -20,8 +20,13 @@ const addTrophy = (name, image, funds, trophyCost, username) => {
 
     const trophyDataJSON = JSON.stringify(trophyData);
     let newFunds;
-    console.log(funds)
     console.log(trophyCost)
+    const response = await fetch('http://localhost:8080/api/user/self', {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
+    });
+    const data = await response.json();
+    const funds = await data.funds;
     if (funds >= trophyCost) {
         fetch("http://localhost:8080/api/trophy", {
             method: "POST",
@@ -56,10 +61,7 @@ function TrophySingle(props) {
     const [trophyDescription, setTrophyDescription] = useState(props.description);
     const [trophyCost, setTrophyCost] = useState(props.cost);
     const [index, setIndex] = useState(props.index);
-    const [funds, setFunds] = useState(props.userFunds);
     const [username, setUsername] = useState(props.username);
-
-    console.log("funds", funds)
 
     const imageObjects = {
         "ball": ball,
@@ -95,7 +97,7 @@ function TrophySingle(props) {
                     </div>
 
                     <div id="buttonWrapper">
-                        <Button variant="contained" id="addToProfile" onClick={()=>{setFunds(addTrophy(trophyTitle, trophyImage, funds, trophyCost, username))}}>Add to My Profile</Button>
+                        <Button variant="contained" id="addToProfile" onClick={()=>{addTrophy(trophyTitle, trophyImage, trophyCost, username)}}>Add to My Profile</Button>
                     </div>
 
                     <div onClick={props.onClick}>

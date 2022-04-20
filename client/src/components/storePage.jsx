@@ -29,6 +29,18 @@ class StorePage extends Component {
             mostPopularTrophyStatus: false}
     }
 
+    updateData() {
+        fetch('http://localhost:8080/api/user/self', {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
+        })
+            .then(response => response.json())
+            .then(data => this.setState({
+                username: data.username,
+                funds: data.funds
+            }))
+    }
+
     componentDidMount() {
         fetch('http://localhost:8080/api/user/self', {
             method: 'GET',
@@ -56,6 +68,16 @@ class StorePage extends Component {
         const status = this.state.trophyStatus;
         status[index] = !status[index];
         this.setState({trophyStatus: status})
+        fetch('http://localhost:8080/api/user/self', {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
+        })
+            .then(response => response.json())
+            .then(data => this.setState({
+                username: data.username,
+                funds: data.funds
+            }))
+
     }
   
     render() {
@@ -105,6 +127,7 @@ class StorePage extends Component {
                                                                           title={trophy.name} description={trophy.description}
                                                                           cost={trophy.price} image={trophy.image}
                                                                           userFunds={this.state.funds}
+                                                                          storePage={this}
                                                                           username={this.state.username}>
                     </TrophySingle>) : ""}
                     {this.state.mostPopularTrophyData.hasOwnProperty('name') ?
