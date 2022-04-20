@@ -39,12 +39,6 @@ function NewMessage(props){
         '🌟': emojiData.glowStar.price,
         '🔥': emojiData.fire.price
     }
-    
-    
-    function removeEmojis(str) {
-        var emojiRE = /(\P{EPres})|(\P{ExtPict})/gu;
-        return str.replace(emojiRE, '');
-    }
 
     function removeNonEmojis(str) {
         var emojiRE = /(\P{EPres})|(\P{ExtPict})/gu;
@@ -52,8 +46,6 @@ function NewMessage(props){
     }
 
     const getMessageValue = (messageBody) => {
-
-        var messageBodyPostCull = removeEmojis(messageBody)
 
         var messageBodyPostCull = removeNonEmojis(messageBody)
 
