@@ -11,7 +11,7 @@ import clover from './images/trophy-icons/clover.png'
 import sword from './images/trophy-icons/sword.png'
 import prize from './images/trophy-icons/prize.png'
 
-const addTrophy = (name, image) => {
+const addTrophy = (name, image, funds, trophyCost, username) => {
 
     const trophyData = {
         name,
@@ -20,14 +20,31 @@ const addTrophy = (name, image) => {
 
     const trophyDataJSON = JSON.stringify(trophyData);
 
+    console.log(funds)
+    console.log(trophyCost)
+    if (funds > trophyCost) {
+        fetch("http://localhost:8080/api/trophy", {
+            method: "POST",
+            headers: {'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
+            body: trophyDataJSON
+        });
 
-    fetch("http://localhost:8080/api/trophy", {
-        method: "POST",
-        headers: {'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
-        body: trophyDataJSON
-    });
+        const newFunds = funds - trophyCost;
+        const newUserFunds = {funds: newFunds};
+        const newUserFundsJSON = JSON.stringify(newUserFunds);
 
-    alert('Trophy purchased! (Maybe we should have a popup for this?)')
+        fetch("http://localhost:8080/api/user?username=" + username, {
+            method: "PATCH",
+            headers: {'Content-Type': 'application/json'},
+            body: newUserFundsJSON
+        });
+
+
+
+        alert('Trophy purchased! (Maybe we should have a popup for this?)');
+    } else {
+        alert("You can't afford this trophy!");
+    }
 }
 
 function TrophySingle(props) {
@@ -37,6 +54,10 @@ function TrophySingle(props) {
     const [trophyDescription, setTrophyDescription] = useState(props.description);
     const [trophyCost, setTrophyCost] = useState(props.cost);
     const [index, setIndex] = useState(props.index);
+    const [funds, setFunds] = useState(props.userFunds);
+    const [username, setUsername] = useState(props.username);
+
+    console.log("funds", funds)
 
     const imageObjects = {
         "ball": ball,
@@ -72,7 +93,7 @@ function TrophySingle(props) {
                     </div>
 
                     <div id="buttonWrapper">
-                        <Button variant="contained" id="addToProfile" onClick={()=>{addTrophy(trophyTitle, trophyImage)}}>Add to My Profile</Button>
+                        <Button variant="contained" id="addToProfile" onClick={()=>{addTrophy(trophyTitle, trophyImage, funds, trophyCost, username)}}>Add to My Profile</Button>
                     </div>
 
                     <div onClick={props.onClick}>
