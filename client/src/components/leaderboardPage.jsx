@@ -37,12 +37,10 @@ class LeaderBoardPage extends Component {
         })
     };
     async componentDidMount() {
-        // const tableData = [];
-        await this.fetchData();// i added an await here... when we wait we get the right values
-        // now the issue is when we render tableData[0] its not waiting to fetch data first
+        await this.fetchData();
+
         console.log("Top 10 Users Fetched Results")
         console.log(this.state.tableData)
-
     }
 
     render() {
