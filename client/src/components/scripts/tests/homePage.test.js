@@ -45,7 +45,7 @@ describe("<HomePage />", () => {
         expect(container.textContent).toContain("Earn points for your positivity.");
     });
 
-    test('Feautres 3 is rendered', () => {
+    test('Features 3 is rendered', () => {
         render(<HomePage/>, container);
 
         expect(container.textContent).toContain("Buy trophies to inspire others!");

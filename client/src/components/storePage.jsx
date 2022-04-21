@@ -76,15 +76,15 @@ class StorePage extends Component {
                     <text id="mostPopTitle">Today's Most Popular</text>
                     <text id="mostPopSubtitle">Explore today's most popular trophies!</text>
                     <div className="mpCard">
-                        <text id="MPTitle">{this.state.mostPopularTrophyData.name}</text>
-                        <img src={imageObjects[this.state.mostPopularTrophyData.image]} className="mostPopImg" onClick={()=> this.setState({mostPopularTrophyStatus: true})}/>
+                        <text id="MPTitle" data-testid = "MPTitle">{this.state.mostPopularTrophyData.name}</text>
+                        <img src={imageObjects[this.state.mostPopularTrophyData.image]} className="mostPopImg" data-testid="mostPopTroph" onClick={()=> this.setState({mostPopularTrophyStatus: true})}/>
                     </div>
                 </div>
 
 
                 <div id="trophyDisplay">
                     {this.state.trophies.map((trophy, i) => <Trophy key={i} index={i} onClick={()=> {this.changeState(i)}} cost={trophy.price} image={trophy.image}></Trophy>)}
-                    {this.state.trophies.map((trophy, i) => <TrophySingle key={i} trigger={this.state.trophyStatus[i]} onClick={()=> {this.changeState(i)}} title={trophy.name} description={trophy.description} cost={trophy.price} image={trophy.image}>
+                    {this.state.trophies.map((trophy, i) => <TrophySingle key={i} trigger={this.state.trophyStatus[i]} onClick={()=> {this.changeState(i)}} title={trophy.name} data-testid={trophy.name} description={trophy.description} cost={trophy.price} image={trophy.image}>
                     </TrophySingle>)}
                     {this.state.mostPopularTrophyData.hasOwnProperty('name') ?
                         <TrophySingle
