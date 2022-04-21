@@ -9,12 +9,13 @@
 }
 #header {
     margin-left: 14%;
-    padding-left: 4rem;
+    padding-left: 4%;
     padding-top: 3%; 
     overflow: hidden;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 20px;
     background-color: #65D7C0;
+    width: 100vw;
 }
 #welcome
 {
