@@ -12,3 +12,39 @@
 {
     margin-left: 2rem;
 }
+
+#msgBtn{
+    width: 18rem;
+    background: #2A9D8F;
+    border-radius: 6px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 45px;
+    /* identical to box height */
+
+    
+   
+    text-align: center;
+    letter-spacing: -0.015em;
+
+    color: #FFFFFF;
+    text-transform: none;
+    padding: 1%;
+}
+
+.btnPos{
+
+    display: inline;
+    position:relative;
+    left: 20rem;
+
+    /* margin-left: 20rem; */
+   
+    
+
+
+}
