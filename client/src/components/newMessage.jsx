@@ -58,6 +58,7 @@ function NewMessage(props){
     const [receiver, setReceiver] = useState('');
     const [receiverName, setReceiverName] = useState('');
     const [receiverFunds, setReceiverFunds] = useState('');
+    const [receiverAllTimeFunds, setReceiverAllTimeFunds] = useState('');
     const [senderMessagingPoints, setSenderMessagingPoints] = useState('');
     const [messageValue, setMessageValue] = useState('');
 
@@ -81,8 +82,13 @@ function NewMessage(props){
     async function getReceiverFunds() {
         const response = await fetch('http://localhost:8080/api/user?username=' + messageObject.receiver);
         const data = await response.json();
-        console.log("funds", data.funds)
         return data.funds;
+    }
+
+    async function getReceiverAllTimeFunds() {
+        const response = await fetch('http://localhost:8080/api/user?username=' + messageObject.receiver);
+        const data = await response.json();
+        return data.allTimeFunds;
     }
 
     const messageObject = {
@@ -198,9 +204,13 @@ function NewMessage(props){
 
     const subtractMessageValue = async (messageObject) => {
         const receiverFunds = await getReceiverFunds();
+        const receiverAllTimeFunds = await getReceiverAllTimeFunds();
         const newMessagingPoints = senderMessagingPoints - messageObject.value;
         const newFunds = receiverFunds + messageObject.value;
         const newFundsValue = parseInt(newFunds);
+
+        const newAllTimeFunds = receiverAllTimeFunds + messageObject.value;
+        const newAllTimeFundsValue = parseInt(newAllTimeFunds);
         console.log("this is the receiver" + receiver)
         console.log("new funds" + newFunds)
         if (newMessagingPoints >= 0) {
@@ -209,7 +219,8 @@ function NewMessage(props){
             }
 
             const receiverData = {
-                funds: newFundsValue
+                funds: newFundsValue,
+                allTimeFunds: newAllTimeFundsValue
             }
 
             const senderDataJSON = JSON.stringify(senderData);
@@ -229,6 +240,7 @@ function NewMessage(props){
                 headers: {'Content-Type': 'application/json'},
                 body: receiverDataJSON
             });
+            getUserInformation();
             return true;
         } else {
             alert("You don't have enough messaging points to send that!")
