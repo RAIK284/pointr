@@ -110,7 +110,7 @@ class HeaderDrawer extends React.Component {
                                 ?  
                                 <ListItem button key={text}>
                                     <ListItemText>
-                                        <div className="active">
+                                        <div className="active" onClick={()=>{changePage(index)}}>
                                             {text}
                                         </div>
                                     </ListItemText>

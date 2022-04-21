@@ -112,7 +112,7 @@ class OtherUserPage extends Component {
                 </p>
             </div>
 
-            <HeaderDrawer index={0} />
+            <HeaderDrawer index={3} />
 
             <div id="content">
                 <br />
