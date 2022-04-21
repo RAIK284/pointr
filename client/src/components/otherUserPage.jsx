@@ -15,6 +15,8 @@ import { useParams } from "react-router-dom";
 import PropTypes from 'prop-types';
 import './styles/profilePage.css';
 import './styles/otherUserPage.css'
+import Button from '@mui/material/Button';
+
 
 function withParams(Component) {
     return props => <Component {...props} params={useParams()} />;
@@ -131,6 +133,7 @@ class OtherUserPage extends Component {
                 </div>
                 <div id={"stats-container"}>
                     <span className="stats">FUNds <p className="rank">{this.state.funds} </p></span>
+                    <Button className="btnPos" id="msgBtn" onClick={()=>{window.location.href='/messages'}}>Send a Message</Button>
                     {/* send message button here */}
                 </div>
             </div>
