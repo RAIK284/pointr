@@ -17,6 +17,7 @@ class LeaderBoardPage extends Component {
         super(props);
         this.state = {
             tableData: [{ name: "", funds: 0, rank: 0 }, { name: "", funds: 0, rank: 0 },{ name: "", funds: 0, rank: 0}],// null/filler data
+            allTimeFunds: 0
         }
     }
 
@@ -35,6 +36,14 @@ class LeaderBoardPage extends Component {
         { name: data[8].username, funds: data[8].allTimeFunds, rank: 9}, 
         { name: data[9].username, funds: data[9].allTimeFunds, rank: 10}] 
         })
+
+        const userDataResponse = await fetch('http://localhost:8080/api/user/self', {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
+        });
+        const userData = await userDataResponse.json();
+
+        this.setState({allTimeFunds: userData.allTimeFunds})
     };
     async componentDidMount() {
         await this.fetchData();
@@ -55,7 +64,7 @@ class LeaderBoardPage extends Component {
             <div id="lbBackground">
                 <div id="fundsAmountWrapper">
                         <text id="fundsAmountText">Your all-time FUNds:</text>
-                        <var id="fundsAmountNum">20,000</var>
+                        <var id="fundsAmountNum">{this.state.allTimeFunds}</var>
                     </div>
 
                     <div id="topThreeDisplay">
