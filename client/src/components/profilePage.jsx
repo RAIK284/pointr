@@ -33,7 +33,8 @@ class ProfilePage extends Component {
     }
 
     async componentDidMount() {
-        this.getUserInformation().then(() => this.getLeaderboardInformation());
+        await this.getUserInformation()
+        await this.getLeaderboardInformation();
     }
 
     async getUserInformation() {
@@ -53,6 +54,27 @@ class ProfilePage extends Component {
                 allTimeFunds: data.allTimeFunds,
                 isPrivate: data.isPrivate
             }))
+
+        // Give the state a second to be set before we try to set the login data
+        setTimeout(() => {
+            this.setLastLogin();
+        }, 1000)
+    }
+
+    async setLastLogin() {
+        const currentDate = new Date().toString();
+
+        const lastLoginData = {
+            lastLogin: currentDate
+        }
+
+        const loginJSON = JSON.stringify(lastLoginData);
+
+        fetch("http://localhost:8080/api/user?username=" + this.state.username, {
+            method: "PATCH",
+            headers: {'Content-Type': 'application/json'},
+            body: loginJSON
+        });
     }
 
     async getLeaderboardInformation () {
@@ -65,7 +87,6 @@ class ProfilePage extends Component {
         let rankSet = false;
         let rank = 1;
         data.forEach((user) => {
-            console.log(user)
             if (user.username === this.state.username) {
                 this.setState({leaderboardRank: rank});
                 rankSet = true;

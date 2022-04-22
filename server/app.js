@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const mongoConnection = require('./utils/database')
 const dailyUpdate = require('./utils/dailyUpdate')
+const weeklyUpdate = require('./utils/weekyNotification')
 const cors = require('cors');
 
 // Use all the proper cors headers
@@ -12,6 +13,7 @@ app.use(express.json());
 
 // Startup the daily job. This job resets users points every day at midnight
 dailyUpdate.updateUsersJob;
+weeklyUpdate.sendNotificationsJob;
 
 // Pass in the express app to the routes, so it can listen for api calls
 require('./routes/userRoutes')(app);
