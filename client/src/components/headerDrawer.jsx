@@ -20,15 +20,13 @@ import leaderboardIcon from "./images/header-icons/leaderboard.svg";
 
 
 
-
+let imgsrc = [profileIcon, messageIcon, storeIcon, exploreIcon, leaderboardIcon]
 
 
 // reference: https://github.com/express-labs/pure-react-carousel
 
 const drawerWidth = 240;
 class HeaderDrawer extends React.Component {
-    
-    
 
     render() {
         let username = ""
@@ -106,9 +104,11 @@ class HeaderDrawer extends React.Component {
                         </ListItemText>
                         {['Profile', 'Messages', 'Store', 'Explore', 'Leaderboard', 'Settings'].map((text, index) => (
                             <div className="pageButtons">
-                            {(index === this.props.index && text !== 'Settings') 
+                            {
+                            (index === this.props.index && text !== 'Settings') 
                                 ?  
                                 <ListItem button key={text}>
+                                    <img className="headerIcons" align="Left" src={imgsrc[index]} />
                                     <ListItemText>
                                         <div className="active" onClick={()=>{changePage(index)}}>
                                             {text}
@@ -128,6 +128,7 @@ class HeaderDrawer extends React.Component {
                                     </ListItem>
                                     :
                                     <ListItem button key={text}>
+                                        <img className="headerIcons" align="Left" src={imgsrc[index]} />
                                         <ListItemText className="inactive" onClick={()=>{changePage(index)}}>
                                             <div className="inactive">
                                                 {text}
