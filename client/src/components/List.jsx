@@ -2,7 +2,7 @@ import { React, useState, useEffect } from 'react'
 //import data from "./ListData.json"
 import ProfileBox from "./profileBox"
 import "./styles/explorePage.css";
-
+import searchicon from "./images/header-icons/search.svg"
 
 function List(props) {
     const [userData, setUserData] = useState([]);

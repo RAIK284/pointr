@@ -49,3 +49,10 @@ input::placeholder
     overflow-y: scroll;
     border-radius: 20px;
 }
+.searchbarIcon
+{
+    width: 60px;
+    height: 60px;
+    margin-right: 37rem;
+
+}
