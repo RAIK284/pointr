@@ -187,6 +187,13 @@
     outline: none;
 }
 
+.tokenCost {
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+color: #FFFFFF;
+}
+
 /* .box select option {
 padding: 30px;
 } */
