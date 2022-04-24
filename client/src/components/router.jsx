@@ -1,6 +1,4 @@
-import { useHistory } from 'react-router-dom';
 import React, { Component } from "react";
-//import HomePage from "./homePage";
 import SignIn from './signIn';
 import {
     BrowserRouter,
@@ -14,11 +12,7 @@ import StorePage from './storePage';
 import ExplorePage from './explorePage'
 import LeaderboardPage from './leaderboardPage'
 import SettingsPage from './settingsPage'
-// import ProfileList, {otherUser} from './profileList'
-// import {otherUserData} from './profileBox'
-import { otherUser } from './profileBox';
 import OtherUserPage from './otherUserPage';
-// let otherUserData = []
 
 class WebsiteRouter extends Component {
     render() {

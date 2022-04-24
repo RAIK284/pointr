@@ -3,33 +3,13 @@ import ducky from "./images/ducky.png"
 import "./styles/profileBox.css"
 import PropTypes from 'prop-types';
 
-let otherUser = 
-{
-  text:"Bobby",
-  bio:"hello there",
-  leaderboardRank: 7,
-  image: './images/ducky.png',
-  funds: 20000
-}
-
-const changeUser = (param) =>
-{
-  otherUser = param
-}
-
 class ProfileBox extends Component {
     render() {
-
-
-      const changePage = () => 
-      {
-        window.location.href="/otherUser"
-      }
       return (
         <React.Fragment>
           <div>
             {
-            (this.props.otherProfile.id % 2 === 0)
+            (this.props.index % 2 === 0)
             ?
               <div className="box1" onClick={()=>{window.location.href="/user/" + this.props.otherProfile.username}}>
                 <img align="Left" id="image" alt="profilepic" src={ducky}/>
@@ -51,6 +31,6 @@ class ProfileBox extends Component {
   }
   ProfileBox.propTypes = {
     otherProfile: PropTypes.object.isRequired,
+    index: PropTypes.number
 };
   export default ProfileBox;
-  export {otherUser};

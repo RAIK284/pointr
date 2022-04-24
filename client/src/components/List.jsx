@@ -34,14 +34,14 @@ function List(props) {
     return (userData !== []) ? (
         <div className="resultsDisplay">
         {/* <ul> */}
-    {filteredData.map((item) => (
+    {filteredData.map((item, index) => (
         <div>
             {
                 /* count < 3
                 ? */
                 /* onLoad={()=>{count++}} */
                 <div  >
-                    <ProfileBox otherProfile={item}/>
+                    <ProfileBox otherProfile={item} index={index}/>
                 </div>
                 /* :
                 false */
