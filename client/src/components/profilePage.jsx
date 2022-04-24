@@ -116,7 +116,7 @@ class ProfilePage extends Component {
 
         let trophyImages = [];
         for (let i = 0; i < this.state.trophies.length; i++) {
-            trophyImages.push(<img src={imageObjects[this.state.trophies[i].image]}/>);
+            trophyImages.push(<img alt="trophy image" src={imageObjects[this.state.trophies[i].image]}/>);
         }
 
         if (this.state.leaderboardRank === "") {

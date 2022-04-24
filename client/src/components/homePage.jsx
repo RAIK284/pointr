@@ -42,7 +42,7 @@ class HomePage extends Component {
                     <div id="rightBoxes">
                             <div className="infoBoxWrapper">
                                 <div className="infoBox" style={{background: "#66D8C1"}}>
-                                    <img src={msgIcon} className="icon" id="icon1"></img>
+                                    <img alt="message icon" src={msgIcon} className="icon" id="icon1"></img>
                                 </div>
                                 <div className="captionLower">Send a motivational note.</div>
                             </div>
@@ -50,7 +50,7 @@ class HomePage extends Component {
                             <div className="infoBoxWrapper">
                             <div className="captionUpper">Earn points for your positivity.</div>
                                 <div className="infoBox" style={{background: "#03B795"}}> 
-                                    <img src={trophyIcon} className="icon" id="icon2"></img>
+                                    <img alt="trophy icon" src={trophyIcon} className="icon" id="icon2"></img>
                                 </div>
                                 
                             </div>
@@ -58,7 +58,7 @@ class HomePage extends Component {
 
                             <div className="infoBoxWrapper">
                                 <div className="infoBox" style={{background: "#0064FF"}}>
-                                    <img src={starIcon} className="icon" id="icon3"></img>
+                                    <img alt ="smiley-face icon" src={starIcon} className="icon" id="icon3"></img>
                                 </div>
                                 <div className="captionLower">Buy trophies to inspire others!</div>
 

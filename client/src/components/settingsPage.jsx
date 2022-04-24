@@ -131,14 +131,14 @@ class SettingsPage extends Component {
                             {/* This will be a logout button. <Button variant="contained" size="large" onClick={}>Logout</Button>*/}
                         </div>
                         <div id={"bottom-options"}>
-                            <input type="checkbox"  className="settings-checkbox" data-testid="privacy-checkbox" name="privacy" checked={!this.state.isPrivate} onChange={this.handleChange} onClick={ () => { this.setState({ isPrivate: !this.state.isPrivate })}} required></input>
-                            <label htmlFor="privacy" className="checkboxLabel">Display my information publicly</label>
+                            <input type="checkbox" id="privacy"  className="settings-checkbox" data-testid="privacy-checkbox" name="privacy" checked={!this.state.isPrivate} onChange={this.handleChange} onClick={ () => { this.setState({ isPrivate: !this.state.isPrivate })}} required></input>
+                            <label htmlFor="privacy" for="privacy" className="checkboxLabel">Display my information publicly</label>
                             <p id={"privacy-info"}>
                                 Enabling this will allow other users to see your tropies, FUNDs, and leaderboard rank.
                             </p>
                             <br/>
-                            <input type="checkbox"  className="settings-checkbox" name="notification" data-testid="notifications-checkbox" checked={this.state.notifications} onChange={this.handleChange} onClick={ () => {this.setState({ notifications: !this.state.notifications })}} required></input>
-                            <label htmlFor="notifications" className="checkboxLabel">Receive email notifications</label>
+                            <input type="checkbox" id="notifications"  className="settings-checkbox" name="notification" data-testid="notifications-checkbox" checked={this.state.notifications} onChange={this.handleChange} onClick={ () => {this.setState({ notifications: !this.state.notifications })}} required></input>
+                            <label htmlFor="notifications" for="notifications" className="checkboxLabel">Receive email notifications</label>
                             <p id={"notifications-info"}>
                                 Notifications will be sent by email one week after your last message.
                             </p>

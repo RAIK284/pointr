@@ -43,7 +43,7 @@ class Trophy extends Component {
         return (
             <React.Fragment >
                 <div className="storeDisplay" onClick={this.props.onClick}>
-                    <img src={imageObjects[this.state.image]} id="trophyImageSmall"/>
+                    <img alt="trophy image" src={imageObjects[this.state.image]} id="trophyImageSmall"/>
                     <div id="trophyCostSmall">
                         <var>{this.state.cost} </var>
                         <text>&nbsp;fds</text>

@@ -108,7 +108,7 @@ class HeaderDrawer extends React.Component {
                             (index === this.props.index && text !== 'Settings') 
                                 ?  
                                 <ListItem button key={text}>
-                                    <img className="headerIcons" align="Left" src={imgsrc[index]} />
+                                    <img className="headerIcons" align="Left" alt={text + "icon"} src={imgsrc[index]} />
                                     <ListItemText>
                                         <div className="active" onClick={()=>{changePage(index)}}>
                                             {text}
@@ -128,7 +128,7 @@ class HeaderDrawer extends React.Component {
                                     </ListItem>
                                     :
                                     <ListItem button key={text}>
-                                        <img className="headerIcons" align="Left" src={imgsrc[index]} />
+                                        <img className="headerIcons" alt={text + "icon"} align="Left" src={imgsrc[index]} />
                                         <ListItemText className="inactive" onClick={()=>{changePage(index)}}>
                                             <div className="inactive">
                                                 {text}

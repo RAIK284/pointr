@@ -111,7 +111,7 @@ class StorePage extends Component {
                     <text id="mostPopSubtitle">Explore today's most popular trophies!</text>
                     <div className="mpCard">
                         <text id="MPTitle">{this.state.mostPopularTrophyData.name}</text>
-                        <img src={imageObjects[this.state.mostPopularTrophyData.image]} className="mostPopImg" onClick={()=> this.setState({mostPopularTrophyStatus: true})}/>
+                        <img alt="most popular trophy" src={imageObjects[this.state.mostPopularTrophyData.image]} className="mostPopImg" onClick={()=> this.setState({mostPopularTrophyStatus: true})}/>
                     </div>
                 </div>
 

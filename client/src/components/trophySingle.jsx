@@ -80,7 +80,7 @@ function TrophySingle(props) {
         <React.Fragment>
             <div className="trophySingleBG">
                 <div className="singleDisplay"> {/* need to add close button */}
-                    <img src={imageObjects[trophyImage]} id="trophyImageLarge"/>
+                    <img alt="single trophy" src={imageObjects[trophyImage]} id="trophyImageLarge"/>
 
 
                     <div id="trophyTitle">
