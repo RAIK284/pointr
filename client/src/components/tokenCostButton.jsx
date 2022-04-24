@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 // import './styles/tokensBox.css';
+import './styles/newMessage.css'
 import Button from '@mui/material/Button';
 import smiley from './images/smiley.png'
 
@@ -20,7 +21,7 @@ class TokenCostButton extends Component {
                     <img src={this.state.image} id="emoji"></img>
 
                     <div id="emoji">
-                        <text>
+                        <text className="tokenCost">
                             {this.state.points + " pts"}
                         </text>
                     </div>
