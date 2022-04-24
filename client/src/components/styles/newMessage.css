@@ -169,22 +169,27 @@
 
     position: relative;
     top: -5%;
-    left: 70%;
+    left: 65%;
     width: 50%;
     transform: translate(-50%, -50%);
+   
 }
 
 .box select {
-    background-color: #0563af;
-    color: white;
+    background-color: #FFFFFF;
+    color: #333333;
     padding: .5vw;
-    width: 60%;
+    width: 90%;
     border: none;
     font-size: 1.5vw;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
     -webkit-appearance: button;
     appearance: button;
     outline: none;
+    border-radius: 20px;
+
+    font-family: 'Poppins';
+    font-weight: 500;
 }
 
 .tokenCost {
