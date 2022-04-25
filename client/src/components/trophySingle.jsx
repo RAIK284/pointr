@@ -10,8 +10,20 @@ import crystal from './images/trophy-icons/crystal.png'
 import clover from './images/trophy-icons/clover.png'
 import sword from './images/trophy-icons/sword.png'
 import prize from './images/trophy-icons/prize.png'
+import Popup from 'react-popup';
+import 'reactjs-popup/dist/index.css';
+
+Popup.registerPlugin('trophyPopup', function (content) {
+    this.create({
+        content: content,
+        className: 'trophyPopup',
+        noOverlay: true
+    });
+});
 
 const addTrophy = async (name, image, trophyCost, username) => {
+
+    let popupMessage = "";
 
     const trophyData = {
         name,
@@ -46,10 +58,25 @@ const addTrophy = async (name, image, trophyCost, username) => {
 
 
 
-        alert('Trophy purchased! (Maybe we should have a popup for this?)');
+        //alert('Trophy purchased! (Maybe we should have a popup for this?)');
+        // setPopupMessage('Trophy purchased! (Maybe we should have a popup for this?)');
+        popupMessage = "Trophy purchased! (Maybe we should have a popup for this?)";
+        Popup.plugins().trophyPopup(popupMessage);
+
+        Popup.create({
+            title: 'Immediate popup',
+            content: 'This popup will be displayed straight away',
+            className: 'alert',
+            buttons: {
+                right: ['ok']
+            }
+        }, true);
     } else {
 
-        alert("You can't afford this trophy!");
+        //alert("You can't afford this trophy!");
+        // setPopupMessage('Trophy purchased! (Maybe we should have a popup for this?)');
+        popupMessage = "You can't afford this trophy!";
+        Popup.plugins().trophyPopup(popupMessage);
     }
     return newFunds;
 }
@@ -62,6 +89,7 @@ function TrophySingle(props) {
     const [trophyCost, setTrophyCost] = useState(props.cost);
     const [index, setIndex] = useState(props.index);
     const [username, setUsername] = useState(props.username);
+    const [trophyPopupMessage, setPopupMessage] = useState("");
 
     const imageObjects = {
         "ball": ball,
@@ -97,7 +125,12 @@ function TrophySingle(props) {
                     </div>
 
                     <div id="buttonWrapper">
+                        <Popup/>
                         <Button variant="contained" id="addToProfile" onClick={()=>{addTrophy(trophyTitle, trophyImage, trophyCost, username)}}>Add to My Profile</Button>
+
+                        {/* <Popup trigger={<button variant="contained" id="addToProfile" onClick={()=>{addTrophy(trophyTitle, trophyImage, trophyCost, username)}}>Add to My Profile</button>} position="right center">
+                            <div>{trophyPopupMessage}</div>
+                        </Popup> */}
                     </div>
 
                     <div onClick={props.onClick}>
