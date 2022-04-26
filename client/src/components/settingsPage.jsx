@@ -127,7 +127,7 @@ class SettingsPage extends Component {
                             <input type="text" name="passwordConfirmation" data-testid="passwordConfirmation-input" value={this.state.passwordConfirmation} onChange={this.handleChange} placeholder="Confirm new password" className="settingsEntry" required></input>
 
                             <label htmlFor="bio" className="settingsLabel">Change bio</label>
-                            <input id = "bio" type="text" name="bio" data-testid="bio-input" value={this.state.bio} onChange={this.handleChange} placeholder="Enter new bio" className="settingsEntry" required></input>
+                            <input id = "bio" type="text" name="bio" data-testid="bio-input" value={this.state.bio} onChange={this.handleChange} placeholder="Enter new bio (55 character limit)" className="settingsEntry" maxlength="55" minlength="1" required></input>
                             {/* This will be a logout button. <Button variant="contained" size="large" onClick={}>Logout</Button>*/}
                         </div>
                         <div id={"bottom-options"}>
