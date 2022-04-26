@@ -1,8 +1,9 @@
 import React, { useState, Component } from "react";
 import './styles/mostPopular.css';
-import './styles/trophy.css'
-/* import Button from '@mui/material/Button';
+import './styles/trophy.css';
 import ducky from './images/ducky.png'
+/* import Button from '@mui/material/Button';
+
 import dice from './images/trophy-icons/dice.png'
 import trophy from './images/trophy-icons/trophy.png'
 import star from './images/trophy-icons/star.png'
@@ -39,11 +40,14 @@ function MostPopular(props) {
         <React.Fragment>
             <div className="trophySingleBG">
                 <div className="singleDisplay"> {/* need to add close button */}
-                    <img alt="single trophy" src={imageObjects[trophyImage]} id="trophyImageLarge"/>
+                    <img alt="single trophy" src= {ducky} id="trophyImageLarge"/> {/* src={imageObjects[trophyImage]} */}
 
 
                     <div id="trophyTitle">
-                        <text>{trophyTitle}</text>
+                        <text>
+                            Trophy Title
+                            {/* {trophyTitle} */}
+                        </text>
                     </div>
 
                     <div id="trophyDescription">

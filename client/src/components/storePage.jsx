@@ -14,6 +14,7 @@ import crystal from './images/trophy-icons/crystal.png'
 import clover from './images/trophy-icons/clover.png'
 import sword from './images/trophy-icons/sword.png'
 import prize from './images/trophy-icons/prize.png'
+import MostPopular from "./mostPopular.jsx";
 
 //reference: https://mui.com/components/drawers/
 
@@ -112,10 +113,11 @@ class StorePage extends Component {
                     <div className="mpCard">
                         <text id="MPTitle">{this.state.mostPopularTrophyData.name}</text>
                         <img alt="most popular trophy" src={imageObjects[this.state.mostPopularTrophyData.image]} className="mostPopImg" onClick={()=> this.setState({mostPopularTrophyStatus: true})}/>
-                    </div>
+                        
+                    </div>    
                 </div>
 
-
+                <MostPopular></MostPopular>
                 <div id="trophyDisplay">
                     {this.state.funds !== -1 ?
                     this.state.trophies.map((trophy, i) => <Trophy key={i} index={i} onClick={()=> {this.changeState(i)}} cost={trophy.price} image={trophy.image}></Trophy>)
