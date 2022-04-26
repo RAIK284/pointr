@@ -26,7 +26,7 @@ class StorePage extends Component {
             funds: -1,
             trophies: [],
             trophyStatus: [],
-            mostPopularTrophyData: {},
+            mostPopularTrophyData: {userList: []},
             mostPopularTrophyStatus: false}
     }
 
@@ -63,6 +63,7 @@ class StorePage extends Component {
             .then((data) => fetch('http://localhost:8080/api/storeItem?name=' + data.name))
             .then(response => response.json())
             .then((data) => {this.setState({mostPopularTrophyData: data})})
+            .then(() => console.log(this.state))
     }
 
     changeState(index) {
@@ -113,12 +114,12 @@ class StorePage extends Component {
                     <div className="mpCard">
                         <text id="MPTitle">{this.state.mostPopularTrophyData.name}</text>
                         <img alt="most popular trophy" src={imageObjects[this.state.mostPopularTrophyData.image]} className="mostPopImg" onClick={()=> this.setState({mostPopularTrophyStatus: true})}/>
-                        
+
                     </div>    
                 </div>
 
-                <MostPopular></MostPopular>
                 <div id="trophyDisplay">
+
                     {this.state.funds !== -1 ?
                     this.state.trophies.map((trophy, i) => <Trophy key={i} index={i} onClick={()=> {this.changeState(i)}} cost={trophy.price} image={trophy.image}></Trophy>)
                         : ""}
@@ -132,17 +133,25 @@ class StorePage extends Component {
                                                                           storePage={this}
                                                                           username={this.state.username}>
                     </TrophySingle>) : ""}
+
                     {this.state.mostPopularTrophyData.hasOwnProperty('name') ?
-                        <TrophySingle
-                            trigger={this.state.mostPopularTrophyStatus}
-                            onClick={()=> this.setState({mostPopularTrophyStatus: false})}
-                            title={this.state.mostPopularTrophyData.name}
-                            description={this.state.mostPopularTrophyData.description}
-                            cost={this.state.mostPopularTrophyData.price}
-                            image={this.state.mostPopularTrophyData.image}
-                            userFunds={this.state.funds}
-                            username={this.state.username}>
-                        </TrophySingle> : ""}
+
+                    <MostPopular trigger={this.state.mostPopularTrophyStatus}
+                                 onClick={()=> this.setState({mostPopularTrophyStatus: false})}
+                                 title={this.state.mostPopularTrophyData.name}
+                                 image={this.state.mostPopularTrophyData.image}
+                                 users={this.state.mostPopularTrophyData.userList}></MostPopular> : ""}
+
+                    {/*    <TrophySingle*/}
+                    {/*        trigger={this.state.mostPopularTrophyStatus}*/}
+                    {/*        onClick={()=> this.setState({mostPopularTrophyStatus: false})}*/}
+                    {/*        title={this.state.mostPopularTrophyData.name}*/}
+                    {/*        description={this.state.mostPopularTrophyData.description}*/}
+                    {/*        cost={this.state.mostPopularTrophyData.price}*/}
+                    {/*        image={this.state.mostPopularTrophyData.image}*/}
+                    {/*        userFunds={this.state.funds}*/}
+                    {/*        username={this.state.username}>*/}
+                    {/*    </TrophySingle> : ""}*/}
                 </div>
             </div>
            

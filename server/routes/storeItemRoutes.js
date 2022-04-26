@@ -10,9 +10,12 @@ module.exports = (app) => {
 
     router.post('/api/storeItem', storeItemController.createStoreItem);
 
+    router.post('/api/storeItemAddUser', storeItemController.addUserToStoreItemList);
+
     router.patch('/api/storeItem', storeItemController.updateStoreItem);
 
     router.delete('/api/storeItem', storeItemController.deleteStoreItem);
+
 
 
     app.use('/', router);

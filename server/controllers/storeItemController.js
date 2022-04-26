@@ -65,13 +65,27 @@ const readMostPopularStoreItem = async (req, res) => {
     res.status(200).send({"name": mostPopularTrophy.toString()});
 }
 
+const addUserToStoreItemList = async (req, res) => {
+    const db = mongoConnection.getDb();
+    const storeItem = await db.collection('storeItems').findOne({name: req.query.name});
+    const storeItemUserList = await storeItem.userList;
+    await storeItemUserList.push(req.body.user)
+
+    db.collection('storeItems').updateOne(
+        {name: req.body.name},
+        {$set: {userList: storeItemUserList}}
+    )
+
+    res.status(200).send('Updated store item');
+}
+
 
 const updateStoreItem = async (req, res) => {
     const db = mongoConnection.getDb();
     for (let key in req.body) {
         await updateStoreItemHelper(db, key, req);
     }
-    res.status(200).send('Updated user');
+    res.status(200).send('Updated store item');
 }
 
 const updateStoreItemHelper = async (db, key, req) => {
@@ -92,6 +106,7 @@ const deleteStoreItem = (req, res) => {
 module.exports = {
     createStoreItem,
     readMostPopularStoreItem,
+    addUserToStoreItemList,
     readStoreItem,
     updateStoreItem,
     deleteStoreItem

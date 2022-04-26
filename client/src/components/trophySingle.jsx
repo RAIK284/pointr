@@ -44,6 +44,19 @@ const addTrophy = async (name, image, trophyCost, username) => {
             body: newUserFundsJSON
         });
 
+        const newUserTrophyData = {name: name, user: username}
+        const newUserTrophyDataJSON = JSON.stringify(newUserTrophyData);
+
+        console.log(newUserTrophyDataJSON)
+
+        fetch("http://localhost:8080/api/storeItemAddUser?name=" + name, {
+            method: "POST",
+            headers: {'Content-Type': 'application/json'},
+            body: newUserTrophyDataJSON
+        });
+
+
+
 
 
         alert('Trophy purchased! (Maybe we should have a popup for this?)');
