@@ -103,20 +103,20 @@ class StorePage extends Component {
             <div className="storeBackground">
                 <div id="fundsAmountWrapper">
                     <text id="fundsAmountText">FUNDs available:</text>
-                    <var id="fundsAmountNum">{this.state.funds}</var>
+                    <var id="fundsAmountNum" data-testid="userFUNds">{this.state.funds}</var>
                 </div>
 
                 <div id="mostPopularDisplay">
                     <text id="mostPopTitle">Today's Most Popular</text>
                     <text id="mostPopSubtitle">Explore today's most popular trophies!</text>
                     <div className="mpCard">
-                        <text id="MPTitle">{this.state.mostPopularTrophyData.name}</text>
-                        <img alt="most popular trophy" src={imageObjects[this.state.mostPopularTrophyData.image]} className="mostPopImg" onClick={()=> this.setState({mostPopularTrophyStatus: true})}/>
+                        <text id="MPTitle" data-testid="MPTitle">{this.state.mostPopularTrophyData.name}</text>
+                        <img alt="most popular trophy" data-testid="mostPopTroph" src={imageObjects[this.state.mostPopularTrophyData.image]} className="mostPopImg" onClick={()=> this.setState({mostPopularTrophyStatus: true})}/>
                     </div>
                 </div>
 
 
-                <div id="trophyDisplay">
+                <div id="trophyDisplay" data-testid="trophyBox">
                     {this.state.funds !== -1 ?
                     this.state.trophies.map((trophy, i) => <Trophy key={i} index={i} onClick={()=> {this.changeState(i)}} cost={trophy.price} image={trophy.image}></Trophy>)
                         : ""}
