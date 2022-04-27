@@ -1,7 +1,5 @@
 import React from 'react';
 import { render, unmountComponentAtNode } from "react-dom";
-import { fireEvent, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import HeaderDrawer from '../../headerDrawer';
 
 let container = null;
