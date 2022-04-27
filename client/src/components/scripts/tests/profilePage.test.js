@@ -16,7 +16,7 @@ afterEach(() => {
     container = null;
 });
 // ['Profile', 'Messages', 'Store', 'Explore', 'Leaderboard', 'Settings']
-describe("<HeaderDrawer />", () => {
+describe("<ProfilePage />", () => {
 
     test('Label for the change name field is rendered', () => {
         render(<ProfilePage/>, container);
