@@ -107,7 +107,7 @@ class OtherUserPage extends Component {
             <img align='Left' id="otherImage" alt="profile pic" src={ducky}/>
                 <p id="welcome">
                     {/* need image here */}
-                    {this.state.name}.
+                    {this.state.name}
                 </p>
                 <p id="sub">
                     {this.state.bio}

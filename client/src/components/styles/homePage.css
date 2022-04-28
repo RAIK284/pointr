@@ -100,16 +100,20 @@ button#homepagebutton {
 
 
 
-#titleHeader{
+.titleHeader{
     width: 100vw;
     height: 40vh;
 
     background: linear-gradient(86.57deg, #65D7C0 2.83%, #02BA90 39.01%, #0064FF 96.43%);
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    animation: gradient 15s ease infinite;
+
 
 
 }
+
+
 
 
 
@@ -323,5 +327,32 @@ button#homepagebutton {
     
     
 }
+.css-selector {
+    width: 100vw;
+    height: 40vh;
 
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background: linear-gradient(235deg, #65d7c0, #02ba90, #0064ff);
+    background-size: 600% 600%;
 
+    -webkit-animation: titleHeader 10s ease infinite;
+    -moz-animation: titleHeader 10s ease infinite;
+    animation: titleHeader 10s ease infinite;
+}
+
+@-webkit-keyframes titleHeader {
+    0%{background-position:0% 40%}
+    50%{background-position:100% 61%}
+    100%{background-position:0% 40%}
+}
+@-moz-keyframes titleHeader {
+    0%{background-position:0% 40%}
+    50%{background-position:100% 61%}
+    100%{background-position:0% 40%}
+}
+@keyframes titleHeader {
+    0%{background-position:0% 40%}
+    50%{background-position:100% 61%}
+    100%{background-position:0% 40%}
+}

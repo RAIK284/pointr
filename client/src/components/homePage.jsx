@@ -25,7 +25,7 @@ class HomePage extends Component {
                         <NavItem to="/signin">Log In</NavItem>
                     </MuiNavbar> 
 
-                    <div id="titleHeader">
+                    <div className="css-selector">
                         <div id="homeTitleWrapper">
                             <text id="homeTitle">Welcome to Pointr.</text>
                         </div>
