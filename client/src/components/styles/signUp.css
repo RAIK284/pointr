@@ -201,3 +201,46 @@ button#signupbutton {
     backdrop-filter: blur(50px);
 
 }
+
+button#toLogin{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 38px;
+    /* identical to box height */
+
+
+    letter-spacing: -0.015em;
+
+color: #ffffff;
+
+
+
+}
+
+#toLoginWrapper{
+    margin-top: 50%;
+    margin-right: 12%;
+    height: fit-content;
+    width: fit-content;
+    align-items: center;
+
+}
+
+#loginCaption{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 38px;
+    /* identical to box height */
+
+
+    letter-spacing: -0.015em;
+
+    color: #ffffff;
+    
+
+
+}
