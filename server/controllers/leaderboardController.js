@@ -25,7 +25,8 @@ const getLeaderboardData = async () => {
         if (user.isPrivate === false) {
             userList.push({
                 "username": user.username,
-                "allTimeFunds": user.allTimeFunds
+                "allTimeFunds": user.allTimeFunds,
+                "profileImg": user.profileImg
             });
         }
     })

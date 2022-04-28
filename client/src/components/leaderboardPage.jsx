@@ -3,7 +3,14 @@ import HeaderDrawer from "./headerDrawer.jsx";
 import InternalHeading from "./internalHeading.jsx";
 import './styles/leaderboardPage.css';
 import duck from "./images/ducky.png";
+import ducky from "./images/ducky.png";
 
+import blake from "./images/profile-pictures/blake.png"
+import wally from "./images/profile-pictures/wally.png"
+import prema from "./images/profile-pictures/prema-cropped.png"
+import shivani from "./images/profile-pictures/shivani.jpeg"
+import keck from "./images/profile-pictures/keck.jpg"
+import sam from "./images/profile-pictures/sam.png"
 
 //reference: https://mui.com/components/drawers/
 /* fake data for rankings table, delete this const once connected to our database */
@@ -47,7 +54,7 @@ class LeaderBoardPage extends Component {
         var rank = 1
         for (let elem of data){
             if(elem != null){
-                tableData.push({ name: elem.username, funds: elem.allTimeFunds, rank: rank})
+                tableData.push({ name: elem.username, funds: elem.allTimeFunds, rank: rank, profileImg: elem.profileImg})
                 rank++
             }
         }
@@ -55,6 +62,16 @@ class LeaderBoardPage extends Component {
     }
 
     render() {
+
+        const profileImages = {
+            "blake": blake,
+            "shivani": shivani,
+            "prema": prema,
+            "wally": wally,
+            "keck": keck,
+            "ducky": ducky,
+            "sam": sam
+        }
         
         return (
             <React.Fragment>
@@ -71,19 +88,19 @@ class LeaderBoardPage extends Component {
 
                     <div id="topThreeDisplay">
                         <div className="topThreeSingle" style={{background: "#E9C46A"}}>
-                            <img alt="other profile image" src={duck} className="topProfilePic"></img>  {/* need to add on-click to route to other profile */}
+                            <img alt="other profile image" src={profileImages[this.state.tableData[0].profileImg]} className="topProfilePic"></img>  {/* need to add on-click to route to other profile */}
                             {/* <text className="topUsrnm" >@username</text> */}
                             <text className="topUsrnm" >{this.state.tableData[0].name}</text>
                             <var className="topFunds">{this.state.tableData[0].funds}</var>
                         </div>
                         <div className="topThreeSingle" style={{background: "#C0C0C5"}}>
-                            <img alt="other profile image" src={duck} className="topProfilePic"></img>
+                            <img alt="other profile image" src={profileImages[this.state.tableData[1].profileImg]} className="topProfilePic"></img>
                             <text className="topUsrnm" >{this.state.tableData[1].name}</text>
                             <var className="topFunds">{this.state.tableData[1].funds}</var>
                         </div>
 
                         <div className="topThreeSingle" style={{background: "#BF6B07"}}>
-                            <img alt="other profile image" src={duck} className="topProfilePic"></img>
+                            <img alt="other profile image" src={profileImages[this.state.tableData[2].profileImg]} className="topProfilePic"></img>
                             <text className="topUsrnm" >{this.state.tableData[2].name}</text>
                             <var className="topFunds">{this.state.tableData[2].funds}</var>
 
