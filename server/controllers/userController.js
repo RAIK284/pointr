@@ -116,7 +116,7 @@ const getPublicUserData = async (req, res) => {
                 bio: user.bio,
                 funds: user.funds,
                 trophies: user.trophies,
-                image: user.image,
+                image: user.profileImg,
                 isPrivate: "false"
             })
         } else {
@@ -126,7 +126,7 @@ const getPublicUserData = async (req, res) => {
                 bio: user.bio,
                 funds: "private",
                 trophies: "private",
-                image: user.image,
+                image: user.profileImg,
                 isPrivate: "true"
             })
         }

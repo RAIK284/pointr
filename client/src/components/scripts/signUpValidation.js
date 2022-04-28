@@ -5,7 +5,7 @@ const jsonBody = {
     "email": "",
     "age": 0,
     "password": "",
-    "profileImg": "./images/default.png",
+    "profileImg": "ducky",
     "phoneNumber": 4029490831,
     "messagingPoints": 100,
     "allTimeFunds": 0,

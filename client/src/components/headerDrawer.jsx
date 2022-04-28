@@ -18,6 +18,12 @@ import storeIcon from "./images/header-icons/store.svg";
 import exploreIcon from "./images/header-icons/search.svg";
 import leaderboardIcon from "./images/header-icons/leaderboard.svg";
 
+import blake from "./images/profile-pictures/blake.png"
+import wally from "./images/profile-pictures/wally.png"
+import prema from "./images/profile-pictures/prema-cropped.png"
+import shivani from "./images/profile-pictures/shivani.jpeg"
+import keck from "./images/profile-pictures/keck.jpg"
+import sam from "./images/profile-pictures/sam.png"
 
 
 let imgsrc = [profileIcon, messageIcon, storeIcon, exploreIcon, leaderboardIcon]
@@ -27,17 +33,51 @@ let imgsrc = [profileIcon, messageIcon, storeIcon, exploreIcon, leaderboardIcon]
 
 const drawerWidth = 240;
 class HeaderDrawer extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state =
+            {image: "ducky"}
+    }
+
+    async componentDidMount() {
+        await this.getUserInformation()
+    }
+
+
+    async getUserInformation() {
+
+        fetch('http://localhost:8080/api/user/self', {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
+        })
+            .then(response => response.json())
+            .then(data => this.setState({image: data.profileImg})).then(console.log(this.state))
+    }
+
 
     render() {
+        const profileImages = {
+            "blake": blake,
+            "shivani": shivani,
+            "prema": prema,
+            "wally": wally,
+            "keck": keck,
+            "ducky": ducky,
+            "sam": sam
+        }
+
         let username = ""
 
-        if(this.props.username) 
+        if(this.state.username)
         {
             username = this.props.username
         }
+
         else {
             username = localStorage.getItem('username');
         }
+
+
             
         const changePage  =  (index) =>
         {
@@ -95,7 +135,7 @@ class HeaderDrawer extends React.Component {
                 variant="permanent"
                 anchor="left"
                 >
-                    <img src={ducky} alt="ducky" id="profilePictureMask"/>
+                    <img src={profileImages[this.state.image]} alt="ducky" id="profilePictureMask"/>
                     <List>
                         <ListItemText className="username">
                             <div className="username">
