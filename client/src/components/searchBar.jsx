@@ -24,6 +24,7 @@ return (
     <div className="search">
     <TextField 
         id="searchEntry"
+        data-testid = "searchEntry"
         
         onChange={inputHandler}
         variant="outlined"

@@ -146,7 +146,7 @@ class ProfilePage extends Component {
                 <br />
                 <label htmlFor="trophies" className="trophiesLabel">Trophies</label>
                 <div id={"carousel-container"}>
-                    <div id={"carousel-wrapper"}>
+                    <div id={"carousel-wrapper"} data-testid='trophyCarousel'>
                         {trophyImages}
                     </div>
                 </div>
