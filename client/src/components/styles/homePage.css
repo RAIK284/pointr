@@ -327,13 +327,17 @@ button#homepagebutton {
     
     
 }
+
+/* Gradient generator code adapted from https://www.gradient-animator.com/ */
+
 .css-selector {
     width: 100vw;
     height: 40vh;
 
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    background: linear-gradient(235deg, #65d7c0, #02ba90, #0064ff);
+
+    background: linear-gradient(88deg, #65d7c0, #02ba90, #0064ff);
     background-size: 600% 600%;
 
     -webkit-animation: titleHeader 10s ease infinite;
@@ -342,17 +346,17 @@ button#homepagebutton {
 }
 
 @-webkit-keyframes titleHeader {
-    0%{background-position:0% 40%}
-    50%{background-position:100% 61%}
-    100%{background-position:0% 40%}
+    0%{background-position:0% 65%}
+    50%{background-position:100% 36%}
+    100%{background-position:0% 65%}
 }
 @-moz-keyframes titleHeader {
-    0%{background-position:0% 40%}
-    50%{background-position:100% 61%}
-    100%{background-position:0% 40%}
+    0%{background-position:0% 65%}
+    50%{background-position:100% 36%}
+    100%{background-position:0% 65%}
 }
 @keyframes titleHeader {
-    0%{background-position:0% 40%}
-    50%{background-position:100% 61%}
-    100%{background-position:0% 40%}
+    0%{background-position:0% 65%}
+    50%{background-position:100% 36%}
+    100%{background-position:0% 65%}
 }
