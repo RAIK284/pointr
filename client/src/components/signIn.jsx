@@ -37,11 +37,20 @@ class SignIn extends Component {
                             Log In to Pointr
                         </text>
                         <br />
-                        <input type="text" placeholder="Email" id="email" className="br1"></input>
+                        <div>
+                            <input type="text" placeholder="Email" id="email" className="br1"></input>
+                        </div>
+                        <div id="forgot1Wrapper">
+                            <Button variant="text" id="forgot">Forgot username?</Button>
+                        </div>
+                       
                         <br />
                         
                         <br />
                         <input type="password" placeholder="Password" id="password" className="br2"></input>
+                        <div id="forgot2Wrapper">
+                            <Button variant="text" id="forgot">Forgot password?</Button>
+                        </div>
                         <br />
                         <br />
                         <Button variant="contained" size="large" id= "loginbutton" onClick={()=>{changePage()}}>Login</Button>

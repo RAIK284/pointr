@@ -99,3 +99,28 @@ h1{
     top: calc(50% - 41.71px/2 - 134.15px);
 
 }
+
+button#forgot{
+    
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 22px;
+
+    letter-spacing: -0.015em;
+
+    color: #333333;
+}
+
+#forgot1Wrapper{
+    position: absolute;
+    left: calc(50% - 549.59px/2 - 8.2px);
+    top: calc(50% - 46.34px/2 - 20px);
+}
+
+#forgot2Wrapper{
+    position: absolute;
+    left: calc(50% - 549.59px/2 - 8.2px);
+    top: calc(50% - 46.34px/2 - -90px);
+}
