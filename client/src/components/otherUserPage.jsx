@@ -16,6 +16,13 @@ import PropTypes from 'prop-types';
 import './styles/profilePage.css';
 import './styles/otherUserPage.css'
 import Button from '@mui/material/Button';
+import blake from "./images/profile-pictures/blake.png"
+import wally from "./images/profile-pictures/wally.png"
+import prema from "./images/profile-pictures/prema-cropped.png"
+import shivani from "./images/profile-pictures/shivani.jpeg"
+import keck from "./images/profile-pictures/keck.jpg"
+import sam from "./images/profile-pictures/sam.png"
+
 
 
 function withParams(Component) {
@@ -29,7 +36,7 @@ class OtherUserPage extends Component {
             {name: '',
                 username: '',
                 bio: '',
-                image: '',
+                profileImg: 'ducky',
                 trophies: [],
                 messagingPoints: 0,
                 funds: 0,
@@ -53,13 +60,13 @@ class OtherUserPage extends Component {
                 name: data.name,
                 username: data.username,
                 bio: data.bio,
-                image: data.image,
+                image: data.profileImg,
                 trophies: [],
                 funds: "Private",
                 leaderboardRank: "Private"
             })
         }
-        console.log(this.state)
+        console.log("state",this.state)
     };
 
     async getLeaderboardInformation () {
@@ -94,6 +101,16 @@ class OtherUserPage extends Component {
             "sword": sword
         }
 
+        const profileImages = {
+            "blake": blake,
+            "shivani": shivani,
+            "prema": prema,
+            "wally": wally,
+            "keck": keck,
+            "ducky": ducky,
+            "sam": sam
+        }
+
 
         let trophyImages = [];
         for (let i = 0; i < this.state.trophies.length; i++) {
@@ -102,9 +119,10 @@ class OtherUserPage extends Component {
         }
         return (
             <React.Fragment>
+                {console.log("image", this.state.image)}
             
             <div id="header">
-            <img align='Left' id="otherImage" alt="profile pic" src={ducky}/>
+            <img align='Left' id="otherImage" alt="profile pic" src={profileImages[this.state.profileImg]}/>
                 <p id="welcome">
                     {/* need image here */}
                     {this.state.name}

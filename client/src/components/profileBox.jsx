@@ -23,6 +23,8 @@ class ProfileBox extends Component {
             "sam": sam
         }
 
+        console.log(this.props)
+
         if (this.props.otherProfile.image === undefined) {
             this.props.otherProfile.image = "ducky";
         }
