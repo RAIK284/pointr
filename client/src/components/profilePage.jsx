@@ -129,7 +129,7 @@ class ProfilePage extends Component {
                 <p id="welcome">
                     Welcome, {this.state.name}.
                 </p>
-                <p id="sub">
+                <p id="subb">
                     {this.state.bio}
                 </p>
             </div>
@@ -146,7 +146,7 @@ class ProfilePage extends Component {
                 <br />
                 <label htmlFor="trophies" className="trophiesLabel">Trophies</label>
                 <div id={"carousel-container"}>
-                    <div id={"carousel-wrapper"}>
+                    <div id={"carousel-wrapper"} data-testid='trophyCarousel'>
                         {trophyImages}
                     </div>
                 </div>

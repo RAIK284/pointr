@@ -38,7 +38,7 @@ class SignIn extends Component {
                         </text>
                         <br />
                         <div>
-                            <input type="text" placeholder="Email" id="email" className="br1"></input>
+                            <input type="text" data-testid="email" placeholder="Email" id="email" className="br1"></input>
                         </div>
                         <div id="forgot1Wrapper">
                             <Button variant="text" id="forgot">Forgot username?</Button>
@@ -47,13 +47,13 @@ class SignIn extends Component {
                         <br />
                         
                         <br />
-                        <input type="password" placeholder="Password" id="password" className="br2"></input>
+                            <input type="password" data-testid="password" placeholder="Password" id="password" className="br2"></input>
                         <div id="forgot2Wrapper">
                             <Button variant="text" id="forgot">Forgot password?</Button>
                         </div>
                         <br />
                         <br />
-                        <Button variant="contained" size="large" id= "loginbutton" onClick={()=>{changePage()}}>Login</Button>
+                        <Button variant="contained" size="large" data-testid="loginbutton" id= "loginbutton" onClick={()=>{changePage()}}>Login</Button>
                     </div>
                 </body>
             </React.Fragment>
