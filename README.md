@@ -1,3 +1,18 @@
+<h1>Tech Stack</h1>
+
+<h2>Front End: </h2>
+<li>React.js</li>
+<!-- <li>React.js</li>
+<li>CSS and HTML for Styling</li>
+<li>Design is based on our <a href="gttps://nodejs.org">Figma</a></li> -->
+
+<br>
+<h2>Back End: <h2>
+<!-- <li>node.js</li>
+<li>MongoDB</li> -->
+</br>
+
+
 <h1>Project setup</h1>
 
 <br>
@@ -6,20 +21,22 @@
 <li>Pull the repository into Visual Studio, name the folder you pull the project into "pointr-project"</li>
 <ul><li>If you did not do this, update file paths in package.json to match the name of your root directory</li></ul>
 <li>Open up 2 terminal windows in VS Code</li>
-<li>In the first terminal, run "npm start" in the root directory
+<li>In the first terminal, run "npm start" in the root directory (this runs the back end)
 <br>
 <li>In the second terminal, type and run "cd client"
-<li>run "npm start" in the client directory</li>
-<li>A React app website will launch with a "Connected?" button</li>
-<li>If everything worked, pressing this button should cause the backend terminal to log "Connected to React"</li>
+<li>run "npm start" in the client directory (this runs the front end)</li>
+<li>A React app website will launch and you will see Pointr's Home Page</li>
 </ol>
 
+<br></br>
+<h1>Deployment</h1>
+[fill in info here]
+<br><br>
 
-Error fix: taskkill /im node.exe /f
 
-<h2> API Documentation </h2>
+<h1> API Documentation </h1>
 
-<h3> Sign Up Endpoint </h3>
+<h2> Sign Up Endpoint </h2>
 
 `POST` **/api/signup**
 
@@ -63,7 +80,7 @@ fetch("http://localhost:8080/api/signup", {
 
 ---
 
-<h3> Login Endpoint </h3>
+<h2> Login Endpoint </h2>
 
 `POST` **/api/login**
 
@@ -97,7 +114,7 @@ fetch("http://localhost:8080/api/login", {
 
 ---
 
-<h3> User Endpoint </h3>
+<h2> User Endpoint </h2>
 
 `GET` **/api/user**
 
@@ -235,7 +252,7 @@ fetch("http://localhost:8080/api/user", {
         });
 ```
 ---
-<h3> Leaderboard Endpoint </h3>
+<h2> Leaderboard Endpoint </h2>
 
 `GET` **/api/leaderboard**
 
@@ -278,7 +295,7 @@ fetch("http://localhost:8080/api/user", {
 ]
 ```
 ---
-<h3> Token Endpoint </h3>
+<h2> Token Endpoint </h2>
 
 `GET` **/api/token**
 
@@ -382,7 +399,7 @@ fetch("http://localhost:8080/api/token", {
 ```
 
 ---
-<h3> Store Item Endpoint </h3>
+<h2> Store Item Endpoint </h2>
 
 `GET` **/api/storeItem**
 
@@ -489,7 +506,7 @@ fetch("http://localhost:8080/api/storeItem", {
 ```
 
 ---
-<h3> Message Endpoint </h3>
+<h2> Message Endpoint </h2>
 
 `GET` **/api/message**
 
