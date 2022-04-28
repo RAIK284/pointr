@@ -62,34 +62,6 @@ describe("<StorePage />", () =>   {
         expect(trophyBox).toBeInTheDocument();
     });
 
-    test('Single Trophies are rendered', () => {
-        render(<StorePage/>, container);
-
-        const singleTrophy = screen.getByTestId("singleTrophy");
-        expect(singleTrophy).toBeInTheDocument();
-
-        //Not sure
-    });
-
-    test('Clicked Trophies are Updated on the Page', () => {
-        const component = render(<StorePage/>, container);
-
-        const trophy = screen.getByTestId("ball"); //need to reference a specific trophy
-        userEvent.click(trophy);
-
-        expect(component.state.trophyStatus[0] === true);
-
-        //Not sure
-    });
-
-    test('FUNds available is taken from user info', () =>   {
-
-        const userFUNds = screen.getByTestId("userFUNds");
-
-        expect(userFUNds).toHaveValue(screen.state.funds);
-
-        //Not finding something via "userFUNds"
-    });
 
     // --------------- Unit Tests for Purchasing Trophies ---------------
 

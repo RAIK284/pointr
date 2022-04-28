@@ -120,10 +120,11 @@ class StorePage extends Component {
 
                 <div id="trophyDisplay" data-testid="trophyBox">
                     {this.state.funds !== -1 ?
-                    this.state.trophies.map((trophy, i) => <Trophy key={i} index={i} onClick={()=> {this.changeState(i)}} cost={trophy.price} image={trophy.image}></Trophy>)
+                    this.state.trophies.map((trophy, i) => <Trophy key={i} data-testid='singleTrophy' index={i} onClick={()=> {this.changeState(i)}} cost={trophy.price} image={trophy.image}></Trophy>)
                         : ""}
                     {this.state.funds !== -1 ?
                     this.state.trophies.map((trophy, i) => <TrophySingle key={i}
+                                                                          data-testid='singleTrophy'
                                                                           trigger={this.state.trophyStatus[i]}
                                                                           onClick={()=> {this.changeState(i)}}
                                                                           title={trophy.name} description={trophy.description}

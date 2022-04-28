@@ -145,8 +145,8 @@ class SettingsPage extends Component {
 
                         </div>
                         <div id={"settings-buttons"}>
-                            <Button id="logout" variant="contained" size="large" onClick={() => this.handleSignOut()}>Log Out</Button>
-                            <Button id="save" variant="contained" size="large" onClick={async () => await this.handleSubmit()}>Save</Button>
+                            <Button id="logout" data-testid='logout-button' variant="contained" size="large" onClick={() => this.handleSignOut()}>Log Out</Button>
+                            <Button id="save" data-testid='save-button' variant="contained" size="large" onClick={async () => await this.handleSubmit()}>Save</Button>
                         </div>
                     </div>
 
