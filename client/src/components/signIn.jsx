@@ -37,14 +37,14 @@ class SignIn extends Component {
                             Log In to Pointr
                         </text>
                         <br />
-                        <input type="text" placeholder="Email" id="email" className="br1"></input>
+                        <input type="text" data-testid="email" placeholder="Email" id="email" className="br1"></input>
                         <br />
                         
                         <br />
-                        <input type="password" placeholder="Password" id="password" className="br2"></input>
+                        <input type="password" data-testid="password" placeholder="Password" id="password" className="br2"></input>
                         <br />
                         <br />
-                        <Button variant="contained" size="large" id= "loginbutton" onClick={()=>{changePage()}}>Login</Button>
+                        <Button variant="contained" size="large" data-testid="loginbutton" id= "loginbutton" onClick={()=>{changePage()}}>Login</Button>
                     </div>
                 </body>
             </React.Fragment>
