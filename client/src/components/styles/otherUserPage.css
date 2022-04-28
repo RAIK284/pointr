@@ -7,6 +7,13 @@
 #sub
 {
     margin-left: 11.6rem;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    letter-spacing: -0.015em;
+
+    color: #333333;
 }
 #welcome
 {
