@@ -23,6 +23,10 @@ class ProfileBox extends Component {
             "sam": sam
         }
 
+        if (this.props.otherProfile.image === undefined) {
+            this.props.otherProfile.image = "ducky";
+        }
+
       return (
         <React.Fragment>
           <div>
