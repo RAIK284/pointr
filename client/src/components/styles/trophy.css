@@ -223,3 +223,20 @@ button#addToProfile{
 
 
 
+button#closeButton {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 90px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.015em;
+  
+    /* color: #FFFFFF; */
+  
+    margin-top: -140%;
+    margin-left: 85%;
+  
+  }
