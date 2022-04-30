@@ -124,3 +124,32 @@ button#forgot{
     left: calc(50% - 549.59px/2 - 8.2px);
     top: calc(50% - 46.34px/2 - -90px);
 }
+
+.css-selectorSI {
+    width: 100vw;
+    height: 100vh;
+   
+    
+    background: linear-gradient(247.13deg, rgba(2, 186, 144, 0.8) 0%, rgba(101, 215, 192, 0.8) 42.71%, rgba(0, 100, 255, 0.8) 100%);
+    background-size: 600% 600%;
+
+    -webkit-animation: titleHeader 20s ease infinite;
+    -moz-animation: titleHeader 20s ease infinite;
+    animation: titleHeader 20s ease infinite;
+}
+
+@-webkit-keyframes titleHeader {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes titleHeader {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes titleHeader {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}

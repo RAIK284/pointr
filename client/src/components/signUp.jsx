@@ -84,7 +84,7 @@ class SignUp extends Component {
     render() {
         return (
             <React.Fragment >
-                <div id="main-container">
+                <div className="css-selectorSU">
                     <div id="toLoginWrapper">
                         <text id="loginCaption">Already have an account?</text>
                   <Button variant="text" id="toLogin" onClick={()=>{window.location.href='/signin'}}>Log In Here.</Button>
