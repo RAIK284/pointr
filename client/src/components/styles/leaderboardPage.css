@@ -108,8 +108,8 @@
     
     color: #FFFFFF;
     position: relative;
-    left: 17%;
-    top: 3%;
+    
+   
     
 }
 
@@ -125,8 +125,15 @@
   color: #FFFFFF;
   
   position: relative;
-  top: 15%;
-  right: 25%;
+  
+  
+}
+
+.nameFundsWrapper{
+
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }
   
 

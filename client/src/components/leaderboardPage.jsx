@@ -90,19 +90,33 @@ class LeaderBoardPage extends Component {
                         <div className="topThreeSingle" style={{background: "#E9C46A"}}>
                             <img alt="other profile image" src={profileImages[this.state.tableData[0].profileImg]} className="topProfilePic"></img>  {/* need to add on-click to route to other profile */}
                             {/* <text className="topUsrnm" >@username</text> */}
+                            <div className="nameFundsWrapper">
                             <text className="topUsrnm" >{this.state.tableData[0].name}</text>
+                            <br/>
                             <var className="topFunds">{this.state.tableData[0].funds}</var>
+                            </div>
+                            
                         </div>
                         <div className="topThreeSingle" style={{background: "#C0C0C5"}}>
                             <img alt="other profile image" src={profileImages[this.state.tableData[1].profileImg]} className="topProfilePic"></img>
+                            <div className="nameFundsWrapper">
                             <text className="topUsrnm" >{this.state.tableData[1].name}</text>
+                            <br/>
+
                             <var className="topFunds">{this.state.tableData[1].funds}</var>
+                            </div>
+                            
                         </div>
 
                         <div className="topThreeSingle" style={{background: "#BF6B07"}}>
                             <img alt="other profile image" src={profileImages[this.state.tableData[2].profileImg]} className="topProfilePic"></img>
+                            <div className="nameFundsWrapper">
                             <text className="topUsrnm" >{this.state.tableData[2].name}</text>
+                            <br/>
+
                             <var className="topFunds">{this.state.tableData[2].funds}</var>
+                            </div>
+                            
 
                         </div>
 
