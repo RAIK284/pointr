@@ -3,13 +3,14 @@ import { React, useState, useEffect } from 'react'
 import ProfileBox from "./profileBox"
 import "./styles/explorePage.css";
 import searchicon from "./images/header-icons/search.svg"
+import root from '../root'
 
 function List(props) {
     const [userData, setUserData] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
-            const res = await fetch('http://localhost:8080/api/usersInfo')
+            const res = await fetch(`http://${root}/api/usersInfo`)
             const json = await res.json();
 
             setUserData(json);

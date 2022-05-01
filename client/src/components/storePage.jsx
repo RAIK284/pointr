@@ -15,6 +15,7 @@ import clover from './images/trophy-icons/clover.png'
 import sword from './images/trophy-icons/sword.png'
 import prize from './images/trophy-icons/prize.png'
 import MostPopular from "./mostPopular.jsx";
+import root from '../root'
 
 //reference: https://mui.com/components/drawers/
 
@@ -31,7 +32,7 @@ class StorePage extends Component {
     }
 
     updateData() {
-        fetch('http://localhost:8080/api/user/self', {
+        fetch(`${root}/api/user/self`, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
         })
@@ -43,7 +44,7 @@ class StorePage extends Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:8080/api/user/self', {
+        fetch(`${root}/api/user/self`, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
         })
@@ -53,12 +54,12 @@ class StorePage extends Component {
                 funds: data.funds
             }))
 
-        fetch('http://localhost:8080/api/storeItem') .then(response => response.json()) .then((data) => {this.setState({
+        fetch(`${root}/api/storeItem`) .then(response => response.json()) .then((data) => {this.setState({
             trophies: data,
             trophyStatus : Array(data.length).fill(false)
         })})
 
-        fetch('http://localhost:8080/api/mostPopularStoreItem')
+        fetch(`${root}/api/mostPopularStoreItem`)
             .then(response => response.json())
             .then((data) => fetch('http://localhost:8080/api/storeItem?name=' + data.name))
             .then(response => response.json())
@@ -70,7 +71,7 @@ class StorePage extends Component {
         const status = this.state.trophyStatus;
         status[index] = !status[index];
         this.setState({trophyStatus: status})
-        fetch('http://localhost:8080/api/user/self', {
+        fetch(`${root}/api/user/self`, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
         })

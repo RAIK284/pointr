@@ -13,6 +13,8 @@ import HeaderDrawer from "./headerDrawer.jsx";
 import {useParams} from "react-router-dom";
 import './styles/profilePage.css';
 
+import root from '../root'
+
 function withParams(Component) {
     return props => <Component {...props} params={useParams()} />;
 }
@@ -39,7 +41,7 @@ class ProfilePage extends Component {
 
     async getUserInformation() {
 
-         fetch('http://localhost:8080/api/user/self', {
+         fetch(`${root}/api/user/self`, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
         })

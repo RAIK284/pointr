@@ -12,6 +12,8 @@ import shivani from "./images/profile-pictures/shivani.jpeg"
 import keck from "./images/profile-pictures/keck.jpg"
 import sam from "./images/profile-pictures/sam.png"
 
+import root from "../root"
+
 //reference: https://mui.com/components/drawers/
 /* fake data for rankings table, delete this const once connected to our database */
 // var tableData = [{ name: "@fake data", funds: 200, rank: 4 }, 
@@ -29,12 +31,12 @@ class LeaderBoardPage extends Component {
     }
 
     fetchData = async () => {
-        const response =  await fetch('http://localhost:8080/api/leaderboard?top=10')
+        const response =  await fetch(`${root}/api/leaderboard?top=10`)
         const data = await response.json();
 
         this.setState({tableData: await this.getTableData(data)})
 
-        const userDataResponse = await fetch('http://localhost:8080/api/user/self', {
+        const userDataResponse = await fetch(`${root}/api/user/self`, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
         });

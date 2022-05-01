@@ -3,6 +3,7 @@ import './styles/newMessage.css';
 import Button from '@mui/material/Button';
 import TokenCostButton from "./tokenCostButton";
 import emojiDataExport from './emojiData.js'
+import root from '../root'
 
 
 function NewMessage(props){
@@ -11,7 +12,7 @@ function NewMessage(props){
 
     useEffect(() => {
         async function fetchData() {
-            const res = await fetch('http://localhost:8080/api/usersInfo')
+            const res = await fetch(`http://${root}/api/usersInfo`)
             const json = await res.json();
 
             setUsernameList(json);

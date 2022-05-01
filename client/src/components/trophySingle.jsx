@@ -10,6 +10,7 @@ import crystal from './images/trophy-icons/crystal.png'
 import clover from './images/trophy-icons/clover.png'
 import sword from './images/trophy-icons/sword.png'
 import prize from './images/trophy-icons/prize.png'
+import root from '../root'
 
 const addTrophy = async (name, image, trophyCost, username) => {
 
@@ -21,14 +22,14 @@ const addTrophy = async (name, image, trophyCost, username) => {
     const trophyDataJSON = JSON.stringify(trophyData);
     let newFunds;
     console.log(trophyCost)
-    const response = await fetch('http://localhost:8080/api/user/self', {
+    const response = await fetch(`${root}/api/user/self`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
     });
     const data = await response.json();
     const funds = await data.funds;
     if (funds >= trophyCost) {
-        fetch("http://localhost:8080/api/trophy", {
+        fetch(`${root}/api/trophy`, {
             method: "POST",
             headers: {'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
             body: trophyDataJSON
@@ -38,7 +39,7 @@ const addTrophy = async (name, image, trophyCost, username) => {
         const newUserFunds = {funds: newFunds};
         const newUserFundsJSON = JSON.stringify(newUserFunds);
 
-        fetch("http://localhost:8080/api/user?username=" + username, {
+        fetch(`${root}/api/user?username=${username}`, {
             method: "PATCH",
             headers: {'Content-Type': 'application/json'},
             body: newUserFundsJSON
@@ -49,7 +50,7 @@ const addTrophy = async (name, image, trophyCost, username) => {
 
         console.log(newUserTrophyDataJSON)
 
-        fetch("http://localhost:8080/api/storeItemAddUser?name=" + name, {
+        fetch(`${root}/api/storeItemAddUser?name=${name}`, {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: newUserTrophyDataJSON

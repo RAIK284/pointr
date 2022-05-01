@@ -8,6 +8,7 @@ import {verifyEmail} from "./scripts/signUpValidation.js"
 import {verifyName} from "./scripts/signUpValidation.js"
 import {verifyUsername} from "./scripts/signUpValidation.js"
 import {createUser} from "./scripts/signUpValidation.js"
+import root from '../root'
 //reference: https://mui.com/components/drawers/
 
 
@@ -29,7 +30,7 @@ class SettingsPage extends Component {
     }
 
     async componentDidMount() {
-        fetch('http://localhost:8080/api/user/self', {
+        fetch(`${root}/api/user/self`, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
         })
@@ -76,7 +77,7 @@ class SettingsPage extends Component {
 
     handleSignOut() {
         console.log("here")
-        fetch("http://localhost:8080/api/signout", {
+        fetch(`${root}/api/signout`, {
             method: "POST",
             headers: {'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
         });
@@ -103,7 +104,7 @@ class SettingsPage extends Component {
 
         console.log(localStorage.getItem("token")._id)
 
-        fetch("http://localhost:8080/api/user?username=" + this.state.username, {
+        fetch(`${root}/api/user?username=${this.state.username}`, {
             method: "PATCH",
             headers: {'Content-Type': 'application/json'},
             body: jsonData

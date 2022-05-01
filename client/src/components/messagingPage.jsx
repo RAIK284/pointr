@@ -5,6 +5,7 @@ import MessageDisplayBox from "./messageDisplayBox";
 import InternalHeading from "./internalHeading";
 import HeaderDrawer from "./headerDrawer";
 import NewMessage from "./newMessage";
+import root from "../root"
 
 class MessagingPage extends Component {
     
@@ -25,7 +26,7 @@ class MessagingPage extends Component {
 
     async componentDidMount() {
 
-        await fetch('http://localhost:8080/api/user/self', {
+        await fetch(`${root}/api/user/self`, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
         })
@@ -34,11 +35,11 @@ class MessagingPage extends Component {
                 username: data.username
             }));
 
-        await fetch('http://localhost:8080/api/message?receiver=' + this.state.username)
+        await fetch(`http://${root}/api/message?receiver=${this.state.username}`)
             .then(response => response.json())
             .then(data => this.setState({receivedMessages: data}))
 
-         fetch('http://localhost:8080/api/message?sender=' + this.state.username)
+         fetch(`http://${root}/api/message?sender=${this.state.username}`)
              .then(response => response.json())
              .then(data => this.setState({sentMessages: data}))
     }

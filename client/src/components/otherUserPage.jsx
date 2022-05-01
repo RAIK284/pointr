@@ -50,7 +50,7 @@ class OtherUserPage extends Component {
     }
 
     fetchData = async (id) => {
-        const response =  await fetch('http://localhost:8080/api/user?username=' + id)
+        const response =  await fetch(`${root}/api/user?username=${id}`)
         const data = await response.json();
         console.log(data)
         if (data.isPrivate === false) {
@@ -70,7 +70,7 @@ class OtherUserPage extends Component {
     };
 
     async getLeaderboardInformation () {
-        await fetch('http://localhost:8080/api/leaderboard')
+        await fetch(`${root}/api/leaderboard`)
             .then(response => response.json())
             .then(data => {this.getUserRank(data)})
     }
@@ -79,7 +79,6 @@ class OtherUserPage extends Component {
         let rank = 1;
         data.forEach((user) => {
             if (user.username === this.state.username) {
-                console.log("happened")
                 this.setState({leaderboardRank: rank})
             } else {
                 rank++;
