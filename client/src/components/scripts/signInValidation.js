@@ -17,7 +17,7 @@ async function validateUser()  {
     const jsonUserData = JSON.stringify(jsonUserDataObject);
 
     //Make a post request with the JSON object to login.
-    const response = await fetch("http://localhost:8080/api/login", {
+    const response = await fetch(`${document.URL.substr(0,document.URL.lastIndexOf('/'))}/api/login`, {
         method: "POST",
         headers: {'Content-Type': 'application/json'},
         body: jsonUserData
