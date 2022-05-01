@@ -61,7 +61,7 @@ class StorePage extends Component {
 
         fetch(`${root}/api/mostPopularStoreItem`)
             .then(response => response.json())
-            .then((data) => fetch('http://localhost:8080/api/storeItem?name=' + data.name))
+            .then((data) => fetch(`${root}/api/storeItem?name=${data.name}`))
             .then(response => response.json())
             .then((data) => {this.setState({mostPopularTrophyData: data})})
             .then(() => console.log(this.state))
