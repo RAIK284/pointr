@@ -51,7 +51,7 @@ class HeaderDrawer extends React.Component {
             headers: { 'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
         })
             .then(response => response.json())
-            .then(data => this.setState({image: data.profileImg})).then(console.log(this.state))
+            .then(data => this.setState({image: data.profileImg}))
     }
 
 
