@@ -48,6 +48,7 @@ class OtherUserPage extends Component {
     componentDidMount() {
         let { id } = this.props.params;
         this.fetchData(id).then(() => this.getLeaderboardInformation());
+        console.log("this is the id: ", id)
     }
 
     fetchData = async (id) => {
