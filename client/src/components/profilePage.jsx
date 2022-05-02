@@ -9,7 +9,6 @@ import clover from './images/trophy-icons/clover.png'
 import sword from './images/trophy-icons/sword.png'
 import prize from './images/trophy-icons/prize.png'
 import HeaderDrawer from "./headerDrawer.jsx";
-//reference: https://mui.com/components/drawers/
 import {useParams} from "react-router-dom";
 import './styles/profilePage.css';
 
@@ -17,7 +16,6 @@ function withParams(Component) {
     return props => <Component {...props} params={useParams()} />;
 }
 
-const drawerWidth = 240;
 class ProfilePage extends Component {
     constructor(props) {
         super(props);
@@ -161,10 +159,4 @@ class ProfilePage extends Component {
         );
     }
 }
-
-// SignIn.propTypes = {
-//     field1: PropTypes.string.isRequired,
-//     field2: PropTypes.string.isRequired,
-// };
-
 export default ProfilePage;
