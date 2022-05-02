@@ -9,19 +9,16 @@ class HomePage extends Component {
     render() {
         return (
             <React.Fragment>
-               
-
-                    <MuiNavbar
-                        logoText="Pointr"
-                        background="#0064FF"
-                        navItemPosition="right"
-                        InputLabelProps={{ style: { fontFamily:'Poppins', fontWeight: '700px',borderWidth:'3px'}  }}
-
-                    >
-                        <NavItem to="/">Contact</NavItem>
-                        <NavItem to="/">About</NavItem>
-                        <NavItem to="/signin">Log In</NavItem>
-                    </MuiNavbar> 
+                    <div id="header-content">
+                        <div className="pointr">
+                            Pointr
+                        </div>
+                        <div id="misc-header-content">
+                            <Button className='content' id ="login-button" variant="contained" size="large" onClick={()=>{window.location.href='/signin'}}>Log In</Button>
+                            <p className="content">Contact</p>
+                            <p className="content">About</p>
+                        </div>
+                    </div>
 
                     <div className="css-selector">
                         <div id="homeTitleWrapper">
