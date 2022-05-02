@@ -57,7 +57,7 @@ class OtherUserPage extends Component {
         const username = JSON.stringify(id)
         //const response = await fetch("https://pointr-project.herokuapp.com/api/user?username=" + username)
         var responseClone; // 1
-        fetch('https://pointr-project.herokuapp.com/api/user?username=" + username')
+        fetch('https://pointr-project.herokuapp.com/api/user?username=' + username)
             .then(function (response) {
                 responseClone = response.clone(); // 2
                 return response.json();
