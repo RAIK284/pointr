@@ -46,13 +46,14 @@ class OtherUserPage extends Component {
     }
 
     componentDidMount() {
-        let id = this.props.params;
+        let { id } = this.props.params;
         this.fetchData(id).then(() => this.getLeaderboardInformation());
         console.log("this is the id: ", id)
     }
 
     fetchData = async (id) => {
-        const response =  await fetch(`${root}/api/user?username=${id}`)
+        console.log("this is the email again tho")
+        const response =  await fetch(`${root}/api/user?username=${JSON.stringify(id)}`)
         const data = await response.json();
         console.log(data)
         if (data.isPrivate === false) {
