@@ -35,11 +35,11 @@ class MessagingPage extends Component {
                 username: data.username
             }));
 
-        await fetch(`http://${root}/api/message?receiver=${this.state.username}`)
+        await fetch(`${root}/api/message?receiver=${this.state.username}`)
             .then(response => response.json())
             .then(data => this.setState({receivedMessages: data}))
 
-         fetch(`http://${root}/api/message?sender=${this.state.username}`)
+         fetch(`${root}/api/message?sender=${this.state.username}`)
              .then(response => response.json())
              .then(data => this.setState({sentMessages: data}))
     }
