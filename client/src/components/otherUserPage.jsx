@@ -45,15 +45,16 @@ class OtherUserPage extends Component {
                 leaderboardRank: "?"}
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         let { id } = this.props.params;
-        this.fetchData(id).then(() => this.getLeaderboardInformation());
+        await this.fetchData(id)
+        await this.getLeaderboardInformation();
         console.log("this is the id: ", id)
     }
 
     fetchData = async (id) => {
         console.log("this is the email again tho")
-        const response =  await fetch(`${root}/api/user?username=${JSON.stringify(id)}`)
+        const response = await fetch(`${root}/api/user?username=${id}`)
         const data = await response.json();
         console.log(data)
         if (data.isPrivate === false) {
