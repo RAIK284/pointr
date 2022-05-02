@@ -6,7 +6,8 @@
     background-color: #0064FF;
     padding: 1rem 1rem 1rem 1rem;
     color: white;
-    font-size: 28px;
+    font-size: 25px;
+    font-style: bold;
 }
 .pointr
 {
@@ -21,6 +22,11 @@
 {
     background-color: #02BA90;
     margin-right: 4rem;
+    margin-top: -0.5rem;
+    font-family: 'Poppins';
+    font-weight: 700px;
+    font-size: 20px;
+    
 }
 .content
 {
