@@ -55,7 +55,8 @@ class OtherUserPage extends Component {
     fetchData = async (id) => {
         console.log("this is the id again tho", id)
         const username = JSON.stringify(id)
-        const response = await fetch(root + "/api/user?username=" + username)
+        const response = await fetch("https://pointr-project.herokuapp.com/api/user?username=" + username)
+        console.log("response", response)
         const data = await response.json();
         console.log(data)
         if (data.isPrivate === false) {
