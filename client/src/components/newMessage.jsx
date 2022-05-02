@@ -12,7 +12,7 @@ function NewMessage(props){
 
     useEffect(() => {
         async function fetchData() {
-            const res = await fetch(`http://${root}/api/usersInfo`)
+            const res = await fetch(`${root}/api/usersInfo`)
             const json = await res.json();
 
             setUsernameList(json);
