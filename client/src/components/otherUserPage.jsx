@@ -55,7 +55,22 @@ class OtherUserPage extends Component {
     fetchData = async (id) => {
         console.log("this is the id again tho", id)
         const username = JSON.stringify(id)
-        const response = await fetch("https://pointr-project.herokuapp.com/api/user?username=" + username)
+        //const response = await fetch("https://pointr-project.herokuapp.com/api/user?username=" + username)
+        var responseClone; // 1
+        fetch('https://pointr-project.herokuapp.com/api/user?username=" + username')
+            .then(function (response) {
+                responseClone = response.clone(); // 2
+                return response.json();
+            })
+            .then(function (data) {
+                // Do something with data
+            }, function (rejectionReason) { // 3
+                console.log('Error parsing JSON from response:', rejectionReason, responseClone); // 4
+                responseClone.text() // 5
+                    .then(function (bodyText) {
+                        console.log('Received the following instead of valid JSON:', bodyText); // 6
+                    });
+            });
         console.log("response", response)
         const data = await response.json();
         console.log(data)
