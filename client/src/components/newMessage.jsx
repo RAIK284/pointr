@@ -66,7 +66,7 @@ function NewMessage(props){
     getUserInformation();
 
     async function getUserInformation() {
-        fetch('http://localhost:8080/api/user/self', {
+        fetch(`${root}/api/user/self`, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
         })
@@ -75,19 +75,19 @@ function NewMessage(props){
     }
 
     async function getReceiverName(messageObject) {
-        const response = await fetch('http://localhost:8080/api/user?username=' + messageObject.receiver);
+        const response = await fetch(`${root}/api/user?username=${messageObject.receiver}`);
         const data = await response.json();
         return data.name;
     }
 
     async function getReceiverFunds() {
-        const response = await fetch('http://localhost:8080/api/user?username=' + messageObject.receiver);
+        const response = await fetch(`${root}/api/user?username=${messageObject.receiver}`);
         const data = await response.json();
         return data.funds;
     }
 
     async function getReceiverAllTimeFunds() {
-        const response = await fetch('http://localhost:8080/api/user?username=' + messageObject.receiver);
+        const response = await fetch(`${root}/api/user?username=${messageObject.receiver}`);
         const data = await response.json();
         return data.allTimeFunds;
     }
@@ -184,7 +184,7 @@ function NewMessage(props){
         messageObject.receiverName = receiverName;
         const jsonData = JSON.stringify(messageObject);
 
-        fetch("http://localhost:8080/api/message", {
+        fetch(`${root}/api/message`, {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: jsonData
@@ -230,13 +230,13 @@ function NewMessage(props){
             console.log(senderData)
             console.log(receiverData)
 
-            fetch("http://localhost:8080/api/user?username=" + sender, {
+            fetch(`${root}/api/user?username=${sender}`, {
                 method: "PATCH",
                 headers: {'Content-Type': 'application/json'},
                 body: senderDataJSON
             });
 
-            fetch("http://localhost:8080/api/user?username=" + document.getElementById("selectedEmail").value, {
+            fetch(`${root}/api/user?username=${document.getElementById("selectedEmail").value}`, {
                 method: "PATCH",
                 headers: {'Content-Type': 'application/json'},
                 body: receiverDataJSON
