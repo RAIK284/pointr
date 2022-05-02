@@ -54,7 +54,7 @@ class OtherUserPage extends Component {
 
     fetchData = async (id) => {
         console.log("this is the id again tho", id)
-        const response = await fetch(`${root}/api/user?username=${id}`)
+        const response = await fetch(root + "/api/user?username=" + id)
         const data = await response.json();
         console.log(data)
         if (data.isPrivate === false) {
