@@ -18,6 +18,7 @@ class MessagingPage extends Component {
         }
     }
 
+    // Handles the switch from displaying sent vs received messages
     handleChange() {
         const newStatus = !this.state.viewStatus;
         this.setState({viewStatus: newStatus});

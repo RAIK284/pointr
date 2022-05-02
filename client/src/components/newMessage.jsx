@@ -4,10 +4,9 @@ import Button from '@mui/material/Button';
 import TokenCostButton from "./tokenCostButton";
 import emojiDataExport from './emojiData.js'
 
-
+// New Message popup for the messaging page
 function NewMessage(props){
     const [usernameList, setUsernameList] = useState([]);
-
 
     useEffect(() => {
         async function fetchData() {
@@ -20,35 +19,7 @@ function NewMessage(props){
         fetchData();
     }, [])
 
-    // filterData();
-
-    // function filterData() {
-    //     const newList = usernameList;
-    //     const keys = Object.keys(newList);
-    //     let i = 0;
-    //     for (const key of keys) {
-    //         // console.log("DKS:FJSLDFJS:LDFJL")
-    //         // console.log(usernameList[Object.keys(usernameList)[i]])
-    //         console.log(newList[Object.keys(newList)[i]].username)
-    //         i++;
-    //         if (newList[Object.keys(newList)[i]].username === sender) {
-    //             console.log("DKS:FJSLDFJS:LDFJL")
-    //             console.log(newList[Object.keys(newList)[0]])
-    //             delete newList[Object.keys(newList)[i]]
-    //         }
-    //     }
-    //     setUsernameList(newList);
-    // }
-    
-
-
-    // console.log("USERNAME LIST")
-    // console.log(usernameList)
-
-
-
-
-
+    // Data about emojis and their value
     const emojiData = emojiDataExport;
 
     const [email, setEmail] = useState('');
@@ -91,6 +62,7 @@ function NewMessage(props){
         return data.allTimeFunds;
     }
 
+    // Message Object that matches what is in the database/post request
     const messageObject = {
         "name": name,
         "receiverName": '',
@@ -102,11 +74,12 @@ function NewMessage(props){
         "isRead": false
     }
 
+    // changes what the message is as the user types
     const handleInput = () => {
         setMessageData()
-        console.log(messageObject)
     }
 
+    // dict to index emoji's versus their value
     var dict = {
         '😂': emojiData.joyTears.price,
         '😎': emojiData.sunglass.price,
@@ -120,22 +93,16 @@ function NewMessage(props){
         '🔥': emojiData.fire.price
     }
     
-    
+    // extract emojis from the message string
     function removeEmojis(str) {
         var emojiRE = /(\P{EPres})|(\P{ExtPict})/gu;
         return str.replace(emojiRE, '');
     }
 
-    function removeNonEmojis(str) {
-        var emojiRE = /(\P{EPres})|(\P{ExtPict})/gu;
-        return str.replace(emojiRE, '');
-    }
-
+    // calculate message value based on emojis used
     const getMessageValue = (messageBody) => {
 
         var messageBodyPostCull = removeEmojis(messageBody)
-
-        var messageBodyPostCull = removeNonEmojis(messageBody)
 
         var totalValue = 0
 
@@ -162,7 +129,7 @@ function NewMessage(props){
         setMessageBody(messageBody)
     }, [messageBody]);
 
-
+    // create message object so it is ready to send
     const setMessageData = async () => {
         messageObject.value = getMessageValue(messageBody);
         setMessageValue(getMessageValue(messageBody));
@@ -179,6 +146,7 @@ function NewMessage(props){
         }
     }
 
+    // send message
     const postMessage = async (messageObject, receiverName) => {
         messageObject.receiverName = receiverName;
         const jsonData = JSON.stringify(messageObject);
@@ -202,6 +170,7 @@ function NewMessage(props){
 
     useEffect(() => console.log(messageBody), [messageBody]);
 
+    // reduce user messaging points based on value of message sent
     const subtractMessageValue = async (messageObject) => {
         const receiverFunds = await getReceiverFunds();
         const receiverAllTimeFunds = await getReceiverAllTimeFunds();
@@ -211,8 +180,8 @@ function NewMessage(props){
 
         const newAllTimeFunds = receiverAllTimeFunds + messageObject.value;
         const newAllTimeFundsValue = parseInt(newAllTimeFunds);
-        console.log("this is the receiver" + receiver)
-        console.log("new funds" + newFunds)
+
+        // if enough funds, send the message
         if (newMessagingPoints >= 0) {
             const senderData = {
                 messagingPoints: newMessagingPoints
@@ -242,7 +211,9 @@ function NewMessage(props){
             });
             getUserInformation();
             return true;
-        } else {
+        } 
+        // alert if not enough points
+        else {
             alert("You don't have enough messaging points to send that!")
             return false;
         }

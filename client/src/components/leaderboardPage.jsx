@@ -13,11 +13,6 @@ import keck from "./images/profile-pictures/keck.jpg"
 import sam from "./images/profile-pictures/sam.png"
 
 //reference: https://mui.com/components/drawers/
-/* fake data for rankings table, delete this const once connected to our database */
-// var tableData = [{ name: "@fake data", funds: 200, rank: 4 }, 
-// { name: "@fakeData2", funds: 150, rank: 5 },
-// { name: "@fakeData3", funds: 100, rank: 6}, { name: "@user3", funds: 90, rank: 7}, 
-// { name: "@fakeData4", funds: 80, rank: 8}, { name: "@user5", funds: 70, rank: 9}, { name: "@user6", funds: 60, rank: 10},]
 
 class LeaderBoardPage extends Component {
     constructor(props) {
@@ -49,6 +44,7 @@ class LeaderBoardPage extends Component {
         console.log(this.state.tableData)
     }
 
+    // take raw data from Get call and convert it into the format needed to display the top 10 leaders
     async getTableData(data){
         const tableData = []
         var rank = 1
@@ -126,9 +122,6 @@ class LeaderBoardPage extends Component {
                     <div id="allDisplay">
                         <table id="rankingTable">
                             <tr>
-                            {/* <th>Rank</th>    
-                            <th>Username</th>
-                            <th>FUNds</th> */}
                             </tr>
                             {this.state.tableData.slice(3,).map((val, key) => {
                             return (

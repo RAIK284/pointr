@@ -59,7 +59,7 @@ const addTrophy = async (name, image, trophyCost, username) => {
 
 
 
-        alert('Trophy purchased! (Maybe we should have a popup for this?)');
+        alert('Trophy purchased!');
     } else {
 
         alert("You can't afford this trophy!");

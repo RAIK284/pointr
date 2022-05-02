@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import './styles/carousel.css'
 
 // reference: https://github.com/express-labs/pure-react-carousel
+// image carousel for the profile page
 class Carousel extends React.Component {
 
     render() {
@@ -42,50 +43,6 @@ class Carousel extends React.Component {
         );
     }
   }
-
-// <CarouselProvider
-//     naturalSlideWidth={this.props.width}
-//     naturalSlideHeight={this.props.height}
-//     totalSlides={this.props.numslides}
-//     isIntrinsicHeight={true}
-//     visibleSlides={this.props.visibleSlides}
-//     step={1}
-// >
-//     <Slider>
-//         <div classname="slider">
-//             {
-//                 images.map((image,index) =>
-//                     <Slide index={index} classname="img">
-//                         <img
-//                             height={this.props.height}
-//                             width={this.props.width}
-//                             alt="Kachowski"
-//                             className="img"
-//                             src={image}
-//                         />
-//                     </Slide>
-//                 )
-//             }
-//         </div>
-//
-//         {/* <Slide index={0}>
-//                     <img
-//                     height={this.props.height}
-//                     width={this.props.width}
-//                     alt="Kachowski"
-//                     src={this.props.images[0]}/>
-//                 </Slide>
-//                 <Slide index={1}>
-//                 <img
-//                     height={this.props.height}
-//                     width={this.props.width}
-//                     alt="Kachowski"
-//                     src={this.props.images[1]}/>
-//                 </Slide> */}
-//     </Slider>
-//     <ButtonBack>Back</ButtonBack>
-//     <ButtonNext>Next</ButtonNext>
-// </CarouselProvider>
 
 Carousel.propTypes = {
     width: PropTypes.number.isRequired,

@@ -15,15 +15,9 @@ class ExplorePage extends Component {
             <InternalHeading title="Explore"></InternalHeading>
             
                 <div id="content">
-                        {/* <p className="header">Explore</p> */}
-                        {/* <input type="text" placeholder="Search for users..." className="search"></input> */}
                         <img align="Right" className="searchbarIcon"  alt="search icon" src={searchicon}/>
-                        <SearchBar/>
-                       
-                        
+                        <SearchBar/>                       
                     </div>
-                
-
                 
             </React.Fragment>
         );

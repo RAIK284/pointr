@@ -13,17 +13,12 @@ import clover from './images/trophy-icons/clover.png'
 import sword from './images/trophy-icons/sword.png'
 import prize from './images/trophy-icons/prize.png'
 
-
+// popup for the most popular trophy on FUNds store page
 function MostPopular(props) {
 
     const [trophyTitle, setTrophyTitle] = useState(props.title);
     const [trophyImage, setTrophyImage] = useState(props.image);
     const [userList, setUserList] = useState([...new Set(props.users)])
-
-    // const [trophyDescription, setTrophyDescription] = useState(props.description);
-    // const [trophyCost, setTrophyCost] = useState(props.cost);
-    // const [index, setIndex] = useState(props.index);
-    // const [username, setUsername] = useState(props.username);
 
     const imageObjects = {
         "ball": ball,

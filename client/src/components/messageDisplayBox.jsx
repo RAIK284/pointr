@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import './styles/messageDisplayBox.css';
 import Button from '@mui/material/Button';
 
+// component for displaying a single message
 class MessageDisplayBox extends Component {
     constructor(props) {
         super(props);

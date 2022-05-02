@@ -37,20 +37,13 @@ function List(props) {
     {filteredData.map((item, index) => (
         <div>
             {
-                /* count < 3
-                ? */
-                /* onLoad={()=>{count++}} */
                 <div  >
                     <ProfileBox otherProfile={item} index={index}/>
                 </div>
-                /* :
-                false */
             }
         </div>
 
     ))}
-    {/*         </ul>
- */}
 </div>
 ) : '';
 }
