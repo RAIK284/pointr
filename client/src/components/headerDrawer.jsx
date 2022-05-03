@@ -37,7 +37,7 @@ class HeaderDrawer extends React.Component {
     }
 
     async getUserInformation() {
-        fetch(`${developmentURL/api/user/self`, {
+        fetch(`${developmentURL}/api/user/self`, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
         })
