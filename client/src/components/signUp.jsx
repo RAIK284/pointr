@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import './styles/signUp.css';
 import Button from '@mui/material/Button';
 import {Link} from 'react-router-dom';
-//import Stack from '@mui/material/Stack';
-//import PropTypes from 'prop-types';
 import {verifyPassword} from "./scripts/signUpValidation.js"
 import {verifyEmail} from "./scripts/signUpValidation.js"
 import {verifyName} from "./scripts/signUpValidation.js"
@@ -37,7 +35,7 @@ class SignUp extends Component {
         });
     }
 
-
+    // check correct username and email when info submitted
     async handleSubmit(event) {
         this.state.loading = true;
         await this.checkUsername()
@@ -47,18 +45,21 @@ class SignUp extends Component {
 
     }
 
+    // check that submitted username is not existing in system
     async checkUsername() {
         await isExistingUsername(this.state.username)
             .then(response => {this.setState({isExistingUsername: response})})
             .then(() => {this.setState({loading: false})})
     }
 
+    // check that submitted email is not existing in system
     async checkEmail() {
         await isExistingEmail(this.state.email)
             .then(response => {this.setState({isExistingEmail: response})})
             .then(() => {this.setState({loading: false})})
     }
 
+    // verify all data passed in by user for signing up and alert if incorrect
     handleData() {
         if (verifyUsername(this.state.username) !== true) {
             alert(verifyUsername(this.state.username))

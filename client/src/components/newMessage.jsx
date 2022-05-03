@@ -228,8 +228,6 @@ function NewMessage(props){
                  
                     <div className="box">
                         <select id="selectedEmail">
-                            {/* {emailList} */}
-                            {/* look at store page */}
                             {usernameList.map((user) => (<option>{user.username}</option>))}
 
                         </select>

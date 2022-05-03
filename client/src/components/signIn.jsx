@@ -61,10 +61,4 @@ class SignIn extends Component {
     }
 }
 
-// SignIn.propTypes = {
-//     field1: PropTypes.string.isRequired,
-//     field2: PropTypes.string.isRequired,
-// };
-
-
 export default SignIn;

@@ -79,6 +79,7 @@ class HeaderDrawer extends React.Component {
 
 
             
+        // handle clicking on side navbar throughout application
         const changePage  =  (index) =>
         {
             switch(index)

@@ -43,6 +43,7 @@ export function verifyUsername(username) {
     }
 }
 
+// verify that email is valid format
 export function verifyEmail(email) {
     if ([...email].length === 0) {
         return "Please input an email!"
@@ -53,6 +54,7 @@ export function verifyEmail(email) {
     }
 }
 
+// verify password constraints
 export function verifyPassword(password) {
     if ([...password].length < 8){
         return "Password is too short! It must be at least 8 characters long"

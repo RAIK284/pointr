@@ -141,34 +141,12 @@ class StorePage extends Component {
                                  title={this.state.mostPopularTrophyData.name}
                                  image={this.state.mostPopularTrophyData.image}
                                  users={this.state.mostPopularTrophyData.userList}></MostPopular> : ""}
-
-                    {/*    <TrophySingle*/}
-                    {/*        trigger={this.state.mostPopularTrophyStatus}*/}
-                    {/*        onClick={()=> this.setState({mostPopularTrophyStatus: false})}*/}
-                    {/*        title={this.state.mostPopularTrophyData.name}*/}
-                    {/*        description={this.state.mostPopularTrophyData.description}*/}
-                    {/*        cost={this.state.mostPopularTrophyData.price}*/}
-                    {/*        image={this.state.mostPopularTrophyData.image}*/}
-                    {/*        userFunds={this.state.funds}*/}
-                    {/*        username={this.state.username}>*/}
-                    {/*    </TrophySingle> : ""}*/}
                 </div>
             </div>
-           
-                
-                    
-
-                   
-
-                    
-                   
-
-            
-                    
+                           
             </React.Fragment>
         );
     }
-
     
 }
 

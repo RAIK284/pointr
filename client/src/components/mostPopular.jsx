@@ -56,19 +56,6 @@ function MostPopular(props) {
                     <div onClick={props.onClick}>
                         <Button variant="text" id="closeButton"> X </Button>
                     </div>
-
-                    {/* <div id="trophyCostLarge">
-                        <text>Cost: </text>
-                        <var>{trophyCost}</var> {/* may not be the proper data type for the cost 
-                    </div>
-
-                    <div id="buttonWrapper">
-                        <Button variant="contained" id="addToProfile" onClick={()=>{addTrophy(trophyTitle, trophyImage, trophyCost, username)}}>Add to My Profile</Button>
-                    </div>
-
-                    <div onClick={props.onClick}>
-                        <Button variant="text" id="closeButton"> X </Button>
-                    </div> */}
                     {props.children}
                 </div>
             </div>

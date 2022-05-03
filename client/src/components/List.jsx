@@ -18,8 +18,7 @@ function List(props) {
         fetchData();
     }, [])
 
-    console.log(userData)
-    //const data = fetch()
+    // filter data for use in explore page
     const filteredData = userData.filter((el) => {
         //if no input the return the original
         if (props.input === '') {

@@ -125,7 +125,6 @@ class OtherUserPage extends Component {
             <div id="header">
             <img align='Left' id="otherImage" alt="profile pic" src={profileImages[this.state.profileImg]}/>
                 <p id="welcome">
-                    {/* need image here */}
                     {this.state.name}
                 </p>
                 <p id="sub">
@@ -153,7 +152,6 @@ class OtherUserPage extends Component {
                 <div id={"stats-container"}>
                     <span className="stats">FUNds <p className="rank">{this.state.funds} </p></span>
                     <Button className="btnPos" id="msgBtn" onClick={()=>{window.location.href='/messages'}}>Send a Message</Button>
-                    {/* send message button here */}
                 </div>
             </div>
             </React.Fragment>

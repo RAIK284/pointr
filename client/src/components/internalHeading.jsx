@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import './styles/internalHeading.css';
 
+// heading component for internal pages to keep formatting consistent
 class InternalHeading extends Component {
     constructor(props) {
         super(props);
