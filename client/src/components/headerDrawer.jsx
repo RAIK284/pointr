@@ -5,19 +5,13 @@ import './styles/headerDrawer.css'
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import { alpha } from '@mui/material/styles';
 import ListItemText from '@mui/material/ListItemText';
-// import car from './images/car.jpg'
 import ducky from './images/ducky.png'
-import { color } from '@mui/system';
-import { Hidden } from '@mui/material';
 import profileIcon from "./images/header-icons/profile.svg";
 import messageIcon from "./images/header-icons/message.svg";
 import storeIcon from "./images/header-icons/store.svg";
 import exploreIcon from "./images/header-icons/search.svg";
 import leaderboardIcon from "./images/header-icons/leaderboard.svg";
-
 import blake from "./images/profile-pictures/blake.png"
 import wally from "./images/profile-pictures/wally.png"
 import prema from "./images/profile-pictures/prema-cropped.png"
@@ -26,11 +20,8 @@ import keck from "./images/profile-pictures/keck.jpg"
 import sam from "./images/profile-pictures/sam.png"
 
 import root from '../root'
-
+    
 let imgsrc = [profileIcon, messageIcon, storeIcon, exploreIcon, leaderboardIcon]
-
-
-// reference: https://github.com/express-labs/pure-react-carousel
 
 const drawerWidth = 240;
 class HeaderDrawer extends React.Component {
@@ -44,7 +35,6 @@ class HeaderDrawer extends React.Component {
         await this.getUserInformation()
     }
 
-
     async getUserInformation() {
         fetch(`${root}/api/user/self`, {
             method: 'GET',
@@ -53,8 +43,6 @@ class HeaderDrawer extends React.Component {
             .then(response => response.json())
             .then(data => this.setState({image: data.profileImg}))
     }
-
-
     render() {
         const profileImages = {
             "blake": blake,
@@ -76,9 +64,7 @@ class HeaderDrawer extends React.Component {
         else {
             username = localStorage.getItem('username');
         }
-
-
-            
+      
         const changePage  =  (index) =>
         {
             switch(index)
@@ -105,20 +91,17 @@ class HeaderDrawer extends React.Component {
                     break;
             }
         }
-        
         return (
             <React.Fragment>
                 <Drawer
                 sx={{
                     ".MuiPaper-root": {
                         bgcolor: '#0064FF',
-                        borderRadius: "0px 25px 25px 0px"
-                        
+                        borderRadius: "0px 25px 25px 0px" 
                     },
                     ".inactive": {
                         color: '#FFFFFF',
                         opacity: 0.5
-
                     },
                     ".active": {
                         color: '#FFFFFF',
@@ -127,7 +110,6 @@ class HeaderDrawer extends React.Component {
                         color: '#FFFFFF',
                         opacity: 0.5
                     },
-
                     width: drawerWidth,
                     flexShrink: 0,
                     '& .MuiDrawer-paper': { width: drawerWidth, boxSizing: 'border-box', },

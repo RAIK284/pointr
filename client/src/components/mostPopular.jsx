@@ -1,7 +1,6 @@
-import React, { useState, Component } from "react";
+import React, { useState} from "react";
 import './styles/mostPopular.css';
 import './styles/trophy.css';
-import ducky from './images/ducky.png'
 import Button from '@mui/material/Button';
 
 import dice from './images/trophy-icons/dice.png'
@@ -20,11 +19,6 @@ function MostPopular(props) {
     const [trophyImage, setTrophyImage] = useState(props.image);
     const [userList, setUserList] = useState([...new Set(props.users)])
 
-    // const [trophyDescription, setTrophyDescription] = useState(props.description);
-    // const [trophyCost, setTrophyCost] = useState(props.cost);
-    // const [index, setIndex] = useState(props.index);
-    // const [username, setUsername] = useState(props.username);
-
     const imageObjects = {
         "ball": ball,
         "star" : star,
@@ -41,9 +35,8 @@ function MostPopular(props) {
 
         <React.Fragment>
             <div className="trophySingleBG">
-                <div className="singleDisplay"> {/* need to add close button */}
-                    <img alt="single trophy" src= {imageObjects[trophyImage]} id="trophyImageLarge"/> {/* src={imageObjects[trophyImage]} */}
-
+                <div className="singleDisplay">
+                    <img alt="single trophy" src= {imageObjects[trophyImage]} id="trophyImageLarge"/>
 
                     <div id="trophyTitle">
                         <text>
@@ -61,25 +54,9 @@ function MostPopular(props) {
                     <div onClick={props.onClick}>
                         <Button variant="text" id="closeButton"> X </Button>
                     </div>
-
-                    {/* <div id="trophyCostLarge">
-                        <text>Cost: </text>
-                        <var>{trophyCost}</var> {/* may not be the proper data type for the cost 
-                    </div>
-
-                    <div id="buttonWrapper">
-                        <Button variant="contained" id="addToProfile" onClick={()=>{addTrophy(trophyTitle, trophyImage, trophyCost, username)}}>Add to My Profile</Button>
-                    </div>
-
-                    <div onClick={props.onClick}>
-                        <Button variant="text" id="closeButton"> X </Button>
-                    </div> */}
                     {props.children}
                 </div>
             </div>
-
-
-
         </React.Fragment>
     ) : "";
 

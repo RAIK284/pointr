@@ -1,9 +1,6 @@
 import React, { Component } from "react";
-// import './styles/tokensBox.css';
 import './styles/newMessage.css'
 import Button from '@mui/material/Button';
-import smiley from './images/smiley.png'
-
 
 class TokenCostButton extends Component {
     constructor(props) {

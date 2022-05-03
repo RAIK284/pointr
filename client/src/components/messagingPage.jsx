@@ -53,11 +53,9 @@ class MessagingPage extends Component {
         for (let i = this.state.sentMessages.length - 1; i > 0; i--) {
             sentMessages.push(<MessageDisplayBox name={this.state.sentMessages[i].receiverName} username={this.state.sentMessages[i].receiver} messageBody={this.state.sentMessages[i].messageBody}></MessageDisplayBox>);
         }
-
         for (let i = this.state.receivedMessages.length - 1; i > 0; i--) {
             receivedMessages.push(<MessageDisplayBox name={this.state.receivedMessages[i].name} username={this.state.receivedMessages[i].sender} messageBody={this.state.receivedMessages[i].messageBody}></MessageDisplayBox>);
         }
-
         if (this.state.viewStatus) {
             return (
                 <React.Fragment >
@@ -79,9 +77,7 @@ class MessagingPage extends Component {
                         <div id="messageDisplayBoxes">
                             {sentMessages}
                         </div>
-
                     </div>
-
                     <NewMessage trigger={this.state.newMessage}>
                         <button className = 'closeButton' onClick={()=> this.setState({newMessage: false})}>
                             X
@@ -93,29 +89,19 @@ class MessagingPage extends Component {
             return (
                 <React.Fragment >
                     <div id="messagingBackground">
-
                         <HeaderDrawer index={1}></HeaderDrawer>
-
                         <InternalHeading title="Messages"></InternalHeading>
-
                         <Button variant="text" id= "newMessage" onClick={()=> this.setState({newMessage: true})}>
                             new message
                         </Button>
-
                         <label className="toggle">
                             <input type="checkbox" onChange={() => this.handleChange()}></input>
                             <span className="labels" data-on="Sent" data-off="Recieved"></span>
                         </label>
-
                         <div id="messageDisplayBoxes">
-                            {/* The way this is displaying is NOT how it should be. We should have a call
-                        to the api, and loop throug every message. Then, we display a box for every message. That way
-                        for ex if someone only has 2 messages only 2 boxes show up */}
                             {receivedMessages}
                         </div>
-
                     </div>
-
                     <NewMessage trigger={this.state.newMessage}>
                         <button className = 'closeButton' onClick={()=> this.setState({newMessage: false})}>
                             X
@@ -124,7 +110,6 @@ class MessagingPage extends Component {
                 </React.Fragment>
             );
         }
-
     }   
 }
 export default MessagingPage;

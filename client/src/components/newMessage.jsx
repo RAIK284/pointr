@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import './styles/newMessage.css';
 import Button from '@mui/material/Button';
 import TokenCostButton from "./tokenCostButton";
@@ -8,7 +8,6 @@ import root from '../root'
 
 function NewMessage(props){
     const [usernameList, setUsernameList] = useState([]);
-
 
     useEffect(() => {
         async function fetchData() {
@@ -20,35 +19,6 @@ function NewMessage(props){
 
         fetchData();
     }, [])
-
-    // filterData();
-
-    // function filterData() {
-    //     const newList = usernameList;
-    //     const keys = Object.keys(newList);
-    //     let i = 0;
-    //     for (const key of keys) {
-    //         // console.log("DKS:FJSLDFJS:LDFJL")
-    //         // console.log(usernameList[Object.keys(usernameList)[i]])
-    //         console.log(newList[Object.keys(newList)[i]].username)
-    //         i++;
-    //         if (newList[Object.keys(newList)[i]].username === sender) {
-    //             console.log("DKS:FJSLDFJS:LDFJL")
-    //             console.log(newList[Object.keys(newList)[0]])
-    //             delete newList[Object.keys(newList)[i]]
-    //         }
-    //     }
-    //     setUsernameList(newList);
-    // }
-    
-
-
-    // console.log("USERNAME LIST")
-    // console.log(usernameList)
-
-
-
-
 
     const emojiData = emojiDataExport;
 
@@ -258,8 +228,6 @@ function NewMessage(props){
                  
                     <div className="box">
                         <select id="selectedEmail">
-                            {/* {emailList} */}
-                            {/* look at store page */}
                             {usernameList.map((user) => (<option>{user.username}</option>))}
 
                         </select>
@@ -334,9 +302,6 @@ function NewMessage(props){
                     <Button variant="text" id= "send" onClick={() => handleInput()}>
                         Send
                     </Button>
-
-
-
                     {props.children}
                 </div>
 

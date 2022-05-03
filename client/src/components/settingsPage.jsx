@@ -9,9 +9,9 @@ import {verifyName} from "./scripts/signUpValidation.js"
 import {verifyUsername} from "./scripts/signUpValidation.js"
 import {createUser} from "./scripts/signUpValidation.js"
 import root from '../root'
+import {verifyPassword, verifyName} from "./scripts/signUpValidation.js"
+
 //reference: https://mui.com/components/drawers/
-
-
 
 class SettingsPage extends Component {
     constructor(props) {
@@ -129,7 +129,6 @@ class SettingsPage extends Component {
 
                             <label htmlFor="bio" className="settingsLabel">Change bio</label>
                             <input id = "bio" type="text" name="bio" data-testid="bio-input" value={this.state.bio} onChange={this.handleChange} placeholder="Enter new bio (55 character limit)" className="settingsEntry" maxlength="55" minlength="1" required></input>
-                            {/* This will be a logout button. <Button variant="contained" size="large" onClick={}>Logout</Button>*/}
                         </div>
                         <div id={"bottom-options"}>
                             <input type="checkbox" id="privacy"  className="settings-checkbox" data-testid="privacy-checkbox" name="privacy" checked={!this.state.isPrivate} onChange={this.handleChange} onClick={ () => { this.setState({ isPrivate: !this.state.isPrivate })}} required></input>
@@ -150,12 +149,8 @@ class SettingsPage extends Component {
                             <Button id="save" data-testid='save-button' variant="contained" size="large" onClick={async () => await this.handleSubmit()}>Save</Button>
                         </div>
                     </div>
-
-
-
             </React.Fragment>
         );
     }
 }
-
 export default SettingsPage;

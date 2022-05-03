@@ -1,16 +1,9 @@
 import React, { Component } from "react";
 import './styles/signUp.css';
 import Button from '@mui/material/Button';
-import {Link} from 'react-router-dom';
-//import Stack from '@mui/material/Stack';
-//import PropTypes from 'prop-types';
-import {verifyPassword} from "./scripts/signUpValidation.js"
-import {verifyEmail} from "./scripts/signUpValidation.js"
-import {verifyName} from "./scripts/signUpValidation.js"
-import {verifyUsername} from "./scripts/signUpValidation.js"
-import {isExistingUsername} from "./scripts/signUpValidation.js"
-import {isExistingEmail} from "./scripts/signUpValidation.js"
-import {createUser} from "./scripts/signUpValidation.js"
+import {verifyPassword, verifyEmail, verifyName, verifyUsername,
+    isExistingUsername, isExistingEmail, createUser} 
+    from "./scripts/signUpValidation.js"
 
 class SignUp extends Component {
     constructor(props) {
@@ -27,7 +20,6 @@ class SignUp extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-
     handleChange(event) {
         const target = event.target;
         const name = target.name;
@@ -36,8 +28,6 @@ class SignUp extends Component {
             [name]: event.target.value
         });
     }
-
-
     async handleSubmit(event) {
         this.state.loading = true;
         await this.checkUsername()
@@ -90,7 +80,6 @@ class SignUp extends Component {
                   <Button variant="text" id="toLogin" onClick={()=>{window.location.href='/signin'}}>Log In Here.</Button>
                     </div>
                     <div id="right-container">
-                    
                         <div className="suTitle">
                             <p>
                             Welcome to Pointr!
@@ -102,8 +91,6 @@ class SignUp extends Component {
                             Sign up for a free account today.
                             </p>
                         </div>
-                
-
                         <div id="info-container">
                                 <label  className="entryLabel">Name</label>
                                 
@@ -122,14 +109,11 @@ class SignUp extends Component {
                                 <input type="password" name="passwordConfirmation" data-testid="passwordConfirmation-input" value={this.state.passwordConfirmation} onChange={this.handleChange} placeholder="Confirm password" className="entry"  required></input>
                         </div>
 
-                        <Button id="signupbutton" variant="contained" size="large" onClick={async () => await this.handleSubmit()}>Sign Up</Button>
-                        
+                        <Button id="signupbutton" variant="contained" size="large" onClick={async () => await this.handleSubmit()}>Sign Up</Button> 
                     </div>
-                    
                 </div>
             </React.Fragment>
         );
     }
 }
-
 export default SignUp;

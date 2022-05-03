@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Carousel from './carousel.jsx';
 import dice from './images/trophy-icons/dice.png'
 import trophy from './images/trophy-icons/trophy.png'
 import star from './images/trophy-icons/star.png'
@@ -11,7 +10,6 @@ import prize from './images/trophy-icons/prize.png'
 import ducky from './images/ducky.png'
 import HeaderDrawer from "./headerDrawer.jsx";
 import { useParams } from "react-router-dom";
-//reference: https://mui.com/components/drawers/
 import PropTypes from 'prop-types';
 import './styles/profilePage.css';
 import './styles/otherUserPage.css'
@@ -129,7 +127,6 @@ class OtherUserPage extends Component {
             <div id="header">
             <img align='Left' id="otherImage" alt="profile pic" src={profileImages[this.state.profileImg]}/>
                 <p id="welcome">
-                    {/* need image here */}
                     {this.state.name}
                 </p>
                 <p id="sub">
@@ -150,14 +147,12 @@ class OtherUserPage extends Component {
                 <label htmlFor="trophies" className="trophiesLabel">Trophies</label>
                 <div id={"carousel-container"}>
                     <div id={"carousel-wrapper"}>
-                        {/* insert images here{trophyImages} */}
                         {trophyImages}
                     </div>
                 </div>
                 <div id={"stats-container"}>
                     <span className="stats">FUNds <p className="rank">{this.state.funds} </p></span>
                     <Button className="btnPos" id="msgBtn" onClick={()=>{window.location.href='/messages'}}>Send a Message</Button>
-                    {/* send message button here */}
                 </div>
             </div>
             </React.Fragment>
