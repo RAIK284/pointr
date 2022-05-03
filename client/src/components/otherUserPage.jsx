@@ -21,7 +21,7 @@ import shivani from "./images/profile-pictures/shivani.jpeg"
 import keck from "./images/profile-pictures/keck.jpg"
 import sam from "./images/profile-pictures/sam.png"
 import root from "../root"
-
+import developmentURL from "../root"
 
 
 function withParams(Component) {
@@ -52,8 +52,9 @@ class OtherUserPage extends Component {
 
     fetchData = async (id) => {
         console.log("this is the id again tho", id)
-        const username = JSON.stringify(id)
-        const response = await fetch("https://pointr-project.herokuapp.com/api/user?username=" + username)
+        const username = id.toString();
+        console.log(root)
+        const response = await fetch(`${developmentURL}/api/user?username=${username}`)
         console.log("response", response)
         const data = await response.json();
         console.log(data)

@@ -9,7 +9,6 @@ import {verifyName} from "./scripts/signUpValidation.js"
 import {verifyUsername} from "./scripts/signUpValidation.js"
 import {createUser} from "./scripts/signUpValidation.js"
 import root from '../root'
-import {verifyPassword, verifyName} from "./scripts/signUpValidation.js"
 
 //reference: https://mui.com/components/drawers/
 

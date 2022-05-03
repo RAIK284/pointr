@@ -1,3 +1,5 @@
+import root from '../../root'
+
 //Checks if user login is valid or not.
 async function validateUser()  {
 
@@ -17,7 +19,7 @@ async function validateUser()  {
     const jsonUserData = JSON.stringify(jsonUserDataObject);
 
     //Make a post request with the JSON object to login.
-    const response = await fetch(`${document.URL.substr(0,document.URL.lastIndexOf('/'))}/api/login`, {
+    const response = await fetch(`${root}/api/login`, {
         method: "POST",
         headers: {'Content-Type': 'application/json'},
         body: jsonUserData
@@ -38,3 +40,6 @@ async function validateUser()  {
 }
 
 export {validateUser};
+
+
+
