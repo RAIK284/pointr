@@ -20,7 +20,7 @@ import keck from "./images/profile-pictures/keck.jpg"
 import sam from "./images/profile-pictures/sam.png"
 
 import root from '../root'
-import developmentURL from '../root'
+import localURL from '../root'
     
 let imgsrc = [profileIcon, messageIcon, storeIcon, exploreIcon, leaderboardIcon]
 
@@ -37,7 +37,7 @@ class HeaderDrawer extends React.Component {
     }
 
     async getUserInformation() {
-        fetch(`${developmentURL}/api/user/self`, {
+        fetch(`${localURL}/api/user/self`, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
         })

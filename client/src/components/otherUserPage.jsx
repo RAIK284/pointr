@@ -54,7 +54,7 @@ class OtherUserPage extends Component {
         console.log("this is the id again tho", id)
         const username = id.toString();
         console.log(root)
-        const response = await fetch(`${developmentURL}/api/user?username=${username}`)
+        const response = await fetch(`${localURL}/api/user?username=${username}`)
         console.log("response", response)
         const data = await response.json();
         console.log(data)
