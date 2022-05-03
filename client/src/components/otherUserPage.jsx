@@ -21,7 +21,7 @@ import shivani from "./images/profile-pictures/shivani.jpeg"
 import keck from "./images/profile-pictures/keck.jpg"
 import sam from "./images/profile-pictures/sam.png"
 import root from "../root"
-import developmentURL from "../root"
+import localURL from "../root"
 
 
 function withParams(Component) {
