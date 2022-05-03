@@ -18,10 +18,9 @@ import prema from "./images/profile-pictures/prema-cropped.png"
 import shivani from "./images/profile-pictures/shivani.jpeg"
 import keck from "./images/profile-pictures/keck.jpg"
 import sam from "./images/profile-pictures/sam.png"
-
 import root from '../root'
-import localURL from '../root'
-    
+
+
 let imgsrc = [profileIcon, messageIcon, storeIcon, exploreIcon, leaderboardIcon]
 
 const drawerWidth = 240;
@@ -37,7 +36,7 @@ class HeaderDrawer extends React.Component {
     }
 
     async getUserInformation() {
-        fetch(`${localURL}/api/user/self`, {
+        fetch(`http//:localhost:8080/api/user/self`, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
         })
