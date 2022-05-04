@@ -28,8 +28,6 @@ async function validateUser()  {
     //If the user login is valid, print to console and response status is 200. Else, print and status is 401.
     if (response.status === 200) {
         // The response from signin only tells you if the user is valid. Does not return the actual user's data. Call the user endpoint to get that data.
-        // const userData = await response.json();
-        // console.log(userData)
         return response.json();
     } else {
         console.log("Incorrect email/password")

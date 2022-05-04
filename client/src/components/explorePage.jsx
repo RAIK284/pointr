@@ -5,7 +5,6 @@ import searchicon from "./images/header-icons/search.svg"
 import InternalHeading from "./internalHeading.jsx";
 import SearchBar from "./searchBar.jsx";
 
-
 class ExplorePage extends Component {
     render() {
         return (
@@ -14,8 +13,9 @@ class ExplorePage extends Component {
                 <InternalHeading title="Explore"></InternalHeading>
                 <div id="content">
                         <img align="Right" className="searchbarIcon"  alt="search icon" src={searchicon}/>
-                    <SearchBar/>
-                </div>
+                        <SearchBar/>                       
+                    </div>
+                
             </React.Fragment>
         );
     }

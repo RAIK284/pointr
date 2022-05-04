@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import './styles/newMessage.css'
 import Button from '@mui/material/Button';
 
+// single button for token and its cost to appear on new message popup
 class TokenCostButton extends Component {
     constructor(props) {
         super(props);

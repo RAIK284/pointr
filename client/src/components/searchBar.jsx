@@ -29,12 +29,12 @@ return (
         fullWidth
        
         label="Search for a user..."
-   
         
         InputLabelProps={{ style: { fontFamily:'Poppins', fontWeight: '700px',borderWidth:'3px'}  }}
         borderWidth='5px'
       />
     </div>
+
     <List input={inputText}/>
   </div>
 );

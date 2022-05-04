@@ -19,6 +19,7 @@ class MessagingPage extends Component {
         }
     }
 
+    // Handles the switch from displaying sent vs received messages
     handleChange() {
         const newStatus = !this.state.viewStatus;
         this.setState({viewStatus: newStatus});
@@ -56,6 +57,8 @@ class MessagingPage extends Component {
         for (let i = this.state.receivedMessages.length - 1; i > 0; i--) {
             receivedMessages.push(<MessageDisplayBox name={this.state.receivedMessages[i].name} username={this.state.receivedMessages[i].sender} messageBody={this.state.receivedMessages[i].messageBody}></MessageDisplayBox>);
         }
+
+        // if switch is toggled to see sent messages
         if (this.state.viewStatus) {
             return (
                 <React.Fragment >
@@ -85,7 +88,9 @@ class MessagingPage extends Component {
                     </NewMessage>
                 </React.Fragment>
             );
-        } else {
+        }
+        // else if received messages should be displayed
+        else {
             return (
                 <React.Fragment >
                     <div id="messagingBackground">

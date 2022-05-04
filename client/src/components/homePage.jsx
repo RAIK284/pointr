@@ -59,9 +59,11 @@ class HomePage extends Component {
 
                             </div>
                     </div>
+                    
             </React.Fragment>
                 
         );
     }
 }
+
 export default HomePage;
