@@ -64,7 +64,8 @@ class HeaderDrawer extends React.Component {
         else {
             username = localStorage.getItem('username');
         }
-      
+            
+        // handle clicking on side navbar throughout application
         const changePage  =  (index) =>
         {
             switch(index)

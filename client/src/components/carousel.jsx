@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import './styles/carousel.css'
 
 // reference: https://github.com/express-labs/pure-react-carousel
+// image carousel for the profile page
 class Carousel extends React.Component {
 
     render() {
@@ -42,6 +43,7 @@ class Carousel extends React.Component {
         );
     }
   }
+  
 Carousel.propTypes = {
     width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired,

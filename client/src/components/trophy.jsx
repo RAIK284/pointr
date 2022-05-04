@@ -22,6 +22,7 @@ class Trophy extends Component {
 
     render() {
 
+        // current trophy objects
         const imageObjects = {
             "ball": ball,
             "star" : star,

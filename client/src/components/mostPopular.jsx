@@ -12,7 +12,7 @@ import clover from './images/trophy-icons/clover.png'
 import sword from './images/trophy-icons/sword.png'
 import prize from './images/trophy-icons/prize.png'
 
-
+// popup for the most popular trophy on FUNds store page
 function MostPopular(props) {
 
     const [trophyTitle, setTrophyTitle] = useState(props.title);
@@ -36,6 +36,7 @@ function MostPopular(props) {
         <React.Fragment>
             <div className="trophySingleBG">
                 <div className="singleDisplay">
+
                     <img alt="single trophy" src= {imageObjects[trophyImage]} id="trophyImageLarge"/>
 
                     <div id="trophyTitle">
@@ -59,8 +60,6 @@ function MostPopular(props) {
             </div>
         </React.Fragment>
     ) : "";
-
-
 }
 
 export default MostPopular

@@ -47,10 +47,12 @@ class SettingsPage extends Component {
         });
     }
 
+    // asynch handle submission of settings change
     async handleSubmit(event) {
         this.handleData()
     }
 
+    // update user data based on settings changed
     handleData() {
         let valid = 1;
         if (this.state.name !== '') {
@@ -74,6 +76,7 @@ class SettingsPage extends Component {
         }
     }
 
+    // sign out user from application
     handleSignOut() {
         console.log("here")
         fetch(`${root}/api/signout`, {
@@ -85,6 +88,7 @@ class SettingsPage extends Component {
 
     }
 
+    // update user info based on input fields 
     async updateUser() {
         const newInfo = {}
         if (this.state.name !== '') {

@@ -23,11 +23,11 @@ import sam from "./images/profile-pictures/sam.png"
 import root from "../root"
 import localURL from "../root"
 
-
 function withParams(Component) {
     return props => <Component {...props} params={useParams()} />;
 }
 
+// similart to profile page, but to display other users in our system
 class OtherUserPage extends Component {
     constructor(props) {
         super(props);

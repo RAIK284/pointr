@@ -38,7 +38,7 @@ describe("<SearchBar />", () => {
         const inputElement = screen.getByTestId("searchEntry");
         userEvent.type(inputElement, testDataValue);
 
-        expect(component.inputText === testDataValue);
+        expect(container.inputText === testDataValue);
 
         //Need to reference "inputText" as the line above is not doing so.
     });

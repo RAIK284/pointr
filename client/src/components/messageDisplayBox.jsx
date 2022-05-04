@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import './styles/messageDisplayBox.css';
 
+// component for displaying a single message
 class MessageDisplayBox extends Component {
     constructor(props) {
         super(props);

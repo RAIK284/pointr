@@ -46,10 +46,9 @@ h1 {
     font-size: 90px;
 
     display: flex;
-
     text-align: right;
-
 }
+
 h2 {
     font-size: 45px;
     color: rgba(51, 51, 51, 0.8);    
@@ -63,14 +62,13 @@ h2 {
     display:flex;
     margin: 4%;
 }
+
 #column-right {
     float: right;
     margin-right: 20px;
 }
 
-
 .emailentry{
-
     border: 4px solid rgba(51, 51, 51, 0.5);
     box-sizing: border-box;
     border-radius: 20px;
@@ -82,17 +80,11 @@ h2 {
     color: rgba(51, 51, 51);
     line-height: 0;
 
-
     margin: 4%;
     letter-spacing: -0.015em;
-
     width: 496px;
     height: 60px;
-
-
 }
-
-
 
 body {
     height: 100vh;
@@ -111,7 +103,6 @@ body {
 }
 
 button#homepagebutton {
-  
     background: #FFFFFF;
     border-radius: 6px;
     
@@ -130,11 +121,7 @@ button#homepagebutton {
     display: flex;
     align-items: center;
     text-align: center;
-
 }
-
-
-
 
 .titleHeader{
     width: 100vw;
@@ -143,14 +130,7 @@ button#homepagebutton {
     background: linear-gradient(86.57deg, #65D7C0 2.83%, #02BA90 39.01%, #0064FF 96.43%);
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-
-
-
 }
-
-
-
-
 
 #homeTitleWrapper{
     position:relative;
@@ -162,14 +142,12 @@ button#homepagebutton {
     position: relative;
     top: 10%;
     margin-left: 18%;
-
 }
 
 #homeButtonWrapper{
     position:relative;
     top: 0%;
     left: 77%;
-
 }
 
 #homeTitle{
@@ -178,13 +156,8 @@ button#homepagebutton {
     font-weight: 700;
     font-size: 100px;
     line-height: 150px;
-
     letter-spacing: -0.015em;
-
-
-
     color: #FFFFFF;
-
 }
 
 #homeSubtitle{
@@ -195,35 +168,28 @@ button#homepagebutton {
     line-height: 68px;
     text-align: right;
     letter-spacing: -0.015em;
-
     color: #FFFFFF;
 }
 
-#rightBoxes{
-    
-    
+#rightBoxes{   
     height:50vh;
     width:100vw;
     margin-top: 10vh;
  
-
     display: flex;
     flex-direction: row;
     align-items:stretch;
     justify-content:space-evenly;
-    
 }
 
 #leftContent{
     position:fixed;
-
     height:50vh;
     width:50vw;
 
     display: flex;
     flex-direction: column;
-    justify-content:space-evenly;
-    
+    justify-content:space-evenly;   
 }
 
 .infoBox{
@@ -233,12 +199,9 @@ button#homepagebutton {
     font-size: 25px;
     line-height: 60px;
     
-    display: flex;
-    
+    display: flex;    
     letter-spacing: -0.015em;
-
     color: #333333;
-
     
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -249,8 +212,6 @@ button#homepagebutton {
     width: 230px;
     height: 230px;
     margin: auto;
- 
- 
 }
 
 .icon{
@@ -260,7 +221,6 @@ button#homepagebutton {
 }
 
 #icon1{
-    /* fill: #24887C; */
     filter: invert(43%) sepia(73%) saturate(395%) hue-rotate(123deg) brightness(89%) contrast(90%);
 }
 
@@ -271,7 +231,6 @@ button#homepagebutton {
 #icon3{
     filter: invert(79%) sepia(5%) saturate(3300%) hue-rotate(188deg) brightness(102%) contrast(101%);
 }
-
 
 .infoBoxWrapperLeft{
     margin-top: 5%;
@@ -294,8 +253,6 @@ button#homepagebutton {
     letter-spacing: -0.015em;
 
     color: #333333;
-
-
 }
 
 #startedText{
@@ -309,7 +266,6 @@ button#homepagebutton {
     letter-spacing: -0.015em;
 
     color: #333333;
-
 }
 
 .flex-container > div{
@@ -318,7 +274,6 @@ button#homepagebutton {
     background-color: #FFFFFF;
     width: 100vw;
     height: 50vh;
-
 }
 
 .captionLower{
@@ -332,9 +287,8 @@ button#homepagebutton {
     line-height: 45px;
     letter-spacing: -0.015em;
   
-   text-align: center;
+    text-align: center;
     color: #333333;
- 
 }
 
 .captionUpper{
@@ -348,23 +302,17 @@ button#homepagebutton {
     line-height: 45px;
     letter-spacing: -0.015em;
 
-    text-align: center;
-   
-    color: #333333;
-   
+    text-align: center;  
+    color: #333333;   
 }
 
 .infoBoxWrapper{
-
     height: 40vh;
     width: 100vw;
-    justify-content: center;
-    
-    
+    justify-content: center;    
 }
 
 /* Gradient animation generator code adapted from https://www.gradient-animator.com/ */
-
 .css-selector {
     width: 100vw;
     height: 40vh;
@@ -384,11 +332,13 @@ button#homepagebutton {
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
 }
+
 @-moz-keyframes titleHeader {
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
 }
+
 @keyframes titleHeader {
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}

@@ -1,17 +1,3 @@
-<h1>Tech Stack</h1>
-
-<h2>Front End: </h2>
-<li>React.js</li>
-<!-- <li>React.js</li>
-<li>CSS and HTML for Styling</li>
-<li>Design is based on our <a href="gttps://nodejs.org">Figma</a></li> -->
-
-<br>
-<h2>Back End: <h2>
-<!-- <li>node.js</li>
-<li>MongoDB</li> -->
-</br>
-
 
 <h1>Project setup</h1>
 
@@ -30,7 +16,15 @@
 
 <br></br>
 <h1>Deployment</h1>
-[fill in info here]
+<p> We were able to deploy our application via <a href="https://www.heroku.com/">Heroku</a></p>
+<p> Our deployed website can be found at: <a href="https://pointr-project.herokuapp.com/">https://pointr-project.herokuapp.com/</a></p>
+
+<i><b>IMPORTANT NOTE: </b> [detail the stuff that doesn't work on the deployed version here]</i>
+
+<br><br>
+
+<h1>Use Case / Demo Video</h1>
+<p> A short video of our application in use is linked <a href="https://use.vg/xmG3vX">here</a>. </p>
 <br><br>
 
 

@@ -5,7 +5,7 @@ import TokenCostButton from "./tokenCostButton";
 import emojiDataExport from './emojiData.js'
 import root from '../root'
 
-
+// New Message popup for the messaging page
 function NewMessage(props){
     const [usernameList, setUsernameList] = useState([]);
 
@@ -20,6 +20,7 @@ function NewMessage(props){
         fetchData();
     }, [])
 
+    // Data about emojis and their value
     const emojiData = emojiDataExport;
 
     const [email, setEmail] = useState('');
@@ -62,6 +63,7 @@ function NewMessage(props){
         return data.allTimeFunds;
     }
 
+    // Message Object that matches what is in the database/post request
     const messageObject = {
         "name": name,
         "receiverName": '',
@@ -73,11 +75,12 @@ function NewMessage(props){
         "isRead": false
     }
 
+    // changes what the message is as the user types
     const handleInput = () => {
         setMessageData()
-        console.log(messageObject)
     }
 
+    // dict to index emoji's versus their value
     var dict = {
         '😂': emojiData.joyTears.price,
         '😎': emojiData.sunglass.price,
@@ -91,22 +94,16 @@ function NewMessage(props){
         '🔥': emojiData.fire.price
     }
     
-    
+    // extract emojis from the message string
     function removeEmojis(str) {
         var emojiRE = /(\P{EPres})|(\P{ExtPict})/gu;
         return str.replace(emojiRE, '');
     }
 
-    function removeNonEmojis(str) {
-        var emojiRE = /(\P{EPres})|(\P{ExtPict})/gu;
-        return str.replace(emojiRE, '');
-    }
-
+    // calculate message value based on emojis used
     const getMessageValue = (messageBody) => {
 
         var messageBodyPostCull = removeEmojis(messageBody)
-
-        var messageBodyPostCull = removeNonEmojis(messageBody)
 
         var totalValue = 0
 
@@ -133,12 +130,12 @@ function NewMessage(props){
         setMessageBody(messageBody)
     }, [messageBody]);
 
-
+    // create message object so it is ready to send
     const setMessageData = async () => {
         messageObject.value = getMessageValue(messageBody);
         setMessageValue(getMessageValue(messageBody));
         messageObject.timestamp = new Date().toUTCString();
-        messageObject.receiver = document.getElementById("selectedEmail").value;
+        messageObject.receiver = document.getElementById("selectedUser").value;
 
         messageObject.messageBody = messageBody;
 
@@ -150,6 +147,7 @@ function NewMessage(props){
         }
     }
 
+    // send message
     const postMessage = async (messageObject, receiverName) => {
         messageObject.receiverName = receiverName;
         const jsonData = JSON.stringify(messageObject);
@@ -173,6 +171,7 @@ function NewMessage(props){
 
     useEffect(() => console.log(messageBody), [messageBody]);
 
+    // reduce user messaging points based on value of message sent
     const subtractMessageValue = async (messageObject) => {
         const receiverFunds = await getReceiverFunds();
         const receiverAllTimeFunds = await getReceiverAllTimeFunds();
@@ -182,8 +181,8 @@ function NewMessage(props){
 
         const newAllTimeFunds = receiverAllTimeFunds + messageObject.value;
         const newAllTimeFundsValue = parseInt(newAllTimeFunds);
-        console.log("this is the receiver" + receiver)
-        console.log("new funds" + newFunds)
+
+        // if enough funds, send the message
         if (newMessagingPoints >= 0) {
             const senderData = {
                 messagingPoints: newMessagingPoints
@@ -206,6 +205,7 @@ function NewMessage(props){
                 body: senderDataJSON
             });
 
+
             fetch(`${root}/api/user?username=${document.getElementById("selectedEmail").value}`, {
                 method: "PATCH",
                 headers: {'Content-Type': 'application/json'},
@@ -213,7 +213,9 @@ function NewMessage(props){
             });
             getUserInformation();
             return true;
-        } else {
+        } 
+        // alert if not enough points
+        else {
             alert("You don't have enough messaging points to send that!")
             return false;
         }
@@ -227,71 +229,72 @@ function NewMessage(props){
                     <text className = 'sendTo'>Send a message to: </text>
                  
                     <div className="box">
-                        <select id="selectedEmail">
+
+                        <select id="selectedUser">
                             {usernameList.map((user) => (<option>{user.username}</option>))}
 
                         </select>
                     </div>
 
                     <div>
-                        <textarea className="messageEntryBox" value={messageBody} name={"messageBody"} rows="4" cols="50" onChange={e => setMessageBody(e.target.value)} placeholder="Type your message here..."></textarea>
+                        <textarea className="messageEntryBox" value={messageBody} name={"messageBody"} rows="4" cols="50" onChange={e => setMessageBody(e.target.value)} placeholder="Type your message here..." maxlength="80" data-testid='messageInputBox'></textarea>
                     </div>
-                    <div className="tokensBox">
-                        <TokenCostButton 
+                    <div className="tokensBox" data-testid = 'tokensBox'>
+                        <TokenCostButton
                             image = {emojiData.joyTears.image} 
                             points = {emojiData.joyTears.price} 
                             onClick={(e) => setMessageBody(messageBody + emojiData.joyTears.emoji)}>
                         </TokenCostButton>
 
-                        <TokenCostButton 
+                        <TokenCostButton
                             image = {emojiData.sunglass.image} 
                             points = {emojiData.sunglass.price} 
                             onClick={(e) => setMessageBody(messageBody + emojiData.sunglass.emoji)}>
                         </TokenCostButton>
 
-                        <TokenCostButton 
+                        <TokenCostButton
                             image = {emojiData.poo.image} 
                             points = {emojiData.poo.price} 
                             onClick={(e) => setMessageBody(messageBody + emojiData.poo.emoji)}>
                         </TokenCostButton>
 
-                        <TokenCostButton 
+                        <TokenCostButton
                             image = {emojiData.kiss.image} 
                             points = {emojiData.kiss.price} 
                             onClick={(e) => setMessageBody(messageBody + emojiData.kiss.emoji)}>
                         </TokenCostButton>
 
-                        <TokenCostButton 
+                        <TokenCostButton
                             image = {emojiData.hundred.image} 
                             points = {emojiData.hundred.price} 
                             onClick={(e) => setMessageBody(messageBody + emojiData.hundred.emoji)}>
                         </TokenCostButton>
 
-                        <TokenCostButton 
+                        <TokenCostButton
                             image = {emojiData.thumbsUp.image} 
                             points = {emojiData.thumbsUp.price} 
                             onClick={(e) => setMessageBody(messageBody + emojiData.thumbsUp.emoji)}>
                         </TokenCostButton>
 
-                        <TokenCostButton 
+                        <TokenCostButton
                             image = {emojiData.frog.image} 
                             points = {emojiData.frog.price} 
                             onClick={(e) => setMessageBody(messageBody + emojiData.frog.emoji)}>
                         </TokenCostButton>
 
-                        <TokenCostButton 
+                        <TokenCostButton
                             image = {emojiData.clinkGlass.image} 
                             points = {emojiData.clinkGlass.price} 
                             onClick={(e) => setMessageBody(messageBody + emojiData.clinkGlass.emoji)}>
                         </TokenCostButton>
 
-                        <TokenCostButton 
+                        <TokenCostButton
                             image = {emojiData.glowStar.image} 
                             points = {emojiData.glowStar.price} 
                             onClick={(e) => setMessageBody(messageBody + emojiData.glowStar.emoji)}>
                         </TokenCostButton>
 
-                        <TokenCostButton 
+                        <TokenCostButton
                             image = {emojiData.fire.image} 
                             points = {emojiData.fire.price} 
                             onClick={(e) => setMessageBody(messageBody + emojiData.fire.emoji)}>
@@ -299,7 +302,7 @@ function NewMessage(props){
 
                     </div>
 
-                    <Button variant="text" id= "send" onClick={() => handleInput()}>
+                    <Button variant="text" id= "send" data-testid='newMessageSendButton' onClick={() => handleInput()}>
                         Send
                     </Button>
                     {props.children}
