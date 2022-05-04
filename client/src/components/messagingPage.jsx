@@ -66,16 +66,16 @@ class MessagingPage extends Component {
 
                         <InternalHeading title="Messages"></InternalHeading>
 
-                        <Button variant="text" id= "newMessage" onClick={()=> this.setState({newMessage: true})}>
+                        <Button variant="text" id= "newMessage" data-testid="newMessageButton" onClick={()=> this.setState({newMessage: true})}>
                             new message
                         </Button>
 
                         <label className="toggle">
-                            <input type="checkbox" onChange={() => this.handleChange()}></input>
-                            <span className="labels" data-on="Sent" data-off="Recieved"></span>
+                            <input type="checkbox" data-testid="checkbox" onChange={() => this.handleChange()}></input>
+                            <span className="labels" data-testid="sentReceivedCheck" data-on="Sent" data-off="Recieved"></span>
                         </label>
 
-                        <div id="messageDisplayBoxes">
+                        <div id="messageDisplayBoxes" data-testid="messageDisplayBoxes">
                             {sentMessages}
                         </div>
 
@@ -97,16 +97,16 @@ class MessagingPage extends Component {
 
                         <InternalHeading title="Messages"></InternalHeading>
 
-                        <Button variant="text" id= "newMessage" onClick={()=> this.setState({newMessage: true})}>
+                        <Button variant="text" id= "newMessage" data-testid="newMessageButton" onClick={()=> this.setState({newMessage: true})}>
                             new message
                         </Button>
 
                         <label className="toggle">
-                            <input type="checkbox" onChange={() => this.handleChange()}></input>
-                            <span className="labels" data-on="Sent" data-off="Recieved"></span>
+                            <input type="checkbox" data-testid="checkbox" onChange={() => this.handleChange()}></input>
+                            <span className="labels" data-testid="sentReceivedCheck" data-on="Sent" data-off="Recieved"></span>
                         </label>
 
-                        <div id="messageDisplayBoxes">
+                        <div id="messageDisplayBoxes" data-testid="messageDisplayBoxes">
                             {/* The way this is displaying is NOT how it should be. We should have a call
                         to the api, and loop throug every message. Then, we display a box for every message. That way
                         for ex if someone only has 2 messages only 2 boxes show up */}
