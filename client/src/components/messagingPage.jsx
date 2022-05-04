@@ -68,16 +68,16 @@ class MessagingPage extends Component {
 
                         <InternalHeading title="Messages"></InternalHeading>
 
-                        <Button variant="text" id= "newMessage" onClick={()=> this.setState({newMessage: true})}>
+                        <Button variant="text" id= "newMessage" data-testid="newMessageButton" onClick={()=> this.setState({newMessage: true})}>
                             new message
                         </Button>
 
                         <label className="toggle">
-                            <input type="checkbox" onChange={() => this.handleChange()}></input>
-                            <span className="labels" data-on="Sent" data-off="Recieved"></span>
+                            <input type="checkbox" data-testid="checkbox" onChange={() => this.handleChange()}></input>
+                            <span className="labels" data-testid="sentReceivedCheck" data-on="Sent" data-off="Recieved"></span>
                         </label>
 
-                        <div id="messageDisplayBoxes">
+                        <div id="messageDisplayBoxes" data-testid="messageDisplayBoxes">
                             {sentMessages}
                         </div>
                     </div>
@@ -96,14 +96,17 @@ class MessagingPage extends Component {
                     <div id="messagingBackground">
                         <HeaderDrawer index={1}></HeaderDrawer>
                         <InternalHeading title="Messages"></InternalHeading>
-                        <Button variant="text" id= "newMessage" onClick={()=> this.setState({newMessage: true})}>
+
+                        <Button variant="text" id= "newMessage" data-testid="newMessageButton" onClick={()=> this.setState({newMessage: true})}>
                             new message
                         </Button>
                         <label className="toggle">
-                            <input type="checkbox" onChange={() => this.handleChange()}></input>
-                            <span className="labels" data-on="Sent" data-off="Recieved"></span>
+                            <input type="checkbox" data-testid="checkbox" onChange={() => this.handleChange()}></input>
+                            <span className="labels" data-testid="sentReceivedCheck" data-on="Sent" data-off="Recieved"></span>
                         </label>
-                        <div id="messageDisplayBoxes">
+
+                        <div id="messageDisplayBoxes" data-testid="messageDisplayBoxes">
+
                             {receivedMessages}
                         </div>
                     </div>

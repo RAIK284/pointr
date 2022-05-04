@@ -74,8 +74,6 @@ describe("<StorePage />", () =>   {
         userEvent.click(topTrophy);
 
         expect(component.state.mostPopularTrophyStatus).toBe(true);
-
-        //mostPopularTrophyStatus is undefined, even if you just render the page and do nothing else.
     });
 
     
