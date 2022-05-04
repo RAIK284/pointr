@@ -100,8 +100,6 @@ export async function createUser(name, username, email, password) {
         body: newUserJSON
     });
     const responseData = await response.json();
-    console.log(response)
-    console.log(responseData)
 
     localStorage.setItem('token', responseData.token);
 }

@@ -55,7 +55,7 @@ class SignUp extends Component {
     }
 
     // verify all data passed in by user for signing up and alert if incorrect
-    async handleData() {
+    handleData() {
         if (verifyUsername(this.state.username) !== true) {
             alert(verifyUsername(this.state.username))
         } else if (this.state.isExistingUsername === 401) {
@@ -71,10 +71,9 @@ class SignUp extends Component {
         } else if (this.state.password !== this.state.passwordConfirmation) {
             alert("Passwords do not match!")
         } else {
-            await createUser(this.state.name, this.state.username, this.state.email, this.state.password)
-            setTimeout(() => {
+            createUser(this.state.name, this.state.username, this.state.email, this.state.password).then(() => {
                 window.location.href='/profile'
-            }, 1500)
+            })
         }
     }
 
