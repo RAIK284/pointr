@@ -43,19 +43,13 @@ class OtherUserPage extends Component {
                 leaderboardRank: "?"}
     }
 
-    async componentDidMount() {
+    componentDidMount() {
         let { id } = this.props.params;
-        await this.fetchData(id)
-        await this.getLeaderboardInformation();
-        console.log("this is the id: ", id)
+        this.fetchData(id).then(() => this.getLeaderboardInformation());
     }
 
     fetchData = async (id) => {
-        console.log("this is the id again tho", id)
-        const username = id.toString();
-        console.log(root)
-        const response = await fetch(`http//:localhost:8080/api/user?username=${username}`)
-        console.log("response", response)
+        const response =  await fetch('http://localhost:8080/api/user?username=' + id)
         const data = await response.json();
         console.log(data)
         if (data.isPrivate === false) {
@@ -65,17 +59,17 @@ class OtherUserPage extends Component {
                 name: data.name,
                 username: data.username,
                 bio: data.bio,
-                image: data.profileImg,
+                image: data.image,
                 trophies: [],
                 funds: "Private",
                 leaderboardRank: "Private"
             })
         }
-        console.log("state",this.state)
+        console.log(this.state)
     };
 
     async getLeaderboardInformation () {
-        await fetch(`${root}/api/leaderboard`)
+        await fetch('http://localhost:8080/api/leaderboard')
             .then(response => response.json())
             .then(data => {this.getUserRank(data)})
     }
