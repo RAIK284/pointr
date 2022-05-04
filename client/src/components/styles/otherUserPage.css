@@ -1,11 +1,10 @@
-#otherImage
-{
+#otherImage{
     width: 152.75px;
     height: 152.75px;
     border-radius: 50%;
 }
-#sub
-{
+
+#sub{
     margin-left: 11.6rem;
     font-family: 'Poppins';
     font-style: normal;
@@ -15,8 +14,8 @@
 
     color: #333333;
 }
-#welcome
-{
+
+#welcome{
     margin-left: 2rem;
 }
 
@@ -31,9 +30,6 @@
     font-weight: 700;
     font-size: 30px;
     line-height: 45px;
-    /* identical to box height */
-
-    
    
     text-align: center;
     letter-spacing: -0.015em;
@@ -44,14 +40,7 @@
 }
 
 .btnPos{
-
     display: inline;
     position:relative;
     left: 20rem;
-
-    /* margin-left: 20rem; */
-   
-    
-
-
 }

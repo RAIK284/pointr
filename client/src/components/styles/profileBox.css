@@ -1,5 +1,4 @@
-.box1 
-{
+.box1 {
     background-color: #9BE5D6;
     width: 1065px;
     padding: 1rem;
@@ -8,8 +7,8 @@
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     margin-bottom: 1rem;
 }
-.box2
-{
+
+.box2{
     background-color: #B3D1FF;
     width: 1065px;
     padding: 1rem;
@@ -18,22 +17,22 @@
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     margin-bottom: 1rem;
 }
-#image
-{
+
+#image{
     height: 120px;
     width: 120px;
     border-radius:50%;
 }
-.name
-{
+
+.name{
     margin-bottom: .5rem;
     font-weight: bold;
     font-size: 40px;
     margin-left: 9rem;
     color: #333333;
 }
-.bio
-{
+
+.bio{
     margin-left: 9rem;
     font-size: 30px;
     margin-bottom: 0rem;
