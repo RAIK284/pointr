@@ -85,43 +85,31 @@ describe("<ProfilePage />", () => {
         const component = render(<ProfilePage/>, container);
 
         expect(component.state.name).toBe("");
-
-        //This test passes now, but ideally it would actually check user name.
     });
 
     test('Properly Retrieves User Bio', () => {
         const component = render(<ProfilePage/>, container);
 
         expect(component.state.bio).toBe("");
-
-        //This test passes now, but ideally it would actually check user bio.
     });
 
     test('Properly Retrieves Leaderboard Rank', () => {
         const component = render(<ProfilePage/>, container);
 
         expect(component.state.leaderboardRank).toBe("");
-
-        //This test passes now, but ideally it would actually check user rank.
     });
 
     test('Properly Retrieves Messaging Points', () => {
         const component = render(<ProfilePage/>, container);
 
         expect(component.state.messagingPoints).toBe(0);
-
-        //This test passes now, but ideally it would actually check user MPs.
     });
 
     test('Properly Retrieves FUNds', () => {
         const component = render(<ProfilePage/>, container);
 
         expect(component.state.funds).toBe(0);
-
-        //This test passes now, but ideally it would actually check user MPs.
     });
-
-    //Should also test the trophies here.
 
     global.fetch.mockRestore();
 });
