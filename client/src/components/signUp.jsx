@@ -55,7 +55,7 @@ class SignUp extends Component {
     }
 
     // verify all data passed in by user for signing up and alert if incorrect
-    handleData() {
+    async handleData() {
         if (verifyUsername(this.state.username) !== true) {
             alert(verifyUsername(this.state.username))
         } else if (this.state.isExistingUsername === 401) {
