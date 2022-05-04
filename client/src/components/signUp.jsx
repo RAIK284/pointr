@@ -2,13 +2,6 @@ import React, { Component } from "react";
 import './styles/signUp.css';
 import Button from '@mui/material/Button';
 import {Link} from 'react-router-dom';
-import {verifyPassword} from "./scripts/signUpValidation.js"
-import {verifyEmail} from "./scripts/signUpValidation.js"
-import {verifyName} from "./scripts/signUpValidation.js"
-import {verifyUsername} from "./scripts/signUpValidation.js"
-import {isExistingUsername} from "./scripts/signUpValidation.js"
-import {isExistingEmail} from "./scripts/signUpValidation.js"
-import {createUser} from "./scripts/signUpValidation.js"
 import {verifyPassword, verifyEmail, verifyName, verifyUsername,
     isExistingUsername, isExistingEmail, createUser} 
     from "./scripts/signUpValidation.js"
