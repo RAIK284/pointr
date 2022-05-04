@@ -71,9 +71,10 @@ class SignUp extends Component {
         } else if (this.state.password !== this.state.passwordConfirmation) {
             alert("Passwords do not match!")
         } else {
-            createUser(this.state.name, this.state.username, this.state.email, this.state.password).then(() => {
+            await createUser(this.state.name, this.state.username, this.state.email, this.state.password)
+            setTimeout(() => {
                 window.location.href='/profile'
-            })
+            }, 1500)
         }
     }
 
