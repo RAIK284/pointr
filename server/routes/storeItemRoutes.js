@@ -16,7 +16,5 @@ module.exports = (app) => {
 
     router.delete('/api/storeItem', storeItemController.deleteStoreItem);
 
-
-
     app.use('/', router);
 };
