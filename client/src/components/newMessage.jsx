@@ -134,7 +134,7 @@ function NewMessage(props){
         messageObject.value = getMessageValue(messageBody);
         setMessageValue(getMessageValue(messageBody));
         messageObject.timestamp = new Date().toUTCString();
-        messageObject.receiver = document.getElementById("selectedEmail").value;
+        messageObject.receiver = document.getElementById("selectedUser").value;
 
         messageObject.messageBody = messageBody;
 
@@ -204,7 +204,7 @@ function NewMessage(props){
                 body: senderDataJSON
             });
 
-            fetch("http://localhost:8080/api/user?username=" + document.getElementById("selectedEmail").value, {
+            fetch("http://localhost:8080/api/user?username=" + document.getElementById("selectedUser").value, {
                 method: "PATCH",
                 headers: {'Content-Type': 'application/json'},
                 body: receiverDataJSON
@@ -227,14 +227,14 @@ function NewMessage(props){
                     <text className = 'sendTo'>Send a message to: </text>
                  
                     <div className="box">
-                        <select id="selectedEmail">
+                        <select id="selectedUser">
                             {usernameList.map((user) => (<option>{user.username}</option>))}
 
                         </select>
                     </div>
 
                     <div>
-                        <textarea className="messageEntryBox" value={messageBody} name={"messageBody"} rows="4" cols="50" onChange={e => setMessageBody(e.target.value)} placeholder="Type your message here..."></textarea>
+                        <textarea className="messageEntryBox" value={messageBody} name={"messageBody"} rows="4" cols="50" onChange={e => setMessageBody(e.target.value)} placeholder="Type your message here..." maxlength="80"></textarea>
                     </div>
                     <div className="tokensBox">
                         <TokenCostButton 
