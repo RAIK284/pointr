@@ -10,7 +10,9 @@ import crystal from './images/trophy-icons/crystal.png'
 import clover from './images/trophy-icons/clover.png'
 import sword from './images/trophy-icons/sword.png'
 import prize from './images/trophy-icons/prize.png'
+import root from '../root'
 
+// add trophy to user profile
 const addTrophy = async (name, image, trophyCost, username) => {
 
     const trophyData = {
@@ -21,14 +23,14 @@ const addTrophy = async (name, image, trophyCost, username) => {
     const trophyDataJSON = JSON.stringify(trophyData);
     let newFunds;
     console.log(trophyCost)
-    const response = await fetch('http://localhost:8080/api/user/self', {
+    const response = await fetch(`${root}/api/user/self`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
     });
     const data = await response.json();
     const funds = await data.funds;
     if (funds >= trophyCost) {
-        fetch("http://localhost:8080/api/trophy", {
+        fetch(`${root}/api/trophy`, {
             method: "POST",
             headers: {'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
             body: trophyDataJSON
@@ -38,7 +40,7 @@ const addTrophy = async (name, image, trophyCost, username) => {
         const newUserFunds = {funds: newFunds};
         const newUserFundsJSON = JSON.stringify(newUserFunds);
 
-        fetch("http://localhost:8080/api/user?username=" + username, {
+        fetch(`${root}/api/user?username=${username}`, {
             method: "PATCH",
             headers: {'Content-Type': 'application/json'},
             body: newUserFundsJSON
@@ -49,17 +51,13 @@ const addTrophy = async (name, image, trophyCost, username) => {
 
         console.log(newUserTrophyDataJSON)
 
-        fetch("http://localhost:8080/api/storeItemAddUser?name=" + name, {
+        fetch(`${root}/api/storeItemAddUser?name=${name}`, {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: newUserTrophyDataJSON
         });
 
-
-
-
-
-        alert('Trophy purchased! (Maybe we should have a popup for this?)');
+        alert('Trophy purchased!');
     } else {
 
         alert("You can't afford this trophy!");
@@ -67,6 +65,7 @@ const addTrophy = async (name, image, trophyCost, username) => {
     return newFunds;
 }
 
+// popup for a single trophy
 function TrophySingle(props) {
 
     const [trophyTitle, setTrophyTitle] = useState(props.title);
@@ -124,60 +123,6 @@ function TrophySingle(props) {
 
         </React.Fragment>
     ) : "";
-
-
 }
 
 export default TrophySingle
-/* 
-
-class TrophySingle extends Component{
-    
-    render() {
-
-    let trophysingle = (
-    <React.Fragment>
-
-            <div className="singleDisplay">
-            <button id="closeButton" onClick={this.props.onClose}>x</button>
-
-                     
-                <img src={ducky} id="trophyImageLarge"/>
-                
-
-                 <div id="trophyTitle">
-                     <text>Trophy Title</text>
-                 </div>
-
-                 <div id="trophyDescription">
-                     <text>This is where the trophy's description will go.</text>
-                  </div> 
-
-                 <div id="trophyCostLarge">
-                     <text>Cost: 100 FUNds</text> 
-                 </div>
-
-                <div id="buttonWrapper">
-                    <Button variant="contained" id="addToProfile" onClick={()=>{window.location.href='/store'}}>Add to My Profile</Button>
-                </div>
-
-             </div>
-
-                
- </React.Fragment>
-    );
-
-    if (! this.props.isOpen) {
-        trophysingle = null;
-    }
-    return (
-        <div>
-            {trophysingle}
-        </div>
-    );
-       
-    }
-    
-        }
-
-export default TrophySingle */

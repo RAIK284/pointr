@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { MuiNavbar, NavItem } from 'mui-navbar';
 import './styles/homePage.css';
 import Button from '@mui/material/Button';
-import homePagePic from "./images/header-icons/homePagePic.jpeg";
-import { color } from "@mui/system";
 import msgIcon from "./images/header-icons/message.svg";
 import trophyIcon from "./images/header-icons/leaderboard.svg";
 import starIcon from "./images/face-grin-stars.svg";
@@ -11,19 +9,16 @@ class HomePage extends Component {
     render() {
         return (
             <React.Fragment>
-               
-
-                    <MuiNavbar
-                        logoText="Pointr"
-                        background="#0064FF"
-                        navItemPosition="right"
-                        InputLabelProps={{ style: { fontFamily:'Poppins', fontWeight: '700px',borderWidth:'3px'}  }}
-
-                    >
-                        <NavItem to="/">Contact</NavItem>
-                        <NavItem to="/">About</NavItem>
-                        <NavItem to="/signin">Log In</NavItem>
-                    </MuiNavbar> 
+                    <div id="header-content">
+                        <div className="pointr">
+                            Pointr
+                        </div>
+                        <div id="misc-header-content">
+                            <Button className='content' id ="login-button" variant="contained" size="large" onClick={()=>{window.location.href='/signin'}}>Log In</Button>
+                            <p className="content">Contact</p>
+                            <p className="content">About</p>
+                        </div>
+                    </div>
 
                     <div className="css-selector">
                         <div id="homeTitleWrapper">
@@ -65,83 +60,10 @@ class HomePage extends Component {
                             </div>
                     </div>
                     
-{/*                 <div class="flex-container">
-                    <div id="rightBoxes">
-
-                        <div className="infoBoxWrapperLeft">
-                            <text className="infoBox">
-                                Send a motivational note.
-                            </text>
-                        </div>
-
-                        <div className="infoBoxWrapperRight"> 
-                            <text className="infoBox">
-                                Earn points for your positivity.
-                            </text>
-                        </div>
-
-                        <div className="infoBoxWrapperLeft">
-                            <text className="infoBox">
-                                Buy trophies to inspire others!
-                            </text>
-                        </div>
-
-                    </div>
-                
-                <div id="leftContent">
-                    <div >
-                        <text id="easyText">It's easy:</text>
-                    </div>
-
-                    <div>
-                        <text id="startedText">Get started today.</text>
-                    </div>
-
-                    <div>
-                        <Button id ="homepagebutton" variant="contained" size="large" onClick={()=>{window.location.href='/signup'}}>Sign Up</Button>
-                    </div>
-
-                </div>
-            </div>  */}  
-
-
-                
             </React.Fragment>
                 
         );
     }
 }
 
-// SignIn.propTypes = {
-//     field1: PropTypes.string.isRequired,
-//     field2: PropTypes.string.isRequired,
-// };
-
 export default HomePage;
-
-
-{/* <React.Fragment>
-<MuiNavbar
-                    logoText="Pointr"
-                    background="#0064FF"
-                    navItemPosition="right"
-                >
-                    <NavItem to="/">Contact</NavItem>
-                    <NavItem to="/">About</NavItem>
-                    <NavItem to="/signin">Log In</NavItem>
-                </MuiNavbar> 
-                
-                <div id="body">
-                    <div id="pictureWrapper">
-                    <img src={homePagePic} id="homePagePic"/>
-                    </div>
-                    <div id='column-right'>
-                        <h1>Welcome to <br /> Pointr.</h1>
-                        <h2>The new way to be<br />rewarded for positivity</h2>
-                        <input type="text" className="emailentry" placeholder="Enter your email address..."></input>
-                        <Button id ="homepagebutton" variant="contained" size="large" onClick={()=>{window.location.href='/signup'}}>Sign Up</Button>
-                    </div>
-                </div>
-                
-                
-            </React.Fragment> */}

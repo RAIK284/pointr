@@ -2,8 +2,6 @@
     position: relative;
     width: 15vw;
     height: 30vh;
-    /* left: 40%;
-    top: 25vh; */
 
     background: #9BE5D6;
     border: 4px solid #02BA90;
@@ -12,14 +10,12 @@
     border-radius: 20px;
 
     text-align: center;
-    /* align-items: center; */
     align-items: stretch;
     font-family: 'Poppins';
     color: #333333;
     flex-direction: column;
     margin-top: 2.5%;
     margin-bottom: 2.5%;
-
 }
 
 #name{
@@ -30,7 +26,6 @@
     line-height: 3vw;
  
     letter-spacing: -0.015em;
-
 }
 
 #username{
@@ -42,7 +37,6 @@
 
     margin-left: 5%;
     margin-right: 5%;
-
 }
 
 #messageBody{
@@ -84,4 +78,4 @@ h1#heading{
 
     row-gap: 5%;
     column-gap: 5%;
-} 
+}

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import './styles/messageDisplayBox.css';
-import Button from '@mui/material/Button';
 
+// component for displaying a single message
 class MessageDisplayBox extends Component {
     constructor(props) {
         super(props);
@@ -14,9 +14,7 @@ class MessageDisplayBox extends Component {
     render() {
         return (
             <React.Fragment >
-                
                 <div className="messageDisplay">
-                    
                     <div>
                         <text id="name" >
                             {this.props.name}
@@ -32,12 +30,9 @@ class MessageDisplayBox extends Component {
                             {this.props.messageBody}
                         </text>
                     </div>
-
                 </div>
-
             </React.Fragment>
         );
-
     }   
 }
 export default MessageDisplayBox;

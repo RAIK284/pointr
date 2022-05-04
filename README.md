@@ -1,17 +1,3 @@
-<h1>Tech Stack</h1>
-
-<h2>Front End: </h2>
-<li>React.js</li>
-<!-- <li>React.js</li>
-<li>CSS and HTML for Styling</li>
-<li>Design is based on our <a href="gttps://nodejs.org">Figma</a></li> -->
-
-<br>
-<h2>Back End: <h2>
-<!-- <li>node.js</li>
-<li>MongoDB</li> -->
-</br>
-
 
 <h1>Project setup</h1>
 
@@ -30,7 +16,15 @@
 
 <br></br>
 <h1>Deployment</h1>
-[fill in info here]
+<p> We were able to deploy our application via <a href="https://www.heroku.com/">Heroku</a></p>
+<p> Our deployed website can be found at: <a href="https://pointr-project.herokuapp.com/">https://pointr-project.herokuapp.com/</a></p>
+
+<i><b>IMPORTANT NOTE: </b> [detail the stuff that doesn't work on the deployed version here]</i>
+
+<br><br>
+
+<h1>Use Case / Demo Video</h1>
+<p> A short video of our application in use is linked <a href="https://use.vg/xmG3vX">here</a>. </p>
 <br><br>
 
 
@@ -69,7 +63,7 @@
 ```
 * Javascript
 ```js
-fetch("http://localhost:8080/api/signup", {
+fetch('`${document.URL.substr(0,document.URL.lastIndexOf('/'))}/api/signup', {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: jsonData
@@ -103,7 +97,7 @@ fetch("http://localhost:8080/api/signup", {
 ```
 * Javascript
 ```js
-fetch("http://localhost:8080/api/login", {
+fetch('`${document.URL.substr(0,document.URL.lastIndexOf('/'))}/api/login', {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: jsonData
@@ -127,7 +121,7 @@ fetch("http://localhost:8080/api/login", {
 **Sample Call**
 
 ```js
-    fetch('http://localhost:8080/api/user?username=bsimpleman')
+    fetch('http://`${document.URL.substr(0,document.URL.lastIndexOf('/'))}/api/user?username=bsimpleman')
         .then(response => response.json())
         .then(data => console.log(data));
 ```
@@ -191,7 +185,7 @@ fetch("http://localhost:8080/api/login", {
 ```
 * Javascript
 ```js
-fetch("http://localhost:8080/api/user", {
+fetch("http://`${document.URL.substr(0,document.URL.lastIndexOf('/'))}/api/user", {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: jsonData
@@ -220,7 +214,7 @@ fetch("http://localhost:8080/api/user", {
 
 * Javascript
 ```js
-fetch("http://localhost:8080/api/user?username=bsimpleman", {
+fetch("http://`${document.URL.substr(0,document.URL.lastIndexOf('/'))}/api/user?username=bsimpleman", {
             method: "PATCH",
             headers: {'Content-Type': 'application/json'},
             body: jsonData
@@ -243,7 +237,7 @@ fetch("http://localhost:8080/api/user?username=bsimpleman", {
 ```
 * Javascript
 ```js
-fetch("http://localhost:8080/api/user", {
+fetch("http://`${document.URL.substr(0,document.URL.lastIndexOf('/'))}/api/user", {
             method: "DELETE",
             headers: {'Content-Type': 'application/json'},
             body: jsonData
@@ -263,7 +257,7 @@ fetch("http://localhost:8080/api/user", {
 **Sample Call**
 
 ```js
-    fetch('http://localhost:8080/api/leaderboard?top=5')
+    fetch('http://`${document.URL.substr(0,document.URL.lastIndexOf('/'))}/api/leaderboard?top=5')
         .then(response => response.json())
         .then(data => console.log(data));
 ```

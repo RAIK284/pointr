@@ -9,6 +9,7 @@ import clinkGlass from './images/emojis/clinkGlass.png'
 import glowStar from './images/emojis/glowStar.png'
 import fire from './images/emojis/fire.png'
 
+// this constant stores all info for emojis in our system
 const emojiDataExport = 
 {
     "joyTears": {
@@ -63,7 +64,5 @@ const emojiDataExport =
         "emoji": "🔥"
     }
 }
-
-// module.exports={emojiDataExport}
 
 export default emojiDataExport

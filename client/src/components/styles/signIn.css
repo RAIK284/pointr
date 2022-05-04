@@ -8,9 +8,7 @@
     height: 380px;
     left: calc(50% - 692px/2);
     top: calc(50% - 380px/2);
-   
 }
-
 
 body#SI{
     background: linear-gradient(247.13deg, rgba(2, 186, 144, 0.8) 0%, rgba(101, 215, 192, 0.8) 42.71%, rgba(0, 100, 255, 0.8) 100%);
@@ -18,9 +16,7 @@ body#SI{
     backdrop-filter: blur(50px);
     height: 100vh;
     width: 100vw;
-
 } 
-
 
 button#loginbutton{
     background-color:#0064FF;
@@ -36,9 +32,7 @@ button#loginbutton{
     font-family: Poppins;
     font-weight: 700;
     font-size: 19px;
-    text-align: center;
-
-    
+    text-align: center;  
 }
 
 p{
@@ -63,8 +57,6 @@ h1{
     font-family: Poppins;
     font-weight: 500;
     font-size: 19px;
- 
-
 }
 
 .br2{
@@ -81,7 +73,6 @@ h1{
     font-family: Poppins;
     font-weight: 500;
     font-size: 19px;
-
 }
 
 .label{
@@ -90,7 +81,6 @@ h1{
     font-weight: 700;
     font-size: 30px;
     line-height: 36px;
-    /* or 120% */
 
     letter-spacing: -0.015em;
 
@@ -128,8 +118,7 @@ button#forgot{
 .css-selectorSI {
     width: 100vw;
     height: 100vh;
-   
-    
+
     background: linear-gradient(247.13deg, rgba(2, 186, 144, 0.8) 0%, rgba(101, 215, 192, 0.8) 42.71%, rgba(0, 100, 255, 0.8) 100%);
     background-size: 600% 600%;
 

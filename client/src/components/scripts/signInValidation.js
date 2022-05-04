@@ -1,3 +1,5 @@
+import root from '../../root'
+
 //Checks if user login is valid or not.
 async function validateUser()  {
 
@@ -17,7 +19,7 @@ async function validateUser()  {
     const jsonUserData = JSON.stringify(jsonUserDataObject);
 
     //Make a post request with the JSON object to login.
-    const response = await fetch("http://localhost:8080/api/login", {
+    const response = await fetch(`${root}/api/login`, {
         method: "POST",
         headers: {'Content-Type': 'application/json'},
         body: jsonUserData
@@ -26,8 +28,6 @@ async function validateUser()  {
     //If the user login is valid, print to console and response status is 200. Else, print and status is 401.
     if (response.status === 200) {
         // The response from signin only tells you if the user is valid. Does not return the actual user's data. Call the user endpoint to get that data.
-        // const userData = await response.json();
-        // console.log(userData)
         return response.json();
     } else {
         console.log("Incorrect email/password")
@@ -38,3 +38,6 @@ async function validateUser()  {
 }
 
 export {validateUser};
+
+
+

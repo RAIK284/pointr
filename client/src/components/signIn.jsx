@@ -2,21 +2,17 @@ import React, { Component } from "react";
 import './styles/signIn.css';
 import Button from '@mui/material/Button';
 import {validateUser} from './scripts/signInValidation.js';
-//import Stack from '@mui/material/Stack';
-//import PropTypes from 'prop-types';
 
 class SignIn extends Component {
     render() {
         const checkresponse = async (response) => {
             console.log(response)
             if (response !== -1) {
-                //Switch to profile page.
                 localStorage.setItem('token', response.token);
                 window.location.href='/profile'
                 console.log("Successul!");
                 console.log(response);
             } else {
-                //Display error and do nothing.
                 console.log("Wrong!");
                 console.log(response);
                 alert("Incorrect Username or Password entered!")
@@ -60,11 +56,5 @@ class SignIn extends Component {
         );
     }
 }
-
-// SignIn.propTypes = {
-//     field1: PropTypes.string.isRequired,
-//     field2: PropTypes.string.isRequired,
-// };
-
 
 export default SignIn;

@@ -12,7 +12,6 @@ html, root, body {
     width: 90%;
 
     margin-top: 0%;
-
     align-content: flex-start;
     justify-content: right;
 }
@@ -23,7 +22,6 @@ html, root, body {
     font-weight: 700;
     font-size: 19px;
     line-height: 0;
-    /* or 126% */
 
     letter-spacing: -0.015em;
     padding: 0;
@@ -93,18 +91,14 @@ html, root, body {
     font-weight: 700;
     font-size: 19px;
     line-height: 0;
-    /* or 126% */
-
     width: 60%;
 
     letter-spacing: -0.015em;
-
     color: #333333;
 }
 
 #bottom-options {
     display: block;
-
 }
 
 #notifications-info {
@@ -118,7 +112,6 @@ html, root, body {
     font-weight: 500;
     font-size: 18px;
     line-height: 24px;
-    /* or 120% */
 
     letter-spacing: -0.015em;
 
@@ -136,14 +129,10 @@ html, root, body {
     font-weight: 500;
     font-size: 18px;
     line-height: 24px;
-    /* or 120% */
 
     letter-spacing: -0.015em;
 
     color: #2A9D8F;
-}
-
-#name-field {
 }
 
 #save {
