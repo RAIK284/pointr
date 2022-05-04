@@ -206,7 +206,7 @@ function NewMessage(props){
             });
 
 
-            fetch(`${root}/api/user?username=${document.getElementById("selectedEmail").value}`, {
+            fetch(`${root}/api/user?username=${document.getElementById("selectedUser").value}`, {
                 method: "PATCH",
                 headers: {'Content-Type': 'application/json'},
                 body: receiverDataJSON
