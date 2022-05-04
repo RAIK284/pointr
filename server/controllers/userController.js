@@ -20,19 +20,19 @@ const signupUser = async (req, res) => {
     res.status(200).send({user, token})
 }
 
-
-
 const loginUser = async (req, res) => {
     const db = mongoConnection.getDb();
     const email = await req.body.email;
     const password = await req.body.password;
     const validEmail = await db.collection('users').find({email: req.body.email});
     const arrayEmail = await validEmail.toArray();
+    //Fail if no valid user is found.
     if (arrayEmail.length === 0) {
         res.status(401).send("Invalid email");
         return;
     }
     const isCorrectPassword = await encrypt.checkHash(password, email);
+        //Pass if password is correct.
         if (isCorrectPassword) {
             const user = await db.collection('users').findOne({email: req.body.email});
             const token = await createToken(user)
@@ -104,11 +104,13 @@ const createUser = async (req, res) => {
 
 const getPublicUserData = async (req, res) => {
     const db = mongoConnection.getDb();
+    //Empty array passed to find() returns all users.
     const users = await db.collection('users').find({}).toArray();
     const userList = []
     let index = 0;
     for (const user of users) {
         index++;
+        //If the user is public, this is their user info.
         if (user.isPrivate === false) {
             userList.push({
                 name: user.name,
@@ -119,6 +121,7 @@ const getPublicUserData = async (req, res) => {
                 image: user.profileImg,
                 isPrivate: "false"
             })
+        //If the user is private, some user info is blocked.
         } else {
             userList.push({
                 name: user.name,

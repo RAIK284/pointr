@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import './styles/trophy.css';
-import Button from '@mui/material/Button';
-import ducky from './images/ducky.png'
 import dice from './images/trophy-icons/dice.png'
 import trophy from './images/trophy-icons/trophy.png'
 import star from './images/trophy-icons/star.png'
@@ -10,10 +8,6 @@ import crystal from './images/trophy-icons/crystal.png'
 import clover from './images/trophy-icons/clover.png'
 import sword from './images/trophy-icons/sword.png'
 import prize from './images/trophy-icons/prize.png'
-import StorePage from "./storePage";
-import TrophySingle from "./trophySingle";
-
-
 
 class Trophy extends Component {
     constructor(props) {

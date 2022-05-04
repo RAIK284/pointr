@@ -1,5 +1,5 @@
 import React from 'react';
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
+import { CarouselProvider, Slider} from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import PropTypes from 'prop-types';
 import './styles/carousel.css'
@@ -43,7 +43,7 @@ class Carousel extends React.Component {
         );
     }
   }
-
+  
 Carousel.propTypes = {
     width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired,
@@ -51,5 +51,4 @@ Carousel.propTypes = {
     images: PropTypes.array.isRequired,
     visibleslides: PropTypes.number.isRequired,
 };
-
-  export default Carousel;
+export default Carousel;

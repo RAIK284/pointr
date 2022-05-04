@@ -63,7 +63,7 @@
 ```
 * Javascript
 ```js
-fetch("http://localhost:8080/api/signup", {
+fetch('`${document.URL.substr(0,document.URL.lastIndexOf('/'))}/api/signup', {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: jsonData
@@ -97,7 +97,7 @@ fetch("http://localhost:8080/api/signup", {
 ```
 * Javascript
 ```js
-fetch("http://localhost:8080/api/login", {
+fetch('`${document.URL.substr(0,document.URL.lastIndexOf('/'))}/api/login', {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: jsonData
@@ -121,7 +121,7 @@ fetch("http://localhost:8080/api/login", {
 **Sample Call**
 
 ```js
-    fetch('http://localhost:8080/api/user?username=bsimpleman')
+    fetch('http://`${document.URL.substr(0,document.URL.lastIndexOf('/'))}/api/user?username=bsimpleman')
         .then(response => response.json())
         .then(data => console.log(data));
 ```
@@ -185,7 +185,7 @@ fetch("http://localhost:8080/api/login", {
 ```
 * Javascript
 ```js
-fetch("http://localhost:8080/api/user", {
+fetch("http://`${document.URL.substr(0,document.URL.lastIndexOf('/'))}/api/user", {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: jsonData
@@ -214,7 +214,7 @@ fetch("http://localhost:8080/api/user", {
 
 * Javascript
 ```js
-fetch("http://localhost:8080/api/user?username=bsimpleman", {
+fetch("http://`${document.URL.substr(0,document.URL.lastIndexOf('/'))}/api/user?username=bsimpleman", {
             method: "PATCH",
             headers: {'Content-Type': 'application/json'},
             body: jsonData
@@ -237,7 +237,7 @@ fetch("http://localhost:8080/api/user?username=bsimpleman", {
 ```
 * Javascript
 ```js
-fetch("http://localhost:8080/api/user", {
+fetch("http://`${document.URL.substr(0,document.URL.lastIndexOf('/'))}/api/user", {
             method: "DELETE",
             headers: {'Content-Type': 'application/json'},
             body: jsonData
@@ -257,7 +257,7 @@ fetch("http://localhost:8080/api/user", {
 **Sample Call**
 
 ```js
-    fetch('http://localhost:8080/api/leaderboard?top=5')
+    fetch('http://`${document.URL.substr(0,document.URL.lastIndexOf('/'))}/api/leaderboard?top=5')
         .then(response => response.json())
         .then(data => console.log(data));
 ```

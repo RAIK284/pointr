@@ -8,13 +8,11 @@ class SignIn extends Component {
         const checkresponse = async (response) => {
             console.log(response)
             if (response !== -1) {
-                //Switch to profile page.
                 localStorage.setItem('token', response.token);
                 window.location.href='/profile'
                 console.log("Successul!");
                 console.log(response);
             } else {
-                //Display error and do nothing.
                 console.log("Wrong!");
                 console.log(response);
                 alert("Incorrect Username or Password entered!")

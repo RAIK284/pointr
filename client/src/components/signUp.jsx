@@ -9,6 +9,9 @@ import {verifyUsername} from "./scripts/signUpValidation.js"
 import {isExistingUsername} from "./scripts/signUpValidation.js"
 import {isExistingEmail} from "./scripts/signUpValidation.js"
 import {createUser} from "./scripts/signUpValidation.js"
+import {verifyPassword, verifyEmail, verifyName, verifyUsername,
+    isExistingUsername, isExistingEmail, createUser} 
+    from "./scripts/signUpValidation.js"
 
 class SignUp extends Component {
     constructor(props) {
@@ -24,7 +27,6 @@ class SignUp extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
 
     handleChange(event) {
         const target = event.target;
@@ -91,7 +93,6 @@ class SignUp extends Component {
                   <Button variant="text" id="toLogin" onClick={()=>{window.location.href='/signin'}}>Log In Here.</Button>
                     </div>
                     <div id="right-container">
-                    
                         <div className="suTitle">
                             <p>
                             Welcome to Pointr!
@@ -103,8 +104,6 @@ class SignUp extends Component {
                             Sign up for a free account today.
                             </p>
                         </div>
-                
-
                         <div id="info-container">
                                 <label  className="entryLabel">Name</label>
                                 
@@ -123,14 +122,11 @@ class SignUp extends Component {
                                 <input type="password" name="passwordConfirmation" data-testid="passwordConfirmation-input" value={this.state.passwordConfirmation} onChange={this.handleChange} placeholder="Confirm password" className="entry"  required></input>
                         </div>
 
-                        <Button id="signupbutton" variant="contained" size="large" onClick={async () => await this.handleSubmit()}>Sign Up</Button>
-                        
+                        <Button id="signupbutton" variant="contained" size="large" onClick={async () => await this.handleSubmit()}>Sign Up</Button> 
                     </div>
-                    
                 </div>
             </React.Fragment>
         );
     }
 }
-
 export default SignUp;

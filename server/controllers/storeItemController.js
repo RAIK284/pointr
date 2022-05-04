@@ -35,8 +35,10 @@ const getTrophyList = async () => {
 
 const getMostPopularTrophy = (trophyList) => {
     const keys = Object.keys(trophyList);
+    //Initialize trophy and key to first and compare each.
     let mostPopularValue = trophyList[keys[0]];
     let mostPopular = keys[0];
+    //For each trophy, if one is more popular than the initial, set trophy and key.
     for (const key of keys) {
         const value = trophyList[key];
         if (value > mostPopularValue) {
@@ -78,7 +80,6 @@ const addUserToStoreItemList = async (req, res) => {
 
     res.status(200).send('Updated store item');
 }
-
 
 const updateStoreItem = async (req, res) => {
     const db = mongoConnection.getDb();

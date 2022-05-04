@@ -2,17 +2,14 @@ import React, { Component } from "react";
 import HeaderDrawer from "./headerDrawer.jsx";
 import InternalHeading from "./internalHeading.jsx";
 import './styles/leaderboardPage.css';
-import duck from "./images/ducky.png";
 import ducky from "./images/ducky.png";
-
 import blake from "./images/profile-pictures/blake.png"
 import wally from "./images/profile-pictures/wally.png"
 import prema from "./images/profile-pictures/prema-cropped.png"
 import shivani from "./images/profile-pictures/shivani.jpeg"
 import keck from "./images/profile-pictures/keck.jpg"
 import sam from "./images/profile-pictures/sam.png"
-
-//reference: https://mui.com/components/drawers/
+import root from "../root"
 
 class LeaderBoardPage extends Component {
     constructor(props) {
@@ -24,12 +21,12 @@ class LeaderBoardPage extends Component {
     }
 
     fetchData = async () => {
-        const response =  await fetch('http://localhost:8080/api/leaderboard?top=10')
+        const response =  await fetch(`${root}/api/leaderboard?top=10`)
         const data = await response.json();
 
         this.setState({tableData: await this.getTableData(data)})
 
-        const userDataResponse = await fetch('http://localhost:8080/api/user/self', {
+        const userDataResponse = await fetch(`${root}/api/user/self`, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
         });
@@ -44,7 +41,6 @@ class LeaderBoardPage extends Component {
         console.log(this.state.tableData)
     }
 
-    // take raw data from Get call and convert it into the format needed to display the top 10 leaders
     async getTableData(data){
         const tableData = []
         var rank = 1
@@ -71,69 +67,61 @@ class LeaderBoardPage extends Component {
         
         return (
             <React.Fragment>
+                <InternalHeading title="Leaderboard"></InternalHeading>
+                <HeaderDrawer index={4}></HeaderDrawer>
+                <div id="lbBackground">
+                    <div id="fundsAmountWrapper">
+                            <text id="fundsAmountText">Your all-time FUNds:</text>
+                            <var id="fundsAmountNum">{this.state.allTimeFunds}</var>
+                        </div>
 
-            <InternalHeading title="Leaderboard"></InternalHeading>
-
-                
-            <HeaderDrawer index={4}></HeaderDrawer>
-            <div id="lbBackground">
-                <div id="fundsAmountWrapper">
-                        <text id="fundsAmountText">Your all-time FUNds:</text>
-                        <var id="fundsAmountNum">{this.state.allTimeFunds}</var>
-                    </div>
-
-                    <div id="topThreeDisplay">
-                        <div className="topThreeSingle" style={{background: "#E9C46A"}}>
-                            <img alt="other profile image" src={profileImages[this.state.tableData[0].profileImg]} className="topProfilePic"></img>
-                            <div className="nameFundsWrapper">
-                            <text className="topUsrnm" >{this.state.tableData[0].name}</text>
-                            <br/>
-                            <var className="topFunds">{this.state.tableData[0].funds}</var>
+                        <div id="topThreeDisplay">
+                            <div className="topThreeSingle" style={{background: "#E9C46A"}}>
+                                <img alt="other profile image" src={profileImages[this.state.tableData[0].profileImg]} className="topProfilePic"></img>
+                                <div className="nameFundsWrapper">
+                                <text className="topUsrnm" >{this.state.tableData[0].name}</text>
+                                <br/>
+                                <var className="topFunds">{this.state.tableData[0].funds}</var>
+                                </div>
                             </div>
-                            
-                        </div>
-                        <div className="topThreeSingle" style={{background: "#C0C0C5"}}>
-                            <img alt="other profile image" src={profileImages[this.state.tableData[1].profileImg]} className="topProfilePic"></img>
-                            <div className="nameFundsWrapper">
-                            <text className="topUsrnm" >{this.state.tableData[1].name}</text>
-                            <br/>
 
-                            <var className="topFunds">{this.state.tableData[1].funds}</var>
+                            <div className="topThreeSingle" style={{background: "#C0C0C5"}}>
+                                <img alt="other profile image" src={profileImages[this.state.tableData[1].profileImg]} className="topProfilePic"></img>
+                                <div className="nameFundsWrapper">
+                                <text className="topUsrnm" >{this.state.tableData[1].name}</text>
+                                <br/>
+
+                                <var className="topFunds">{this.state.tableData[1].funds}</var>
+                                </div>
                             </div>
-                            
-                        </div>
 
-                        <div className="topThreeSingle" style={{background: "#BF6B07"}}>
-                            <img alt="other profile image" src={profileImages[this.state.tableData[2].profileImg]} className="topProfilePic"></img>
-                            <div className="nameFundsWrapper">
-                            <text className="topUsrnm" >{this.state.tableData[2].name}</text>
-                            <br/>
-
-                            <var className="topFunds">{this.state.tableData[2].funds}</var>
-                            </div>                           
+                            <div className="topThreeSingle" style={{background: "#BF6B07"}}>
+                                <img alt="other profile image" src={profileImages[this.state.tableData[2].profileImg]} className="topProfilePic"></img>
+                                <div className="nameFundsWrapper">
+                                <text className="topUsrnm" >{this.state.tableData[2].name}</text>
+                                <br/>
+                                <var className="topFunds">{this.state.tableData[2].funds}</var>
+                                </div>
+                            </div>
 
                         </div>
 
-                    </div>
+                        <div id="allDisplay">
+                            <table id="rankingTable">
 
-                    <div id="allDisplay">
-                        <table id="rankingTable">
-                            <tr>
-                            </tr>
-                            {this.state.tableData.slice(3,).map((val, key) => {
-                            return (
-                                <tr key={key}>
-                                <td id="rank">{val.rank}</td>
-                                <td id="name">{val.name}</td> 
-                                <td>{val.funds}</td>
-                                
-                                </tr>
-                            )
-                            })}
-                            </table>
-                            </div>         
-            </div>
+                                {this.state.tableData.slice(3,).map((val, key) => {
+                                return (
+                                    <tr key={key}>
+                                    <td id="rank">{val.rank}</td>
+                                    <td id="name">{val.name}</td> 
+                                    <td>{val.funds}</td>
 
+                                    </tr>
+                                )
+                                })}
+                                </table>
+                                </div>         
+                </div>
             </React.Fragment>
         );
     }

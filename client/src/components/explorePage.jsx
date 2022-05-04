@@ -8,11 +8,9 @@ import SearchBar from "./searchBar.jsx";
 class ExplorePage extends Component {
     render() {
         return (
-            <React.Fragment>
-                
-            <HeaderDrawer index={3}></HeaderDrawer>
-            <InternalHeading title="Explore"></InternalHeading>
-            
+            <React.Fragment>    
+                <HeaderDrawer index={3}></HeaderDrawer>
+                <InternalHeading title="Explore"></InternalHeading>
                 <div id="content">
                         <img align="Right" className="searchbarIcon"  alt="search icon" src={searchicon}/>
                         <SearchBar/>                       
@@ -22,5 +20,4 @@ class ExplorePage extends Component {
         );
     }
 }
-
 export default ExplorePage;

@@ -9,15 +9,15 @@ import clover from './images/trophy-icons/clover.png'
 import sword from './images/trophy-icons/sword.png'
 import prize from './images/trophy-icons/prize.png'
 import HeaderDrawer from "./headerDrawer.jsx";
-//reference: https://mui.com/components/drawers/
 import {useParams} from "react-router-dom";
 import './styles/profilePage.css';
+
+import root from '../root'
 
 function withParams(Component) {
     return props => <Component {...props} params={useParams()} />;
 }
 
-const drawerWidth = 240;
 class ProfilePage extends Component {
     constructor(props) {
         super(props);
@@ -39,7 +39,7 @@ class ProfilePage extends Component {
 
     async getUserInformation() {
 
-         fetch('http://localhost:8080/api/user/self', {
+         fetch(`${root}/api/user/self`, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json', "Authorization": localStorage.getItem("token")},
         })
@@ -161,5 +161,4 @@ class ProfilePage extends Component {
         );
     }
 }
-
 export default ProfilePage;

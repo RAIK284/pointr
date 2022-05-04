@@ -1,7 +1,6 @@
-import React, { useState, Component } from "react";
+import React, { useState} from "react";
 import './styles/mostPopular.css';
 import './styles/trophy.css';
-import ducky from './images/ducky.png'
 import Button from '@mui/material/Button';
 
 import dice from './images/trophy-icons/dice.png'
@@ -37,7 +36,8 @@ function MostPopular(props) {
         <React.Fragment>
             <div className="trophySingleBG">
                 <div className="singleDisplay">
-                    <img alt="single trophy" src= {imageObjects[trophyImage]} id="trophyImageLarge"/> {/* src={imageObjects[trophyImage]} */}
+
+                    <img alt="single trophy" src= {imageObjects[trophyImage]} id="trophyImageLarge"/>
 
                     <div id="trophyTitle">
                         <text>

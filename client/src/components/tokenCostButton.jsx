@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import './styles/tokensBox.css';
 import './styles/newMessage.css'
 import Button from '@mui/material/Button';
 

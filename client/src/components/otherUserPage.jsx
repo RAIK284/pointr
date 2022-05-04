@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Carousel from './carousel.jsx';
 import dice from './images/trophy-icons/dice.png'
 import trophy from './images/trophy-icons/trophy.png'
 import star from './images/trophy-icons/star.png'
@@ -11,7 +10,6 @@ import prize from './images/trophy-icons/prize.png'
 import ducky from './images/ducky.png'
 import HeaderDrawer from "./headerDrawer.jsx";
 import { useParams } from "react-router-dom";
-//reference: https://mui.com/components/drawers/
 import PropTypes from 'prop-types';
 import './styles/profilePage.css';
 import './styles/otherUserPage.css'
@@ -22,7 +20,8 @@ import prema from "./images/profile-pictures/prema-cropped.png"
 import shivani from "./images/profile-pictures/shivani.jpeg"
 import keck from "./images/profile-pictures/keck.jpg"
 import sam from "./images/profile-pictures/sam.png"
-
+import root from "../root"
+import localURL from "../root"
 
 function withParams(Component) {
     return props => <Component {...props} params={useParams()} />;
@@ -44,13 +43,19 @@ class OtherUserPage extends Component {
                 leaderboardRank: "?"}
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         let { id } = this.props.params;
-        this.fetchData(id).then(() => this.getLeaderboardInformation());
+        await this.fetchData(id)
+        await this.getLeaderboardInformation();
+        console.log("this is the id: ", id)
     }
 
     fetchData = async (id) => {
-        const response =  await fetch('http://localhost:8080/api/user?username=' + id)
+        console.log("this is the id again tho", id)
+        const username = id.toString();
+        console.log(root)
+        const response = await fetch(`http//:localhost:8080/api/user?username=${username}`)
+        console.log("response", response)
         const data = await response.json();
         console.log(data)
         if (data.isPrivate === false) {
@@ -70,7 +75,7 @@ class OtherUserPage extends Component {
     };
 
     async getLeaderboardInformation () {
-        await fetch('http://localhost:8080/api/leaderboard')
+        await fetch(`${root}/api/leaderboard`)
             .then(response => response.json())
             .then(data => {this.getUserRank(data)})
     }
@@ -79,7 +84,6 @@ class OtherUserPage extends Component {
         let rank = 1;
         data.forEach((user) => {
             if (user.username === this.state.username) {
-                console.log("happened")
                 this.setState({leaderboardRank: rank})
             } else {
                 rank++;
@@ -144,7 +148,6 @@ class OtherUserPage extends Component {
                 <label htmlFor="trophies" className="trophiesLabel">Trophies</label>
                 <div id={"carousel-container"}>
                     <div id={"carousel-wrapper"}>
-                        {/* insert images here{trophyImages} */}
                         {trophyImages}
                     </div>
                 </div>

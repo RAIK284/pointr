@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ../pointr/server/app.js",
-    "dev": "nodemon ../pointr/server/app.js",
+    "start": "node server/app.js",
+    "dev": "nodemon server/app.js",
     "client": "npm start client",
-    "all": "npm-run-all --parallel client dev"
+    "all": "npm-run-all --parallel client dev",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
@@ -20,8 +21,10 @@
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
     "mongodb": "^4.4.0",
     "node-cron": "^3.0.0",
+    "nodemailer": "^6.7.4",
     "nodemon": "^2.0.15"
   },
   "devDependencies": {

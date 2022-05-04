@@ -1,3 +1,5 @@
+import root from '../../root'
+
 const jsonBody = {
     "username": "",
     "name": "",
@@ -72,13 +74,13 @@ export function verifyPassword(password) {
 }
 
 export async function isExistingUsername(username) {
-    const users = await fetch('http://localhost:8080/api/existingUser?username=' + username);
+    const users = await fetch(`${root}/api/existingUser?username=${username}`);
     const response = await users;
     return response.status;
 }
 
 export async function isExistingEmail(email) {
-    const emails = await fetch('http://localhost:8080/api/existingEmail?email=' + email);
+    const emails = await fetch(`${root}/api/existingEmail?email=${email}`);
     const response = await emails;
     return response.status;
 }
@@ -92,7 +94,7 @@ export async function createUser(name, username, email, password) {
     const newUserJSON = JSON.stringify(jsonBody);
 
     // Send JSON data into POST request
-    const response = await fetch("http://localhost:8080/api/signup", {
+    const response = await fetch(`${root}/api/signup`, {
         method: "POST",
         headers: {'Content-Type': 'application/json'},
         body: newUserJSON

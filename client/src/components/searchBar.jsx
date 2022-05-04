@@ -1,14 +1,9 @@
 import { React, useState } from 'react';
 import TextField from "@mui/material/TextField";
 import List from './List';
-import data from "./ListData.json";
 import './styles/searchBar.css';
-import { fontFamily } from '@mui/system';
-
 
 /* code inspired by this tutorial: https://dev.to/salehmubashar/search-bar-in-react-js-545l */
-
-
 function SearchBar() {
 
 const [inputText, setInputText] = useState("");
@@ -39,7 +34,7 @@ return (
         borderWidth='5px'
       />
     </div>
-    
+
     <List input={inputText}/>
   </div>
 );
