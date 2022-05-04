@@ -30,7 +30,7 @@ describe("<List />", () => {
     test('Input state of component is updated from user input', () => {
         const component = render(<List input = "bsimpleman"/>, container);
 
-        expect(container.props.input === ["bsimpleman"])
+        expect(container.input === ["bsimpleman"])
 
         //Need to reference "filteredData", as well as specify what the expected value should be.
     });
