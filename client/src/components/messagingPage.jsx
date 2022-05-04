@@ -58,6 +58,7 @@ class MessagingPage extends Component {
             receivedMessages.push(<MessageDisplayBox name={this.state.receivedMessages[i].name} username={this.state.receivedMessages[i].sender} messageBody={this.state.receivedMessages[i].messageBody}></MessageDisplayBox>);
         }
 
+        // if switch is toggled to see sent messages
         if (this.state.viewStatus) {
             return (
                 <React.Fragment >
@@ -89,7 +90,9 @@ class MessagingPage extends Component {
                     </NewMessage>
                 </React.Fragment>
             );
-        } else {
+        }
+        // else if received messages should be displayed
+        else {
             return (
                 <React.Fragment >
                     <div id="messagingBackground">

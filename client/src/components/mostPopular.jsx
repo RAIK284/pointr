@@ -36,9 +36,8 @@ function MostPopular(props) {
 
         <React.Fragment>
             <div className="trophySingleBG">
-                <div className="singleDisplay"> {/* need to add close button */}
+                <div className="singleDisplay">
                     <img alt="single trophy" src= {imageObjects[trophyImage]} id="trophyImageLarge"/> {/* src={imageObjects[trophyImage]} */}
-
 
                     <div id="trophyTitle">
                         <text>
@@ -59,13 +58,8 @@ function MostPopular(props) {
                     {props.children}
                 </div>
             </div>
-
-
-
         </React.Fragment>
     ) : "";
-
-
 }
 
 export default MostPopular

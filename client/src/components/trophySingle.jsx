@@ -122,8 +122,6 @@ function TrophySingle(props) {
 
         </React.Fragment>
     ) : "";
-
-
 }
 
 export default TrophySingle

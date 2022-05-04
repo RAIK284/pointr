@@ -77,7 +77,6 @@ class HeaderDrawer extends React.Component {
             username = localStorage.getItem('username');
         }
 
-
             
         // handle clicking on side navbar throughout application
         const changePage  =  (index) =>

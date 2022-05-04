@@ -24,7 +24,6 @@ import keck from "./images/profile-pictures/keck.jpg"
 import sam from "./images/profile-pictures/sam.png"
 
 
-
 function withParams(Component) {
     return props => <Component {...props} params={useParams()} />;
 }

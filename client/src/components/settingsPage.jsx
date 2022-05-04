@@ -11,7 +11,6 @@ import {createUser} from "./scripts/signUpValidation.js"
 //reference: https://mui.com/components/drawers/
 
 
-
 class SettingsPage extends Component {
     constructor(props) {
         super(props);

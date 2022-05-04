@@ -84,8 +84,7 @@ class LeaderBoardPage extends Component {
 
                     <div id="topThreeDisplay">
                         <div className="topThreeSingle" style={{background: "#E9C46A"}}>
-                            <img alt="other profile image" src={profileImages[this.state.tableData[0].profileImg]} className="topProfilePic"></img>  {/* need to add on-click to route to other profile */}
-                            {/* <text className="topUsrnm" >@username</text> */}
+                            <img alt="other profile image" src={profileImages[this.state.tableData[0].profileImg]} className="topProfilePic"></img>
                             <div className="nameFundsWrapper">
                             <text className="topUsrnm" >{this.state.tableData[0].name}</text>
                             <br/>
@@ -111,13 +110,11 @@ class LeaderBoardPage extends Component {
                             <br/>
 
                             <var className="topFunds">{this.state.tableData[2].funds}</var>
-                            </div>
-                            
+                            </div>                           
 
                         </div>
 
                     </div>
-
 
                     <div id="allDisplay">
                         <table id="rankingTable">

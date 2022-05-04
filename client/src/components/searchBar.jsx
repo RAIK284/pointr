@@ -40,7 +40,6 @@ return (
         borderWidth='5px'
       />
     </div>
-
     
     <List input={inputText}/>
   </div>

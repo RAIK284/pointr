@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import './styles/signIn.css';
 import Button from '@mui/material/Button';
 import {validateUser} from './scripts/signInValidation.js';
-//import Stack from '@mui/material/Stack';
-//import PropTypes from 'prop-types';
 
 class SignIn extends Component {
     render() {

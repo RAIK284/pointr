@@ -303,8 +303,6 @@ function NewMessage(props){
                         Send
                     </Button>
 
-
-
                     {props.children}
                 </div>
 

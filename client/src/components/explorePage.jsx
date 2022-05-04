@@ -5,7 +5,6 @@ import searchicon from "./images/header-icons/search.svg"
 import InternalHeading from "./internalHeading.jsx";
 import SearchBar from "./searchBar.jsx";
 
-
 class ExplorePage extends Component {
     render() {
         return (
