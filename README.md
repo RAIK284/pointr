@@ -4,14 +4,15 @@
 <br>
 <ol>
 <li><a href="https://nodejs.org/en/download">Download node.js</a></li>
-<li>Pull the repository into Visual Studio, name the folder you pull the project into "pointr-project"</li>
-<ul><li>If you did not do this, update file paths in package.json to match the name of your root directory</li></ul>
+<li>Pull the repository into Visual Studio</li>
 <li>Open up 2 terminal windows in VS Code</li>
-<li>In the first terminal, run "npm start" in the root directory (this runs the back end)
+<li>In the first terminal, run "npm i" in the root directory
 <br>
 <li>In the second terminal, type and run "cd client"
-<li>run "npm start" in the client directory (this runs the front end)</li>
-<li>A React app website will launch and you will see Pointr's Home Page</li>
+<li>run "npm i" in the client directory</li>
+<li>run "npm start" in your first terminal (the root directory). This runs the back-end</li>
+<li>run "npm start" in your second terminal (the client directory). This runs the front-end</li>
+<li>A React app website will launch and you will see Pointr's Home Page!</li>
 </ol>
 
 <br></br>
@@ -19,7 +20,14 @@
 <p> We were able to deploy our application via <a href="https://www.heroku.com/">Heroku</a></p>
 <p> Our deployed website can be found at: <a href="https://pointr-project.herokuapp.com/">https://pointr-project.herokuapp.com/</a></p>
 
-<i><b>IMPORTANT NOTE: </b> [detail the stuff that doesn't work on the deployed version here]</i>
+<i><b>IMPORTANT NOTE: </b> Due to some issues with deployment there are a few small bugs on the heroku app that do not exist on our locally hosted application. 
+
+<li>profile images will always be the default avatar. </li>
+<li>if you click a user profile from the explore page, the profile you are redirected to is not populated with the correct information.</li>
+</i>
+
+<br></br>
+A short video of the above functionality working on our locally hosted app is linked <a href="https://use.vg/XFxDko">here</a>. 
 
 <br><br>
 
